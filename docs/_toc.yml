@@ -1,8 +1,17 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
-- file: intro
-- file: content
-  sections:
-    - file: markdown
-    - file: notebooks
+- file: introduction
+- part: Explainable AI Tools
+  chapters:
+  - file: model-level/model-level
+#   sections:
+#     - file: anova
+#     - file: varimp
+#     - file: pdp
+#     - file: dt
+  - file: instance-level/instance-level
+#   sections:
+#     - file: lime
+#     - file: shap
+    
