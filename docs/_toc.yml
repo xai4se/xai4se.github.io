@@ -5,8 +5,8 @@
 - part: Explainable AI Tools
   chapters:
   - file: model-level/model-level
-#   sections:
-#     - file: anova
+  sections:
+    - file: model-level/anova
 #     - file: varimp
 #     - file: pdp
 #     - file: dt
