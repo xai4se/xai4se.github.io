@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Actionable Analytics - Stop Telling Me What Is, Telling Me What To Do! &#8212; Actionable Analytics - Stop Telling Me What Is, Telling Me What To Do!</title>
+    <title>Actionable Analytics: Stop Telling Me What Is, Telling Me What To Do! &#8212; Actionable Analytics - Stop Telling Me What Is, Telling Me What To Do!</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -47,9 +47,9 @@
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -83,57 +83,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="modellevel.html">
-   Model-level Explainable AI Tools
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="anova.html">
-     ANOVA analysis of regression models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="varimp.html">
-     Variable importance analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pdp.html">
-     Partial Dependence Plot (PDP)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dt.html">
-     Decision Rules/Decision Trees
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="instancelevel.html">
-   Instance-level Explainable AI Tools
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="lime.html">
-     LIME
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="shap.html">
-     SHAP
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
-</ul>
-
+    
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -172,9 +122,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/intro.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -195,7 +145,7 @@
             href="https://github.com/xai4se/xai4se.github.io/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/xai4se/xai4se.github.io/edit/master/docs/intro.md"><button
+        <a class="edit-button" href="https://github.com/xai4se/xai4se.github.io/edit/master/docs/intro.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -209,6 +159,26 @@
                         class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/xai4se.github.io/master?urlpath=tree/docs/intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -224,13 +194,15 @@
               <div>
                 
   <div class="section" id="actionable-analytics-stop-telling-me-what-is-telling-me-what-to-do">
-<h1>Actionable Analytics - Stop Telling Me What Is, Telling Me What To Do!<a class="headerlink" href="#actionable-analytics-stop-telling-me-what-is-telling-me-what-to-do" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://mybinder.org/v2/gh/xai4se/xai-tutorials/07024e456ee6a01eb55478013fb057b0418d9ea5?filepath=xai-tools.ipynb"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
+<h1>Actionable Analytics: Stop Telling Me What Is, Telling Me What To Do!<a class="headerlink" href="#actionable-analytics-stop-telling-me-what-is-telling-me-what-to-do" title="Permalink to this headline">¶</a></h1>
+<p><span class="xref myst"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></span></p>
 <p>TODO</p>
 <p>Cite this book:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>TODO</p>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -238,21 +210,21 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "xai4se/xai4se.github.io",
             ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "xaitools"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "xaitools",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'xaitools'</script>
 
               </div>
               

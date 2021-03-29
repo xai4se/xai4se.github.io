@@ -1,7 +1,7 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
-- file: introduction
+- file: intro
 - part: Explainable AI Tools
   chapters:
   - file: model-level/model-level
