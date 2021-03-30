@@ -1,16 +1,17 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
-- file: intro
+- file: intro.ipynb
 - part: Explainable AI Tools
   chapters:
-  - file: model-level/model-level
-  sections:
-    - file: model-level/anova
+  - file: model-level/Model-level.ipynb
+    sections:
+    - file: model-level/ANOVA.ipynb
 #     - file: varimp
 #     - file: pdp
 #     - file: dt
-  - file: instance-level/instance-level
+  chapters:
+  - file: instance-level/Instance-level.ipynb
 #   sections:
 #     - file: lime
 #     - file: shap
