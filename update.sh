@@ -1,7 +1,7 @@
 #!bin/bash
 
 # delete branch locally
-git branch -d gh-pages
+git branch -D gh-pages
 
 # delete branch remotely
 git push origin --delete gh-pages
