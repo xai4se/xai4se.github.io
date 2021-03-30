@@ -66,7 +66,7 @@
 <meta property="og:url"         content="https://xai4se.github.io/instance-level/LIME.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="LIME" />
-<meta property="og:description" content="LIME  TODO  Tutorial  Load Data and preparing datasets  # Import for Load Data from os import listdir from os.path import isfile, join import pandas as pd # Imp" />
+<meta property="og:description" content="LIME  LIME (i.e., Local Interpretable Model-agnostic Explanations) [RSG16] is a model-agnostic technique that mimics the behaviour of the black-box model to gen" />
 <meta property="og:image"       content="https://xai4se.github.io/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -280,7 +280,7 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#id2">
      LIME
     </a>
    </li>
@@ -300,7 +300,24 @@
                 
   <div class="section" id="lime">
 <h1>LIME<a class="headerlink" href="#lime" title="Permalink to this headline">¶</a></h1>
-<p>TODO</p>
+<p><strong>LIME</strong> (i.e., Local Interpretable Model-agnostic
+Explanations) <span id="id1">[<a class="reference internal" href="../References.html#id8"><span>RSG16</span></a>]</span> is a model-agnostic technique that
+mimics the behaviour of the black-box model to generate the explanations
+of the predictions of the black-box model. Given a black-box model and
+an instance to explain, LIME performs 4 key steps to generate an
+instance explanation as follows:</p>
+<ul class="simple">
+<li><p>First, LIME randomly generates instances surrounding the instance of
+interest.</p></li>
+<li><p>Second, LIME uses the black-box model to generate predictions of the
+generated random instances.</p></li>
+<li><p>Third, LIME constructs a local regression model using the generated
+random instances and their generated predictions from the black-box
+model.</p></li>
+<li><p>Finally, the coefficients of the regression model indicate the
+contribution of each metric on the prediction of the instance of
+interest according to the black-box model.</p></li>
+</ul>
 <div class="section" id="tutorial">
 <h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="load-data-and-preparing-datasets">
@@ -423,8 +440,8 @@ Random Forests (AUC, F1): (0.8589023524916761, 0.4951456310679611)
 </div>
 <div class="section" id="local-explanations">
 <h2>Local Explanations<a class="headerlink" href="#local-explanations" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>LIME<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>LIME<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for LIME</span>
@@ -37558,10 +37575,10 @@ Random Forests (AUC, F1): (0.8589023524916761, 0.4951456310679611)
 /***/ })
 /******/ ]);
 //# sourceMappingURL=bundle.js.map </script></head><body>
-        <div class="lime top_div" id="top_divFWOGS81XX10OH9V"></div>
+        <div class="lime top_div" id="top_divLKJYD5AQ6P4GEX1"></div>
 
         <script>
-        var top_div = d3.select('#top_divFWOGS81XX10OH9V').classed('lime top_div', true);
+        var top_div = d3.select('#top_divLKJYD5AQ6P4GEX1').classed('lime top_div', true);
 
             var pp_div = top_div.append('div')
                                 .classed('lime predict_proba', true);

@@ -52,6 +52,8 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://xai4se.github.io/model-level/VarImp.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -66,7 +68,7 @@
 <meta property="og:url"         content="https://xai4se.github.io/model-level/VarImp.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Variable Importance analysis" />
-<meta property="og:description" content="Variable Importance analysis  TODO  Tutorial  Load Data and preparing datasets  # Import for Load Data from os import listdir from os.path import isfile, join i" />
+<meta property="og:description" content="Variable Importance analysis  Variable importance (a.k.a. VarImp) is an approach to examine the importance of software metrics for random forest models. There a" />
 <meta property="og:image"       content="https://xai4se.github.io/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -300,7 +302,56 @@
                 
   <div class="section" id="variable-importance-analysis">
 <h1>Variable Importance analysis<a class="headerlink" href="#variable-importance-analysis" title="Permalink to this headline">¶</a></h1>
-<p>TODO</p>
+<p>Variable importance (a.k.a. VarImp) is an approach to examine the
+importance of software metrics for random forest models. There are two
+commonly-used calculation approaches of variable importance scores,
+namely, Gini Importance and Permutation Importance, which we describe
+below.</p>
+<p><strong>Gini Importance (a.k.a. MeanDecreaseGini)</strong> determines the importance
+of metrics from the decrease of the Gini Index, i.e., the distinguishing
+power for the defective class due to a given
+metric <span id="id1">[<a class="reference internal" href="../References.html#id6"><span>Bre01</span></a>]</span>. We start from a random
+forest model that is constructed using the original dataset with
+multiple trees, where each tree is constructed using a bootstrap sample.
+For each tree, a parent node (i.e., <span class="math notranslate nohighlight">\(G_{\mathrm{Parent}}\)</span>) is split by
+the best cut-point into two descendent nodes (i.e.,
+<span class="math notranslate nohighlight">\(G_{\mathrm{Desc.1}}\)</span> and <span class="math notranslate nohighlight">\(G_{\mathrm{Desc.2}}\)</span>). The calculation of the
+Gini Importance of each metric is made up of 2 steps:</p>
+<p><em>(Step 1) Compute the DecreaseGini for all of the trees in the random
+forest model.</em> The DecreaseGini is the improvement of the ability to
+distinguish between two classes across parent and its descendent nodes.
+We compute the DecreaseGini using the following equation:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{DecreaseGini}(m_i) = I_{m_i} = G_{\mathrm{Parent}} - G_{\mathrm{Desc.1}} - G_{\mathrm{Desc.2}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(G\)</span> is the Gini Index, i.e., the distinguishing power of defective
+class for a given metric. The Gini Index is computed using the following
+equation: <span class="math notranslate nohighlight">\(G = \sum_{i=1}^{N_{\mathrm{Class}}}p_i(1-p_i)\)</span>, where
+<span class="math notranslate nohighlight">\(N_{\mathrm{Class}}\)</span> is the number of classes and <span class="math notranslate nohighlight">\(p_i\)</span> is the
+proportion of Class<span class="math notranslate nohighlight">\(_i\)</span>.</p>
+<p><em>(Step 2) Compute the MeanDecreaseGini measure.</em> Finally, the importance
+of each metric (i.e., MeanDecreaseGini) is the average of the
+DecreaseGini values from all of the splits of that metric across all the
+trees in the random forest model.</p>
+<p>In this paper, we consider both the scaled and non-scaled importance
+scores for the Gini Importance.</p>
+<p><strong>Permutation Importance (a.k.a. MeanDecreaseAccuracy)</strong> determines the
+importance of metrics from the decrease of the accuracy (i.e., the
+misclassification rate) when the values of a given metric are randomly
+permuted <span id="id2">[<a class="reference internal" href="../References.html#id6"><span>Bre01</span></a>]</span>. Similar to
+MeanDecreaseGini, we start from a random forest model that is
+constructed using an original dataset with multiple trees, where each
+tree is constructed using an out-of-sample bootstrap. The calculation of
+the Permutation Importance is made up of 2 steps:</p>
+<p><em>(Step 1) Compute the DecreaseAccuracy of each tree in the random forest
+model.</em> The DecreaseAccuracy is the decrease of the accuracy (i.e.,
+misclassification rate) between a model that is tested using the
+original out-of-bag testing samples and a model that is tested using
+permuted out-of-bag testing samples, i.e., a dataset with one metric
+permuted, while all other metrics are unchanged).</p>
+<p><em>(Step 2) Compute the MeanDecreaseAccuracy measure.</em> Finally, the
+importance of each metric (i.e., MeanDecreaseAccuracy) is the average of
+the DecreaseAccuracy values across all of the trees in the random forest
+model.</p>
 <div class="section" id="tutorial">
 <h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="load-data-and-preparing-datasets">
