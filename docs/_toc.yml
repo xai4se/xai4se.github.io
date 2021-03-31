@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
 - file: index.ipynb
-  numbered: true
+  numbered: 3
 
 - part: Getting Started
   chapters:
