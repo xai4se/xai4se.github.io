@@ -398,35 +398,6 @@
   <a class="reference internal nav-link" href="#tutorial">
    Tutorial
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-data-and-preparing-datasets">
-     Load Data and preparing datasets
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#construct-a-black-box-model-regression-and-random-forests">
-     Construct a black-box model (Regression and Random Forests)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cross-release-model-validation-for-sanity-check-train-with-2-9-0-and-test-with-3-0-0">
-     Cross-release model validation for sanity check (Train with 2.9.0 and test with 3.0.0)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#local-explanations">
-   Local Explanations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     LIME
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -462,19 +433,25 @@ interest according to the black-box model.</p></li>
 </ul>
 <div class="section" id="tutorial">
 <h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="load-data-and-preparing-datasets">
-<h3>Load Data and preparing datasets<a class="headerlink" href="#load-data-and-preparing-datasets" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for Load Data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Load Data and preparing datasets</span>
+
+<span class="c1"># Import for Load Data</span>
 <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="c1"># Import for Split Data into Training and Testing Samples</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 
-<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../datasets/lucene-2.9.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
-<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../datasets/lucene-3.0.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
+<span class="c1"># Import for Construct a black-box model (Regression and Random Forests)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../../datasets/lucene-2.9.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../../datasets/lucene-3.0.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
 
 <span class="n">outcome</span> <span class="o">=</span> <span class="s1">&#39;RealBug&#39;</span>
 <span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;OWN_COMMIT&#39;</span><span class="p">,</span> <span class="s1">&#39;Added_lines&#39;</span><span class="p">,</span> <span class="s1">&#39;CountClassCoupled&#39;</span><span class="p">,</span> <span class="s1">&#39;AvgLine&#39;</span><span class="p">,</span> <span class="s1">&#39;RatioCommentToCode&#39;</span><span class="p">]</span>
@@ -504,20 +481,9 @@ interest according to the black-box model.</p></li>
 <span class="n">X_test</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">features</span>
 <span class="n">training_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">testing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="construct-a-black-box-model-regression-and-random-forests">
-<h3>Construct a black-box model (Regression and Random Forests)<a class="headerlink" href="#construct-a-black-box-model-regression-and-random-forests" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for Construct a black-box model (Regression and Random Forests)</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-<span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="c1">## Construct a black-box model (Regression and Random Forests)</span>
+
 
 <span class="c1"># regression (ols)</span>
 <span class="n">model_formula</span> <span class="o">=</span> <span class="n">outcome</span> <span class="o">+</span> <span class="s1">&#39; ~ &#39;</span> <span class="o">+</span> <span class="s1">&#39; + &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
@@ -541,68 +507,14 @@ interest according to the black-box model.</p></li>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="cross-release-model-validation-for-sanity-check-train-with-2-9-0-and-test-with-3-0-0">
-<h3>Cross-release model validation for sanity check (Train with 2.9.0 and test with 3.0.0)<a class="headerlink" href="#cross-release-model-validation-for-sanity-check-train-with-2-9-0-and-test-with-3-0-0" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_model_performance</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">):</span>
-    <span class="n">model_prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">values</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
-    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">model_prediction</span><span class="p">,</span> <span class="n">pos_label</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">auc_value</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
-    <span class="n">transformed_prediction</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">model_prediction</span><span class="p">]</span>
-    <span class="n">f1_value</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">transformed_prediction</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">auc_value</span><span class="p">,</span> <span class="n">f1_value</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Regression (AUC, F1):&#39;</span><span class="p">,</span> <span class="n">get_model_performance</span><span class="p">(</span><span class="n">lr_model</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Random Forests (AUC, F1):&#39;</span><span class="p">,</span> <span class="n">get_model_performance</span><span class="p">(</span><span class="n">rf_model</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Regression (AUC, F1): (0.7989602095955461, 0.23236514522821577)
-Random Forests (AUC, F1): (0.8589023524916761, 0.4951456310679611)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jirayusjiar/.conda/envs/xaitools/lib/python3.6/site-packages/ipykernel_launcher.py:5: DeprecationWarning: In future, it will be an error for &#39;np.bool_&#39; scalars to be interpreted as an index
-  &quot;&quot;&quot;
-/home/jirayusjiar/.conda/envs/xaitools/lib/python3.6/site-packages/ipykernel_launcher.py:5: DeprecationWarning: In future, it will be an error for &#39;np.bool_&#39; scalars to be interpreted as an index
-  &quot;&quot;&quot;
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="local-explanations">
-<h2>Local Explanations<a class="headerlink" href="#local-explanations" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>LIME<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for LIME</span>
 <span class="kn">import</span> <span class="nn">lime</span>
 <span class="kn">import</span> <span class="nn">lime.lime_tabular</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># construct a lime explainer</span>
+
+<span class="c1"># construct a lime explainer</span>
 <span class="n">lime_explainer</span> <span class="o">=</span> <span class="n">lime</span><span class="o">.</span><span class="n">lime_tabular</span><span class="o">.</span><span class="n">LimeTabularExplainer</span><span class="p">(</span>
                             <span class="n">training_data</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>  
                             <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;classification&#39;</span><span class="p">,</span>
@@ -624,12 +536,17 @@ Random Forests (AUC, F1): (0.8589023524916761, 0.4951456310679611)
                             <span class="n">num_features</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
                             <span class="n">top_labels</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
+<span class="c1"># textual explanation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lime_local_explanation</span><span class="o">.</span><span class="n">as_list</span><span class="p">(</span><span class="n">label</span><span class="o">=</span> <span class="n">lime_local_explanation</span><span class="o">.</span><span class="n">available_labels</span><span class="p">()[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="c1"># visual LIME</span>
 <span class="n">lime_local_explanation</span><span class="o">.</span><span class="n">show_in_notebook</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>src/java/org/apache/lucene/index/DocumentsWriter.java is likely to be defective with the probability of 0.79
+[(&#39;nCoupledClass &gt; 9.00&#39;, 0.1999064535427199), (&#39;AddedLOC &gt; 95.00&#39;, 0.15787821638941893), (&#39;CommentToCodeRatio &lt;= 0.34&#39;, 0.04030911709105902), (&#39;0.50 &lt; nCommit &lt;= 1.00&#39;, 0.016747236516423392), (&#39;10.00 &lt; LOC &lt;= 15.00&#39;, -0.008381568589944464)]
 </pre></div>
 </div>
 <div class="output text_html"><html>
@@ -37723,10 +37640,10 @@ Random Forests (AUC, F1): (0.8589023524916761, 0.4951456310679611)
 /***/ })
 /******/ ]);
 //# sourceMappingURL=bundle.js.map </script></head><body>
-        <div class="lime top_div" id="top_divBCGIQNF0Q4ZMCK9"></div>
+        <div class="lime top_div" id="top_divU2ILN35WPOV372W"></div>
 
         <script>
-        var top_div = d3.select('#top_divBCGIQNF0Q4ZMCK9').classed('lime top_div', true);
+        var top_div = d3.select('#top_divU2ILN35WPOV372W').classed('lime top_div', true);
 
             var pp_div = top_div.append('div')
                                 .classed('lime predict_proba', true);
@@ -37745,24 +37662,6 @@ Random Forests (AUC, F1): (0.8589023524916761, 0.4951456310679611)
 
         </script>
         </body></html></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Conditions and scores</span>
-<span class="n">lime_local_explanation</span><span class="o">.</span><span class="n">as_list</span><span class="p">(</span><span class="n">label</span><span class="o">=</span> <span class="n">lime_local_explanation</span><span class="o">.</span><span class="n">available_labels</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;nCoupledClass &gt; 9.00&#39;, 0.1999064535427199),
- (&#39;AddedLOC &gt; 95.00&#39;, 0.15787821638941893),
- (&#39;CommentToCodeRatio &lt;= 0.34&#39;, 0.04030911709105902),
- (&#39;0.50 &lt; nCommit &lt;= 1.00&#39;, 0.016747236516423392),
- (&#39;10.00 &lt; LOC &lt;= 15.00&#39;, -0.008381568589944464)]
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
