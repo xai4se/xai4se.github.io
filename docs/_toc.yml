@@ -2,26 +2,47 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
 - file: index.ipynb
-  title: Summary
   numbered: true
 
-- part: Book
+- part: Getting Started
   chapters:
-  - file: 5_explainable-analytics.ipynb
+  - file: start/about-this-book.ipynb
+
+- part: The Book
+  chapters:
+  - file: data-analysis/index.ipynb
     sections:
-      - file: explainable-analytics/explainability-in-se.ipynb
-      - file: explainable-analytics/theory-explainability.ipynb
-      - file: explainable-analytics/theory-explanation.ipynb
-      - file: explainable-analytics/model-level/Model-level.ipynb
+      - file: data-analysis/outliers.ipynb
+      - file: data-analysis/data-normalization.ipynb
+      - file: data-analysis/data-skewness.ipynb
+      - file: data-analysis/feature-selection.ipynb
+      - file: data-analysis/correlation-analysis.ipynb
+      - file: data-analysis/class-imbalance.ipynb
+      - file: data-analysis/hypothesis-testing.ipynb
+      
+  - file: modelling/index.ipynb
+    sections:
+      - file: modelling/classification.ipynb
+      - file: modelling/parameter-settings.ipynb
+      - file: modelling/model-validation.ipynb
+      - file: modelling/evaluation-measures.ipynb
+      - file: modelling/ranking-and-multiple-comparison.ipynb
+      
+  - file: explaining/index.ipynb
+    sections:
+      - file: explaining/explainability-in-se.ipynb
+      - file: explaining/theory-explainability.ipynb
+      - file: explaining/theory-explanation.ipynb
+      - file: explaining/model-level/Model-level.ipynb
         sections:
-          - file: explainable-analytics/model-level/ANOVA.ipynb
-          - file: explainable-analytics/model-level/VarImp.ipynb
-          - file: explainable-analytics/model-level/PDP.ipynb
-          - file: explainable-analytics/model-level/DTDR.ipynb
-      - file: explainable-analytics/instance-level/Instance-level.ipynb
+          - file: explaining/model-level/ANOVA.ipynb
+          - file: explaining/model-level/VarImp.ipynb
+          - file: explaining/model-level/PDP.ipynb
+          - file: explaining/model-level/DTDR.ipynb
+      - file: explaining/instance-level/Instance-level.ipynb
         sections:
-          - file: explainable-analytics/instance-level/LIME.ipynb
-          - file: explainable-analytics/instance-level/SHAP.ipynb
+          - file: explaining/instance-level/LIME.ipynb
+          - file: explaining/instance-level/SHAP.ipynb
 
 - part: Datasets
   chapters:
