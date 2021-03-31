@@ -467,17 +467,6 @@
 
 <span class="c1">## Construct a black-box model (Regression and Random Forests)</span>
 
-
-<span class="c1"># regression (ols)</span>
-<span class="n">model_formula</span> <span class="o">=</span> <span class="n">outcome</span> <span class="o">+</span> <span class="s1">&#39; ~ &#39;</span> <span class="o">+</span> <span class="s1">&#39; + &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
-<span class="n">regression_model</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="n">model_formula</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">)</span>
-<span class="c1"># regression_model = sm.OLS(y_train, sm.add_constant(X_train))</span>
-<span class="n">regression_model_fit</span> <span class="o">=</span> <span class="n">regression_model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-
-<span class="c1"># regression (logistic regression)</span>
-<span class="n">lr_model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">fit_intercept</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">lr_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  
-
 <span class="c1"># random forests</span>
 <span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">rf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  

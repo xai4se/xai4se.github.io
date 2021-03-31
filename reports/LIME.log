@@ -64,18 +64,7 @@ X_test.columns = features
 training_data = pd.concat([X_train, y_train], axis=1)
 testing_data = pd.concat([X_test, y_test], axis=1)
 
-## Construct a black-box model (Regression and Random Forests)
-
-
-# regression (ols)
-model_formula = outcome + ' ~ ' + ' + '.join(features)
-regression_model = ols(model_formula, data = training_data)
-# regression_model = sm.OLS(y_train, sm.add_constant(X_train))
-regression_model_fit = regression_model.fit()
-
-# regression (logistic regression)
-lr_model = LogisticRegression(fit_intercept = True)
-lr_model.fit(X_train, y_train)  
+## Construct a black-box model (Random Forests)
 
 # random forests
 rf_model = RandomForestClassifier(random_state=1234, n_jobs = 10)
@@ -84,7 +73,7 @@ rf_model.fit(X_train, y_train)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m<ipython-input-1-1e727bc4b02a>[0m in [0;36m<module>[0;34m[0m
+[0;32m<ipython-input-1-6c9d40712e25>[0m in [0;36m<module>[0;34m[0m
 [1;32m     14[0m [0;32mfrom[0m [0msklearn[0m[0;34m.[0m[0mlinear_model[0m [0;32mimport[0m [0mLogisticRegression[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     15[0m [0;34m[0m[0m
 [0;32m---> 16[0;31m [0mtrain_dataset[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m([0m[0;34m"../../../datasets/lucene-2.9.0.csv"[0m[0;34m)[0m[0;34m,[0m [0mindex_col[0m [0;34m=[0m [0;34m'File'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

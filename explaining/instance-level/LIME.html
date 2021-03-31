@@ -482,18 +482,7 @@ interest according to the black-box model.</p></li>
 <span class="n">training_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">testing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c1">## Construct a black-box model (Regression and Random Forests)</span>
-
-
-<span class="c1"># regression (ols)</span>
-<span class="n">model_formula</span> <span class="o">=</span> <span class="n">outcome</span> <span class="o">+</span> <span class="s1">&#39; ~ &#39;</span> <span class="o">+</span> <span class="s1">&#39; + &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
-<span class="n">regression_model</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="n">model_formula</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">)</span>
-<span class="c1"># regression_model = sm.OLS(y_train, sm.add_constant(X_train))</span>
-<span class="n">regression_model_fit</span> <span class="o">=</span> <span class="n">regression_model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-
-<span class="c1"># regression (logistic regression)</span>
-<span class="n">lr_model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">fit_intercept</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">lr_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  
+<span class="c1">## Construct a black-box model (Random Forests)</span>
 
 <span class="c1"># random forests</span>
 <span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
@@ -512,7 +501,6 @@ interest according to the black-box model.</p></li>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for LIME</span>
 <span class="kn">import</span> <span class="nn">lime</span>
 <span class="kn">import</span> <span class="nn">lime.lime_tabular</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># construct a lime explainer</span>
 <span class="n">lime_explainer</span> <span class="o">=</span> <span class="n">lime</span><span class="o">.</span><span class="n">lime_tabular</span><span class="o">.</span><span class="n">LimeTabularExplainer</span><span class="p">(</span>
