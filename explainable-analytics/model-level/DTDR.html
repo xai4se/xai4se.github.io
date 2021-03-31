@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4.4. Decision Tree/Decision Rules &#8212; Actionable Analytics - Stop Telling Me What Is, Telling Me What To Do!</title>
+    <title>Decision Tree/Decision Rules &#8212; Actionable Analytics - Stop Telling Me What Is, Telling Me What To Do!</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -55,8 +55,6 @@
     <link rel="canonical" href="https://xai4se.github.io/explainable-analytics/model-level/DTDR.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5. Instance-level" href="../instance-level/Instance-level.html" />
-    <link rel="prev" title="4.3. Partial Dependence Plot (PDP)" href="PDP.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -95,77 +93,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <p class="caption collapsible-parent">
- <span class="caption-text">
-  Explainable Analytics
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../explainability-in-se.html">
-   1. Explainability in Software Engineering
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../theory-explainability.html">
-   2. A Theory of Explainability
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../theory-explanation.html">
-   3. A Theory of Explanations
-  </a>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="Model-level.html">
-   4. Model-level
-  </a>
-  <ul class="current collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="ANOVA.html">
-     4.1. ANOVA analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="VarImp.html">
-     4.2. Variable Importance analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="PDP.html">
-     4.3. Partial Dependence Plot (PDP)
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     4.4. Decision Tree/Decision Rules
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../instance-level/Instance-level.html">
-   5. Instance-level
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../instance-level/LIME.html">
-     5.1. LIME
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../instance-level/SHAP.html">
-     5.2. SHAP
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
-</ul>
-
+    
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -280,34 +208,34 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tutorial">
-   4.4.1. Tutorial
+   Tutorial
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#load-data-and-preparing-datasets">
-     4.4.1.1. Load Data and preparing datasets
+     Load Data and preparing datasets
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#construct-a-black-box-model-regression-and-random-forests">
-     4.4.1.2. Construct a black-box model (Regression and Random Forests)
+     Construct a black-box model (Regression and Random Forests)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cross-release-model-validation-for-sanity-check-train-with-2-9-0-and-test-with-3-0-0">
-     4.4.1.3. Cross-release model validation for sanity check (Train with 2.9.0 and test with 3.0.0)
+     Cross-release model validation for sanity check (Train with 2.9.0 and test with 3.0.0)
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#model-explanation">
-   4.4.2. Model Explanation
+   Model Explanation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#decision-rules-decision-trees">
-     4.4.2.1. Decision Rules/Decision Trees
+     Decision Rules/Decision Trees
     </a>
    </li>
   </ul>
@@ -325,7 +253,7 @@
               <div>
                 
   <div class="section" id="decision-tree-decision-rules">
-<h1><span class="section-number">4.4. </span>Decision Tree/Decision Rules<a class="headerlink" href="#decision-tree-decision-rules" title="Permalink to this headline">¶</a></h1>
+<h1>Decision Tree/Decision Rules<a class="headerlink" href="#decision-tree-decision-rules" title="Permalink to this headline">¶</a></h1>
 <p><strong>Decision Tree</strong> or Decision Rule is a technique to generate tree-based
 model explanations. A decision tree is constructed in a top-down
 direction from a root node. Then, a decision tree partitions the data
@@ -334,9 +262,9 @@ or an information gain score are used to calculate the homogeneity of
 among instances. Finally, the constructed decision tree can be converted
 into a set of if-then-else decision rules.</p>
 <div class="section" id="tutorial">
-<h2><span class="section-number">4.4.1. </span>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
+<h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="load-data-and-preparing-datasets">
-<h3><span class="section-number">4.4.1.1. </span>Load Data and preparing datasets<a class="headerlink" href="#load-data-and-preparing-datasets" title="Permalink to this headline">¶</a></h3>
+<h3>Load Data and preparing datasets<a class="headerlink" href="#load-data-and-preparing-datasets" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for Load Data</span>
@@ -436,7 +364,7 @@ into a set of if-then-else decision rules.</p>
 </div>
 </div>
 <div class="section" id="construct-a-black-box-model-regression-and-random-forests">
-<h3><span class="section-number">4.4.1.2. </span>Construct a black-box model (Regression and Random Forests)<a class="headerlink" href="#construct-a-black-box-model-regression-and-random-forests" title="Permalink to this headline">¶</a></h3>
+<h3>Construct a black-box model (Regression and Random Forests)<a class="headerlink" href="#construct-a-black-box-model-regression-and-random-forests" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for Construct a black-box model (Regression and Random Forests)</span>
@@ -469,7 +397,7 @@ into a set of if-then-else decision rules.</p>
 </div>
 </div>
 <div class="section" id="cross-release-model-validation-for-sanity-check-train-with-2-9-0-and-test-with-3-0-0">
-<h3><span class="section-number">4.4.1.3. </span>Cross-release model validation for sanity check (Train with 2.9.0 and test with 3.0.0)<a class="headerlink" href="#cross-release-model-validation-for-sanity-check-train-with-2-9-0-and-test-with-3-0-0" title="Permalink to this headline">¶</a></h3>
+<h3>Cross-release model validation for sanity check (Train with 2.9.0 and test with 3.0.0)<a class="headerlink" href="#cross-release-model-validation-for-sanity-check-train-with-2-9-0-and-test-with-3-0-0" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
@@ -507,9 +435,9 @@ Random Forests (AUC, F1): (0.8589023524916761, 0.4951456310679611)
 </div>
 </div>
 <div class="section" id="model-explanation">
-<h2><span class="section-number">4.4.2. </span>Model Explanation<a class="headerlink" href="#model-explanation" title="Permalink to this headline">¶</a></h2>
+<h2>Model Explanation<a class="headerlink" href="#model-explanation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="decision-rules-decision-trees">
-<h3><span class="section-number">4.4.2.1. </span>Decision Rules/Decision Trees<a class="headerlink" href="#decision-rules-decision-trees" title="Permalink to this headline">¶</a></h3>
+<h3>Decision Rules/Decision Trees<a class="headerlink" href="#decision-rules-decision-trees" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for Decision Rules/Decision Trees</span>
@@ -581,8 +509,6 @@ Random Forests (AUC, F1): (0.8589023524916761, 0.4951456310679611)
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="PDP.html" title="previous page"><span class="section-number">4.3. </span>Partial Dependence Plot (PDP)</a>
-    <a class='right-next' id="next-link" href="../instance-level/Instance-level.html" title="next page"><span class="section-number">5. </span>Instance-level</a>
 
         </div>
         
