@@ -403,6 +403,50 @@
    Welcome to “The Actionable Analytics Book”!
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#software-analytics">
+     Software Analytics
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stop-telling-me-what-is">
+     Stop Telling Me What Is
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#is-the-community-moving-to-the-right-direction">
+     Is the Community Moving to the Right Direction?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#researchers-focuses">
+       Researchers’ Focuses
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#practitioners-needs">
+       Practitioners’ Needs
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#explainable-ai-for-se-a-way-forward">
+       Explainable AI for SE: A Way Forward
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#please-tell-me-what-to-do">
+     Please Tell Me What To Do!
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lessons-learned">
+     Lessons Learned
+    </a>
+    <ul class="nav section-nav flex-column">
+    </ul>
+   </li>
   </ul>
  </li>
 </ul>
@@ -431,11 +475,258 @@
 <p class="admonition-title">Note</p>
 <p>TODO</p>
 </div>
+<div class="section" id="software-analytics">
+<h2>Software Analytics<a class="headerlink" href="#software-analytics" title="Permalink to this headline">¶</a></h2>
+<p>The success of software engineering projects largely depends on complex
+decision-making. For example, which tasks should a developer do first,
+who should perform this task, is the software of high quality, is a
+software system reliable and resilient enough to deploy, etc. However,
+erroneous decision-making for these complex questions is costly in terms
+of money and reputation.</p>
+<p>Today’s software development processes depend on a variety of
+development tools, such as issue tracking systems, version control
+systems, code review, continuous integration, continuous deployment, and
+Q&amp;A websites. Such tools generate large quantities of unstructured
+software artefacts at a high frequency (so-called Big Data) in many
+forms like issue reports, source code, test cases, code reviews,
+execution logs, app reviews, developer mailing lists, and discussion
+threads.</p>
+<p>Software Analytics is a sub-field in software engineering that focuses
+on leveraging AI/ML and data <em>analytics</em> techniques to uncover
+interesting and actionable knowledge from the unprecedented amount of
+<em>software data</em> <span id="id1">[<a class="reference internal" href="References.html#id23"><span>MZ18</span></a>]</span> <span id="id2">[<a class="reference internal" href="References.html#id24"><span>TH18</span></a>]</span>.
+Many software organisations (e.g., Microsoft, Facebook, and Google)
+currently use powerful AI/ML techniques to make data-driven engineering
+decisions and automate software engineering tasks. For example, software
+defect prediction, effort estimation, task prioritization, task
+recommendation, expert recommendation, code generation, developers’
+productivity prediction, malware detection, and security vulnerability
+detection.</p>
+</div>
+<div class="section" id="stop-telling-me-what-is">
+<h2>Stop Telling Me What Is<a class="headerlink" href="#stop-telling-me-what-is" title="Permalink to this headline">¶</a></h2>
+<p>While the adoption of software analytics enables software organisations
+to distill actionable insights and support decision-making, there are
+still many barriers to the successful adoption of such software
+analytics in software organizations <span id="id3">[<a class="reference internal" href="References.html#id25"><span>DTG18</span></a>]</span>.</p>
+<p>First, most software practitioners do not understand the reason behind
+the predictions from software analytics systems <span id="id4">[<a class="reference internal" href="References.html#id25"><span>DTG18</span></a>]</span>.
+They often ask the following questions:</p>
+<ul class="simple">
+<li><p>Why is this person best suited for this task?</p></li>
+<li><p>Why is this file predicted as defective?</p></li>
+<li><p>Why is this task required the highest development effort?</p></li>
+<li><p>Why should this task be done first?</p></li>
+<li><p>Why is this developer predicted to have low productivity?</p></li>
+<li><p>How can we improve the quality of software systems in following
+iterations?</p></li>
+</ul>
+<p>These concerns about a lack of explanation often leads to a lack of
+trust and transparency, hindering the adoption of software analytics in
+practice.</p>
+<p>Second, software practitioners are often affected by the decision-making
+from software analytics. Our recent work also found that practitioners
+are very concerned about their privacy and fairness if defect prediction
+models were deployed in practice. Practitioners even asked “Would
+developers be laid-off due to the use of defect prediction models for
+identifying who are most likely to introduce software
+defects?” <span id="id5">[<a class="reference internal" href="References.html#id12"><span>JTG21</span></a>]</span>. Article 22 of the European
+Union’s General Data Protection Regulation (GDPR) states that the use of
+data in decision-making that affects an individual or group requires an
+<strong>explanation</strong> for any decision made by an algorithm. Unfortunately,
+current software analytics still often do not uphold privacy
+laws <span id="id6">[<a class="reference internal" href="References.html#id26"><span>JTDG20</span></a>]</span>. Thus, the risks of unjustified
+decision-making of software analytics systems can be catastrophic,
+leading to potentially erroneous and costly business
+decisions <span id="id7">[<a class="reference internal" href="References.html#id25"><span>DTG18</span></a>]</span>.</p>
+</div>
+<div class="section" id="is-the-community-moving-to-the-right-direction">
+<h2>Is the Community Moving to the Right Direction?<a class="headerlink" href="#is-the-community-moving-to-the-right-direction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="researchers-focuses">
+<h3>Researchers’ Focuses<a class="headerlink" href="#researchers-focuses" title="Permalink to this headline">¶</a></h3>
+<p>We conducted a literature analysis to better understand what researchers
+are currently focusing on for defect explanation. We collected 96
+primary defect prediction studies that were published in top-tier
+Software Engineering venues (i.e., TSE, ICSE, EMSE, FSE, and MSR) during
+2015-2020 (as of 11 January 2021). We then characterized the key goals
+of each defect prediction study into three main goals: (1) predictions;
+(2) model explanation; and (3) instance
+explanation <span id="id8">[<a class="reference internal" href="References.html#id12"><span>JTG21</span></a>]</span> <strong>TODO (see
+Figure</strong>. We found that 91% (81/96) of the defect
+prediction studies only focus on making predictions, without considering
+explaining the predictions. As few as 4% of the defect prediction
+studies focus on explaining the predictions of defect prediction models
+<strong>TODO (see Figure)</strong>. This indicates that the explainability and
+actionability of software analytics is still very under researched.</p>
+</div>
+<div class="section" id="practitioners-needs">
+<h3>Practitioners’ Needs<a class="headerlink" href="#practitioners-needs" title="Permalink to this headline">¶</a></h3>
+<p>We conducted a qualitative survey to better understand what
+practitioners perceive as the usefulness of each goal of defect
+prediction models. We found that practitioners perceive that the
+explainability and actionability of software analytics are as <strong>equally
+useful</strong> as the predictions <span id="id9">[<a class="reference internal" href="References.html#id12"><span>JTG21</span></a>]</span>. 82% of our
+respondents said that the explanability goal (generating model
+explanations and instance explanations) is as useful as the prediction
+goal. Thus, we argue that <strong>explainable and actionable software
+analytics is urgently and critically needed</strong>. The research and practice
+communities should thus start answering the key question: <em>“How can we
+make software analytics more explainable and actionable?”</em>.</p>
+</div>
+<div class="section" id="explainable-ai-for-se-a-way-forward">
+<h3>Explainable AI for SE: A Way Forward<a class="headerlink" href="#explainable-ai-for-se-a-way-forward" title="Permalink to this headline">¶</a></h3>
+<p>Explainable AI is a suite of AI/ML techniques that produce accurate
+predictions, while being able to explain such predictions. The purpose
+of increasing the explainability of software analytics (XAI4SE) is to
+make its behavior more intelligible to humans by providing explanations.
+The explainability of software analytics can be achieved by:</p>
+<ul class="simple">
+<li><p><strong>“Global Explanability”:</strong> Using interpretable machine learning
+techniques (e.g., decision tree, decision rules or logistic
+regression techniques) or intrinsic model-specific techniques (e.g.,
+ANOVA, variable importance) so the entire predictions and
+recommendations process are transparent and comprehensible. Such
+intrinsic model-specific techniques aim to provide the global
+explainability. Thus, users can only understand how the model works
+globally (e.g., by inspecting a branch of decision trees). However,
+users often do not understand why the model makes that prediction.</p></li>
+<li><p><strong>“Local Explanability”:</strong> Using model-agnostic techniques (e.g.,
+LIME <span id="id10">[<a class="reference internal" href="References.html#id8"><span>RSG16</span></a>]</span>) to explain the predictions of the
+software analytics models (e.g., neural network, random forest).
+Such post-hoc model-agnostic techniques can provide an explanation
+for each prediction (i.e., an instance to be explained). Users can
+then understand why the prediction is made by the software analytics
+models.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="please-tell-me-what-to-do">
+<h2>Please Tell Me What To Do!<a class="headerlink" href="#please-tell-me-what-to-do" title="Permalink to this headline">¶</a></h2>
+<p>We discuss some initial evidence from a successful case study of using
+Explainable AI for Software Engineering in the context of software
+defect prediction <span id="id11">[<a class="reference internal" href="References.html#id15"><span>RTJ+21</span></a>]</span>.</p>
+<p><strong>Background.</strong> In today’s increasingly digitalized world, software
+defects are widespread and enormously expensive, but they are very hard
+to detect, predict, and prevent. Thus, a failure to eliminate software
+defects in safety-critical systems could result in serious injury to
+people, threats to life, death, and disasters.</p>
+<p>Traditionally, software quality assurance activities – software testing
+and code review – are widely adopted to discover software defects in
+software systems. However, ultra-large-scale systems, such as, Google,
+can have more than two billion lines of code. Thus, exhaustively
+reviewing and testing every single line of code is not feasible with
+limited time and resources. Defect prediction—an AI/ML model trained
+on historical data to predict if a file/commit will be defective in the
+future—has been proposed to help developers prioritize their limited
+software quality assurance resources on the most risky files/commits.</p>
+<p><strong>Gaps.</strong> However, developers often do not understand why a file is
+being predicted as defective. In addition, such predictions and global
+explanations are still often not
+actionable <span id="id12">[<a class="reference internal" href="References.html#id10"><span>JTH19</span></a>]</span>—i.e., developers do not know what
+to actually do – or what to avoid doing – in order to improve the
+quality of the software system. These limitations often lead to a lack
+of trust in the predictions, hindering the adoption of defect prediction
+models in practice.</p>
+<p>Let’s consider a scenario where a defect prediction model indicates that
+<em>file size</em> is associated with defect-proneness i.e. code in bigger
+files is likely to be more defective. This insight may help managers
+develop quality improvement plans that, in the next development
+iteration, developers should pay attention to the file size to mitigate
+the risk of having defects. However, such insights do not provide a
+concrete suggestion of what to do and what to avoid (i.e. does
+increasing or decreasing size reduce or increase defects?). Thus, a lack
+of such actionable guidance remains an extremely challenging problem,
+often leading to ineffective software quality improvement plans.</p>
+<p><strong>Approach.</strong> To generate actionable guidance, we used a rule-based
+model-agnostic technique to generate a rule-based explanation for each
+prediction of defect prediction models <span id="id13">[<a class="reference internal" href="References.html#id15"><span>RTJ+21</span></a>]</span>. We
+first build file-level defect prediction models that are trained using
+traditional software features (e.g., lines of code, code complexity, the
+number of developers who edited a file) with a random forest
+classification technique. For each prediction, we applied a rule-based
+model-agnostic technique to generate two types of actionable guidance
+(i.e., what developers should do to mitigate the risk of having defects
+and what developers should not do to avoid increasing the risk of having
+defects).</p>
+<p><strong>TODO Figure-Rules</strong></p>
+<p><strong>Visualizing the actionable guidance.</strong> For each guidance, we
+translated a rule-based explanation into an actionable guidance. Then,
+we developed a proof-of-concept to visualize the actionable guidance
+using a bullet plot <strong>(see
+Figure)</strong>. The visualization is designed to provide the
+following key information: (1) the list of guidance that practitioners
+should follow and should avoid; (2) the actual feature value of that
+file; and (3) its threshold and range values for practitioners to follow
+to mitigate the risk of having defects. The green shades indicate the
+non-risky range values of features, while the red shades indicate the
+risky range values of features. The vertical bars indicate the actual
+values of features for a given file. The green arrows provide directions
+of how a feature should be changed (i.e., increase or decrease). The
+provided guidance is structured into two parts: (1) what to do to
+<em>decrease the risk</em> of being defective; and (2) what to avoid to <em>not
+increase the risk</em> of being defective.</p>
+<p><strong>TODO Figure X</strong> shows an example of such actionable guidance to
+help managers develop their quality improvement plans. In this example,
+to decrease the risk of having defects, developers should consider (1)
+decrease the number of class and method declaration lines to less than
+29 lines, (2) decrease the number of distinct developers to less than 2
+developers, (3) increase the proportion of code ownership to more than
+0.85, (4) decrease the number of blank lines to less than 8 lines, (5)
+decrease the number of output variables to less than 2 variables.
+Nevertheless, to not increase the risk of having defects, developers
+should consider avoid decreasing the comment to code ratio and avoid
+increasing the number of minor or junior developers.</p>
+<p><strong>User Study Evaluation.</strong> We conducted a qualitative survey to
+investigate the practitioners’ perceptions of our visualization
+approach. We also used the visualization of Microsoft’s Code Defect AI
+as a baseline comparison.</p>
+<p><strong>Results.</strong> We found that 80% of our respondents agree that our
+visualization is better for providing actionable guidance when compared
+to the visualization of Microsoft’s Code Defect AI. In addition, 63%-90%
+of the respondents agree with the seven actionable guidance provided by
+our approach.</p>
+</div>
+<div class="section" id="lessons-learned">
+<h2>Lessons Learned<a class="headerlink" href="#lessons-learned" title="Permalink to this headline">¶</a></h2>
+<p>Based on these findings, we summarise our key lessons learned:</p>
+<ol class="simple">
+<li><p>Explainable AI is very important in software engineering, but is
+still under-researched <span id="id14">[<a class="reference internal" href="References.html#id12"><span>JTG21</span></a>]</span>.</p></li>
+<li><p>Explainable AI techniques can be used in software engineering to
+provide explanations of the predictions and actionable guidance to
+support software engineering tasks <span id="id15">[<a class="reference internal" href="References.html#id15"><span>RTJ+21</span></a>]</span>.
+Other initial successful evidence can be found at <span id="id16">[<a class="reference internal" href="References.html#id28"><span>CFKM18</span></a>]</span><span id="id17">[<a class="reference internal" href="References.html#id26"><span>JTDG20</span></a>]</span><span id="id18">[<a class="reference internal" href="References.html#id29"><span>KM20</span></a>]</span><span id="id19">[<a class="reference internal" href="References.html#id30"><span>PM21</span></a>]</span><span id="id20">[<a class="reference internal" href="References.html#id27"><span>WTT+20</span></a>]</span>.</p></li>
+</ol>
+<p>However, there are several open research questions that remain largely
+unexplored:</p>
+<ul class="simple">
+<li><p>What is the best form of explanations for software engineering tasks
+that are most understandable to software developers?</p></li>
+<li><p>Do different stakeholders need different forms of explanations in
+software engineering?</p></li>
+<li><p>How can we measure the quality and value of explanations in software
+engineering?</p></li>
+<li><p>How do explanations from explainable AI domains impact software
+engineering practices?</p></li>
+<li><p>What are the other application areas in software engineering that
+need explanations?</p></li>
+<li><p>How can we improve the explanations for other complex AI/ML
+algorithms (e.g., deep learning, optimization, natural language
+processing) to address other software engineering tasks?</p></li>
+</ul>
+<p>We developed an interactive tutorial of Explainable AI tools for SE to
+support future research. This can be found at <a class="reference external" href="http://xai4se.github.io">http://xai4se.github.io</a>.
+We hope this article will motivate future work to address these
+important questions, which require the SE community to work together
+with other disciplines and communities (e.g., Explainable AI, Visual
+Analytics, Natural Language Processing, Human-Centric Software
+Engineering).</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
