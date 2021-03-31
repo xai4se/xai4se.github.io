@@ -2,20 +2,24 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
 - file: intro.ipynb
-- part: Model-level Explainable AI Tools
+  title: Summary
+  numbered: true
+
+- part: Book
   chapters:
-  - file: model-level/ANOVA.ipynb
-  - file: model-level/VarImp.ipynb
-  - file: model-level/PDP.ipynb
-  - file: model-level/DTDR.ipynb
-#     - file: varimp
-#     - file: pdp
-#     - file: dt
-- part: Instance-level Explainable AI Tools
-  chapters:
-  - file: instance-level/LIME.ipynb
-  - file: instance-level/SHAP.ipynb
-#   sections:
-#     - file: lime
-#     - file: shap
-    
+  - file: 5_explainable-analytics.ipynb
+    sections:
+      - file: explainable-analytics/explainability-in-se.ipynb
+      - file: explainable-analytics/theory-explainability.ipynb
+      - file: explainable-analytics/theory-explanation.ipynb
+      - file: explainable-analytics/model-level/Model-level.ipynb
+        sections:
+          - file: explainable-analytics/model-level/ANOVA.ipynb
+          - file: explainable-analytics/model-level/VarImp.ipynb
+          - file: explainable-analytics/model-level/PDP.ipynb
+          - file: explainable-analytics/model-level/DTDR.ipynb
+      - file: explainable-analytics/instance-level/Instance-level.ipynb
+        sections:
+          - file: explainable-analytics/instance-level/LIME.ipynb
+          - file: explainable-analytics/instance-level/SHAP.ipynb
+
