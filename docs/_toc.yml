@@ -23,3 +23,7 @@
           - file: explainable-analytics/instance-level/LIME.ipynb
           - file: explainable-analytics/instance-level/SHAP.ipynb
 
+- part: Datasets
+  chapters:
+  - file: datasets/defect-prediction-datasets.ipynb
+  - file: datasets/effort-estimation-datasets.ipynb
