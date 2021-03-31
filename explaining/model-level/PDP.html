@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1.4.3. Partial Dependence Plot (PDP) &#8212; Actionable Analytics - Stop Telling Me What Is, Telling Me What To Do!</title>
+    <title>3.4.3. Partial Dependence Plot (PDP) &#8212; Actionable Analytics - Stop Telling Me What Is, Telling Me What To Do!</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -52,18 +52,18 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://xai4se.github.io/explainable-analytics/model-level/PDP.html" />
+    <link rel="canonical" href="https://xai4se.github.io/explaining/model-level/PDP.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.4.4. Decision Tree/Decision Rules" href="DTDR.html" />
-    <link rel="prev" title="1.4.2. Variable Importance analysis" href="VarImp.html" />
+    <link rel="next" title="3.4.4. Decision Tree/Decision Rules" href="DTDR.html" />
+    <link rel="prev" title="3.4.2. Variable Importance analysis" href="VarImp.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="https://xai4se.github.io/explainable-analytics/model-level/PDP.html" />
+<meta property="og:url"         content="https://xai4se.github.io/explaining/model-level/PDP.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Partial Dependence Plot (PDP)" />
 <meta property="og:description" content="Partial Dependence Plot (PDP)  Partial Dependence Plot (PDP) [Fri01] is a model-agnostic technique to generate model explanations for any classification models." />
@@ -97,53 +97,143 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <p class="caption collapsible-parent">
  <span class="caption-text">
-  Book
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../start/about-this-book.html">
+   1. About this Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  The Book
  </span>
 </p>
 <ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../data-analysis/index.html">
+   1. About this Book
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data-analysis/outliers.html">
+     1.1. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data-analysis/data-normalization.html">
+     1.2. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data-analysis/data-skewness.html">
+     1.3. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data-analysis/feature-selection.html">
+     1.4. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data-analysis/correlation-analysis.html">
+     1.5. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data-analysis/class-imbalance.html">
+     1.6. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data-analysis/hypothesis-testing.html">
+     1.7. About this Book
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../modelling/index.html">
+   2. About this Book
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modelling/classification.html">
+     2.1. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modelling/parameter-settings.html">
+     2.2. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modelling/model-validation.html">
+     2.3. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modelling/evaluation-measures.html">
+     2.4. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modelling/ranking-and-multiple-comparison.html">
+     2.5. About this Book
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
  <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../../5_explainable-analytics.html">
-   1. Explainable Analytics
+  <a class="reference internal" href="../index.html">
+   3. Explaining the Models
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../explainability-in-se.html">
-     1.1. Explainability in Software Engineering
+     3.1. Explainability in Software Engineering
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../theory-explainability.html">
-     1.2. A Theory of Explainability
+     3.2. A Theory of Explainability
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../theory-explanation.html">
-     1.3. A Theory of Explanations
+     3.3. A Theory of Explanations
     </a>
    </li>
    <li class="toctree-l2 current active collapsible-parent">
     <a class="reference internal" href="Model-level.html">
-     1.4. Model-level
+     3.4. Model-level
     </a>
     <ul class="current collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="ANOVA.html">
-       1.4.1. ANOVA analysis
+       3.4.1. ANOVA analysis
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="VarImp.html">
-       1.4.2. Variable Importance analysis
+       3.4.2. Variable Importance analysis
       </a>
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       1.4.3. Partial Dependence Plot (PDP)
+       3.4.3. Partial Dependence Plot (PDP)
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="DTDR.html">
-       1.4.4. Decision Tree/Decision Rules
+       3.4.4. Decision Tree/Decision Rules
       </a>
      </li>
     </ul>
@@ -152,17 +242,17 @@
    </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../instance-level/Instance-level.html">
-     1.5. Instance-level
+     3.5. Instance-level
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../instance-level/LIME.html">
-       1.5.1. LIME
+       3.5.1. LIME
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../instance-level/SHAP.html">
-       1.5.2. SHAP
+       3.5.2. SHAP
       </a>
      </li>
     </ul>
@@ -230,7 +320,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/explainable-analytics/model-level/PDP.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/explaining/model-level/PDP.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -250,10 +340,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/xai4se/xai4se.github.io/issues/new?title=Issue%20on%20page%20%2Fexplainable-analytics/model-level/PDP.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/xai4se/xai4se.github.io/issues/new?title=Issue%20on%20page%20%2Fexplaining/model-level/PDP.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/xai4se/xai4se.github.io/edit/master/docs/explainable-analytics/model-level/PDP.ipynb"><button
+        <a class="edit-button" href="https://github.com/xai4se/xai4se.github.io/edit/master/docs/explaining/model-level/PDP.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -273,7 +363,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/xai4se.github.io/master?urlpath=tree/docs/explainable-analytics/model-level/PDP.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/xai4se.github.io/master?urlpath=tree/docs/explaining/model-level/PDP.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -281,7 +371,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/xai4se.github.io/blob/master/docs/explainable-analytics/model-level/PDP.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/xai4se.github.io/blob/master/docs/explaining/model-level/PDP.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -306,34 +396,34 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tutorial">
-   1.4.3.1. Tutorial
+   3.4.3.1. Tutorial
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#load-data-and-preparing-datasets">
-     1.4.3.1.1. Load Data and preparing datasets
+     3.4.3.1.1. Load Data and preparing datasets
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#construct-a-black-box-model-regression-and-random-forests">
-     1.4.3.1.2. Construct a black-box model (Regression and Random Forests)
+     3.4.3.1.2. Construct a black-box model (Regression and Random Forests)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cross-release-model-validation-for-sanity-check-train-with-2-9-0-and-test-with-3-0-0">
-     1.4.3.1.3. Cross-release model validation for sanity check (Train with 2.9.0 and test with 3.0.0)
+     3.4.3.1.3. Cross-release model validation for sanity check (Train with 2.9.0 and test with 3.0.0)
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#model-explanation">
-   1.4.3.2. Model Explanation
+   3.4.3.2. Model Explanation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     1.4.3.2.1. Partial Dependence Plot (PDP)
+     3.4.3.2.1. Partial Dependence Plot (PDP)
     </a>
    </li>
   </ul>
@@ -351,7 +441,7 @@
               <div>
                 
   <div class="section" id="partial-dependence-plot-pdp">
-<h1><span class="section-number">1.4.3. </span>Partial Dependence Plot (PDP)<a class="headerlink" href="#partial-dependence-plot-pdp" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.4.3. </span>Partial Dependence Plot (PDP)<a class="headerlink" href="#partial-dependence-plot-pdp" title="Permalink to this headline">¶</a></h1>
 <p><strong>Partial Dependence Plot (PDP)</strong> <span id="id1">[<a class="reference internal" href="../../References.html#id7"><span>Fri01</span></a>]</span> is a
 model-agnostic technique to generate model explanations for any
 classification models. Unlike visual explanations generated by ANOVA and
@@ -359,9 +449,9 @@ VarImp that show only the importance of all features, visual
 explanations generated by PDP illustrate the marginal effect that one or
 two features have on the predicted outcome of a classification model.</p>
 <div class="section" id="tutorial">
-<h2><span class="section-number">1.4.3.1. </span>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.3.1. </span>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="load-data-and-preparing-datasets">
-<h3><span class="section-number">1.4.3.1.1. </span>Load Data and preparing datasets<a class="headerlink" href="#load-data-and-preparing-datasets" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.3.1.1. </span>Load Data and preparing datasets<a class="headerlink" href="#load-data-and-preparing-datasets" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for Load Data</span>
@@ -408,7 +498,7 @@ two features have on the predicted outcome of a classification model.</p>
 </div>
 </div>
 <div class="section" id="construct-a-black-box-model-regression-and-random-forests">
-<h3><span class="section-number">1.4.3.1.2. </span>Construct a black-box model (Regression and Random Forests)<a class="headerlink" href="#construct-a-black-box-model-regression-and-random-forests" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.3.1.2. </span>Construct a black-box model (Regression and Random Forests)<a class="headerlink" href="#construct-a-black-box-model-regression-and-random-forests" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for Construct a black-box model (Regression and Random Forests)</span>
@@ -441,7 +531,7 @@ two features have on the predicted outcome of a classification model.</p>
 </div>
 </div>
 <div class="section" id="cross-release-model-validation-for-sanity-check-train-with-2-9-0-and-test-with-3-0-0">
-<h3><span class="section-number">1.4.3.1.3. </span>Cross-release model validation for sanity check (Train with 2.9.0 and test with 3.0.0)<a class="headerlink" href="#cross-release-model-validation-for-sanity-check-train-with-2-9-0-and-test-with-3-0-0" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.3.1.3. </span>Cross-release model validation for sanity check (Train with 2.9.0 and test with 3.0.0)<a class="headerlink" href="#cross-release-model-validation-for-sanity-check-train-with-2-9-0-and-test-with-3-0-0" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
@@ -479,9 +569,9 @@ Random Forests (AUC, F1): (0.8589023524916761, 0.4951456310679611)
 </div>
 </div>
 <div class="section" id="model-explanation">
-<h2><span class="section-number">1.4.3.2. </span>Model Explanation<a class="headerlink" href="#model-explanation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.3.2. </span>Model Explanation<a class="headerlink" href="#model-explanation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
-<h3><span class="section-number">1.4.3.2.1. </span>Partial Dependence Plot (PDP)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.3.2.1. </span>Partial Dependence Plot (PDP)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot_partial_dependence requires scikit-learn version 0.22.2</span>
@@ -560,7 +650,7 @@ Random Forests (AUC, F1): (0.8589023524916761, 0.4951456310679611)
         },
         kernelOptions: {
             kernelName: "xaitools",
-            path: "./explainable-analytics/model-level"
+            path: "./explaining/model-level"
         },
         predefinedOutput: true
     }
@@ -572,8 +662,8 @@ Random Forests (AUC, F1): (0.8589023524916761, 0.4951456310679611)
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="VarImp.html" title="previous page"><span class="section-number">1.4.2. </span>Variable Importance analysis</a>
-    <a class='right-next' id="next-link" href="DTDR.html" title="next page"><span class="section-number">1.4.4. </span>Decision Tree/Decision Rules</a>
+    <a class='left-prev' id="prev-link" href="VarImp.html" title="previous page"><span class="section-number">3.4.2. </span>Variable Importance analysis</a>
+    <a class='right-next' id="next-link" href="DTDR.html" title="next page"><span class="section-number">3.4.4. </span>Decision Tree/Decision Rules</a>
 
         </div>
         

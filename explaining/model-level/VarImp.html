@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1.4.1. ANOVA analysis &#8212; Actionable Analytics - Stop Telling Me What Is, Telling Me What To Do!</title>
+    <title>3.4.2. Variable Importance analysis &#8212; Actionable Analytics - Stop Telling Me What Is, Telling Me What To Do!</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,21 +54,21 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="canonical" href="https://xai4se.github.io/explainable-analytics/model-level/ANOVA.html" />
+    <link rel="canonical" href="https://xai4se.github.io/explaining/model-level/VarImp.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.4.2. Variable Importance analysis" href="VarImp.html" />
-    <link rel="prev" title="1.4. Model-level" href="Model-level.html" />
+    <link rel="next" title="3.4.3. Partial Dependence Plot (PDP)" href="PDP.html" />
+    <link rel="prev" title="3.4.1. ANOVA analysis" href="ANOVA.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="https://xai4se.github.io/explainable-analytics/model-level/ANOVA.html" />
+<meta property="og:url"         content="https://xai4se.github.io/explaining/model-level/VarImp.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="ANOVA analysis" />
-<meta property="og:description" content="ANOVA analysis  Analysis of Variance (a.k.a. multi-way ANOVA) is a statistical test that examines the importance of multiple independent variables (e.g., two or" />
+<meta property="og:title"       content="Variable Importance analysis" />
+<meta property="og:description" content="Variable Importance analysis  Variable importance (a.k.a. VarImp) is an approach to examine the importance of software metrics for random forest models. There a" />
 <meta property="og:image"       content="https://xai4se.github.io/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -99,53 +99,143 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <p class="caption collapsible-parent">
  <span class="caption-text">
-  Book
+  Getting Started
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../start/about-this-book.html">
+   1. About this Book
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  The Book
  </span>
 </p>
 <ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../data-analysis/index.html">
+   1. About this Book
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data-analysis/outliers.html">
+     1.1. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data-analysis/data-normalization.html">
+     1.2. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data-analysis/data-skewness.html">
+     1.3. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data-analysis/feature-selection.html">
+     1.4. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data-analysis/correlation-analysis.html">
+     1.5. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data-analysis/class-imbalance.html">
+     1.6. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../data-analysis/hypothesis-testing.html">
+     1.7. About this Book
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../modelling/index.html">
+   2. About this Book
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modelling/classification.html">
+     2.1. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modelling/parameter-settings.html">
+     2.2. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modelling/model-validation.html">
+     2.3. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modelling/evaluation-measures.html">
+     2.4. About this Book
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modelling/ranking-and-multiple-comparison.html">
+     2.5. About this Book
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
  <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../../5_explainable-analytics.html">
-   1. Explainable Analytics
+  <a class="reference internal" href="../index.html">
+   3. Explaining the Models
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../explainability-in-se.html">
-     1.1. Explainability in Software Engineering
+     3.1. Explainability in Software Engineering
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../theory-explainability.html">
-     1.2. A Theory of Explainability
+     3.2. A Theory of Explainability
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../theory-explanation.html">
-     1.3. A Theory of Explanations
+     3.3. A Theory of Explanations
     </a>
    </li>
    <li class="toctree-l2 current active collapsible-parent">
     <a class="reference internal" href="Model-level.html">
-     1.4. Model-level
+     3.4. Model-level
     </a>
     <ul class="current collapse-ul">
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       1.4.1. ANOVA analysis
+     <li class="toctree-l3">
+      <a class="reference internal" href="ANOVA.html">
+       3.4.1. ANOVA analysis
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="VarImp.html">
-       1.4.2. Variable Importance analysis
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       3.4.2. Variable Importance analysis
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="PDP.html">
-       1.4.3. Partial Dependence Plot (PDP)
+       3.4.3. Partial Dependence Plot (PDP)
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="DTDR.html">
-       1.4.4. Decision Tree/Decision Rules
+       3.4.4. Decision Tree/Decision Rules
       </a>
      </li>
     </ul>
@@ -154,17 +244,17 @@
    </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../instance-level/Instance-level.html">
-     1.5. Instance-level
+     3.5. Instance-level
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../instance-level/LIME.html">
-       1.5.1. LIME
+       3.5.1. LIME
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../instance-level/SHAP.html">
-       1.5.2. SHAP
+       3.5.2. SHAP
       </a>
      </li>
     </ul>
@@ -232,7 +322,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/explainable-analytics/model-level/ANOVA.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/explaining/model-level/VarImp.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -252,10 +342,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/xai4se/xai4se.github.io/issues/new?title=Issue%20on%20page%20%2Fexplainable-analytics/model-level/ANOVA.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/xai4se/xai4se.github.io/issues/new?title=Issue%20on%20page%20%2Fexplaining/model-level/VarImp.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/xai4se/xai4se.github.io/edit/master/docs/explainable-analytics/model-level/ANOVA.ipynb"><button
+        <a class="edit-button" href="https://github.com/xai4se/xai4se.github.io/edit/master/docs/explaining/model-level/VarImp.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -275,7 +365,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/xai4se.github.io/master?urlpath=tree/docs/explainable-analytics/model-level/ANOVA.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/xai4se.github.io/master?urlpath=tree/docs/explaining/model-level/VarImp.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -283,7 +373,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/xai4se.github.io/blob/master/docs/explainable-analytics/model-level/ANOVA.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/xai4se.github.io/blob/master/docs/explaining/model-level/VarImp.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -308,34 +398,34 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tutorial">
-   1.4.1.1. Tutorial
+   3.4.2.1. Tutorial
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#load-data-and-preparing-datasets">
-     1.4.1.1.1. Load Data and preparing datasets
+     3.4.2.1.1. Load Data and preparing datasets
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#construct-a-black-box-model-regression-and-random-forests">
-     1.4.1.1.2. Construct a black-box model (Regression and Random Forests)
+     3.4.2.1.2. Construct a black-box model (Regression and Random Forests)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cross-release-model-validation-for-sanity-check-train-with-2-9-0-and-test-with-3-0-0">
-     1.4.1.1.3. Cross-release model validation for sanity check (Train with 2.9.0 and test with 3.0.0)
+     3.4.2.1.3. Cross-release model validation for sanity check (Train with 2.9.0 and test with 3.0.0)
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#model-explanation">
-   1.4.1.2. Model Explanation
+   3.4.2.2. Model Explanation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#anova-regression">
-     1.4.1.2.1. ANOVA (Regression)
+    <a class="reference internal nav-link" href="#varimp-random-forests">
+     3.4.2.2.1. VarImp (Random Forests)
     </a>
    </li>
   </ul>
@@ -352,68 +442,62 @@
         
               <div>
                 
-  <div class="section" id="anova-analysis">
-<h1><span class="section-number">1.4.1. </span>ANOVA analysis<a class="headerlink" href="#anova-analysis" title="Permalink to this headline">¶</a></h1>
-<p>Analysis of Variance (a.k.a. multi-way ANOVA) is a statistical test that
-examines the importance of multiple independent variables (e.g., two or
-more software metrics) on the outcome (e.g.,
-defect-proneness) <span id="id1">[<a class="reference internal" href="../../References.html#id3"><span>Fis25</span></a>]</span>. The significance of each
-metric in a regression model is estimated from the calculation of the
-Sum of Squares (SS)—i.e., the explained variance of the observations
-with respect to their mean value. There are two commonly-used approaches
-to calculate the Sum of Squares for ANOVA, namely, Type-I and Type-II.
-We provide a description of the two types of ANOVA below.</p>
-<p><strong>Type-I</strong>, <em>one of the most commonly-used interpretation techniques and
-the default interpretation technique for a logistic regression (<code class="docutils literal notranslate"><span class="pre">glm</span></code>)
-model in R</em>, examines the importance of each metric in a sequential
-order <span id="id2">[<span>&#64;fox2015applied</span>]</span><span id="id3">[<a class="reference internal" href="../../References.html#id5"><span>Cha92</span></a>]</span>. In other words,
-Type-I measures the improvement of the Residual Sum of Squares (RSS)
-(i.e., the unexplained variance) when each metric is sequentially added
-into the model. Hence, Type-I attributes as much variance as it can to
-the first metric before attributing residual variance to the second
-metric in the model specification. Thus, the importance (i.e., produced
-ranking) of metrics is dependent on the ordering of metrics in the model
-specification.</p>
-<p>The calculation starts from the RSS of the preliminary model
-(<span class="math notranslate nohighlight">\(y \sim 1\)</span>), i.e., a null model that is fitted without any software
-metrics. We then compute the RSS of the first metric by fitting a
-regression model with the first metric (<span class="math notranslate nohighlight">\(y \sim m_1\)</span>). Thus, the
-importance of the first metric (<span class="math notranslate nohighlight">\(m_1\)</span>) is the improvement between the
-unexplained variances (RSS) of the preliminary model and the model that
-is constructed by the first metric.</p>
+  <div class="section" id="variable-importance-analysis">
+<h1><span class="section-number">3.4.2. </span>Variable Importance analysis<a class="headerlink" href="#variable-importance-analysis" title="Permalink to this headline">¶</a></h1>
+<p>Variable importance (a.k.a. VarImp) is an approach to examine the
+importance of software metrics for random forest models. There are two
+commonly-used calculation approaches of variable importance scores,
+namely, Gini Importance and Permutation Importance, which we describe
+below.</p>
+<p><strong>Gini Importance (a.k.a. MeanDecreaseGini)</strong> determines the importance
+of metrics from the decrease of the Gini Index, i.e., the distinguishing
+power for the defective class due to a given
+metric <span id="id1">[<a class="reference internal" href="../../References.html#id6"><span>Bre01</span></a>]</span>. We start from a random
+forest model that is constructed using the original dataset with
+multiple trees, where each tree is constructed using a bootstrap sample.
+For each tree, a parent node (i.e., <span class="math notranslate nohighlight">\(G_{\mathrm{Parent}}\)</span>) is split by
+the best cut-point into two descendent nodes (i.e.,
+<span class="math notranslate nohighlight">\(G_{\mathrm{Desc.1}}\)</span> and <span class="math notranslate nohighlight">\(G_{\mathrm{Desc.2}}\)</span>). The calculation of the
+Gini Importance of each metric is made up of 2 steps:</p>
+<p><em>(Step 1) Compute the DecreaseGini for all of the trees in the random
+forest model.</em> The DecreaseGini is the improvement of the ability to
+distinguish between two classes across parent and its descendent nodes.
+We compute the DecreaseGini using the following equation:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{SS}(m_1) = \mathrm{RSS}(\mathrm{Model}_\mathrm{null})-\mathrm{RSS}(m_1)\]</div>
-<p>Similar to the computation of the importance of the first metric, the
-importance of the remaining metrics is computed using the following
-equation.</p>
-<div class="math notranslate nohighlight">
-\[\mathrm{SS}(m_i) = \mathrm{RSS}(\mathrm{m_1 + ... + m_{i-1}})-\mathrm{RSS}(m_1 + ... + m_i)\]</div>
-<p><strong>Type II</strong>, an enhancement to the ANOVA Type-I, examines the importance
-of each metric in a hierarchical nature, i.e., the ordering of metrics
-is rearranged for each
-examination <span id="id4">[<span>&#64;fox2015applied</span>]</span><span id="id5">[<a class="reference internal" href="../../References.html#id5"><span>Cha92</span></a>]</span>. The importance
-of metrics (Type-II) measures the improvement of the Residual Sum of
-Squares (RSS) (i.e., the unexplained variance) when adding a metric
-under examination to the model after the other metrics. In other words,
-the importance of metrics (Type-II) is equivalent to a Type-I where a
-metric under examination appears at the last position of the model. The
-intuition is that the Type-II is evaluated after all of the other
-metrics have been accounted for. The importance of each metric (i.e.,
-SS(<span class="math notranslate nohighlight">\(m_e\)</span>)) measures the improvement of the RSS of the model that is
-constructed by adding only the other metrics except for the metric under
-examination, and the RSS of the model that is constructed by adding the
-other metrics where the metric under examination appears at the last
-position of the model. For example, given a set of <span class="math notranslate nohighlight">\(M\)</span> metrics, and
-<span class="math notranslate nohighlight">\(e,i,j\in[1,M]\)</span>, the importance of each metric <span class="math notranslate nohighlight">\(m_e\)</span> can be explained as
-follows:</p>
-<div class="math notranslate nohighlight">
-\[\mathrm{SS}(m_e) = \mathrm{RSS}(m_i + ... + m_{j})-\mathrm{RSS}(m_i + ... + m_{j} + m_e)\]</div>
-<p>where <span class="math notranslate nohighlight">\(m_e\)</span> is the metric under examination and <span class="math notranslate nohighlight">\(m_i + ... + m_{j}\)</span> is a
-set of the other metrics except the metric under examination.</p>
+\[\mathrm{DecreaseGini}(m_i) = I_{m_i} = G_{\mathrm{Parent}} - G_{\mathrm{Desc.1}} - G_{\mathrm{Desc.2}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(G\)</span> is the Gini Index, i.e., the distinguishing power of defective
+class for a given metric. The Gini Index is computed using the following
+equation: <span class="math notranslate nohighlight">\(G = \sum_{i=1}^{N_{\mathrm{Class}}}p_i(1-p_i)\)</span>, where
+<span class="math notranslate nohighlight">\(N_{\mathrm{Class}}\)</span> is the number of classes and <span class="math notranslate nohighlight">\(p_i\)</span> is the
+proportion of Class<span class="math notranslate nohighlight">\(_i\)</span>.</p>
+<p><em>(Step 2) Compute the MeanDecreaseGini measure.</em> Finally, the importance
+of each metric (i.e., MeanDecreaseGini) is the average of the
+DecreaseGini values from all of the splits of that metric across all the
+trees in the random forest model.</p>
+<p>In this paper, we consider both the scaled and non-scaled importance
+scores for the Gini Importance.</p>
+<p><strong>Permutation Importance (a.k.a. MeanDecreaseAccuracy)</strong> determines the
+importance of metrics from the decrease of the accuracy (i.e., the
+misclassification rate) when the values of a given metric are randomly
+permuted <span id="id2">[<a class="reference internal" href="../../References.html#id6"><span>Bre01</span></a>]</span>. Similar to
+MeanDecreaseGini, we start from a random forest model that is
+constructed using an original dataset with multiple trees, where each
+tree is constructed using an out-of-sample bootstrap. The calculation of
+the Permutation Importance is made up of 2 steps:</p>
+<p><em>(Step 1) Compute the DecreaseAccuracy of each tree in the random forest
+model.</em> The DecreaseAccuracy is the decrease of the accuracy (i.e.,
+misclassification rate) between a model that is tested using the
+original out-of-bag testing samples and a model that is tested using
+permuted out-of-bag testing samples, i.e., a dataset with one metric
+permuted, while all other metrics are unchanged).</p>
+<p><em>(Step 2) Compute the MeanDecreaseAccuracy measure.</em> Finally, the
+importance of each metric (i.e., MeanDecreaseAccuracy) is the average of
+the DecreaseAccuracy values across all of the trees in the random forest
+model.</p>
 <div class="section" id="tutorial">
-<h2><span class="section-number">1.4.1.1. </span>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4.2.1. </span>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="load-data-and-preparing-datasets">
-<h3><span class="section-number">1.4.1.1.1. </span>Load Data and preparing datasets<a class="headerlink" href="#load-data-and-preparing-datasets" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.2.1.1. </span>Load Data and preparing datasets<a class="headerlink" href="#load-data-and-preparing-datasets" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for Load Data</span>
@@ -460,7 +544,7 @@ set of the other metrics except the metric under examination.</p>
 </div>
 </div>
 <div class="section" id="construct-a-black-box-model-regression-and-random-forests">
-<h3><span class="section-number">1.4.1.1.2. </span>Construct a black-box model (Regression and Random Forests)<a class="headerlink" href="#construct-a-black-box-model-regression-and-random-forests" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.2.1.2. </span>Construct a black-box model (Regression and Random Forests)<a class="headerlink" href="#construct-a-black-box-model-regression-and-random-forests" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for Construct a black-box model (Regression and Random Forests)</span>
@@ -493,7 +577,7 @@ set of the other metrics except the metric under examination.</p>
 </div>
 </div>
 <div class="section" id="cross-release-model-validation-for-sanity-check-train-with-2-9-0-and-test-with-3-0-0">
-<h3><span class="section-number">1.4.1.1.3. </span>Cross-release model validation for sanity check (Train with 2.9.0 and test with 3.0.0)<a class="headerlink" href="#cross-release-model-validation-for-sanity-check-train-with-2-9-0-and-test-with-3-0-0" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.2.1.3. </span>Cross-release model validation for sanity check (Train with 2.9.0 and test with 3.0.0)<a class="headerlink" href="#cross-release-model-validation-for-sanity-check-train-with-2-9-0-and-test-with-3-0-0" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
@@ -531,32 +615,76 @@ Random Forests (AUC, F1): (0.8589023524916761, 0.4951456310679611)
 </div>
 </div>
 <div class="section" id="model-explanation">
-<h2><span class="section-number">1.4.1.2. </span>Model Explanation<a class="headerlink" href="#model-explanation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="anova-regression">
-<h3><span class="section-number">1.4.1.2.1. </span>ANOVA (Regression)<a class="headerlink" href="#anova-regression" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">3.4.2.2. </span>Model Explanation<a class="headerlink" href="#model-explanation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="varimp-random-forests">
+<h3><span class="section-number">3.4.2.2.1. </span>VarImp (Random Forests)<a class="headerlink" href="#varimp-random-forests" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for ANOVA (Regression)</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get VarImp score from the rf_model</span>
+<span class="n">feature_importances</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Features&#39;</span><span class="p">:</span> <span class="n">features</span><span class="p">,</span>
+             <span class="s1">&#39;ImportanceScore&#39;</span><span class="p">:</span> <span class="n">rf_model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">})</span>
+<span class="n">feature_importances</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;ImportanceScore&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">feature_importances</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Features</th>
+      <th>ImportanceScore</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>AddedLOC</td>
+      <td>0.248906</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>nCoupledClass</td>
+      <td>0.238614</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CommentToCodeRatio</td>
+      <td>0.223627</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>LOC</td>
+      <td>0.172079</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>nCommit</td>
+      <td>0.116773</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compute an ANOVA Type-II table</span>
-<span class="n">aov_table</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">anova_lm</span><span class="p">(</span><span class="n">regression_model_fit</span><span class="p">,</span> 
-                              <span class="n">typ</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">aov_table</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;sum_sq&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualize an ANOVA Type-II table</span>
-<span class="n">aov_table</span><span class="p">[</span><span class="s1">&#39;Features&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">aov_table</span><span class="o">.</span><span class="n">index</span>
-<span class="n">aov_table</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:,:]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Features&#39;</span><span class="p">)</span> <span class="c1"># remove the residual</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualize VarImp</span>
+<span class="n">feature_importances</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;ImportanceScore&#39;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Features&#39;</span><span class="p">)</span> <span class="c1"># remove the residual</span>
 </pre></div>
 </div>
 </div>
@@ -564,7 +692,7 @@ Random Forests (AUC, F1): (0.8589023524916761, 0.4951456310679611)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Features&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/ANOVA_14_1.png" src="../../_images/ANOVA_14_1.png" />
+<img alt="../../_images/VarImp_13_1.png" src="../../_images/VarImp_13_1.png" />
 </div>
 </div>
 </div>
@@ -584,7 +712,7 @@ Random Forests (AUC, F1): (0.8589023524916761, 0.4951456310679611)
         },
         kernelOptions: {
             kernelName: "xaitools",
-            path: "./explainable-analytics/model-level"
+            path: "./explaining/model-level"
         },
         predefinedOutput: true
     }
@@ -596,8 +724,8 @@ Random Forests (AUC, F1): (0.8589023524916761, 0.4951456310679611)
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Model-level.html" title="previous page"><span class="section-number">1.4. </span>Model-level</a>
-    <a class='right-next' id="next-link" href="VarImp.html" title="next page"><span class="section-number">1.4.2. </span>Variable Importance analysis</a>
+    <a class='left-prev' id="prev-link" href="ANOVA.html" title="previous page"><span class="section-number">3.4.1. </span>ANOVA analysis</a>
+    <a class='right-next' id="next-link" href="PDP.html" title="next page"><span class="section-number">3.4.3. </span>Partial Dependence Plot (PDP)</a>
 
         </div>
         
