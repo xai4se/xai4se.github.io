@@ -52,6 +52,8 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://xai4se.github.io/data-analysis/feature-selection.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -66,7 +68,7 @@
 <meta property="og:url"         content="https://xai4se.github.io/data-analysis/feature-selection.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Feature Selection" />
-<meta property="og:description" content="Feature Selection" />
+<meta property="og:description" content="Feature Selection  Feature selection is a data preprocessing technique for selecting a subset of the best software metrics prior to constructing a defect model." />
 <meta property="og:image"       content="https://xai4se.github.io/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -388,6 +390,26 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filter-based-family">
+   1.4.1. Filter-based Family
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wrapper-based-family">
+   1.4.2. Wrapper-based Family
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -398,6 +420,107 @@
                 
   <div class="section" id="feature-selection">
 <h1><span class="section-number">1.4. </span>Feature Selection<a class="headerlink" href="#feature-selection" title="Permalink to this headline">¶</a></h1>
+<p>Feature selection is a data preprocessing technique for selecting a
+subset of the best software metrics prior to constructing a defect
+model. There is a plethora of feature selection techniques that can be
+applied <span id="id1">[<a class="reference internal" href="../References.html#id31"><span>GE03</span></a>]</span>, e.g., filter-based, wrapper-based, and
+embedded-based families. In this book, we would like to select a manageable set of feature
+selection techniques from filter-based and wrapper-based familites for preparing interactive tutorials.</p>
+<div class="section" id="filter-based-family">
+<h2><span class="section-number">1.4.1. </span>Filter-based Family<a class="headerlink" href="#filter-based-family" title="Permalink to this headline">¶</a></h2>
+<p>Filter-based feature selection techniques search for the best subset of
+metrics according to an evaluation criterion regardless of model
+construction. Since constructing models is not required, the use of
+filter-based feature selection techniques is considered low cost and
+widely used.</p>
+<p><strong>Chi-Squared-based feature selection</strong> <span id="id2">[<a class="reference internal" href="../References.html#id33"><span>McH13</span></a>]</span> assesses the
+importance of metrics with the <span class="math notranslate nohighlight">\(\chi^2\)</span> statistic which is a
+non-parametric statistical test of independence.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for Chi-sqaured-based feature selection technique</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">SelectKBest</span><span class="p">,</span> <span class="n">chi2</span>
+
+<span class="n">top_k</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">chi2_fs</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">chi2</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">top_k</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">dfscores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">chi2_fs</span><span class="o">.</span><span class="n">scores_</span><span class="p">)</span>
+<span class="n">dfcolumns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+<span class="c1">#concat two dataframes for better visualization </span>
+<span class="n">featureScores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dfcolumns</span><span class="p">,</span><span class="n">dfscores</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">featureScores</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">,</span><span class="s1">&#39;Score&#39;</span><span class="p">]</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Top-k features ( k =&#39;</span><span class="p">,</span> <span class="n">top_k</span><span class="p">,</span> <span class="s1">&#39;) according to Chi-squared statistics are as follows:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">featureScores</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="n">top_k</span><span class="p">,</span><span class="s1">&#39;Score&#39;</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Top-k features ( k = 3 ) according to Chi-squared statistics are as follows:
+              Feature         Score
+1            AddedLOC  26834.488115
+2       nCoupledClass   1599.996258
+4  CommentToCodeRatio     64.268658
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="wrapper-based-family">
+<h2><span class="section-number">1.4.2. </span>Wrapper-based Family<a class="headerlink" href="#wrapper-based-family" title="Permalink to this headline">¶</a></h2>
+<p>Wrapper-based feature selection
+techniques <span id="id3">[<a class="reference internal" href="../References.html#id34"><span>JKP94</span></a>]</span><span id="id4">[<a class="reference internal" href="../References.html#id32"><span>KJ97</span></a>]</span> use classification
+techniques to assess each subset of metrics and find the best subset of
+metrics according to an evaluation criterion. Wrapper-based feature
+selection is made up of three steps, which we described below.</p>
+<p><em>(Step 1) Generate a subset of metrics.</em> Since it is impossible to
+evaluate all possible subsets of metrics, wrapper-based feature
+selection often uses search techniques (e.g., best first, greedy hill
+climbing) to generate candidate subsets of metrics for evaluation.</p>
+<p><em>(Step 2) Construct a classifier using a subset of metrics with a
+predetermined classification technique.</em> Wrapper-based feature selection
+constructs a classification model using a candidate subset of metrics
+for a given classification technique (e.g., logistic regression and
+random forest).</p>
+<p><em>(Step 3) Evaluate the classifier according to a given evaluation
+criterion.</em> Once the classifier is constructed, wrapper-based feature
+selection evaluates the classifier using a given evaluation criterion
+(e.g., Akaike Information Criterion).</p>
+<p>For each candidate subset of metrics, wrapper-based feature selection
+repeats Steps 2 and 3 in order to find the best subset of metrics
+according to the evaluation criterion. Finally, it provides the best
+subset of metrics that yields the highest performance according to the
+evaluation criterion.</p>
+<p><strong>Recursive Feature Elimination</strong> (RFE) <span id="id5">[<a class="reference internal" href="../References.html#id31"><span>GE03</span></a>]</span>
+searches for the best subset of metrics by recursively eliminating the
+least important metric. First, RFE constructs a model using all metrics
+and ranks metrics according to their importance score (e.g., Breiman’s
+Variable Importance for random forest). In each iteration, RFE excludes
+the least important metric and reconstructs a model. Finally, RFE
+provides the subset of metrics which yields the best performance
+according to an evaluation criterion (e.g., AUC).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Feature Extraction with RFE</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">RFE</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">compress</span>
+<span class="n">top_k</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">rfe</span> <span class="o">=</span> <span class="n">RFE</span><span class="p">(</span><span class="n">rf_model</span><span class="p">,</span> <span class="n">n_features_to_select</span> <span class="o">=</span> <span class="n">top_k</span><span class="p">)</span>
+<span class="n">rfe_fit</span> <span class="o">=</span> <span class="n">rfe</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">rfe_features</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">compress</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">rfe_fit</span><span class="o">.</span><span class="n">support_</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Top-k ( k =&#39;</span><span class="p">,</span> <span class="n">top_k</span><span class="p">,</span> <span class="s1">&#39;) according to the RFE teachnique are as follows:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rfe_features</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Top-k ( k = 3 ) according to the RFE teachnique are as follows:
+[&#39;AddedLOC&#39;, &#39;nCoupledClass&#39;, &#39;CommentToCodeRatio&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

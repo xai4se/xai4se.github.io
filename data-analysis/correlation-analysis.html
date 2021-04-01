@@ -52,6 +52,8 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://xai4se.github.io/data-analysis/correlation-analysis.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -66,7 +68,7 @@
 <meta property="og:url"         content="https://xai4se.github.io/data-analysis/correlation-analysis.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Correlation Analysis" />
-<meta property="og:description" content="Correlation Analysis  Pair-wise Correlation  Collinearity  MulticollinearityPair-wise CorrelationCollinearityMulticollinearity" />
+<meta property="og:description" content="Correlation Analysis  ## Load Data and preparing datasets  # Import for Load Data from os import listdir from os.path import isfile, join import pandas as pd # " />
 <meta property="og:image"       content="https://xai4se.github.io/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -395,18 +397,18 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pair-wise-correlation">
-   1.5.1. Pair-wise Correlation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#collinearity">
-   1.5.2. Collinearity
+  <a class="reference internal nav-link" href="#collinearity-pairwise-correlation">
+   1.5.1. Collinearity (Pairwise Correlation)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#multicollinearity">
-   1.5.3. Multicollinearity
+   1.5.2. Multicollinearity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autospearman-an-automated-feature-selection-approach-that-address-collinearity-and-multicollinearity">
+   1.5.3. AutoSpearman: An automated feature selection approach that address collinearity and multicollinearity
   </a>
  </li>
 </ul>
@@ -423,14 +425,339 @@
                 
   <div class="section" id="correlation-analysis">
 <h1><span class="section-number">1.5. </span>Correlation Analysis<a class="headerlink" href="#correlation-analysis" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="pair-wise-correlation">
-<h2><span class="section-number">1.5.1. </span>Pair-wise Correlation<a class="headerlink" href="#pair-wise-correlation" title="Permalink to this headline">¶</a></h2>
+<div class="cell tag_delete-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Load Data and preparing datasets</span>
+
+<span class="c1"># Import for Load Data</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># Import for Split Data into Training and Testing Samples</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># Import for Construct a black-box model (Regression and Random Forests)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../datasets/lucene-2.9.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../datasets/lucene-3.0.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
+
+<span class="n">outcome</span> <span class="o">=</span> <span class="s1">&#39;RealBug&#39;</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;OWN_COMMIT&#39;</span><span class="p">,</span> <span class="s1">&#39;Added_lines&#39;</span><span class="p">,</span> <span class="s1">&#39;CountClassCoupled&#39;</span><span class="p">,</span> <span class="s1">&#39;AvgLine&#39;</span><span class="p">,</span> <span class="s1">&#39;RatioCommentToCode&#39;</span><span class="p">]</span>
+
+<span class="c1"># process outcome to 0 and 1</span>
+<span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">])</span>
+<span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+
+<span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">])</span>
+<span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">features</span><span class="p">]</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">features</span><span class="p">]</span>
+
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">outcome</span><span class="p">]</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">outcome</span><span class="p">]</span>
+
+
+<span class="c1"># commits - # of commits that modify the file of interest</span>
+<span class="c1"># Added lines - # of added lines of code</span>
+<span class="c1"># Count class coupled - # of classes that interact or couple with the class of interest</span>
+<span class="c1"># LOC - # of lines of code</span>
+<span class="c1"># RatioCommentToCode - The ratio of lines of comments to lines of code</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nCommit&#39;</span><span class="p">,</span> <span class="s1">&#39;AddedLOC&#39;</span><span class="p">,</span> <span class="s1">&#39;nCoupledClass&#39;</span><span class="p">,</span> <span class="s1">&#39;LOC&#39;</span><span class="p">,</span> <span class="s1">&#39;CommentToCodeRatio&#39;</span><span class="p">]</span>
+
+<span class="n">X_train</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">features</span>
+<span class="n">X_test</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">features</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">testing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">## Construct a black-box model (Random Forests)</span>
+
+<span class="c1"># random forests</span>
+<span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">rf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  
+</pre></div>
 </div>
-<div class="section" id="collinearity">
-<h2><span class="section-number">1.5.2. </span>Collinearity<a class="headerlink" href="#collinearity" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomForestClassifier(n_jobs=10, random_state=1234)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="collinearity-pairwise-correlation">
+<h2><span class="section-number">1.5.1. </span>Collinearity (Pairwise Correlation)<a class="headerlink" href="#collinearity-pairwise-correlation" title="Permalink to this headline">¶</a></h2>
+<p>Collinearity is a phenomenon in which one metric can be linearly predicted by another metric.
+There are several correlation tests that can detect collinearity between metrics. For example, Pearson correlation test, Spearman correlation test, and Kendall Tau correlation test.
+Below, we provide a tutorial for using and visualising Spearman correlation test.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for Correlation tests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># There are 3 options for the parameter setting of method as follows:</span>
+<span class="c1"># pearson : standard correlation coefficient</span>
+<span class="c1"># kendall : Kendall Tau correlation coefficient</span>
+<span class="c1"># spearman : Spearman rank correlation</span>
+<span class="n">corrmat</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+<span class="n">top_corr_features</span> <span class="o">=</span> <span class="n">corrmat</span><span class="o">.</span><span class="n">index</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="c1">#plot heat map</span>
+<span class="n">g</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">top_corr_features</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span><span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlGn&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/correlation-analysis_3_0.png" src="../_images/correlation-analysis_3_0.png" />
+</div>
+</div>
 </div>
 <div class="section" id="multicollinearity">
-<h2><span class="section-number">1.5.3. </span>Multicollinearity<a class="headerlink" href="#multicollinearity" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.5.2. </span>Multicollinearity<a class="headerlink" href="#multicollinearity" title="Permalink to this headline">¶</a></h2>
+<p>Multicollinearity is a phenomenon in which one metric can be linearly predicted by a combination of two or more metrics.
+Multicollinearity can be detected using Variance Inflation Factor (VIF) analysis <span id="id1">[<a class="reference internal" href="../References.html#id35"><span>FM92</span></a>]</span>.
+The idea behind variance inflation factor analysis is to construct an ordinary least square regression to predict a metric by using the other metrics in the dataset.
+Having a model that is well fit indicates that the metric can be predicted by other metrics, linearly highly-correlated with other metrics.
+There are 3 steps in variance inflation factor analysis.</p>
+<p><em>(Step 1) Construct a regression model for each metric.</em>
+For each metric, we construct a model using the other metrics to predict that particular metric.</p>
+<p><em>(Step 2) Compute a VIF score for each metric.</em>
+The VIF score for each metric is computed using the following formula: <span class="math notranslate nohighlight">\(\mathrm{VIF} = \frac{1}{1 - \mathrm{R}^2}\)</span>, where <span class="math notranslate nohighlight">\(\mathrm{R}^2\)</span> is the explanatory power of the regression model from Step 1.
+A high VIF score of a metric indicates that a given metric can be accurately predicted by the other metrics.
+Thus, that given metric is considered redundant and should be removed from our model.</p>
+<p><em>(Step 3) Remove metrics with a VIF score that is higher than a given threshold.</em>
+We remove metrics with a VIF score that is higher than a given threshold.
+We use a VIF threshold of 5 to determine the magnitude of multi-collinearity, as it is suggested by Fox <span id="id2">[<a class="reference internal" href="../References.html#id4"><span>Fox15</span></a>]</span>.
+Then, we repeat the above three steps until the VIF scores of all remaining metrics are lower than the pre-defined threshold.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for VIF</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tools.tools</span> <span class="kn">import</span> <span class="n">add_constant</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Prepare a dataframe for VIF</span>
+<span class="n">X_VIF</span> <span class="o">=</span> <span class="n">add_constant</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+<span class="c1"># Simulate a multicollinearity situation of LOC, A, and B</span>
+<span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x_i</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;LOC&#39;</span><span class="p">]]</span>
+<span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x_i</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;LOC&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Calculate VIF scores</span>
+<span class="n">vif_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">X_VIF</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> 
+               <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X_VIF</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])],</span> 
+              <span class="n">index</span><span class="o">=</span><span class="n">X_VIF</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="c1"># Prepare a final dataframe of VIF scores</span>
+<span class="n">vif_scores</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">vif_scores</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">,</span> <span class="s1">&#39;VIFscore&#39;</span><span class="p">]</span>
+<span class="n">vif_scores</span> <span class="o">=</span> <span class="n">vif_scores</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">vif_scores</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;const&#39;</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">vif_scores</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Feature</th>
+      <th>VIFscore</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>nCoupledClass</td>
+      <td>1.222543</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>nCommit</td>
+      <td>1.040746</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>LOC</td>
+      <td>113905.910899</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>CommentToCodeRatio</td>
+      <td>1.123840</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>B</td>
+      <td>82271.933165</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AddedLOC</td>
+      <td>1.126917</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>A</td>
+      <td>34025.146679</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In this example, we observe that LOC, A, and B are problematic with the VIF scores of above 5.
+To mitigate multicollinearity, we need to exclude one metric with the highest VIF score, i.e., LOC.
+We iteratively repeat the process as described above.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for VIF</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tools.tools</span> <span class="kn">import</span> <span class="n">add_constant</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Prepare a dataframe for VIF</span>
+<span class="n">X_VIF</span> <span class="o">=</span> <span class="n">add_constant</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+<span class="c1"># Simulate a multicollinearity situation of LOC, A, and B</span>
+<span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x_i</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;LOC&#39;</span><span class="p">]]</span>
+<span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x_i</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;LOC&#39;</span><span class="p">]]</span>
+
+<span class="n">selected_features</span> <span class="o">=</span> <span class="n">X_VIF</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="c1"># Stepwise-VIF</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stepwise VIF START&#39;</span><span class="p">)</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Calculate VIF scores</span>
+    <span class="n">vif_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">X_VIF</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> 
+                   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X_VIF</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])],</span> 
+                  <span class="n">index</span><span class="o">=</span><span class="n">X_VIF</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="c1"># Prepare a final dataframe of VIF scores</span>
+    <span class="n">vif_scores</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">vif_scores</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">,</span> <span class="s1">&#39;VIFscore&#39;</span><span class="p">]</span>
+    <span class="n">vif_scores</span> <span class="o">=</span> <span class="n">vif_scores</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">vif_scores</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;const&#39;</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">vif_scores</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;VIFscore&#39;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Find features that have their VIF scores of above 5.0</span>
+    <span class="n">filtered_vif_scores</span> <span class="o">=</span> <span class="n">vif_scores</span><span class="p">[</span><span class="n">vif_scores</span><span class="p">[</span><span class="s1">&#39;VIFscore&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">5.0</span><span class="p">]</span>
+    
+    <span class="c1"># Terminate when there is no features with the VIF scores of above 5.0</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">filtered_vif_scores</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span>
+        
+    <span class="c1"># exclude the metric with the highest VIF score</span>
+    <span class="n">metric_to_exclude</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">filtered_vif_scores</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+    
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Step&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span><span class="s1">&#39;- exclude&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">metric_to_exclude</span><span class="p">))</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+        
+    <span class="n">selected_features</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">selected_features</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">([</span><span class="n">metric_to_exclude</span><span class="p">]))</span>
+    
+    <span class="n">X_VIF</span> <span class="o">=</span> <span class="n">X_VIF</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">selected_features</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The following features are selected according to Stepwise VIF with the VIF threshold value of 5:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vif_scores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stepwise VIF START
+Step 1 - exclude LOC
+Step 2 - exclude A
+The following features are selected according to Stepwise VIF with the VIF threshold value of 5:
+              Feature  VIFscore
+4       nCoupledClass  1.220623
+0            AddedLOC  1.122381
+2  CommentToCodeRatio  1.120922
+3             nCommit  1.039821
+5                   B  1.017022
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="autospearman-an-automated-feature-selection-approach-that-address-collinearity-and-multicollinearity">
+<h2><span class="section-number">1.5.3. </span>AutoSpearman: An automated feature selection approach that address collinearity and multicollinearity<a class="headerlink" href="#autospearman-an-automated-feature-selection-approach-that-address-collinearity-and-multicollinearity" title="Permalink to this headline">¶</a></h2>
+<p>In our recent work [&#64;jiarpakdee2018autospearman], we introduce , an
+automated metric selection approach based on the Spearman rank
+correlation test and the VIF analysis for statistical inference. Below,
+we describe  using
+Algorithm <a class="reference external" href="#AutoSpearman_code">[AutoSpearman_code]</a>{reference-type=”ref”
+reference=”AutoSpearman_code”}, where <span class="math notranslate nohighlight">\(S\)</span> is a set of Spearman
+coefficients for each pair of metrics, <span class="math notranslate nohighlight">\(C_S\)</span> is a set of Spearman
+coefficients that are above a Spearman threshold value (<span class="math notranslate nohighlight">\(sp.t\)</span>), <span class="math notranslate nohighlight">\(V\)</span> is
+a set of VIF scores of metrics, <span class="math notranslate nohighlight">\(C_V\)</span> is a set of VIF scores of metrics
+that are above a VIF threshold value (<span class="math notranslate nohighlight">\(vif.t\)</span>), and <span class="math notranslate nohighlight">\(M'\)</span> is a set of
+non-correlated metrics based on the Spearman rank correlation test and
+the Variance Inflation Factor analysis. The high-level concept of  can
+be summarised into 2 parts:</p>
+<p><em>(Part 1) Automatically select non-correlated metrics based on a
+Spearman rank correlation test.</em> We first measure the correlation of all
+metrics using the Spearman rank correlation test (<span class="math notranslate nohighlight">\(\rho\)</span>) (<em>cf.</em> Line
+2). We use the interpretation of correlation coefficients (<span class="math notranslate nohighlight">\(|\rho|\)</span>) as
+provided by Kraemer  [&#64;kraemer2003measures]—i.e., a Spearman
+correlation coefficient of above or equal to 0.7 is considered a strong
+correlation. Thus, we only consider the pairs that have an absolute
+Spearman correlation coefficient of above or equal to the threshold
+value (<span class="math notranslate nohighlight">\(sp.t\)</span>) of 0.7 (<em>cf.</em> Line 3).</p>
+<p>To automatically select non-correlated metrics based on the Spearman
+rank correlation test, we start from the pair that has the highest
+Spearman correlation coefficient (<em>cf.</em> Line 4). Since the two
+correlated metrics under examination can be linearly predicted with each
+other, one of these two metrics must be removed. Thus, we select the
+metric that has the lowest average values of the absolute Spearman
+correlation coefficients of the other metrics that are not included in
+the pair (<em>cf.</em> Line 6). That means the removed metric is another metric
+in the pair that is not selected (<em>cf.</em> Line 7). Since the removed
+metric may be correlated with the other metrics, we remove any pairs of
+metrics that are correlated with the removed metric (<em>cf.</em> Line 8).
+Finally, we exclude the removed metric from the set of the remaining
+metrics (<span class="math notranslate nohighlight">\(M'\)</span>) (<em>cf.</em> Line 9). We repeat this process until all pairs of
+metrics have their Spearman correlation coefficient below a threshold
+value of 0.7 (<em>cf.</em> Line 5).</p>
+<p><em>(Part 2) Automatically select non-correlated metrics based on a
+Variance Inflation Factor analysis.</em> We first measure the magnitude of
+multicollinearity of the remaining metrics (<span class="math notranslate nohighlight">\(M'\)</span>) from <code class="docutils literal notranslate"><span class="pre">Part</span> <span class="pre">1</span></code> using
+the Variance Inflation Factor analysis (<em>cf.</em> Line 12). We use a VIF
+threshold value (<span class="math notranslate nohighlight">\(vif.t\)</span>) of 5 to identify the presence of
+multicollinearity, as suggested by Fox [&#64;fox2015applied] and prior
+work [&#64;Mcintosh2014; &#64;bettenburg2010studying; &#64;jiarpakdee2018impact; &#64;jiarpakdee2016study]
+(<em>cf.</em> Line 13).</p>
+<p>To automatically remove correlated metrics from the Variance Inflation
+Factor analysis, we identify the removed metric as the metric that has
+the highest VIF score (<em>cf.</em> Line 14). We then exclude the removed
+metric from the set of the remaining metrics (<span class="math notranslate nohighlight">\(M'\)</span>) (<em>cf.</em> Line 15). We
+apply the VIF analysis on the remaining metrics until none of the
+remaining metrics have their VIF scores above or equal to the threshold
+value (<em>cf.</em> Line 16). Finally,  produces a subset of non-correlated
+metrics based on the Spearman rank correlation test and the VIF analysis
+(<span class="math notranslate nohighlight">\(M'\)</span>) (<em>cf.</em> Line 17).</p>
+<p>Similar to filter-based feature selection techniques, <em>Part 1</em>
+of  measures the correlation of all metrics using the Spearman rank
+correlation test regardless of model construction. Similar to
+wrapper-based feature selection techniques, <em>Part 2</em> of  constructs
+regression models to measure the magnitude of multicollinearity of
+metrics. Thus, we consider  as a hybrid feature selection technique
+(both filter-based and wrapper-based).</p>
 </div>
 </div>
 
