@@ -6,7 +6,7 @@
 
 - part: Getting Started
   chapters:
-  - file: start/about-this-book.ipynb
+  - file: start/software-analytics-in-a-nutshell.ipynb
 
 - part: The Book
   chapters:
