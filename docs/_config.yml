@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: 'The Actionable Software Analytics Cookbook'
-author: Authors
+title: 'The Software Analytics Cookbook'
+author: Chakkrit Tantithamthavorn and Jirayus Jiarpakdee
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -40,4 +40,4 @@ launch_buttons:
   notebook_interface: "classic" # The interface interactive links will activate ["classic", "jupyterlab"]
   binderhub_url: "https://mybinder.org"
   colab_url: "https://colab.research.google.com"
-  thebe: true
+#   thebe: true
