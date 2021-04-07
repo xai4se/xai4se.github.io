@@ -1,0 +1,641 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. Always handle class imbalance &#8212; The Actionable Software Analytics Cookbook</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://analytics-cookbook.github.io/software-analytics/class-imbalance.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Avoid feature selection if the goal is to derive actionable insights" href="hypothesis-testing.html" />
+    <link rel="prev" title="3. Always handle collinearity and multicollinearity" href="correlation-analysis.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://analytics-cookbook.github.io/software-analytics/class-imbalance.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Always handle class imbalance" />
+<meta property="og:description" content="Always handle class imbalance  Class Rebalancing Techniques for Software Analytics  A plethora of class rebalancing techniques exist [HG09], e.g., (1) sampling " />
+<meta property="og:image"       content="https://analytics-cookbook.github.io/_static/logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Actionable Software Analytics Cookbook</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Software Analytics Recipes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   1. Software Analytics in a Nutshell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="feature-selection.html">
+   2. Always find the best subset of the most relevant software metrics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="correlation-analysis.html">
+   3. Always handle collinearity and multicollinearity
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Always handle class imbalance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hypothesis-testing.html">
+   5. Avoid feature selection if the goal is to derive actionable insights
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification.html">
+   6. Always find the best classification technique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="parameter-settings.html">
+   7. Always optimize hyperparameter settings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="model-validation.html">
+   8. Model Validation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="evaluation-measures.html">
+   9. Always evaluate using business-driven measures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ranking-and-multiple-comparison.html">
+   10. Model Ranking and Multiple Comparison
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Towards Explainable AI for SE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/index.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/explainability-in-se.html">
+   2. Explainability in Software Engineering
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../xai4se/model-level/Model-level.html">
+   3. Model-level
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../xai4se/model-level/ANOVA.html">
+     3.1. ANOVA analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../xai4se/model-level/VarImp.html">
+     3.2. Variable Importance analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../xai4se/model-level/PDP.html">
+     3.3. Partial Dependence Plot (PDP)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../xai4se/model-level/DTDR.html">
+     3.4. Decision Tree/Decision Rules
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../xai4se/instance-level/Instance-level.html">
+   4. Instance-level
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../xai4se/instance-level/LIME.html">
+     4.1. LIME
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../xai4se/instance-level/SHAP.html">
+     4.2. SHAP
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/actionable-analytics.html">
+   5. Please Tell Me What To Do!
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Case Study Examples
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../examples/defect-prediction.html">
+   1. Defect Prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../examples/effort-estimation.html">
+   2. Effort Estimation Datasets
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/software-analytics/class-imbalance.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/issues/new?title=Issue%20on%20page%20%2Fsoftware-analytics/class-imbalance.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/edit/master/docs/software-analytics/class-imbalance.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/analytics-cookbook/analytics-cookbook.github.io/master?urlpath=tree/docs/software-analytics/class-imbalance.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/analytics-cookbook/analytics-cookbook.github.io/blob/master/docs/software-analytics/class-imbalance.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#class-rebalancing-techniques-for-software-analytics">
+   4.1. Class Rebalancing Techniques for Software Analytics
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#over-sampling-technique-over">
+     Over-Sampling Technique (OVER)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#under-sampling-technique-under">
+     Under-Sampling Technique (UNDER)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#synthetic-minority-oversampling-technique-smote">
+     Synthetic Minority Oversampling Technique (SMOTE)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boostrap-random-over-sampling-examples-technique-rose">
+     Boostrap Random Over-Sampling Examples Technique (ROSE)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="always-handle-class-imbalance">
+<h1><span class="section-number">4. </span>Always handle class imbalance<a class="headerlink" href="#always-handle-class-imbalance" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="class-rebalancing-techniques-for-software-analytics">
+<h2><span class="section-number">4.1. </span>Class Rebalancing Techniques for Software Analytics<a class="headerlink" href="#class-rebalancing-techniques-for-software-analytics" title="Permalink to this headline">¶</a></h2>
+<p>A plethora of class rebalancing techniques exist <span id="id1">[<a class="reference internal" href="../References.html#id4"><span>HG09</span></a>]</span>,
+e.g., (1) sampling methods for imbalanced learning, (2) cost-sensitive
+methods for imbalanced learning, (3) kernel-based methods for imbalanced
+learning, and (4) active learning for imbalanced learning. Since it is
+impractical to study all of these techniques, we select a manageable set
+of class rebalancing techniques for our study. As discussed by
+He <span id="id2">[<a class="reference internal" href="../References.html#id4"><span>HG09</span></a>]</span>, we start from the four families of imbalance
+learning techniques. Based on a literature surveys by Hall <em>et al.</em> <span id="id3">[<a class="reference internal" href="../References.html#id6"><span>HBB+12</span></a>]</span>,
+Shihab <span id="id4">[<a class="reference internal" href="../References.html#id12"><span>Shi12</span></a>]</span>, and Nam <span id="id5">[<a class="reference internal" href="../References.html#id9"><span>Nam14</span></a>]</span>, we then select only the
+family of sampling techniques for the context of defect prediction.</p>
+<p>We first select the three commonly-used techniques (i.e., over-sampling,
+under-sampling, and Default SMOTE <span id="id6">[<a class="reference internal" href="../References.html#id10"><span>CBHK02</span></a>]</span>) that were
+previously used in the literature <span id="id7">[<a class="reference internal" href="../References.html#id11"><span>KMM+07</span></a>]</span><span id="id8">[<a class="reference internal" href="../References.html#id14"><span>KGS10</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id7"><span>PD07</span></a>]</span><span id="id10">[<a class="reference internal" href="../References.html#id8"><span>SKVanHulseF14</span></a>]</span><span id="id11">[<a class="reference internal" href="../References.html#id23"><span>TTDM15</span></a>]</span><span id="id12">[<a class="reference internal" href="../References.html#id22"><span>WY13</span></a>]</span><span id="id13">[<a class="reference internal" href="../References.html#id16"><span>XLS+15</span></a>]</span><span id="id14">[<a class="reference internal" href="../References.html#id24"><span>YLH+16</span></a>]</span><span id="id15">[<a class="reference internal" href="../References.html#id15"><span>YLX+17</span></a>]</span>.
+Recent research shows that bootstrap resampling techniques tend to
+produce more accurate and reliable estimates in the context of software
+engineering <span id="id16">[<a class="reference internal" href="../References.html#id21"><span>TMHM17</span></a>]</span>. Recently,
+Menardi <span id="id17">[<a class="reference internal" href="../References.html#id20"><span>MT14</span></a>]</span> show that a smoothed bootstrap
+resampling technique (ROSE) outperforms other techniques in a
+non-software engineering domain. Thus, we select the ROSE
+technique <span id="id18">[<a class="reference internal" href="../References.html#id19"><span>LMT14</span></a>]</span><span id="id19">[<a class="reference internal" href="../References.html#id20"><span>MT14</span></a>]</span> in our study.</p>
+<p>Below, we provide a description and a discussion of the 4 studied class rebalancing techniques for our study with interactive python tutorials.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find a class ratio of the original training dataset</span>
+<span class="n">get_class_ratio</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>From the total of 1368 files, there are:
+273 defective files (19.96%)
+1095 clean files (80.04%)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="over-sampling-technique-over">
+<h3>Over-Sampling Technique (OVER)<a class="headerlink" href="#over-sampling-technique-over" title="Permalink to this headline">¶</a></h3>
+<p>The over-sampling technique (a.k.a. up-sampling) randomly samples with
+replacement (i.e., replicating) <em>the minority class</em> (e.g., defective
+class) to be the same size as the majority class (e.g., clean class).
+The advantage of an over-sampling technique is that it leads to no
+information loss. Since oversampling simply adds replicated modules from
+the original dataset, the disadvantage is that the training dataset ends
+up with multiple redundant modules, leading to an overfitting. Thus,
+when applying the over-sampling technique, the performance of with-in
+defect prediction models is likely higher than the performance of
+cross-project defect prediction models.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for the Over-Sampling technique (OVER)</span>
+<span class="kn">from</span> <span class="nn">imblearn.over_sampling</span> <span class="kn">import</span> <span class="n">RandomOverSampler</span>
+
+<span class="c1"># Apply the Over-Sampling technique</span>
+<span class="n">oversample</span> <span class="o">=</span> <span class="n">RandomOverSampler</span><span class="p">(</span><span class="n">sampling_strategy</span><span class="o">=</span><span class="s1">&#39;minority&#39;</span><span class="p">)</span>
+<span class="n">X_OVER_train</span><span class="p">,</span> <span class="n">y_OVER_train</span> <span class="o">=</span> <span class="n">oversample</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Find a class ratio of the over-sampled training dataset</span>
+<span class="n">get_class_ratio</span><span class="p">(</span><span class="n">y_OVER_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>From the total of 2190 files, there are:
+1095 defective files (50.0%)
+1095 clean files (50.0%)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="under-sampling-technique-under">
+<h3>Under-Sampling Technique (UNDER)<a class="headerlink" href="#under-sampling-technique-under" title="Permalink to this headline">¶</a></h3>
+<p>The under-sampling technique (a.k.a. down-sampling) randomly samples
+(i.e., reducing) <em>the majority class</em> (e.g., clean class) in order to
+reduce the number of majority modules to be the same number as the
+minority class (e.g., defective class). The advantage of an
+under-sampling technique is that it reduces the size of the training
+data when the original data is relatively large. However, the
+disadvantage is that removing modules may cause the training data to
+lose important information pertaining to the majority class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for the Under-Sampling technique (UNDER)</span>
+<span class="kn">from</span> <span class="nn">imblearn.under_sampling</span> <span class="kn">import</span> <span class="n">RandomUnderSampler</span>
+
+<span class="c1"># Apply the Under-Sampling technique</span>
+<span class="n">undersample</span> <span class="o">=</span> <span class="n">RandomUnderSampler</span><span class="p">(</span><span class="n">sampling_strategy</span><span class="o">=</span><span class="s1">&#39;majority&#39;</span><span class="p">)</span>
+<span class="n">X_UNDER_train</span><span class="p">,</span> <span class="n">y_UNDER_train</span> <span class="o">=</span> <span class="n">undersample</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Find a class ratio of the under-sampled training dataset</span>
+<span class="n">get_class_ratio</span><span class="p">(</span><span class="n">y_UNDER_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>From the total of 546 files, there are:
+273 defective files (50.0%)
+273 clean files (50.0%)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="synthetic-minority-oversampling-technique-smote">
+<h3>Synthetic Minority Oversampling Technique (SMOTE)<a class="headerlink" href="#synthetic-minority-oversampling-technique-smote" title="Permalink to this headline">¶</a></h3>
+<p>The SMOTE technique <span id="id20">[<a class="reference internal" href="../References.html#id10"><span>CBHK02</span></a>]</span> was proposed to combat the
+disavantages of the simple over-sampling and under-sampling techniques.
+The SMOTE technique creates artificial data based on the feature space
+(rather than the data space) similarities from the minority modules. The
+SMOTE technique starts with a set of minority modules (i.e., defective
+modules). For each of the minority defective modules of the training
+datasets, SMOTE performs the following steps:</p>
+<ol class="simple">
+<li><p>Calculate the <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors.</p></li>
+<li><p>Select <span class="math notranslate nohighlight">\(N\)</span> majority clean modules based on the smallest magnitude of
+the euclidean distances that are obtained from the <span class="math notranslate nohighlight">\(k\)</span>-nearest
+neighbors.</p></li>
+</ol>
+<p>Finally, SMOTE combines the synthetic oversampling of the minority
+defective modules with the undersampling the majority clean modules.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for the Synthetic Minority Oversampling Technique (SMOTE)</span>
+<span class="kn">from</span> <span class="nn">imblearn.over_sampling</span> <span class="kn">import</span> <span class="n">SMOTE</span>
+
+<span class="c1"># Apply the SMOTE technique</span>
+<span class="n">oversample_SMOTE</span> <span class="o">=</span> <span class="n">SMOTE</span><span class="p">(</span><span class="n">sampling_strategy</span><span class="o">=</span><span class="s1">&#39;minority&#39;</span><span class="p">)</span>
+<span class="n">X_SMOTE_train</span><span class="p">,</span> <span class="n">y_SMOTE_train</span> <span class="o">=</span> <span class="n">oversample_SMOTE</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Find a class ratio of the SMOTE-ed training dataset</span>
+<span class="n">get_class_ratio</span><span class="p">(</span><span class="n">y_SMOTE_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>From the total of 2190 files, there are:
+1095 defective files (50.0%)
+1095 clean files (50.0%)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="boostrap-random-over-sampling-examples-technique-rose">
+<h3>Boostrap Random Over-Sampling Examples Technique (ROSE)<a class="headerlink" href="#boostrap-random-over-sampling-examples-technique-rose" title="Permalink to this headline">¶</a></h3>
+<p>The ROSE technique <span id="id21">[<a class="reference internal" href="../References.html#id19"><span>LMT14</span></a>]</span> uses a smoothed-bootstrapping
+approach to draw artificial samples from the feature space neighbourhood
+around the minority class <span id="id22">[<a class="reference internal" href="../References.html#id18"><span>ET93</span></a>]</span>. ROSE combines oversampling and
+undersampling by generating an augmented sample of the data (especially
+belonging to the rare class). The ROSE technique consists of four steps:</p>
+<ol class="simple">
+<li><p>Resample the data of the majority class using a bootstrap resampling
+technique to remove modules of the majority class to a defective
+ratio of 50% (undersampling).</p></li>
+<li><p>Resample the data of the minority class using a bootstrap resampling
+technique to repeat modules of the minority class to a defective
+ratio of 50% (oversampling).</p></li>
+<li><p>Combine the data of the majority and minority classes from Steps 1 and 2 into a new training sample.</p></li>
+<li><p>Generate a new synthetic data for both the majority and minority
+classes in its neighborhood <span id="id23">[<a class="reference internal" href="../References.html#id20"><span>MT14</span></a>]</span> based on the
+combined data from Step 3. The shape of the neighborhood is
+determined by the kernel density function with a Gaussian kernel <span class="math notranslate nohighlight">\(K\)</span>
+and a smoothing matrix <span class="math notranslate nohighlight">\(\textbf{H}\)</span> with a <span class="math notranslate nohighlight">\(d\)</span> dimension (i.e., <span class="math notranslate nohighlight">\(d\)</span>
+is the number of independent variables), where <span class="math notranslate nohighlight">\(\textbf{H}=diag(h_1,...,h_d)\)</span> and <span class="math notranslate nohighlight">\(h_d\)</span> is defined as follows:
+<br />
+$<span class="math notranslate nohighlight">\(h_q = \Bigg(\frac{4}{(d+2)n}\Bigg)^{1/(d+4)} \times \hat{\sigma}_q ; q = 1,...,d.\)</span><span class="math notranslate nohighlight">\(
+, where \)</span>\hat{\sigma}_q<span class="math notranslate nohighlight">\( is the standard deviation of the \)</span>q^{th}$
+dimension of the observations belonging to a given
+class <span id="id24">[<a class="reference internal" href="../References.html#id20"><span>MT14</span></a>]</span>.</p></li>
+</ol>
+<p>These four steps are repeated for each training sample in order to
+produce a new synthetic training sample of approximately equal size as
+the original dataset where the number of modules for both classes
+equally represent (i.e., a defective ratio of nearly 50%).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Either TODO or Exclude</span>
+<span class="c1"># The python implementation is not available</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "analytics-cookbook/analytics-cookbook.github.io",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "xaitools"
+        },
+        kernelOptions: {
+            kernelName: "xaitools",
+            path: "./software-analytics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'xaitools'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="correlation-analysis.html" title="previous page"><span class="section-number">3. </span>Always handle collinearity and multicollinearity</a>
+    <a class='right-next' id="next-link" href="hypothesis-testing.html" title="next page"><span class="section-number">5. </span>Avoid feature selection if the goal is to derive actionable insights</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Authors<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

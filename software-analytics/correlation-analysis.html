@@ -1,0 +1,703 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Always handle collinearity and multicollinearity &#8212; The Actionable Software Analytics Cookbook</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://analytics-cookbook.github.io/software-analytics/correlation-analysis.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Always handle class imbalance" href="class-imbalance.html" />
+    <link rel="prev" title="2. Always find the best subset of the most relevant software metrics" href="feature-selection.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://analytics-cookbook.github.io/software-analytics/correlation-analysis.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Always handle collinearity and multicollinearity" />
+<meta property="og:description" content="Always handle collinearity and multicollinearity  Collinearity (Pairwise Correlation)  Collinearity is a phenomenon in which one metric can be linearly predicte" />
+<meta property="og:image"       content="https://analytics-cookbook.github.io/_static/logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Actionable Software Analytics Cookbook</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Software Analytics Recipes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   1. Software Analytics in a Nutshell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="feature-selection.html">
+   2. Always find the best subset of the most relevant software metrics
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Always handle collinearity and multicollinearity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="class-imbalance.html">
+   4. Always handle class imbalance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hypothesis-testing.html">
+   5. Avoid feature selection if the goal is to derive actionable insights
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification.html">
+   6. Always find the best classification technique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="parameter-settings.html">
+   7. Always optimize hyperparameter settings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="model-validation.html">
+   8. Model Validation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="evaluation-measures.html">
+   9. Always evaluate using business-driven measures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ranking-and-multiple-comparison.html">
+   10. Model Ranking and Multiple Comparison
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Towards Explainable AI for SE
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/index.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/explainability-in-se.html">
+   2. Explainability in Software Engineering
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../xai4se/model-level/Model-level.html">
+   3. Model-level
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../xai4se/model-level/ANOVA.html">
+     3.1. ANOVA analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../xai4se/model-level/VarImp.html">
+     3.2. Variable Importance analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../xai4se/model-level/PDP.html">
+     3.3. Partial Dependence Plot (PDP)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../xai4se/model-level/DTDR.html">
+     3.4. Decision Tree/Decision Rules
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../xai4se/instance-level/Instance-level.html">
+   4. Instance-level
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../xai4se/instance-level/LIME.html">
+     4.1. LIME
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../xai4se/instance-level/SHAP.html">
+     4.2. SHAP
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/actionable-analytics.html">
+   5. Please Tell Me What To Do!
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Case Study Examples
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../examples/defect-prediction.html">
+   1. Defect Prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../examples/effort-estimation.html">
+   2. Effort Estimation Datasets
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/software-analytics/correlation-analysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/issues/new?title=Issue%20on%20page%20%2Fsoftware-analytics/correlation-analysis.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/edit/master/docs/software-analytics/correlation-analysis.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/analytics-cookbook/analytics-cookbook.github.io/master?urlpath=tree/docs/software-analytics/correlation-analysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/analytics-cookbook/analytics-cookbook.github.io/blob/master/docs/software-analytics/correlation-analysis.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collinearity-pairwise-correlation">
+   3.1. Collinearity (Pairwise Correlation)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multicollinearity">
+   3.2. Multicollinearity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autospearman-an-automated-feature-selection-approach-that-address-collinearity-and-multicollinearity">
+   3.3. AutoSpearman: An automated feature selection approach that address collinearity and multicollinearity
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="always-handle-collinearity-and-multicollinearity">
+<h1><span class="section-number">3. </span>Always handle collinearity and multicollinearity<a class="headerlink" href="#always-handle-collinearity-and-multicollinearity" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="collinearity-pairwise-correlation">
+<h2><span class="section-number">3.1. </span>Collinearity (Pairwise Correlation)<a class="headerlink" href="#collinearity-pairwise-correlation" title="Permalink to this headline">¶</a></h2>
+<p>Collinearity is a phenomenon in which one metric can be linearly predicted by another metric.
+There are several correlation tests that can detect collinearity between metrics. For example, Pearson correlation test, Spearman correlation test, and Kendall Tau correlation test.
+Below, we provide a tutorial for using and visualising Spearman correlation test.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for Correlation tests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># There are 3 options for the parameter setting of method as follows:</span>
+<span class="c1"># pearson : standard correlation coefficient</span>
+<span class="c1"># kendall : Kendall Tau correlation coefficient</span>
+<span class="c1"># spearman : Spearman rank correlation</span>
+<span class="n">corrmat</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+<span class="n">top_corr_features</span> <span class="o">=</span> <span class="n">corrmat</span><span class="o">.</span><span class="n">index</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="c1">#plot heat map</span>
+<span class="n">g</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">top_corr_features</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span><span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdYlGn&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/correlation-analysis_3_0.png" src="../_images/correlation-analysis_3_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="multicollinearity">
+<h2><span class="section-number">3.2. </span>Multicollinearity<a class="headerlink" href="#multicollinearity" title="Permalink to this headline">¶</a></h2>
+<p>Multicollinearity is a phenomenon in which one metric can be linearly predicted by a combination of two or more metrics.
+Multicollinearity can be detected using Variance Inflation Factor (VIF) analysis <span id="id1">[<a class="reference internal" href="../References.html#id54"><span>FM92</span></a>]</span>.
+The idea behind variance inflation factor analysis is to construct an ordinary least square regression to predict a metric by using the other metrics in the dataset.
+Having a model that is well fit indicates that the metric can be predicted by other metrics, linearly highly-correlated with other metrics.
+There are 3 steps in variance inflation factor analysis.</p>
+<p><em>(Step 1) Construct a regression model for each metric.</em>
+For each metric, we construct a model using the other metrics to predict that particular metric.</p>
+<p><em>(Step 2) Compute a VIF score for each metric.</em>
+The VIF score for each metric is computed using the following formula: <span class="math notranslate nohighlight">\(\mathrm{VIF} = \frac{1}{1 - \mathrm{R}^2}\)</span>, where <span class="math notranslate nohighlight">\(\mathrm{R}^2\)</span> is the explanatory power of the regression model from Step 1.
+A high VIF score of a metric indicates that a given metric can be accurately predicted by the other metrics.
+Thus, that given metric is considered redundant and should be removed from our model.</p>
+<p><em>(Step 3) Remove metrics with a VIF score that is higher than a given threshold.</em>
+We remove metrics with a VIF score that is higher than a given threshold.
+We use a VIF threshold of 5 to determine the magnitude of multi-collinearity, as it is suggested by Fox <span id="id2">[<a class="reference internal" href="../References.html#id5"><span>Fox15</span></a>]</span>.
+Then, we repeat the above three steps until the VIF scores of all remaining metrics are lower than the pre-defined threshold.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for VIF</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tools.tools</span> <span class="kn">import</span> <span class="n">add_constant</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Prepare a dataframe for VIF</span>
+<span class="n">X_VIF</span> <span class="o">=</span> <span class="n">add_constant</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+<span class="c1"># Simulate a multicollinearity situation of LOC, A, and B</span>
+<span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x_i</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;LOC&#39;</span><span class="p">]]</span>
+<span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x_i</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;LOC&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Calculate VIF scores</span>
+<span class="n">vif_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">X_VIF</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> 
+               <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X_VIF</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])],</span> 
+              <span class="n">index</span><span class="o">=</span><span class="n">X_VIF</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="c1"># Prepare a final dataframe of VIF scores</span>
+<span class="n">vif_scores</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">vif_scores</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">,</span> <span class="s1">&#39;VIFscore&#39;</span><span class="p">]</span>
+<span class="n">vif_scores</span> <span class="o">=</span> <span class="n">vif_scores</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">vif_scores</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;const&#39;</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">vif_scores</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Feature</th>
+      <th>VIFscore</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>nCoupledClass</td>
+      <td>1.222543</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>nCommit</td>
+      <td>1.040746</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>LOC</td>
+      <td>113905.910899</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>CommentToCodeRatio</td>
+      <td>1.123840</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>B</td>
+      <td>82271.933165</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AddedLOC</td>
+      <td>1.126917</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>A</td>
+      <td>34025.146679</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In this example, we observe that LOC, A, and B are problematic with the VIF scores of above 5.
+To mitigate multicollinearity, we need to exclude one metric with the highest VIF score, i.e., LOC.
+We iteratively repeat the process as described above.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for VIF</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tools.tools</span> <span class="kn">import</span> <span class="n">add_constant</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Prepare a dataframe for VIF</span>
+<span class="n">X_VIF</span> <span class="o">=</span> <span class="n">add_constant</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+
+<span class="c1"># Simulate a multicollinearity situation of LOC, A, and B</span>
+<span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x_i</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;LOC&#39;</span><span class="p">]]</span>
+<span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x_i</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">X_VIF</span><span class="p">[</span><span class="s1">&#39;LOC&#39;</span><span class="p">]]</span>
+
+<span class="n">selected_features</span> <span class="o">=</span> <span class="n">X_VIF</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="c1"># Stepwise-VIF</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stepwise VIF START&#39;</span><span class="p">)</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Calculate VIF scores</span>
+    <span class="n">vif_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">X_VIF</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> 
+                   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X_VIF</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])],</span> 
+                  <span class="n">index</span><span class="o">=</span><span class="n">X_VIF</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="c1"># Prepare a final dataframe of VIF scores</span>
+    <span class="n">vif_scores</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">vif_scores</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">,</span> <span class="s1">&#39;VIFscore&#39;</span><span class="p">]</span>
+    <span class="n">vif_scores</span> <span class="o">=</span> <span class="n">vif_scores</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">vif_scores</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;const&#39;</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">vif_scores</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;VIFscore&#39;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Find features that have their VIF scores of above 5.0</span>
+    <span class="n">filtered_vif_scores</span> <span class="o">=</span> <span class="n">vif_scores</span><span class="p">[</span><span class="n">vif_scores</span><span class="p">[</span><span class="s1">&#39;VIFscore&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">5.0</span><span class="p">]</span>
+    
+    <span class="c1"># Terminate when there is no features with the VIF scores of above 5.0</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">filtered_vif_scores</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span>
+        
+    <span class="c1"># exclude the metric with the highest VIF score</span>
+    <span class="n">metric_to_exclude</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">filtered_vif_scores</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+    
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Step&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span><span class="s1">&#39;- exclude&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">metric_to_exclude</span><span class="p">))</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+        
+    <span class="n">selected_features</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">selected_features</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">([</span><span class="n">metric_to_exclude</span><span class="p">]))</span>
+    
+    <span class="n">X_VIF</span> <span class="o">=</span> <span class="n">X_VIF</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">selected_features</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The following features are selected according to Stepwise VIF with the VIF threshold value of 5:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vif_scores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stepwise VIF START
+Step 1 - exclude LOC
+Step 2 - exclude A
+The following features are selected according to Stepwise VIF with the VIF threshold value of 5:
+              Feature  VIFscore
+4       nCoupledClass  1.220623
+0            AddedLOC  1.122381
+2  CommentToCodeRatio  1.120922
+3             nCommit  1.039821
+5                   B  1.017022
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="autospearman-an-automated-feature-selection-approach-that-address-collinearity-and-multicollinearity">
+<h2><span class="section-number">3.3. </span>AutoSpearman: An automated feature selection approach that address collinearity and multicollinearity<a class="headerlink" href="#autospearman-an-automated-feature-selection-approach-that-address-collinearity-and-multicollinearity" title="Permalink to this headline">¶</a></h2>
+<p>Jiarpakdee <em>et al.</em> <span id="id3">[<a class="reference internal" href="../References.html#id55"><span>JTT18</span></a>]</span><span id="id4">[<a class="reference internal" href="../References.html#id56"><span>JTT20</span></a>]</span> [&#64;jiarpakdee2018autospearman] introduce , an
+automated metric selection approach based on the Spearman rank
+correlation test and the VIF analysis for statistical inference.
+The high-level concept of can be summarised into 2 parts:</p>
+<p><em>(Part 1) Automatically select non-correlated metrics based on a
+Spearman rank correlation test.</em> We first measure the correlation of all
+metrics using the Spearman rank correlation test (<span class="math notranslate nohighlight">\(\rho\)</span>) (<em>cf.</em> Line
+2). We use the interpretation of correlation coefficients (<span class="math notranslate nohighlight">\(|\rho|\)</span>) as
+provided by Kraemer <span id="id5">[<a class="reference internal" href="../References.html#id57"><span>KML+03</span></a>]</span>—i.e., a Spearman
+correlation coefficient of above or equal to 0.7 is considered a strong
+correlation. Thus, we only consider the pairs that have an absolute
+Spearman correlation coefficient of above or equal to the threshold
+value (<span class="math notranslate nohighlight">\(sp.t\)</span>) of 0.7.</p>
+<p>To automatically select non-correlated metrics based on the Spearman
+rank correlation test, we start from the pair that has the highest
+Spearman correlation coefficient. Since the two
+correlated metrics under examination can be linearly predicted with each
+other, one of these two metrics must be removed. Thus, we select the
+metric that has the lowest average values of the absolute Spearman
+correlation coefficients of the other metrics that are not included in
+the pair. That means the removed metric is another metric
+in the pair that is not selected. Since the removed
+metric may be correlated with the other metrics, we remove any pairs of
+metrics that are correlated with the removed metric.
+Finally, we exclude the removed metric from the set of the remaining
+metrics (<span class="math notranslate nohighlight">\(M'\)</span>). We repeat this process until all pairs of
+metrics have their Spearman correlation coefficient below a threshold
+value of 0.7.</p>
+<p><em>(Part 2) Automatically select non-correlated metrics based on a
+Variance Inflation Factor analysis.</em> We first measure the magnitude of
+multicollinearity of the remaining metrics (<span class="math notranslate nohighlight">\(M'\)</span>) from <code class="docutils literal notranslate"><span class="pre">Part</span> <span class="pre">1</span></code> using
+the Variance Inflation Factor analysis (<em>cf.</em> Line 12). We use a VIF
+threshold value (<span class="math notranslate nohighlight">\(vif.t\)</span>) of 5 to identify the presence of
+multicollinearity, as suggested by Fox <span id="id6">[<a class="reference internal" href="../References.html#id5"><span>Fox15</span></a>]</span>.</p>
+<p>To automatically remove correlated metrics from the Variance Inflation
+Factor analysis, we identify the removed metric as the metric that has
+the highest VIF score. We then exclude the removed
+metric from the set of the remaining metrics (<span class="math notranslate nohighlight">\(M'\)</span>). We
+apply the VIF analysis on the remaining metrics until none of the
+remaining metrics have their VIF scores above or equal to the threshold
+value. Finally,  produces a subset of non-correlated
+metrics based on the Spearman rank correlation test and the VIF analysis
+(<span class="math notranslate nohighlight">\(M'\)</span>).</p>
+<p>Similar to filter-based feature selection techniques, <em>Part 1</em>
+of  measures the correlation of all metrics using the Spearman rank
+correlation test regardless of model construction. Similar to
+wrapper-based feature selection techniques, <em>Part 2</em> of  constructs
+regression models to measure the magnitude of multicollinearity of
+metrics. Thus, we consider  as a hybrid feature selection technique
+(both filter-based and wrapper-based).</p>
+<p>TODO - include Tutorials for AutoSpearman</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "analytics-cookbook/analytics-cookbook.github.io",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "xaitools"
+        },
+        kernelOptions: {
+            kernelName: "xaitools",
+            path: "./software-analytics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'xaitools'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="feature-selection.html" title="previous page"><span class="section-number">2. </span>Always find the best subset of the most relevant software metrics</a>
+    <a class='right-next' id="next-link" href="class-imbalance.html" title="next page"><span class="section-number">4. </span>Always handle class imbalance</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Authors<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

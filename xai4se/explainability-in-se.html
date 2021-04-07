@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Explainability in Software Engineering &#8212; The Actionable Software Analytics Cookbook</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://analytics-cookbook.github.io/xai4se/explainability-in-se.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Model-level" href="model-level/Model-level.html" />
+    <link rel="prev" title="1. Introduction" href="index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://analytics-cookbook.github.io/xai4se/explainability-in-se.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Explainability in Software Engineering" />
+<meta property="og:description" content="Explainability in Software Engineering  Software engineering is by nature a collaborative social practice. Collaboration among different stakeholders (e.g., use" />
+<meta property="og:image"       content="https://analytics-cookbook.github.io/_static/logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Actionable Software Analytics Cookbook</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Software Analytics Recipes
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/index.html">
+   1. Software Analytics in a Nutshell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/feature-selection.html">
+   2. Always find the best subset of the most relevant software metrics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/correlation-analysis.html">
+   3. Always handle collinearity and multicollinearity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/class-imbalance.html">
+   4. Always handle class imbalance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/hypothesis-testing.html">
+   5. Avoid feature selection if the goal is to derive actionable insights
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/classification.html">
+   6. Always find the best classification technique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/parameter-settings.html">
+   7. Always optimize hyperparameter settings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/model-validation.html">
+   8. Model Validation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/evaluation-measures.html">
+   9. Always evaluate using business-driven measures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/ranking-and-multiple-comparison.html">
+   10. Model Ranking and Multiple Comparison
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Towards Explainable AI for SE
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Explainability in Software Engineering
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="model-level/Model-level.html">
+   3. Model-level
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="model-level/ANOVA.html">
+     3.1. ANOVA analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="model-level/VarImp.html">
+     3.2. Variable Importance analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="model-level/PDP.html">
+     3.3. Partial Dependence Plot (PDP)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="model-level/DTDR.html">
+     3.4. Decision Tree/Decision Rules
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="instance-level/Instance-level.html">
+   4. Instance-level
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="instance-level/LIME.html">
+     4.1. LIME
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="instance-level/SHAP.html">
+     4.2. SHAP
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="actionable-analytics.html">
+   5. Please Tell Me What To Do!
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Case Study Examples
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../examples/defect-prediction.html">
+   1. Defect Prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../examples/effort-estimation.html">
+   2. Effort Estimation Datasets
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/xai4se/explainability-in-se.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/issues/new?title=Issue%20on%20page%20%2Fxai4se/explainability-in-se.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/edit/master/docs/xai4se/explainability-in-se.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/analytics-cookbook/analytics-cookbook.github.io/master?urlpath=tree/docs/xai4se/explainability-in-se.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/analytics-cookbook/analytics-cookbook.github.io/blob/master/docs/xai4se/explainability-in-se.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explainable-ai-for-se-a-way-forward">
+   2.1. Explainable AI for SE: A Way Forward
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-theory-of-explainability">
+   2.2. A Theory of Explainability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-theory-of-explanations">
+   2.3. A Theory of Explanations
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="explainability-in-software-engineering">
+<h1><span class="section-number">2. </span>Explainability in Software Engineering<a class="headerlink" href="#explainability-in-software-engineering" title="Permalink to this headline">¶</a></h1>
+<p>Software engineering is by nature a collaborative social practice.
+Collaboration among different stakeholders (e.g., users, developers, and
+managers) is essential in modern software engineering. As a part of the
+collaboration, individuals are often expected to explain decisions made
+throughout software development processes to develop appropriate trust
+and enable effective communication. Since tool support in software
+development processes is an integral part of this collaborative process,
+similar expectations are also applied. Such tools should not only
+provide insights or generate predictions for recommendation, but also be
+able to explain such insights and recommendations.</p>
+<p>Recent automated and advanced software development tools heavily rely on
+Artificial Intelligence and Machine Learning (AI/ML) capabilities to
+predict software defects, estimate development effort, and recommend API
+choices. However, such AI/ML algorithms are often “black-box”, which
+makes it hard for practitioners to understand how the models arrive at a
+decision. A lack of explainability of the black-box algorithms leads to
+a lack of trust in the predictions or recommendations produced by such
+algorithms.</p>
+<div class="section" id="explainable-ai-for-se-a-way-forward">
+<h2><span class="section-number">2.1. </span>Explainable AI for SE: A Way Forward<a class="headerlink" href="#explainable-ai-for-se-a-way-forward" title="Permalink to this headline">¶</a></h2>
+<p>Explainable AI is a suite of AI/ML techniques that produce accurate
+predictions, while being able to explain such predictions. The purpose
+of increasing the explainability of software analytics (XAI4SE) is to
+make its behavior more intelligible to humans by providing explanations.
+The explainability of software analytics can be achieved by:</p>
+<ul class="simple">
+<li><p><strong>“Global Explanability”:</strong> Using interpretable machine learning
+techniques (e.g., decision tree, decision rules or logistic
+regression techniques) or intrinsic model-specific techniques (e.g.,
+ANOVA, variable importance) so the entire predictions and
+recommendations process are transparent and comprehensible. Such
+intrinsic model-specific techniques aim to provide the global
+explainability. Thus, users can only understand how the model works
+globally (e.g., by inspecting a branch of decision trees). However,
+users often do not understand why the model makes that prediction.</p></li>
+<li><p><strong>“Local Explanability”:</strong> Using model-agnostic techniques (e.g.,
+LIME <span id="id1">[<a class="reference internal" href="../References.html#id27"><span>RSG16</span></a>]</span>) to explain the predictions of the
+software analytics models (e.g., neural network, random forest).
+Such post-hoc model-agnostic techniques can provide an explanation
+for each prediction (i.e., an instance to be explained). Users can
+then understand why the prediction is made by the software analytics
+models.</p></li>
+</ul>
+</div>
+<div class="section" id="a-theory-of-explainability">
+<h2><span class="section-number">2.2. </span>A Theory of Explainability<a class="headerlink" href="#a-theory-of-explainability" title="Permalink to this headline">¶</a></h2>
+<p>According to philosophy, social science, and psychology theories, a
+common definition of <em>explainability or interpretability</em> is <em>the degree
+to which a human can understand the reasons behind a decision or an
+action</em> <span id="id2">[<a class="reference internal" href="../References.html#id30"><span>Mil19</span></a>]</span>. The explainability of AI/ML algorithms can be
+achieved by (1) making the entire decision-making process transparent
+and comprehensible and (2) explicitly providing an explanation for each
+decision <span id="id3">[<a class="reference internal" href="../References.html#id32"><span>Lip18</span></a>]</span> (since an explanation is not likely applicable to
+all decisions <span id="id4">[<a class="reference internal" href="../References.html#id33"><span>Lea14</span></a>]</span>. Hence, research has emerged to
+explore how to explain decisions made by complex, black-box models and
+how explanations are presented in a form that would be easily understood
+(and hence, accepted) by humans.</p>
+</div>
+<div class="section" id="a-theory-of-explanations">
+<h2><span class="section-number">2.3. </span>A Theory of Explanations<a class="headerlink" href="#a-theory-of-explanations" title="Permalink to this headline">¶</a></h2>
+<p>According to a philosophical and psychological theory of explanations,
+Salmon  <span id="id5">[<a class="reference internal" href="../References.html#id38"><span>Sal84</span></a>]</span> argue that explanations can be presented as a causal
+chain of causes that lead to the decision. Causal chains can be
+classified into five categories <span id="id6">[<a class="reference internal" href="../References.html#id39"><span>HMS05</span></a>]</span>: temporal, coincidental,
+unfolding, opportunity chains and pre-emptive. Each type of causal chain
+is thus associated with an explanation type. However, identifying the
+complete causal chain of causes is challenging, since most AI/ML
+techniques produce only correlations instead of causations.</p>
+<p>In contrast, Miller <span id="id7">[<a class="reference internal" href="../References.html#id30"><span>Mil19</span></a>]</span> argue that explanations can be presented
+as answers to why-questions. Similarly, Lipton <span id="id8">[<a class="reference internal" href="../References.html#id35"><span>Lip90</span></a>]</span> also share
+a similar view of explanations as being <em>contrastive</em>. There are three
+components of why-questions <span id="id9">[<a class="reference internal" href="../References.html#id36"><span>VF+80</span></a>]</span>: (1) the event to be explained,
+also called the <em>explanandum</em> (e.g., file A is defective); (2) a set of
+similar events that are similar to the explanandum but did not occur
+(e.g., file A is clean); and (3) a request for information that can
+distinguish the occurrence of the explanandum from the non-occurrence of
+the other similar events (e.g., a large number of changes made to file
+A). Below, we describe four types of why-questions:</p>
+<ul class="simple">
+<li><p><strong>Plain-fact</strong> is the properties of the object. <em>Why does object <span class="math notranslate nohighlight">\(a\)</span> have property <span class="math notranslate nohighlight">\(P\)</span>?</em>
+<br />
+Example: Why is file <span class="math notranslate nohighlight">\(A\)</span> defective?</p></li>
+<li><p><strong>Property-contrast</strong> is the differences in the Properties within an object. <em>Why does object <span class="math notranslate nohighlight">\(a\)</span> have property <span class="math notranslate nohighlight">\(P\)</span>, rather than property <span class="math notranslate nohighlight">\(P'\)</span>?</em>
+<br />
+Example: Why is file <span class="math notranslate nohighlight">\(A\)</span> defective rather than clean?</p></li>
+<li><p><strong>Object-contrast</strong> is the differences between two Objects. <em>Why does object <span class="math notranslate nohighlight">\(a\)</span> have property <span class="math notranslate nohighlight">\(P\)</span>, while object <span class="math notranslate nohighlight">\(b\)</span> has property <span class="math notranslate nohighlight">\(P'\)</span>?</em>
+<br />
+Example: Why is file <span class="math notranslate nohighlight">\(A\)</span> defective, while file <span class="math notranslate nohighlight">\(B\)</span> is clean?</p></li>
+<li><p><strong>Time-contrast</strong> is the differences within an object over Time. <em>Why does object <span class="math notranslate nohighlight">\(a\)</span> have property <span class="math notranslate nohighlight">\(P\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>, but property <span class="math notranslate nohighlight">\(P'\)</span> at
+time <span class="math notranslate nohighlight">\(t'\)</span>?</em>
+<br />
+Example: Why was file <span class="math notranslate nohighlight">\(A\)</span> not classified as defective in version 1.2, but was subsequently classified as defective in version 1.3?</p></li>
+</ul>
+<p>Answers to the P-contrast, O-contrast and T-contrast why-questions form
+an explanation. <em>Contrastive explanations focus on only the differences
+on <strong>Properties within an object</strong> (Property-contrast), between <strong>two
+Objects</strong> (Object-contrast), and <strong>within an object over Time</strong>
+(Time-contrast)</em> <span id="id10">[<a class="reference internal" href="../References.html#id37"><span>VBW02</span></a>]</span>. Answering a plain fact question is
+generally more difficult than generating answers to the contrastive
+questions <span id="id11">[<a class="reference internal" href="../References.html#id35"><span>Lip90</span></a>]</span>. For example, we could answer the
+Property-contrast question (e.g., “Why is file <span class="math notranslate nohighlight">\(A\)</span> classified as being
+defective instead of being clean?”) by citing that there are a
+substantial number of defect-fixing commits that involve with the file.
+Information about the size, complexity, owner of the file, and so on are
+not required to answer this question. On the other hand, explaining why
+file <span class="math notranslate nohighlight">\(A\)</span> is defective in a non-contrastive manner would require us to
+use all causes. In addition, humans tend to be cognitively attached to
+digest contrastive explanations <span id="id12">[<a class="reference internal" href="../References.html#id30"><span>Mil19</span></a>]</span>. Thus, contrastive
+explanations may be more valuable and more intuitive to humans. These
+important factors from both social and computational perspectives should
+be considered when providing explainable models or tool support for
+software engineering.</p>
+<p>Explanation is not only a <em>product</em>, as discussed above, but also a
+<em>process</em> <span id="id13">[<a class="reference internal" href="../References.html#id40"><span>Lom06</span></a>]</span>. In fact, generating explanations is a
+<em>cognitive process</em> which essentially involves four cognitive systems:
+(1) attention, (2) long-term memory, (3) working memory, and (4)
+metacognition <span id="id14">[<a class="reference internal" href="../References.html#id41"><span>HMC19</span></a>]</span><span id="id15">[<a class="reference internal" href="../References.html#id33"><span>Lea14</span></a>]</span>. Recent
+work <span id="id16">[<a class="reference internal" href="../References.html#id30"><span>Mil19</span></a>]</span> further recognised the importance of considering
+explanation as being not only a cognitive process but also a <em>social
+process</em>, in which an explainer communicates knowledge to an explainee.
+Using this view, explanations should be considered as part of a
+conversation between the explainer and explainee. The theories, models,
+and processes of how humans explain decisions to one another are
+important to the work on explainable software analytics and the
+development of explainable tool support for software engineering in
+general.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "analytics-cookbook/analytics-cookbook.github.io",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "xaitools"
+        },
+        kernelOptions: {
+            kernelName: "xaitools",
+            path: "./xai4se"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'xaitools'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page"><span class="section-number">1. </span>Introduction</a>
+    <a class='right-next' id="next-link" href="model-level/Model-level.html" title="next page"><span class="section-number">3. </span>Model-level</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Authors<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
