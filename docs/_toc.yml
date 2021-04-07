@@ -4,10 +4,6 @@
 - file: index.ipynb
   numbered: 3
 
-- part: Getting Started
-  chapters:
-  - file: start/software-analytics-in-a-nutshell.ipynb
-
 - part: "Software Analytics Recipes"
   chapters:      
   - file: software-analytics/index.ipynb
@@ -37,8 +33,11 @@
     sections:
       - file: xai4se/instance-level/LIME.ipynb
       - file: xai4se/instance-level/SHAP.ipynb
+  - file: xai4se/actionable-analytics.ipynb
 
-- part: Datasets
+  
+- part: "Example Case Studies"
   chapters:
-  - file: datasets/defect-prediction-datasets.ipynb
-  - file: datasets/effort-estimation-datasets.ipynb
+  - file: example/index.ipynb  
+  - file: example/defect-prediction-datasets.ipynb
+  - file: example/effort-estimation-datasets.ipynb
