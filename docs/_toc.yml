@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
 - file: index.ipynb
-  numbered: 3
+  numbered: 2
 
 - part: "Software Analytics Recipes"
   chapters:      
@@ -21,8 +21,6 @@
   chapters:        
   - file: xai4se/index.ipynb
   - file: xai4se/explainability-in-se.ipynb
-  - file: xai4se/theory-explainability.ipynb
-  - file: xai4se/theory-explanation.ipynb
   - file: xai4se/model-level/Model-level.ipynb
     sections:
       - file: xai4se/model-level/ANOVA.ipynb
@@ -39,5 +37,5 @@
 - part: "Case Study Examples"
   chapters:
   - file: examples/index.ipynb  
-  - file: examples/defect-prediction-datasets.ipynb
-  - file: examples/effort-estimation-datasets.ipynb
+  - file: examples/defect-prediction.ipynb
+  - file: examples/effort-estimation.ipynb
