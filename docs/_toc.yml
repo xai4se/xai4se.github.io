@@ -4,11 +4,11 @@
 - file: index.ipynb
   numbered: 2
 
-- part: "Getting Started"
+- part: 'Getting Started'
   chapters:      
   - file: start/index.ipynb
   
-- part: "Software Analytics Recipes"
+- part: 'Part1-Software Analytics Recipes'
   chapters:      
   - file: software-analytics/feature-selection.ipynb
   - file: software-analytics/correlation-analysis.ipynb
@@ -20,7 +20,7 @@
   - file: software-analytics/evaluation-measures.ipynb
   - file: software-analytics/ranking-and-multiple-comparison.ipynb
 
-- part: "Towards Explainable AI for SE"
+- part: 'Part2-Explainable AI for SE'
   chapters:        
   - file: xai4se/index.ipynb
   - file: xai4se/explainability-in-se.ipynb
@@ -37,7 +37,7 @@
   - file: xai4se/actionable-analytics.ipynb
 
   
-- part: "Case Study Examples"
+- part: 'Part3-Case Study Examples'
   chapters:
   - file: examples/index.ipynb  
   - file: examples/defect-prediction.ipynb
