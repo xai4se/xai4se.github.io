@@ -4,9 +4,12 @@
 - file: index.ipynb
   numbered: 2
 
+- part: "Getting Started"
+  chapters:      
+  - file: start/index.ipynb
+  s
 - part: "Software Analytics Recipes"
   chapters:      
-  - file: software-analytics/index.ipynb
   - file: software-analytics/feature-selection.ipynb
   - file: software-analytics/correlation-analysis.ipynb
   - file: software-analytics/class-imbalance.ipynb
