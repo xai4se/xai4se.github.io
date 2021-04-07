@@ -7,6 +7,8 @@
 - part: 'Getting Started'
   chapters:      
   - file: start/index.ipynb
+  - file: start/software-quality-assurance.ipynb
+  - file: start/defect-prediction-models.ipynbs
   
 - part: 'Part1-Software Analytics Recipes'
   chapters:      
@@ -41,4 +43,3 @@
   chapters:
   - file: examples/index.ipynb  
   - file: examples/defect-prediction.ipynb
-  - file: examples/effort-estimation.ipynb
