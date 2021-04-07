@@ -36,8 +36,8 @@
   - file: xai4se/actionable-analytics.ipynb
 
   
-- part: "Example Case Studies"
+- part: "Case Study Examples"
   chapters:
-  - file: example/index.ipynb  
-  - file: example/defect-prediction-datasets.ipynb
-  - file: example/effort-estimation-datasets.ipynb
+  - file: examples/index.ipynb  
+  - file: examples/defect-prediction-datasets.ipynb
+  - file: examples/effort-estimation-datasets.ipynb
