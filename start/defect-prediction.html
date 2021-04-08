@@ -67,7 +67,7 @@
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Defect Prediction Models" />
 <meta property="og:description" content="Defect Prediction Models  Defect prediction models have been proposed to predict the most risky areas of source code that are likely to have post-release defect" />
-<meta property="og:image"       content="https://analytics-cookbook.github.io/_static/logo.png" />
+
 
 <meta name="twitter:card" content="summary" />
 
@@ -83,8 +83,6 @@
     
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
   
   
   <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
@@ -440,7 +438,15 @@ Third, one must extract software metrics of each module (e.g., size, and complex
 To extract such software metrics, one must focus on development activities that occur prior to a release of interest that corresponds to the release branch of a studied system to ensure that activities that we study correspond to the development and maintenance of the official software releases.
 Finally, one must identify and label modules as defective if they have been affected by code changes that address issue reports that were classified as defects after the software is released (i.e., post-release defects).
 On the other hand, modules that are not changed to address any issue reports are labelled as clean.</p>
+<div class="figure align-default" id="data-preparation">
+<img alt="../_images/data-preparation.png" src="../_images/data-preparation.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">An overview of defect data preparation steps.</span><a class="headerlink" href="#data-preparation" title="Permalink to this image">¶</a></p>
+</div>
 <p>Prior studies proposed several approaches to identify post-release defects, which we describe below.</p>
+<div class="figure align-default" id="defect-labelling">
+<img alt="../_images/defect-labelling.png" src="../_images/defect-labelling.png" />
+<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">An illustrative example of defect identification approaches, where ID indicates an issue report ID, v indicates affected release(s), C indicates a commit hash, indicates changed file(s), and the grey area indicates the 6-month period after a release of interest (i.e., Release 1.0).</span><a class="headerlink" href="#defect-labelling" title="Permalink to this image">¶</a></p>
+</div>
 <div class="section" id="the-heuristic-approach">
 <h3>The heuristic approach<a class="headerlink" href="#the-heuristic-approach" title="Permalink to this headline">¶</a></h3>
 <p>Post-release defects are defined as modules that are changed to address a defect report within a post-release window period (e.g., 6 months) <span id="id42">[<a class="reference internal" href="../References.html#id342"><span>ZPZ07</span></a>,<a class="reference internal" href="../References.html#id64"><span>FPG03</span></a>,<a class="reference internal" href="../References.html#id48"><span>DAmbrosLR10</span></a>,<a class="reference internal" href="../References.html#id49"><span>DAmbrosLR12b</span></a>,<a class="reference internal" href="../References.html#id136"><span>KSA+13</span></a>,<a class="reference internal" href="../References.html#id459"><span>SliwerskiZZ05</span></a>]</span>.

@@ -69,7 +69,7 @@
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Always handle class imbalance" />
 <meta property="og:description" content="Always handle class imbalance  Class Rebalancing Techniques for Software Analytics  A plethora of class rebalancing techniques exist [HG09], e.g., (1) sampling " />
-<meta property="og:image"       content="https://analytics-cookbook.github.io/_static/logo.png" />
+
 
 <meta name="twitter:card" content="summary" />
 
@@ -85,8 +85,6 @@
     
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
   
   
   <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
@@ -374,11 +372,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#boostrap-random-over-sampling-examples-technique-rose">
-     Boostrap Random Over-Sampling Examples Technique (ROSE)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#suggested-readings">
      Suggested Readings
     </a>
@@ -421,7 +414,11 @@ Menardi <span id="id17">[<a class="reference internal" href="../References.html
 resampling technique (ROSE) outperforms other techniques in a
 non-software engineering domain. Thus, we select the ROSE
 technique <span id="id18">[<a class="reference internal" href="../References.html#id178"><span>LMT14</span></a>]</span><span id="id19">[<a class="reference internal" href="../References.html#id195"><span>MT14</span></a>]</span> in our study.</p>
-<p>Below, we provide a description and a discussion of the 4 studied class rebalancing techniques for our study with interactive python tutorials.</p>
+<div class="figure align-default" id="class-imbalance-overview">
+<img alt="../_images/class-imbalance-overview.png" src="../_images/class-imbalance-overview.png" />
+<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">An illustrative overview of the 3 selected class rebalancing techniques.</span><a class="headerlink" href="#class-imbalance-overview" title="Permalink to this image">¶</a></p>
+</div>
+<p>Below, we provide a description and a discussion of the 3 selected class rebalancing techniques for our book with interactive python tutorials.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find a class ratio of the original training dataset</span>
@@ -540,46 +537,6 @@ defective modules with the undersampling the majority clean modules.</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>From the total of 2190 files, there are:
 1095 defective files (50.0%)
 1095 clean files (50.0%)
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="boostrap-random-over-sampling-examples-technique-rose">
-<h3>Boostrap Random Over-Sampling Examples Technique (ROSE)<a class="headerlink" href="#boostrap-random-over-sampling-examples-technique-rose" title="Permalink to this headline">¶</a></h3>
-<p>The ROSE technique <span id="id21">[<a class="reference internal" href="../References.html#id178"><span>LMT14</span></a>]</span> uses a smoothed-bootstrapping
-approach to draw artificial samples from the feature space neighbourhood
-around the minority class <span id="id22">[<a class="reference internal" href="../References.html#id58"><span>ET93</span></a>]</span>. ROSE combines oversampling and
-undersampling by generating an augmented sample of the data (especially
-belonging to the rare class). The ROSE technique consists of four steps:</p>
-<ol class="simple">
-<li><p>Resample the data of the majority class using a bootstrap resampling
-technique to remove modules of the majority class to a defective
-ratio of 50% (undersampling).</p></li>
-<li><p>Resample the data of the minority class using a bootstrap resampling
-technique to repeat modules of the minority class to a defective
-ratio of 50% (oversampling).</p></li>
-<li><p>Combine the data of the majority and minority classes from Steps 1 and 2 into a new training sample.</p></li>
-<li><p>Generate a new synthetic data for both the majority and minority
-classes in its neighborhood <span id="id23">[<a class="reference internal" href="../References.html#id195"><span>MT14</span></a>]</span> based on the
-combined data from Step 3. The shape of the neighborhood is
-determined by the kernel density function with a Gaussian kernel <span class="math notranslate nohighlight">\(K\)</span>
-and a smoothing matrix <span class="math notranslate nohighlight">\(\textbf{H}\)</span> with a <span class="math notranslate nohighlight">\(d\)</span> dimension (i.e., <span class="math notranslate nohighlight">\(d\)</span>
-is the number of independent variables), where <span class="math notranslate nohighlight">\(\textbf{H}=diag(h_1,...,h_d)\)</span> and <span class="math notranslate nohighlight">\(h_d\)</span> is defined as follows:
-<br />
-$<span class="math notranslate nohighlight">\(h_q = \Bigg(\frac{4}{(d+2)n}\Bigg)^{1/(d+4)} \times \hat{\sigma}_q ; q = 1,...,d.\)</span><span class="math notranslate nohighlight">\(
-, where \)</span>\hat{\sigma}_q<span class="math notranslate nohighlight">\( is the standard deviation of the \)</span>q^{th}$
-dimension of the observations belonging to a given
-class <span id="id24">[<a class="reference internal" href="../References.html#id195"><span>MT14</span></a>]</span>.</p></li>
-</ol>
-<p>These four steps are repeated for each training sample in order to
-produce a new synthetic training sample of approximately equal size as
-the original dataset where the number of modules for both classes
-equally represent (i.e., a defective ratio of nearly 50%).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Either TODO or Exclude</span>
-<span class="c1"># The python implementation is not available</span>
 </pre></div>
 </div>
 </div>

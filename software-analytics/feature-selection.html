@@ -67,7 +67,7 @@
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Always find the best subset of the most relevant software metrics" />
 <meta property="og:description" content="Always find the best subset of the most relevant software metrics  Feature Selection  Feature selection is a data preprocessing technique for selecting a subset" />
-<meta property="og:image"       content="https://analytics-cookbook.github.io/_static/logo.png" />
+
 
 <meta name="twitter:card" content="summary" />
 
@@ -83,8 +83,6 @@
     
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
   
   
   <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
@@ -478,7 +476,7 @@ according to an evaluation criterion (e.g., AUC).</p>
 <span class="n">rfe</span> <span class="o">=</span> <span class="n">RFE</span><span class="p">(</span><span class="n">rf_model</span><span class="p">,</span> <span class="n">n_features_to_select</span> <span class="o">=</span> <span class="n">top_k</span><span class="p">)</span>
 <span class="n">rfe_fit</span> <span class="o">=</span> <span class="n">rfe</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 <span class="n">rfe_features</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">compress</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">rfe_fit</span><span class="o">.</span><span class="n">support_</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Top-k ( k =&#39;</span><span class="p">,</span> <span class="n">top_k</span><span class="p">,</span> <span class="s1">&#39;) according to the RFE teachnique are as follows:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Top-k (k =&#39;</span><span class="p">,</span> <span class="n">top_k</span><span class="p">,</span> <span class="s1">&#39;) according to the RFE teachnique are as follows:&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rfe_features</span><span class="p">)</span>
 </pre></div>
 </div>
