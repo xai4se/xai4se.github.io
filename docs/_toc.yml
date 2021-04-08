@@ -8,7 +8,7 @@
   chapters:      
   - file: start/index.ipynb
   - file: start/software-quality-assurance.ipynb
-  - file: start/defect-prediction.ipynbs
+  - file: start/defect-prediction.ipynb
   
 - part: 'Part1-Software Analytics Recipes'
   chapters:      
