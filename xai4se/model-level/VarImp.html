@@ -241,6 +241,18 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../references.html">
+   1. References
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -378,7 +390,7 @@ below.</p>
 <p><strong>Gini Importance (a.k.a. MeanDecreaseGini)</strong> determines the importance
 of metrics from the decrease of the Gini Index, i.e., the distinguishing
 power for the defective class due to a given
-metric <span id="id1">[<a class="reference internal" href="../../References.html#id30"><span>Bre01</span></a>]</span>. We start from a random
+metric <span id="id1">[<a class="reference internal" href="../../references.html#id30"><span>Bre01</span></a>]</span>. We start from a random
 forest model that is constructed using the original dataset with
 multiple trees, where each tree is constructed using a bootstrap sample.
 For each tree, a parent node (i.e., <span class="math notranslate nohighlight">\(G_{\mathrm{Parent}}\)</span>) is split by
@@ -405,7 +417,7 @@ scores for the Gini Importance.</p>
 <p><strong>Permutation Importance (a.k.a. MeanDecreaseAccuracy)</strong> determines the
 importance of metrics from the decrease of the accuracy (i.e., the
 misclassification rate) when the values of a given metric are randomly
-permuted <span id="id2">[<a class="reference internal" href="../../References.html#id30"><span>Bre01</span></a>]</span>. Similar to
+permuted <span id="id2">[<a class="reference internal" href="../../references.html#id30"><span>Bre01</span></a>]</span>. Similar to
 MeanDecreaseGini, we start from a random forest model that is
 constructed using an original dataset with multiple trees, where each
 tree is constructed using an out-of-sample bootstrap. The calculation of

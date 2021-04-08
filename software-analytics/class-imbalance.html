@@ -241,6 +241,18 @@
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   1. References
+  </a>
+ </li>
+</ul>
 
 </nav> <!-- To handle the deprecated key -->
 
@@ -394,19 +406,19 @@
 <h1><span class="section-number">2. </span>Always handle class imbalance<a class="headerlink" href="#always-handle-class-imbalance" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="class-rebalancing-techniques-for-software-analytics">
 <h2><span class="section-number">2.1. </span>Class Rebalancing Techniques for Software Analytics<a class="headerlink" href="#class-rebalancing-techniques-for-software-analytics" title="Permalink to this headline">¶</a></h2>
-<p>A plethora of class rebalancing techniques exist <span id="id1">[<a class="reference internal" href="../References.html#id99"><span>HG09</span></a>]</span>,
+<p>A plethora of class rebalancing techniques exist <span id="id1">[<a class="reference internal" href="../references.html#id99"><span>HG09</span></a>]</span>,
 e.g., (1) sampling methods for imbalanced learning, (2) cost-sensitive
 methods for imbalanced learning, (3) kernel-based methods for imbalanced
 learning, and (4) active learning for imbalanced learning. Since it is
 impractical to study all of these techniques, we select a manageable set
 of class rebalancing techniques for our study. As discussed by
-He <span id="id2">[<a class="reference internal" href="../References.html#id99"><span>HG09</span></a>]</span>, we start from the four families of imbalance
-learning techniques. Based on a literature surveys by Hall <em>et al.</em> <span id="id3">[<a class="reference internal" href="../References.html#id88"><span>HBB+12</span></a>]</span>,
-Shihab <span id="id4">[<a class="reference internal" href="../References.html#id276"><span>Shi12</span></a>]</span>, and Nam <span id="id5">[<a class="reference internal" href="../References.html#id226"><span>Nam14</span></a>]</span>, we then select only the
+He <span id="id2">[<a class="reference internal" href="../references.html#id99"><span>HG09</span></a>]</span>, we start from the four families of imbalance
+learning techniques. Based on a literature surveys by Hall <em>et al.</em> <span id="id3">[<a class="reference internal" href="../references.html#id88"><span>HBB+12</span></a>]</span>,
+Shihab <span id="id4">[<a class="reference internal" href="../references.html#id276"><span>Shi12</span></a>]</span>, and Nam <span id="id5">[<a class="reference internal" href="../references.html#id226"><span>Nam14</span></a>]</span>, we then select only the
 family of sampling techniques for the context of defect prediction.</p>
 <p>We first select the three commonly-used techniques (i.e., over-sampling,
-under-sampling, and Default SMOTE <span id="id6">[<a class="reference internal" href="../References.html#id41"><span>CBHK02</span></a>]</span>) that were
-previously used in the literature <span id="id7">[<a class="reference internal" href="../References.html#id133"><span>KameiMondenMatsumoto+07</span></a>]</span><span id="id8">[<a class="reference internal" href="../References.html#id142"><span>KGS10</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id238"><span>PD07</span></a>]</span><span id="id10">[<a class="reference internal" href="../References.html#id271"><span>SKVanHulseF14</span></a>]</span><span id="id11">[<a class="reference internal" href="../References.html#id287"><span>TTDM15</span></a>]</span><span id="id12">[<a class="reference internal" href="../References.html#id320"><span>WY13</span></a>]</span><span id="id13">[<a class="reference internal" href="../References.html#id331"><span>XLS+15</span></a>]</span><span id="id14">[<a class="reference internal" href="../References.html#id333"><span>YLH+16</span></a>]</span><span id="id15">[<a class="reference internal" href="../References.html#id334"><span>YLX+17</span></a>]</span></p>
+under-sampling, and Default SMOTE <span id="id6">[<a class="reference internal" href="../references.html#id41"><span>CBHK02</span></a>]</span>) that were
+previously used in the literature <span id="id7">[<a class="reference internal" href="../references.html#id133"><span>KameiMondenMatsumoto+07</span></a>]</span><span id="id8">[<a class="reference internal" href="../references.html#id142"><span>KGS10</span></a>]</span><span id="id9">[<a class="reference internal" href="../references.html#id238"><span>PD07</span></a>]</span><span id="id10">[<a class="reference internal" href="../references.html#id271"><span>SKVanHulseF14</span></a>]</span><span id="id11">[<a class="reference internal" href="../references.html#id287"><span>TTDM15</span></a>]</span><span id="id12">[<a class="reference internal" href="../references.html#id320"><span>WY13</span></a>]</span><span id="id13">[<a class="reference internal" href="../references.html#id331"><span>XLS+15</span></a>]</span><span id="id14">[<a class="reference internal" href="../references.html#id333"><span>YLH+16</span></a>]</span><span id="id15">[<a class="reference internal" href="../references.html#id334"><span>YLX+17</span></a>]</span></p>
 <div class="figure align-default" id="class-imbalance-overview">
 <img alt="../_images/class-imbalance-overview.png" src="../_images/class-imbalance-overview.png" />
 <p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">An illustrative overview of the 3 selected class rebalancing techniques.</span><a class="headerlink" href="#class-imbalance-overview" title="Permalink to this image">¶</a></p>
@@ -497,7 +509,7 @@ lose important information pertaining to the majority class.</p>
 </div>
 <div class="section" id="synthetic-minority-oversampling-technique-smote">
 <h3>Synthetic Minority Oversampling Technique (SMOTE)<a class="headerlink" href="#synthetic-minority-oversampling-technique-smote" title="Permalink to this headline">¶</a></h3>
-<p>The SMOTE technique <span id="id16">[<a class="reference internal" href="../References.html#id41"><span>CBHK02</span></a>]</span> was proposed to combat the
+<p>The SMOTE technique <span id="id16">[<a class="reference internal" href="../references.html#id41"><span>CBHK02</span></a>]</span> was proposed to combat the
 disavantages of the simple over-sampling and under-sampling techniques.
 The SMOTE technique creates artificial data based on the feature space
 (rather than the data space) similarities from the minority modules. The
