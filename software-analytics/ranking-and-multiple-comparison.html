@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>10. Model Ranking and Multiple Comparison &#8212; The Actionable Software Analytics Cookbook</title>
+    <title>7. Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison &#8212; The Software Analytics Cookbook</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -47,16 +47,18 @@
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://analytics-cookbook.github.io/software-analytics/ranking-and-multiple-comparison.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1. Introduction" href="../xai4se/index.html" />
-    <link rel="prev" title="9. Always evaluate using business-driven measures" href="evaluation-measures.html" />
+    <link rel="prev" title="6. Always evaluate using business-driven measures" href="evaluation-measures.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -65,8 +67,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://analytics-cookbook.github.io/software-analytics/ranking-and-multiple-comparison.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Model Ranking and Multiple Comparison" />
-<meta property="og:description" content="Model Ranking and Multiple Comparison" />
+<meta property="og:title"       content="Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison" />
+<meta property="og:description" content="Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison  The Non-Parametric ScottKnott ESD (NPSK) test is a multiple comparison approach that levera" />
 <meta property="og:image"       content="https://analytics-cookbook.github.io/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -87,7 +89,7 @@
   <img src="../_static/logo.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">The Actionable Software Analytics Cookbook</h1>
+  <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -97,64 +99,71 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <p class="caption collapsible-parent">
  <span class="caption-text">
-  Software Analytics Recipes
+  Getting Started
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
+  <a class="reference internal" href="../start/index.html">
    1. Software Analytics in a Nutshell
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="feature-selection.html">
-   2. Always find the best subset of the most relevant software metrics
+  <a class="reference internal" href="../start/software-quality-assurance.html">
+   2. Software Quality Assurance
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="correlation-analysis.html">
-   3. Always handle collinearity and multicollinearity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="class-imbalance.html">
-   4. Always handle class imbalance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="hypothesis-testing.html">
-   5. Avoid feature selection if the goal is to derive actionable insights
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="classification.html">
-   6. Always find the best classification technique
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="parameter-settings.html">
-   7. Always optimize hyperparameter settings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="model-validation.html">
-   8. Model Validation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="evaluation-measures.html">
-   9. Always evaluate using business-driven measures
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   10. Model Ranking and Multiple Comparison
+  <a class="reference internal" href="../start/defect-prediction.html">
+   3. Defect Prediction Models
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Towards Explainable AI for SE
+  Part1-Software Analytics Recipes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="correlation-analysis.html">
+   1. Always handle collinearity and multicollinearity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="class-imbalance.html">
+   2. Always handle class imbalance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification.html">
+   3. Always find the best classification technique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="parameter-settings.html">
+   4. Always optimize hyperparameter settings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="model-validation.html">
+   5. Avoid using testing dataset in model training
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="evaluation-measures.html">
+   6. Always evaluate using business-driven measures
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   7. Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Part2-Explainable AI for SE
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -224,18 +233,13 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Case Study Examples
+  Part3-Case Study Examples
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../examples/defect-prediction.html">
    1. Defect Prediction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../examples/effort-estimation.html">
-   2. Effort Estimation Datasets
   </a>
  </li>
 </ul>
@@ -334,9 +338,6 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -346,6 +347,21 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#suggested-readings">
+   7.1. Suggested Readings
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -354,15 +370,32 @@
         
               <div>
                 
-  <div class="section" id="model-ranking-and-multiple-comparison">
-<h1><span class="section-number">10. </span>Model Ranking and Multiple Comparison<a class="headerlink" href="#model-ranking-and-multiple-comparison" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="using-a-non-parametric-scott-knott-esd-test-for-multiple-comparison">
+<h1><span class="section-number">7. </span>Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison<a class="headerlink" href="#using-a-non-parametric-scott-knott-esd-test-for-multiple-comparison" title="Permalink to this headline">¶</a></h1>
+<p>The Non-Parametric ScottKnott ESD (NPSK) test is a multiple comparison approach that leverages a hierarchical clustering to partition the set of median values of techniques (e.g., medians of variable importance scores, medians of model performance) into statistically distinct groups with non-negligible difference. The Non-Parametric ScottKnott ESD (NPSK) does not require the assumptions of normal distributions, homogeneous distributions, and the minimum sample size. The mechanism of the Non-Parametric Scott-Knott ESD test is made up of 2 steps:</p>
+<ul class="simple">
+<li><p><strong>(Step 1) Find a partition that maximizes treatment medians between groups.</strong> We begin by sorting the median value of the distributions. Then, we compute the Kruskal Chisq statistics to identify a partition that maximizes the median values between groups. The Kruskal Chisq test is a non-parametric test, which does not require data normality and data heterogeneity assumptions.</p></li>
+<li><p><strong>(Step 2) Splitting into two groups or merging into one group.</strong> We analyze the magnitude of the difference for each pair for all of the treatment medians of the two groups. If there is any one pair of treatment medians of two groups are non-negligible, we split into two groups. Otherwise, we merge into one group. We use the Cliff <span class="math notranslate nohighlight">\(|\delta|\)</span> effect size to estimate the effect size of the difference between the two medians.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Parts of this chapter have been published by Chakkrit Tantithamthavorn, Shane McIntosh, Ahmed E. Hassan, Kenichi Matsumoto:
+An Empirical Comparison of Model Validation Techniques for Defect Prediction Models. IEEE Trans. Software Eng. 43(1): 1-18 (2017).</p>
+</div>
+<div class="section" id="suggested-readings">
+<h2><span class="section-number">7.1. </span>Suggested Readings<a class="headerlink" href="#suggested-readings" title="Permalink to this headline">¶</a></h2>
+<p>[1] Chakkrit Tantithamthavorn, Shane McIntosh, Ahmed E. Hassan, Kenichi Matsumoto:
+An Empirical Comparison of Model Validation Techniques for Defect Prediction Models. IEEE Trans. Software Eng. 43(1): 1-18 (2017)</p>
+<p>[2] Chakkrit Tantithamthavorn, Shane McIntosh, Ahmed E. Hassan, Kenichi Matsumoto:
+The Impact of Automated Parameter Optimization on Defect Prediction Models. IEEE Trans. Software Eng. 45(7): 683-711 (2019)</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "analytics-cookbook/analytics-cookbook.github.io",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -383,7 +416,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="evaluation-measures.html" title="previous page"><span class="section-number">9. </span>Always evaluate using business-driven measures</a>
+    <a class='left-prev' id="prev-link" href="evaluation-measures.html" title="previous page"><span class="section-number">6. </span>Always evaluate using business-driven measures</a>
     <a class='right-next' id="next-link" href="../xai4se/index.html" title="next page"><span class="section-number">1. </span>Introduction</a>
 
         </div>
@@ -394,7 +427,7 @@
     <div class="container">
       <p>
         
-          By Authors<br/>
+          By Chakkrit Tantithamthavorn and Jirayus Jiarpakdee<br/>
         
             &copy; Copyright 2020.<br/>
       </p>

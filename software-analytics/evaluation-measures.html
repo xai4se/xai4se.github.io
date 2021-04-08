@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>9. Always evaluate using business-driven measures &#8212; The Actionable Software Analytics Cookbook</title>
+    <title>6. Always evaluate using business-driven measures &#8212; The Software Analytics Cookbook</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -47,16 +47,16 @@
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://analytics-cookbook.github.io/software-analytics/evaluation-measures.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="10. Model Ranking and Multiple Comparison" href="ranking-and-multiple-comparison.html" />
-    <link rel="prev" title="8. Model Validation" href="model-validation.html" />
+    <link rel="next" title="7. Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison" href="ranking-and-multiple-comparison.html" />
+    <link rel="prev" title="5. Avoid using testing dataset in model training" href="model-validation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -87,7 +87,7 @@
   <img src="../_static/logo.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">The Actionable Software Analytics Cookbook</h1>
+  <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -97,64 +97,71 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <p class="caption collapsible-parent">
  <span class="caption-text">
-  Software Analytics Recipes
+  Getting Started
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
+  <a class="reference internal" href="../start/index.html">
    1. Software Analytics in a Nutshell
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="feature-selection.html">
-   2. Always find the best subset of the most relevant software metrics
+  <a class="reference internal" href="../start/software-quality-assurance.html">
+   2. Software Quality Assurance
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="correlation-analysis.html">
-   3. Always handle collinearity and multicollinearity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="class-imbalance.html">
-   4. Always handle class imbalance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="hypothesis-testing.html">
-   5. Avoid feature selection if the goal is to derive actionable insights
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="classification.html">
-   6. Always find the best classification technique
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="parameter-settings.html">
-   7. Always optimize hyperparameter settings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="model-validation.html">
-   8. Model Validation
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   9. Always evaluate using business-driven measures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ranking-and-multiple-comparison.html">
-   10. Model Ranking and Multiple Comparison
+  <a class="reference internal" href="../start/defect-prediction.html">
+   3. Defect Prediction Models
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Towards Explainable AI for SE
+  Part1-Software Analytics Recipes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="correlation-analysis.html">
+   1. Always handle collinearity and multicollinearity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="class-imbalance.html">
+   2. Always handle class imbalance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification.html">
+   3. Always find the best classification technique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="parameter-settings.html">
+   4. Always optimize hyperparameter settings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="model-validation.html">
+   5. Avoid using testing dataset in model training
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   6. Always evaluate using business-driven measures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ranking-and-multiple-comparison.html">
+   7. Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Part2-Explainable AI for SE
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -224,18 +231,13 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Case Study Examples
+  Part3-Case Study Examples
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../examples/defect-prediction.html">
    1. Defect Prediction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../examples/effort-estimation.html">
-   2. Effort Estimation Datasets
   </a>
  </li>
 </ul>
@@ -334,9 +336,6 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -355,7 +354,7 @@
               <div>
                 
   <div class="section" id="always-evaluate-using-business-driven-measures">
-<h1><span class="section-number">9. </span>Always evaluate using business-driven measures<a class="headerlink" href="#always-evaluate-using-business-driven-measures" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6. </span>Always evaluate using business-driven measures<a class="headerlink" href="#always-evaluate-using-business-driven-measures" title="Permalink to this headline">¶</a></h1>
 <p>TODO</p>
 <!-- 
 First, we use the *Brier score* [@Brier1950; @Rufibach2010] to measure
@@ -401,7 +400,7 @@ package [@rms] to calculate the Brier score, calibration slope, and AUC.
     {
         requestKernel: true,
         binderOptions: {
-            repo: "analytics-cookbook/analytics-cookbook.github.io",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -422,8 +421,8 @@ package [@rms] to calculate the Brier score, calibration slope, and AUC.
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="model-validation.html" title="previous page"><span class="section-number">8. </span>Model Validation</a>
-    <a class='right-next' id="next-link" href="ranking-and-multiple-comparison.html" title="next page"><span class="section-number">10. </span>Model Ranking and Multiple Comparison</a>
+    <a class='left-prev' id="prev-link" href="model-validation.html" title="previous page"><span class="section-number">5. </span>Avoid using testing dataset in model training</a>
+    <a class='right-next' id="next-link" href="ranking-and-multiple-comparison.html" title="next page"><span class="section-number">7. </span>Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison</a>
 
         </div>
         
@@ -433,7 +432,7 @@ package [@rms] to calculate the Brier score, calibration slope, and AUC.
     <div class="container">
       <p>
         
-          By Authors<br/>
+          By Chakkrit Tantithamthavorn and Jirayus Jiarpakdee<br/>
         
             &copy; Copyright 2020.<br/>
       </p>

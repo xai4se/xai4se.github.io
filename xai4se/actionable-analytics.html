@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5. Please Tell Me What To Do! &#8212; The Actionable Software Analytics Cookbook</title>
+    <title>5. Please Tell Me What To Do! &#8212; The Software Analytics Cookbook</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -47,9 +47,9 @@
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://analytics-cookbook.github.io/xai4se/actionable-analytics.html" />
@@ -87,7 +87,7 @@
   <img src="../_static/logo.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">The Actionable Software Analytics Cookbook</h1>
+  <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -97,64 +97,71 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <p class="caption collapsible-parent">
  <span class="caption-text">
-  Software Analytics Recipes
+  Getting Started
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/index.html">
+  <a class="reference internal" href="../start/index.html">
    1. Software Analytics in a Nutshell
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/feature-selection.html">
-   2. Always find the best subset of the most relevant software metrics
+  <a class="reference internal" href="../start/software-quality-assurance.html">
+   2. Software Quality Assurance
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/correlation-analysis.html">
-   3. Always handle collinearity and multicollinearity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/class-imbalance.html">
-   4. Always handle class imbalance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/hypothesis-testing.html">
-   5. Avoid feature selection if the goal is to derive actionable insights
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/classification.html">
-   6. Always find the best classification technique
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/parameter-settings.html">
-   7. Always optimize hyperparameter settings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/model-validation.html">
-   8. Model Validation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/evaluation-measures.html">
-   9. Always evaluate using business-driven measures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/ranking-and-multiple-comparison.html">
-   10. Model Ranking and Multiple Comparison
+  <a class="reference internal" href="../start/defect-prediction.html">
+   3. Defect Prediction Models
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Towards Explainable AI for SE
+  Part1-Software Analytics Recipes
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/correlation-analysis.html">
+   1. Always handle collinearity and multicollinearity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/class-imbalance.html">
+   2. Always handle class imbalance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/classification.html">
+   3. Always find the best classification technique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/parameter-settings.html">
+   4. Always optimize hyperparameter settings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/model-validation.html">
+   5. Avoid using testing dataset in model training
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/evaluation-measures.html">
+   6. Always evaluate using business-driven measures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/ranking-and-multiple-comparison.html">
+   7. Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Part2-Explainable AI for SE
  </span>
 </p>
 <ul class="current nav sidenav_l1">
@@ -224,18 +231,13 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Case Study Examples
+  Part3-Case Study Examples
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../examples/defect-prediction.html">
    1. Defect Prediction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../examples/effort-estimation.html">
-   2. Effort Estimation Datasets
   </a>
  </li>
 </ul>
@@ -334,9 +336,6 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -373,7 +372,7 @@
 <h1><span class="section-number">5. </span>Please Tell Me What To Do!<a class="headerlink" href="#please-tell-me-what-to-do" title="Permalink to this headline">¶</a></h1>
 <p>We discuss some initial evidence from a successful case study of using
 Explainable AI for Software Engineering in the context of software
-defect prediction <span id="id1">[<a class="reference internal" href="../References.html#id34"><span>RTJ+21</span></a>]</span>.</p>
+defect prediction <span id="id1">[<a class="reference internal" href="../References.html#id252"><span>RTJ+21</span></a>]</span>.</p>
 <p><strong>Background.</strong> In today’s increasingly digitalized world, software
 defects are widespread and enormously expensive, but they are very hard
 to detect, predict, and prevent. Thus, a failure to eliminate software
@@ -391,7 +390,7 @@ software quality assurance resources on the most risky files/commits.</p>
 <p><strong>Gaps.</strong> However, developers often do not understand why a file is
 being predicted as defective. In addition, such predictions and global
 explanations are still often not
-actionable <span id="id2">[<a class="reference internal" href="../References.html#id29"><span>JTH19</span></a>]</span>—i.e., developers do not know what
+actionable <span id="id2">[<a class="reference internal" href="../References.html#id123"><span>JTH19</span></a>]</span>—i.e., developers do not know what
 to actually do – or what to avoid doing – in order to improve the
 quality of the software system. These limitations often lead to a lack
 of trust in the predictions, hindering the adoption of defect prediction
@@ -408,7 +407,7 @@ of such actionable guidance remains an extremely challenging problem,
 often leading to ineffective software quality improvement plans.</p>
 <p><strong>Approach.</strong> To generate actionable guidance, we used a rule-based
 model-agnostic technique to generate a rule-based explanation for each
-prediction of defect prediction models <span id="id3">[<a class="reference internal" href="../References.html#id34"><span>RTJ+21</span></a>]</span>. We
+prediction of defect prediction models <span id="id3">[<a class="reference internal" href="../References.html#id252"><span>RTJ+21</span></a>]</span>. We
 first build file-level defect prediction models that are trained using
 traditional software features (e.g., lines of code, code complexity, the
 number of developers who edited a file) with a random forest
@@ -459,11 +458,11 @@ our approach.</p>
 <p>Based on these findings, we summarise our key lessons learned:</p>
 <ol class="simple">
 <li><p>Explainable AI is very important in software engineering, but is
-still under-researched <span id="id4">[<a class="reference internal" href="../References.html#id31"><span>JTG21</span></a>]</span>.</p></li>
+still under-researched <span id="id4">[<a class="reference internal" href="../References.html#id128"><span>JTG21</span></a>]</span>.</p></li>
 <li><p>Explainable AI techniques can be used in software engineering to
 provide explanations of the predictions and actionable guidance to
-support software engineering tasks <span id="id5">[<a class="reference internal" href="../References.html#id34"><span>RTJ+21</span></a>]</span>.
-Other initial successful evidence can be found at <span id="id6">[<a class="reference internal" href="../References.html#id47"><span>CFKM18</span></a>]</span><span id="id7">[<a class="reference internal" href="../References.html#id45"><span>JTDG20</span></a>]</span><span id="id8">[<a class="reference internal" href="../References.html#id48"><span>KM20</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id49"><span>PM21</span></a>]</span><span id="id10">[<a class="reference internal" href="../References.html#id46"><span>WTT+20</span></a>]</span>.</p></li>
+support software engineering tasks <span id="id5">[<a class="reference internal" href="../References.html#id252"><span>RTJ+21</span></a>]</span>.
+Other initial successful evidence can be found at <span id="id6">[<a class="reference internal" href="../References.html#id44"><span>CFKM18</span></a>]</span><span id="id7">[<a class="reference internal" href="../References.html#id127"><span>JTDG20b</span></a>]</span><span id="id8">[<a class="reference internal" href="../References.html#id159"><span>KM20</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id242"><span>PM21</span></a>]</span><span id="id10">[<a class="reference internal" href="../References.html#id329"><span>WTT+20</span></a>]</span>.</p></li>
 </ol>
 <p>However, there are several open research questions that remain largely
 unexplored:</p>
@@ -496,7 +495,7 @@ Engineering).</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "analytics-cookbook/analytics-cookbook.github.io",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -528,7 +527,7 @@ Engineering).</p>
     <div class="container">
       <p>
         
-          By Authors<br/>
+          By Chakkrit Tantithamthavorn and Jirayus Jiarpakdee<br/>
         
             &copy; Copyright 2020.<br/>
       </p>

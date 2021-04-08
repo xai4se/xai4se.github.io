@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.1. ANOVA analysis &#8212; The Actionable Software Analytics Cookbook</title>
+    <title>3.1. ANOVA analysis &#8212; The Software Analytics Cookbook</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -47,9 +47,9 @@
     <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -89,7 +89,7 @@
   <img src="../../_static/logo.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">The Actionable Software Analytics Cookbook</h1>
+  <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -99,64 +99,71 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <p class="caption collapsible-parent">
  <span class="caption-text">
-  Software Analytics Recipes
+  Getting Started
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../software-analytics/index.html">
+  <a class="reference internal" href="../../start/index.html">
    1. Software Analytics in a Nutshell
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../software-analytics/feature-selection.html">
-   2. Always find the best subset of the most relevant software metrics
+  <a class="reference internal" href="../../start/software-quality-assurance.html">
+   2. Software Quality Assurance
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../software-analytics/correlation-analysis.html">
-   3. Always handle collinearity and multicollinearity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../software-analytics/class-imbalance.html">
-   4. Always handle class imbalance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../software-analytics/hypothesis-testing.html">
-   5. Avoid feature selection if the goal is to derive actionable insights
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../software-analytics/classification.html">
-   6. Always find the best classification technique
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../software-analytics/parameter-settings.html">
-   7. Always optimize hyperparameter settings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../software-analytics/model-validation.html">
-   8. Model Validation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../software-analytics/evaluation-measures.html">
-   9. Always evaluate using business-driven measures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../software-analytics/ranking-and-multiple-comparison.html">
-   10. Model Ranking and Multiple Comparison
+  <a class="reference internal" href="../../start/defect-prediction.html">
+   3. Defect Prediction Models
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Towards Explainable AI for SE
+  Part1-Software Analytics Recipes
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../software-analytics/correlation-analysis.html">
+   1. Always handle collinearity and multicollinearity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../software-analytics/class-imbalance.html">
+   2. Always handle class imbalance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../software-analytics/classification.html">
+   3. Always find the best classification technique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../software-analytics/parameter-settings.html">
+   4. Always optimize hyperparameter settings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../software-analytics/model-validation.html">
+   5. Avoid using testing dataset in model training
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../software-analytics/evaluation-measures.html">
+   6. Always evaluate using business-driven measures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../software-analytics/ranking-and-multiple-comparison.html">
+   7. Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Part2-Explainable AI for SE
  </span>
 </p>
 <ul class="current nav sidenav_l1">
@@ -226,18 +233,13 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Case Study Examples
+  Part3-Case Study Examples
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../examples/defect-prediction.html">
    1. Defect Prediction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../examples/effort-estimation.html">
-   2. Effort Estimation Datasets
   </a>
  </li>
 </ul>
@@ -336,9 +338,6 @@
                     src="../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -376,7 +375,7 @@
 <p>Analysis of Variance (a.k.a. multi-way ANOVA) is a statistical test that
 examines the importance of multiple independent variables (e.g., two or
 more software metrics) on the outcome (e.g.,
-defect-proneness) <span id="id1">[<a class="reference internal" href="../../References.html#id3"><span>Fis25</span></a>]</span>. The significance of each
+defect-proneness) <span id="id1">[<a class="reference internal" href="../../References.html#id67"><span>Fis25</span></a>]</span>. The significance of each
 metric in a regression model is estimated from the calculation of the
 Sum of Squares (SS)—i.e., the explained variance of the observations
 with respect to their mean value. There are two commonly-used approaches
@@ -385,7 +384,7 @@ We provide a description of the two types of ANOVA below.</p>
 <p><strong>Type-I</strong>, <em>one of the most commonly-used interpretation techniques and
 the default interpretation technique for a logistic regression (<code class="docutils literal notranslate"><span class="pre">glm</span></code>)
 model in R</em>, examines the importance of each metric in a sequential
-order <span id="id2">[<a class="reference internal" href="../../References.html#id13"><span>Cha92</span></a>]</span><span id="id3">[<a class="reference internal" href="../../References.html#id5"><span>Fox15</span></a>]</span>. In other words,
+order <span id="id2">[<a class="reference internal" href="../../References.html#id42"><span>Cha92</span></a>]</span><span id="id3">[<a class="reference internal" href="../../References.html#id72"><span>Fox15</span></a>]</span>. In other words,
 Type-I measures the improvement of the Residual Sum of Squares (RSS)
 (i.e., the unexplained variance) when each metric is sequentially added
 into the model. Hence, Type-I attributes as much variance as it can to
@@ -410,7 +409,7 @@ equation.</p>
 <p><strong>Type II</strong>, an enhancement to the ANOVA Type-I, examines the importance
 of each metric in a hierarchical nature, i.e., the ordering of metrics
 is rearranged for each
-examination <span id="id4">[<a class="reference internal" href="../../References.html#id13"><span>Cha92</span></a>]</span><span id="id5">[<a class="reference internal" href="../../References.html#id5"><span>Fox15</span></a>]</span>. The importance
+examination <span id="id4">[<a class="reference internal" href="../../References.html#id42"><span>Cha92</span></a>]</span><span id="id5">[<a class="reference internal" href="../../References.html#id72"><span>Fox15</span></a>]</span>. The importance
 of metrics (Type-II) measures the improvement of the Residual Sum of
 Squares (RSS) (i.e., the unexplained variance) when adding a metric
 under examination to the model after the other metrics. In other words,
@@ -520,7 +519,7 @@ set of the other metrics except the metric under examination.</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "analytics-cookbook/analytics-cookbook.github.io",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -552,7 +551,7 @@ set of the other metrics except the metric under examination.</p>
     <div class="container">
       <p>
         
-          By Authors<br/>
+          By Chakkrit Tantithamthavorn and Jirayus Jiarpakdee<br/>
         
             &copy; Copyright 2020.<br/>
       </p>

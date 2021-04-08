@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Always handle class imbalance &#8212; The Actionable Software Analytics Cookbook</title>
+    <title>2. Always handle class imbalance &#8212; The Software Analytics Cookbook</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -47,9 +47,9 @@
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -57,8 +57,8 @@
     <link rel="canonical" href="https://analytics-cookbook.github.io/software-analytics/class-imbalance.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Avoid feature selection if the goal is to derive actionable insights" href="hypothesis-testing.html" />
-    <link rel="prev" title="3. Always handle collinearity and multicollinearity" href="correlation-analysis.html" />
+    <link rel="next" title="3. Always find the best classification technique" href="classification.html" />
+    <link rel="prev" title="1. Always handle collinearity and multicollinearity" href="correlation-analysis.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -89,7 +89,7 @@
   <img src="../_static/logo.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">The Actionable Software Analytics Cookbook</h1>
+  <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -99,64 +99,71 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <p class="caption collapsible-parent">
  <span class="caption-text">
-  Software Analytics Recipes
+  Getting Started
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
+  <a class="reference internal" href="../start/index.html">
    1. Software Analytics in a Nutshell
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="feature-selection.html">
-   2. Always find the best subset of the most relevant software metrics
+  <a class="reference internal" href="../start/software-quality-assurance.html">
+   2. Software Quality Assurance
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="correlation-analysis.html">
-   3. Always handle collinearity and multicollinearity
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   4. Always handle class imbalance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="hypothesis-testing.html">
-   5. Avoid feature selection if the goal is to derive actionable insights
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="classification.html">
-   6. Always find the best classification technique
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="parameter-settings.html">
-   7. Always optimize hyperparameter settings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="model-validation.html">
-   8. Model Validation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="evaluation-measures.html">
-   9. Always evaluate using business-driven measures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ranking-and-multiple-comparison.html">
-   10. Model Ranking and Multiple Comparison
+  <a class="reference internal" href="../start/defect-prediction.html">
+   3. Defect Prediction Models
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Towards Explainable AI for SE
+  Part1-Software Analytics Recipes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="correlation-analysis.html">
+   1. Always handle collinearity and multicollinearity
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Always handle class imbalance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification.html">
+   3. Always find the best classification technique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="parameter-settings.html">
+   4. Always optimize hyperparameter settings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="model-validation.html">
+   5. Avoid using testing dataset in model training
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="evaluation-measures.html">
+   6. Always evaluate using business-driven measures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ranking-and-multiple-comparison.html">
+   7. Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Part2-Explainable AI for SE
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -226,18 +233,13 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Case Study Examples
+  Part3-Case Study Examples
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../examples/defect-prediction.html">
    1. Defect Prediction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../examples/effort-estimation.html">
-   2. Effort Estimation Datasets
   </a>
  </li>
 </ul>
@@ -336,9 +338,6 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -356,7 +355,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#class-rebalancing-techniques-for-software-analytics">
-   4.1. Class Rebalancing Techniques for Software Analytics
+   2.1. Class Rebalancing Techniques for Software Analytics
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -379,6 +378,11 @@
      Boostrap Random Over-Sampling Examples Technique (ROSE)
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#suggested-readings">
+     Suggested Readings
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -394,29 +398,29 @@
               <div>
                 
   <div class="section" id="always-handle-class-imbalance">
-<h1><span class="section-number">4. </span>Always handle class imbalance<a class="headerlink" href="#always-handle-class-imbalance" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>Always handle class imbalance<a class="headerlink" href="#always-handle-class-imbalance" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="class-rebalancing-techniques-for-software-analytics">
-<h2><span class="section-number">4.1. </span>Class Rebalancing Techniques for Software Analytics<a class="headerlink" href="#class-rebalancing-techniques-for-software-analytics" title="Permalink to this headline">¶</a></h2>
-<p>A plethora of class rebalancing techniques exist <span id="id1">[<a class="reference internal" href="../References.html#id4"><span>HG09</span></a>]</span>,
+<h2><span class="section-number">2.1. </span>Class Rebalancing Techniques for Software Analytics<a class="headerlink" href="#class-rebalancing-techniques-for-software-analytics" title="Permalink to this headline">¶</a></h2>
+<p>A plethora of class rebalancing techniques exist <span id="id1">[<a class="reference internal" href="../References.html#id101"><span>HG09</span></a>]</span>,
 e.g., (1) sampling methods for imbalanced learning, (2) cost-sensitive
 methods for imbalanced learning, (3) kernel-based methods for imbalanced
 learning, and (4) active learning for imbalanced learning. Since it is
 impractical to study all of these techniques, we select a manageable set
 of class rebalancing techniques for our study. As discussed by
-He <span id="id2">[<a class="reference internal" href="../References.html#id4"><span>HG09</span></a>]</span>, we start from the four families of imbalance
-learning techniques. Based on a literature surveys by Hall <em>et al.</em> <span id="id3">[<a class="reference internal" href="../References.html#id6"><span>HBB+12</span></a>]</span>,
-Shihab <span id="id4">[<a class="reference internal" href="../References.html#id12"><span>Shi12</span></a>]</span>, and Nam <span id="id5">[<a class="reference internal" href="../References.html#id9"><span>Nam14</span></a>]</span>, we then select only the
+He <span id="id2">[<a class="reference internal" href="../References.html#id101"><span>HG09</span></a>]</span>, we start from the four families of imbalance
+learning techniques. Based on a literature surveys by Hall <em>et al.</em> <span id="id3">[<a class="reference internal" href="../References.html#id90"><span>HBB+12</span></a>]</span>,
+Shihab <span id="id4">[<a class="reference internal" href="../References.html#id280"><span>Shi12</span></a>]</span>, and Nam <span id="id5">[<a class="reference internal" href="../References.html#id229"><span>Nam14</span></a>]</span>, we then select only the
 family of sampling techniques for the context of defect prediction.</p>
 <p>We first select the three commonly-used techniques (i.e., over-sampling,
-under-sampling, and Default SMOTE <span id="id6">[<a class="reference internal" href="../References.html#id10"><span>CBHK02</span></a>]</span>) that were
-previously used in the literature <span id="id7">[<a class="reference internal" href="../References.html#id11"><span>KMM+07</span></a>]</span><span id="id8">[<a class="reference internal" href="../References.html#id14"><span>KGS10</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id7"><span>PD07</span></a>]</span><span id="id10">[<a class="reference internal" href="../References.html#id8"><span>SKVanHulseF14</span></a>]</span><span id="id11">[<a class="reference internal" href="../References.html#id23"><span>TTDM15</span></a>]</span><span id="id12">[<a class="reference internal" href="../References.html#id22"><span>WY13</span></a>]</span><span id="id13">[<a class="reference internal" href="../References.html#id16"><span>XLS+15</span></a>]</span><span id="id14">[<a class="reference internal" href="../References.html#id24"><span>YLH+16</span></a>]</span><span id="id15">[<a class="reference internal" href="../References.html#id15"><span>YLX+17</span></a>]</span>.
+under-sampling, and Default SMOTE <span id="id6">[<a class="reference internal" href="../References.html#id43"><span>CBHK02</span></a>]</span>) that were
+previously used in the literature <span id="id7">[<a class="reference internal" href="../References.html#id135"><span>KMM+07b</span></a>]</span><span id="id8">[<a class="reference internal" href="../References.html#id144"><span>KGS10</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id241"><span>PD07</span></a>]</span><span id="id10">[<a class="reference internal" href="../References.html#id274"><span>SKVanHulseF14</span></a>]</span><span id="id11">[<a class="reference internal" href="../References.html#id291"><span>TTDM15</span></a>]</span><span id="id12">[<a class="reference internal" href="../References.html#id324"><span>WY13</span></a>]</span><span id="id13">[<a class="reference internal" href="../References.html#id335"><span>XLS+15</span></a>]</span><span id="id14">[<a class="reference internal" href="../References.html#id337"><span>YLH+16</span></a>]</span><span id="id15">[<a class="reference internal" href="../References.html#id338"><span>YLX+17</span></a>]</span>.
 Recent research shows that bootstrap resampling techniques tend to
 produce more accurate and reliable estimates in the context of software
-engineering <span id="id16">[<a class="reference internal" href="../References.html#id21"><span>TMHM17</span></a>]</span>. Recently,
-Menardi <span id="id17">[<a class="reference internal" href="../References.html#id20"><span>MT14</span></a>]</span> show that a smoothed bootstrap
+engineering <span id="id16">[<a class="reference internal" href="../References.html#id297"><span>TMHM17b</span></a>]</span>. Recently,
+Menardi <span id="id17">[<a class="reference internal" href="../References.html#id198"><span>MT14</span></a>]</span> show that a smoothed bootstrap
 resampling technique (ROSE) outperforms other techniques in a
 non-software engineering domain. Thus, we select the ROSE
-technique <span id="id18">[<a class="reference internal" href="../References.html#id19"><span>LMT14</span></a>]</span><span id="id19">[<a class="reference internal" href="../References.html#id20"><span>MT14</span></a>]</span> in our study.</p>
+technique <span id="id18">[<a class="reference internal" href="../References.html#id181"><span>LMT14</span></a>]</span><span id="id19">[<a class="reference internal" href="../References.html#id198"><span>MT14</span></a>]</span> in our study.</p>
 <p>Below, we provide a description and a discussion of the 4 studied class rebalancing techniques for our study with interactive python tutorials.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -503,7 +507,7 @@ lose important information pertaining to the majority class.</p>
 </div>
 <div class="section" id="synthetic-minority-oversampling-technique-smote">
 <h3>Synthetic Minority Oversampling Technique (SMOTE)<a class="headerlink" href="#synthetic-minority-oversampling-technique-smote" title="Permalink to this headline">¶</a></h3>
-<p>The SMOTE technique <span id="id20">[<a class="reference internal" href="../References.html#id10"><span>CBHK02</span></a>]</span> was proposed to combat the
+<p>The SMOTE technique <span id="id20">[<a class="reference internal" href="../References.html#id43"><span>CBHK02</span></a>]</span> was proposed to combat the
 disavantages of the simple over-sampling and under-sampling techniques.
 The SMOTE technique creates artificial data based on the feature space
 (rather than the data space) similarities from the minority modules. The
@@ -543,9 +547,9 @@ defective modules with the undersampling the majority clean modules.</p>
 </div>
 <div class="section" id="boostrap-random-over-sampling-examples-technique-rose">
 <h3>Boostrap Random Over-Sampling Examples Technique (ROSE)<a class="headerlink" href="#boostrap-random-over-sampling-examples-technique-rose" title="Permalink to this headline">¶</a></h3>
-<p>The ROSE technique <span id="id21">[<a class="reference internal" href="../References.html#id19"><span>LMT14</span></a>]</span> uses a smoothed-bootstrapping
+<p>The ROSE technique <span id="id21">[<a class="reference internal" href="../References.html#id181"><span>LMT14</span></a>]</span> uses a smoothed-bootstrapping
 approach to draw artificial samples from the feature space neighbourhood
-around the minority class <span id="id22">[<a class="reference internal" href="../References.html#id18"><span>ET93</span></a>]</span>. ROSE combines oversampling and
+around the minority class <span id="id22">[<a class="reference internal" href="../References.html#id60"><span>ET93</span></a>]</span>. ROSE combines oversampling and
 undersampling by generating an augmented sample of the data (especially
 belonging to the rare class). The ROSE technique consists of four steps:</p>
 <ol class="simple">
@@ -557,7 +561,7 @@ technique to repeat modules of the minority class to a defective
 ratio of 50% (oversampling).</p></li>
 <li><p>Combine the data of the majority and minority classes from Steps 1 and 2 into a new training sample.</p></li>
 <li><p>Generate a new synthetic data for both the majority and minority
-classes in its neighborhood <span id="id23">[<a class="reference internal" href="../References.html#id20"><span>MT14</span></a>]</span> based on the
+classes in its neighborhood <span id="id23">[<a class="reference internal" href="../References.html#id198"><span>MT14</span></a>]</span> based on the
 combined data from Step 3. The shape of the neighborhood is
 determined by the kernel density function with a Gaussian kernel <span class="math notranslate nohighlight">\(K\)</span>
 and a smoothing matrix <span class="math notranslate nohighlight">\(\textbf{H}\)</span> with a <span class="math notranslate nohighlight">\(d\)</span> dimension (i.e., <span class="math notranslate nohighlight">\(d\)</span>
@@ -566,7 +570,7 @@ is the number of independent variables), where <span class="math notranslate noh
 $<span class="math notranslate nohighlight">\(h_q = \Bigg(\frac{4}{(d+2)n}\Bigg)^{1/(d+4)} \times \hat{\sigma}_q ; q = 1,...,d.\)</span><span class="math notranslate nohighlight">\(
 , where \)</span>\hat{\sigma}_q<span class="math notranslate nohighlight">\( is the standard deviation of the \)</span>q^{th}$
 dimension of the observations belonging to a given
-class <span id="id24">[<a class="reference internal" href="../References.html#id20"><span>MT14</span></a>]</span>.</p></li>
+class <span id="id24">[<a class="reference internal" href="../References.html#id198"><span>MT14</span></a>]</span>.</p></li>
 </ol>
 <p>These four steps are repeated for each training sample in order to
 produce a new synthetic training sample of approximately equal size as
@@ -580,6 +584,16 @@ equally represent (i.e., a defective ratio of nearly 50%).</p>
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Parts of this chapter have been published by Chakkrit Tantithamthavorn, Ahmed E. Hassan, Kenichi Matsumoto: The Impact of Class Rebalancing Techniques on the Performance and Interpretation of Defect Prediction Models. IEEE Trans. Software Eng. 46(11): 1200-1219 (2020)”</p>
+</div>
+</div>
+<div class="section" id="suggested-readings">
+<h3>Suggested Readings<a class="headerlink" href="#suggested-readings" title="Permalink to this headline">¶</a></h3>
+<p>[1] Chakkrit Tantithamthavorn, Ahmed E. Hassan, Kenichi Matsumoto: The Impact of Class Rebalancing Techniques on the Performance and Interpretation of Defect Prediction Models. IEEE Trans. Software Eng. 46(11): 1200-1219 (2020)”</p>
+<p>[2] Amritanshu Agrawal, Tim Menzies:
+Is “better data” better than “better data miners”?: on the benefits of tuning SMOTE for defect prediction. ICSE 2018: 1050-1061</p>
 </div>
 </div>
 </div>
@@ -588,7 +602,7 @@ equally represent (i.e., a defective ratio of nearly 50%).</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "analytics-cookbook/analytics-cookbook.github.io",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -609,8 +623,8 @@ equally represent (i.e., a defective ratio of nearly 50%).</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="correlation-analysis.html" title="previous page"><span class="section-number">3. </span>Always handle collinearity and multicollinearity</a>
-    <a class='right-next' id="next-link" href="hypothesis-testing.html" title="next page"><span class="section-number">5. </span>Avoid feature selection if the goal is to derive actionable insights</a>
+    <a class='left-prev' id="prev-link" href="correlation-analysis.html" title="previous page"><span class="section-number">1. </span>Always handle collinearity and multicollinearity</a>
+    <a class='right-next' id="next-link" href="classification.html" title="next page"><span class="section-number">3. </span>Always find the best classification technique</a>
 
         </div>
         
@@ -620,7 +634,7 @@ equally represent (i.e., a defective ratio of nearly 50%).</p>
     <div class="container">
       <p>
         
-          By Authors<br/>
+          By Chakkrit Tantithamthavorn and Jirayus Jiarpakdee<br/>
         
             &copy; Copyright 2020.<br/>
       </p>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Explainability in Software Engineering &#8212; The Actionable Software Analytics Cookbook</title>
+    <title>2. Explainability in Software Engineering &#8212; The Software Analytics Cookbook</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -47,9 +47,9 @@
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -89,7 +89,7 @@
   <img src="../_static/logo.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">The Actionable Software Analytics Cookbook</h1>
+  <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -99,64 +99,71 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <p class="caption collapsible-parent">
  <span class="caption-text">
-  Software Analytics Recipes
+  Getting Started
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/index.html">
+  <a class="reference internal" href="../start/index.html">
    1. Software Analytics in a Nutshell
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/feature-selection.html">
-   2. Always find the best subset of the most relevant software metrics
+  <a class="reference internal" href="../start/software-quality-assurance.html">
+   2. Software Quality Assurance
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/correlation-analysis.html">
-   3. Always handle collinearity and multicollinearity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/class-imbalance.html">
-   4. Always handle class imbalance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/hypothesis-testing.html">
-   5. Avoid feature selection if the goal is to derive actionable insights
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/classification.html">
-   6. Always find the best classification technique
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/parameter-settings.html">
-   7. Always optimize hyperparameter settings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/model-validation.html">
-   8. Model Validation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/evaluation-measures.html">
-   9. Always evaluate using business-driven measures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/ranking-and-multiple-comparison.html">
-   10. Model Ranking and Multiple Comparison
+  <a class="reference internal" href="../start/defect-prediction.html">
+   3. Defect Prediction Models
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Towards Explainable AI for SE
+  Part1-Software Analytics Recipes
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/correlation-analysis.html">
+   1. Always handle collinearity and multicollinearity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/class-imbalance.html">
+   2. Always handle class imbalance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/classification.html">
+   3. Always find the best classification technique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/parameter-settings.html">
+   4. Always optimize hyperparameter settings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/model-validation.html">
+   5. Avoid using testing dataset in model training
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/evaluation-measures.html">
+   6. Always evaluate using business-driven measures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/ranking-and-multiple-comparison.html">
+   7. Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Part2-Explainable AI for SE
  </span>
 </p>
 <ul class="current nav sidenav_l1">
@@ -226,18 +233,13 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Case Study Examples
+  Part3-Case Study Examples
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../examples/defect-prediction.html">
    1. Defect Prediction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../examples/effort-estimation.html">
-   2. Effort Estimation Datasets
   </a>
  </li>
 </ul>
@@ -336,9 +338,6 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -419,7 +418,7 @@ explainability. Thus, users can only understand how the model works
 globally (e.g., by inspecting a branch of decision trees). However,
 users often do not understand why the model makes that prediction.</p></li>
 <li><p><strong>“Local Explanability”:</strong> Using model-agnostic techniques (e.g.,
-LIME <span id="id1">[<a class="reference internal" href="../References.html#id27"><span>RSG16</span></a>]</span>) to explain the predictions of the
+LIME <span id="id1">[<a class="reference internal" href="../References.html#id259"><span>RSG16</span></a>]</span>) to explain the predictions of the
 software analytics models (e.g., neural network, random forest).
 Such post-hoc model-agnostic techniques can provide an explanation
 for each prediction (i.e., an instance to be explained). Users can
@@ -432,11 +431,11 @@ models.</p></li>
 <p>According to philosophy, social science, and psychology theories, a
 common definition of <em>explainability or interpretability</em> is <em>the degree
 to which a human can understand the reasons behind a decision or an
-action</em> <span id="id2">[<a class="reference internal" href="../References.html#id30"><span>Mil19</span></a>]</span>. The explainability of AI/ML algorithms can be
+action</em> <span id="id2">[<a class="reference internal" href="../References.html#id215"><span>Mil19</span></a>]</span>. The explainability of AI/ML algorithms can be
 achieved by (1) making the entire decision-making process transparent
 and comprehensible and (2) explicitly providing an explanation for each
-decision <span id="id3">[<a class="reference internal" href="../References.html#id32"><span>Lip18</span></a>]</span> (since an explanation is not likely applicable to
-all decisions <span id="id4">[<a class="reference internal" href="../References.html#id33"><span>Lea14</span></a>]</span>. Hence, research has emerged to
+decision <span id="id3">[<a class="reference internal" href="../References.html#id174"><span>Lip18</span></a>]</span> (since an explanation is not likely applicable to
+all decisions <span id="id4">[<a class="reference internal" href="../References.html#id166"><span>Lea14</span></a>]</span>. Hence, research has emerged to
 explore how to explain decisions made by complex, black-box models and
 how explanations are presented in a form that would be easily understood
 (and hence, accepted) by humans.</p>
@@ -444,17 +443,17 @@ how explanations are presented in a form that would be easily understood
 <div class="section" id="a-theory-of-explanations">
 <h2><span class="section-number">2.3. </span>A Theory of Explanations<a class="headerlink" href="#a-theory-of-explanations" title="Permalink to this headline">¶</a></h2>
 <p>According to a philosophical and psychological theory of explanations,
-Salmon  <span id="id5">[<a class="reference internal" href="../References.html#id38"><span>Sal84</span></a>]</span> argue that explanations can be presented as a causal
+Salmon  <span id="id5">[<a class="reference internal" href="../References.html#id270"><span>Sal84</span></a>]</span> argue that explanations can be presented as a causal
 chain of causes that lead to the decision. Causal chains can be
-classified into five categories <span id="id6">[<a class="reference internal" href="../References.html#id39"><span>HMS05</span></a>]</span>: temporal, coincidental,
+classified into five categories <span id="id6">[<a class="reference internal" href="../References.html#id109"><span>HMS05</span></a>]</span>: temporal, coincidental,
 unfolding, opportunity chains and pre-emptive. Each type of causal chain
 is thus associated with an explanation type. However, identifying the
 complete causal chain of causes is challenging, since most AI/ML
 techniques produce only correlations instead of causations.</p>
-<p>In contrast, Miller <span id="id7">[<a class="reference internal" href="../References.html#id30"><span>Mil19</span></a>]</span> argue that explanations can be presented
-as answers to why-questions. Similarly, Lipton <span id="id8">[<a class="reference internal" href="../References.html#id35"><span>Lip90</span></a>]</span> also share
+<p>In contrast, Miller <span id="id7">[<a class="reference internal" href="../References.html#id215"><span>Mil19</span></a>]</span> argue that explanations can be presented
+as answers to why-questions. Similarly, Lipton <span id="id8">[<a class="reference internal" href="../References.html#id173"><span>Lip90</span></a>]</span> also share
 a similar view of explanations as being <em>contrastive</em>. There are three
-components of why-questions <span id="id9">[<a class="reference internal" href="../References.html#id36"><span>VF+80</span></a>]</span>: (1) the event to be explained,
+components of why-questions <span id="id9">[<a class="reference internal" href="../References.html#id317"><span>VF+80</span></a>]</span>: (1) the event to be explained,
 also called the <em>explanandum</em> (e.g., file A is defective); (2) a set of
 similar events that are similar to the explanandum but did not occur
 (e.g., file A is clean); and (3) a request for information that can
@@ -480,9 +479,9 @@ Example: Why was file <span class="math notranslate nohighlight">\(A\)</span> no
 an explanation. <em>Contrastive explanations focus on only the differences
 on <strong>Properties within an object</strong> (Property-contrast), between <strong>two
 Objects</strong> (Object-contrast), and <strong>within an object over Time</strong>
-(Time-contrast)</em> <span id="id10">[<a class="reference internal" href="../References.html#id37"><span>VBW02</span></a>]</span>. Answering a plain fact question is
+(Time-contrast)</em> <span id="id10">[<a class="reference internal" href="../References.html#id319"><span>VBW02</span></a>]</span>. Answering a plain fact question is
 generally more difficult than generating answers to the contrastive
-questions <span id="id11">[<a class="reference internal" href="../References.html#id35"><span>Lip90</span></a>]</span>. For example, we could answer the
+questions <span id="id11">[<a class="reference internal" href="../References.html#id173"><span>Lip90</span></a>]</span>. For example, we could answer the
 Property-contrast question (e.g., “Why is file <span class="math notranslate nohighlight">\(A\)</span> classified as being
 defective instead of being clean?”) by citing that there are a
 substantial number of defect-fixing commits that involve with the file.
@@ -490,17 +489,17 @@ Information about the size, complexity, owner of the file, and so on are
 not required to answer this question. On the other hand, explaining why
 file <span class="math notranslate nohighlight">\(A\)</span> is defective in a non-contrastive manner would require us to
 use all causes. In addition, humans tend to be cognitively attached to
-digest contrastive explanations <span id="id12">[<a class="reference internal" href="../References.html#id30"><span>Mil19</span></a>]</span>. Thus, contrastive
+digest contrastive explanations <span id="id12">[<a class="reference internal" href="../References.html#id215"><span>Mil19</span></a>]</span>. Thus, contrastive
 explanations may be more valuable and more intuitive to humans. These
 important factors from both social and computational perspectives should
 be considered when providing explainable models or tool support for
 software engineering.</p>
 <p>Explanation is not only a <em>product</em>, as discussed above, but also a
-<em>process</em> <span id="id13">[<a class="reference internal" href="../References.html#id40"><span>Lom06</span></a>]</span>. In fact, generating explanations is a
+<em>process</em> <span id="id13">[<a class="reference internal" href="../References.html#id178"><span>Lom06</span></a>]</span>. In fact, generating explanations is a
 <em>cognitive process</em> which essentially involves four cognitive systems:
 (1) attention, (2) long-term memory, (3) working memory, and (4)
-metacognition <span id="id14">[<a class="reference internal" href="../References.html#id41"><span>HMC19</span></a>]</span><span id="id15">[<a class="reference internal" href="../References.html#id33"><span>Lea14</span></a>]</span>. Recent
-work <span id="id16">[<a class="reference internal" href="../References.html#id30"><span>Mil19</span></a>]</span> further recognised the importance of considering
+metacognition <span id="id14">[<a class="reference internal" href="../References.html#id113"><span>HMC19</span></a>]</span><span id="id15">[<a class="reference internal" href="../References.html#id166"><span>Lea14</span></a>]</span>. Recent
+work <span id="id16">[<a class="reference internal" href="../References.html#id215"><span>Mil19</span></a>]</span> further recognised the importance of considering
 explanation as being not only a cognitive process but also a <em>social
 process</em>, in which an explainer communicates knowledge to an explainee.
 Using this view, explanations should be considered as part of a
@@ -509,6 +508,17 @@ and processes of how humans explain decisions to one another are
 important to the work on explainable software analytics and the
 development of explainable tool support for software engineering in
 general.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Parts of this chapter have been published by Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, Hoa Khanh Dam, John Grundy: An Empirical Study of Model-Agnostic Techniques for Defect Prediction Models. IEEE Trans. Software Eng. (2020) <a class="reference external" href="https://doi.org/10.1109/TSE.2020.2982385">https://doi.org/10.1109/TSE.2020.2982385</a>”</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -516,7 +526,7 @@ general.</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "analytics-cookbook/analytics-cookbook.github.io",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -548,7 +558,7 @@ general.</p>
     <div class="container">
       <p>
         
-          By Authors<br/>
+          By Chakkrit Tantithamthavorn and Jirayus Jiarpakdee<br/>
         
             &copy; Copyright 2020.<br/>
       </p>

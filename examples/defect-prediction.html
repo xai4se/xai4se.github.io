@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Defect Prediction &#8212; The Actionable Software Analytics Cookbook</title>
+    <title>1. Defect Prediction &#8212; The Software Analytics Cookbook</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -47,15 +47,14 @@
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://analytics-cookbook.github.io/examples/defect-prediction.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Effort Estimation Datasets" href="effort-estimation.html" />
     <link rel="prev" title="&lt;no title&gt;" href="index.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -66,7 +65,7 @@
 <meta property="og:url"         content="https://analytics-cookbook.github.io/examples/defect-prediction.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Defect Prediction" />
-<meta property="og:description" content="Defect Prediction  Our society is now driven by software. But, one software defect could have an ultimate impact on the society, financial economy, and human li" />
+<meta property="og:description" content="Defect Prediction" />
 <meta property="og:image"       content="https://analytics-cookbook.github.io/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -87,7 +86,7 @@
   <img src="../_static/logo.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">The Actionable Software Analytics Cookbook</h1>
+  <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -97,64 +96,71 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <p class="caption collapsible-parent">
  <span class="caption-text">
-  Software Analytics Recipes
+  Getting Started
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/index.html">
+  <a class="reference internal" href="../start/index.html">
    1. Software Analytics in a Nutshell
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/feature-selection.html">
-   2. Always find the best subset of the most relevant software metrics
+  <a class="reference internal" href="../start/software-quality-assurance.html">
+   2. Software Quality Assurance
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/correlation-analysis.html">
-   3. Always handle collinearity and multicollinearity
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/class-imbalance.html">
-   4. Always handle class imbalance
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/hypothesis-testing.html">
-   5. Avoid feature selection if the goal is to derive actionable insights
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/classification.html">
-   6. Always find the best classification technique
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/parameter-settings.html">
-   7. Always optimize hyperparameter settings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/model-validation.html">
-   8. Model Validation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/evaluation-measures.html">
-   9. Always evaluate using business-driven measures
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/ranking-and-multiple-comparison.html">
-   10. Model Ranking and Multiple Comparison
+  <a class="reference internal" href="../start/defect-prediction.html">
+   3. Defect Prediction Models
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Towards Explainable AI for SE
+  Part1-Software Analytics Recipes
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/correlation-analysis.html">
+   1. Always handle collinearity and multicollinearity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/class-imbalance.html">
+   2. Always handle class imbalance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/classification.html">
+   3. Always find the best classification technique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/parameter-settings.html">
+   4. Always optimize hyperparameter settings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/model-validation.html">
+   5. Avoid using testing dataset in model training
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/evaluation-measures.html">
+   6. Always evaluate using business-driven measures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/ranking-and-multiple-comparison.html">
+   7. Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Part2-Explainable AI for SE
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -224,18 +230,13 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Case Study Examples
+  Part3-Case Study Examples
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    1. Defect Prediction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="effort-estimation.html">
-   2. Effort Estimation Datasets
   </a>
  </li>
 </ul>
@@ -334,9 +335,6 @@
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -356,23 +354,13 @@
                 
   <div class="section" id="defect-prediction">
 <h1><span class="section-number">1. </span>Defect Prediction<a class="headerlink" href="#defect-prediction" title="Permalink to this headline">¶</a></h1>
-<p>Our society is now driven by software. But, one software defect could have an ultimate impact on the society, financial economy, and human lives, ranging from IT services disruption, massive overdose of radiotherapy of Therac-25, to an explosion of the Ariane 5 rocket. These failures are often due to the discovery of the majority of software defects after release, while they are often introduced in the early development life cycle like the requirements, design, release planning. Since the cost of defect fixing is exponentially increase (especially fix in production) (Brooks 1995), finding and fixing software defects prior to releasing software is usually much cheaper and faster.</p>
-<p><strong>Software quality assurance</strong> is neither a process nor a phase but a must-need systematic practice to ensure that the product meets the quality standards, especially for the development of any life-impacting and safety-critical software systems. Thus, QA practices must be embedded as a quality culture throughout the life cycles from planning to release so teams can follow best practices to prevent defects, rather than wasting time detecting them.</p>
-<p>However, modern software development practices like Agile pose several challenges to the current SQA practices. In modern practices, everyone is accountable and quality is everyone’s responsibility. Thus, developers are encouraged to test their own code and to write sufficient and effective unit tests to ensure the new code has no obvious errors and to get notified quickly as soon as something is broken. Several defect detection tools are used during the software development life cycle. For example, automation testing (e.g., CI/CD) can be used to enable the automation of test execution where the code coverage is used to infer a certain level of quality in the meaningful test cases. Static analysis is used to detect bugs, but produce too many false positives or false alarms. Code review can be used to review all code changes prior to integrating a pull request into the main branch repository.</p>
-<p>Despite these SQA tools being invested and adopted, software defects might still occur since these tools do not guarantee a bug-free software product. They also neither identify the problematic areas that may lead to software defects after release (i.e., post-release software defects) nor provide any actionable guidance how to mitigate risks. As a result, it could lead to ineffective and inefficient software quality assurance practices. Teams may release poor quality of software products to customers, causing slow project progress and high costs of software development, unsatisfactory software products, unhappy end-users, and serious monetary and reputation losses for that software organization.</p>
-<p>&lt;need an example scenario of post-release software defects, dev starts implement features, QA assists teams, prepare to release, QA makes ad-hoc decision, release to customer, defects pass through, lots of bug and crash reports, example of bug reports, customers are not happy, &gt;
-Configuration issues, network issues, database-related issues, GUI, performance, permission issues, security issues, (<a class="reference external" href="https://arxiv.org/pdf/1907.11031.pdf">https://arxiv.org/pdf/1907.11031.pdf</a>)</p>
-<p>Our team believes that prevention is better than cure, i.e., software products are delivered with higher quality if we prevent defects from the early phase of software development rather than detect and fix them at a later stage. Thus, intelligence support to assess quality risk, Identify potential defective areas, and generate actionable guidance is needed to support modern QA practices.</p>
-<p>Consider an example of an Agile SQA practice inside the Atlassian company, Australia’s largest software company with a variety of well-known software products e.g., JIRA Issue Tracking System, BitBucket, and Trello. Figure 1 summarises a JIRA Software Development Process. During this process, a QA engineer has multiple points at which he or she provides feedback into the way the feature is developed and tested—i.e., providing every form of quality improvement except testing the software. QA engineers provide feedback and guidance during all steps of the software development process from planning to completion. This process allows for active feedback, ensuring that knowledge gained from previous software defects is fed back in to the testing notes for future releases.</p>
-<p>In the development cycle/release planning, the quality risk analysis will be conducted for the most appropriate release planning, task allocation, task prioritisation. For example, QA aims to identify where is the risky area, is it high priority, how risky they are, how long does it take to fix it. So the risky areas of code are flagged for more thorough testing. In the release preparation, a final check is needed to ensure there are no risky areas that will be defective after release. However, an analysis of such risky is ad-hoc. If a decision is made without evidence, developers may waste their time on testing non risky and low priority areas of code.</p>
-<p>In addition, QA engineers still encounter various QA planning problems during the planning steps. In particular, without analyzing historical data, he can’t understand what are the key risky practices for this team/project, what are the non-risky practices, what are key things to avoid that increase the risk of having defects, and what are the things to do to decrease the risk of having defects. This results in a failure to develop the most effective SQA plan. It is due to a lack of understanding of the risky and non-risky practices in the team for the current project, and Bob lacks guidance on what to do and what to avoid, leading to poor SQA and software development workflows.</p>
 </div>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "analytics-cookbook/analytics-cookbook.github.io",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -394,7 +382,6 @@ Configuration issues, network issues, database-related issues, GUI, performance,
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="index.html" title="previous page">&lt;no title&gt;</a>
-    <a class='right-next' id="next-link" href="effort-estimation.html" title="next page"><span class="section-number">2. </span>Effort Estimation Datasets</a>
 
         </div>
         
@@ -404,7 +391,7 @@ Configuration issues, network issues, database-related issues, GUI, performance,
     <div class="container">
       <p>
         
-          By Authors<br/>
+          By Chakkrit Tantithamthavorn and Jirayus Jiarpakdee<br/>
         
             &copy; Copyright 2020.<br/>
       </p>
