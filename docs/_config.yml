@@ -29,13 +29,36 @@ repository:
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+# html:
+#   use_issues_button: true
+#   use_repository_button: true
+#   home_page_in_navbar: false
+#   use_edit_page_button: true
+#   baseurl: https://analytics-cookbook.github.io
+
+#######################################################################################
+# HTML-specific settings
 html:
-  use_issues_button: true
-  use_repository_button: true
-  home_page_in_navbar: false
-  use_edit_page_button: true
-  baseurl: https://analytics-cookbook.github.io
-  
+#   favicon                   : "./_static/images/logo/favicon.ico"  # A path to a favicon image
+  navbar_number_sections    : true  # Add a number to each section in your left navbar
+  use_edit_page_button      : true  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
+  use_repository_button     : true  # Whether to add a link to your repository button
+  use_issues_button         : true  # Whether to add an "open an issue" button
+  home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
+  baseurl                   : "https://analytics-cookbook.github.io"  # The base URL where your book will be hosted.
+#   extra_navbar              : Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.
+  extra_footer              :   # Will be displayed underneath the footer.
+    <script>mermaid.init();</script>
+    <div class="row_footer">
+    This project has received funding from the <a href="https://www.arc.gov.au/">Australian Research Council</a>. This book reflects the views of the authors and neither Australian Research Council nor Monash University are liable for any use that may be made of the information contained herein.
+    </div>
+  google_analytics_id       : "UA-171697285-1"  # A GA id that can be used to track book views.
+#   comments:
+#     hypothesis: true
+#     utterances:
+#       repo: "analytics-cookbook/analytics-cookbook.github.io"
+#######################################################################################
+
 launch_buttons:
   notebook_interface: "classic" # The interface interactive links will activate ["classic", "jupyterlab"]
   binderhub_url: "https://mybinder.org"
