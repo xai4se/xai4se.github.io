@@ -43,3 +43,7 @@
   chapters:
   - file: examples/index.ipynb  
   - file: examples/defect-prediction.ipynb
+  
+- part: 'Appendix'
+  chapters:
+  - file: references.md
