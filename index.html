@@ -43,41 +43,6 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script kind="utterances">
-
-    var commentsRunWhenDOMLoaded = cb => {
-    if (document.readyState != 'loading') {
-        cb()
-    } else if (document.addEventListener) {
-        document.addEventListener('DOMContentLoaded', cb)
-    } else {
-        document.attachEvent('onreadystatechange', function() {
-        if (document.readyState == 'complete') cb()
-        })
-    }
-}
-
-var addUtterances = () => {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://utteranc.es/client.js";
-    script.async = "async";
-
-    script.setAttribute("repo", "analytics-cookbook/analytics-cookbook.github.io");
-    script.setAttribute("issue-term", "pathname");
-    script.setAttribute("theme", "github-light");
-    script.setAttribute("label", "💬 comment");
-    script.setAttribute("crossorigin", "anonymous");
-
-    sections = document.querySelectorAll("div.section");
-    if (sections !== null) {
-        section = sections[sections.length-1];
-        section.appendChild(script);
-    }
-}
-commentsRunWhenDOMLoaded(addUtterances);
-</script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -431,6 +396,11 @@ commentsRunWhenDOMLoaded(addUtterances);
   <a class="reference internal nav-link" href="#cite-this-book">
    Cite this book:
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testimonials">
+   Testimonials
+  </a>
   <ul class="nav section-nav flex-column">
   </ul>
  </li>
@@ -492,14 +462,18 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p class="admonition-title">Note</p>
 <p>TODO</p>
 </div>
+</div>
+<div class="section" id="testimonials">
+<h2>Testimonials<a class="headerlink" href="#testimonials" title="Permalink to this headline">¶</a></h2>
+<p>Please tell us how this book help you (in any aspects, e.g., research, education).</p>
 <script
    type="text/javascript"
    src="https://utteranc.es/client.js"
    async="async"
    repo="analytics-cookbook/analytics-cookbook.github.io"
-   issue-term="testimonial"
+   issue-term="Testimonials"
    theme="github-light"
-   label="comment"
+   label="💬 comment"
    crossorigin="anonymous"
 /><script src="https://utteranc.es/client.js"
         repo="https://github.com/analytics-cookbook/analytics-cookbook.github.io"
