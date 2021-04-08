@@ -375,7 +375,7 @@
 <p>Analysis of Variance (a.k.a. multi-way ANOVA) is a statistical test that
 examines the importance of multiple independent variables (e.g., two or
 more software metrics) on the outcome (e.g.,
-defect-proneness) <span id="id1">[<a class="reference internal" href="../../References.html#id67"><span>Fis25</span></a>]</span>. The significance of each
+defect-proneness) <span id="id1">[<a class="reference internal" href="../../References.html#id65"><span>Fis25</span></a>]</span>. The significance of each
 metric in a regression model is estimated from the calculation of the
 Sum of Squares (SS)—i.e., the explained variance of the observations
 with respect to their mean value. There are two commonly-used approaches
@@ -384,7 +384,7 @@ We provide a description of the two types of ANOVA below.</p>
 <p><strong>Type-I</strong>, <em>one of the most commonly-used interpretation techniques and
 the default interpretation technique for a logistic regression (<code class="docutils literal notranslate"><span class="pre">glm</span></code>)
 model in R</em>, examines the importance of each metric in a sequential
-order <span id="id2">[<a class="reference internal" href="../../References.html#id42"><span>Cha92</span></a>]</span><span id="id3">[<a class="reference internal" href="../../References.html#id72"><span>Fox15</span></a>]</span>. In other words,
+order <span id="id2">[<a class="reference internal" href="../../References.html#id40"><span>Cha92</span></a>]</span><span id="id3">[<a class="reference internal" href="../../References.html#id70"><span>Fox15</span></a>]</span>. In other words,
 Type-I measures the improvement of the Residual Sum of Squares (RSS)
 (i.e., the unexplained variance) when each metric is sequentially added
 into the model. Hence, Type-I attributes as much variance as it can to
@@ -409,7 +409,7 @@ equation.</p>
 <p><strong>Type II</strong>, an enhancement to the ANOVA Type-I, examines the importance
 of each metric in a hierarchical nature, i.e., the ordering of metrics
 is rearranged for each
-examination <span id="id4">[<a class="reference internal" href="../../References.html#id42"><span>Cha92</span></a>]</span><span id="id5">[<a class="reference internal" href="../../References.html#id72"><span>Fox15</span></a>]</span>. The importance
+examination <span id="id4">[<a class="reference internal" href="../../References.html#id40"><span>Cha92</span></a>]</span><span id="id5">[<a class="reference internal" href="../../References.html#id70"><span>Fox15</span></a>]</span>. The importance
 of metrics (Type-II) measures the improvement of the Residual Sum of
 Squares (RSS) (i.e., the unexplained variance) when adding a metric
 under examination to the model after the other metrics. In other words,

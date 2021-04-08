@@ -392,7 +392,7 @@
 <p>Feature selection is a data preprocessing technique for selecting a
 subset of the best software metrics prior to constructing a defect
 model. There is a plethora of feature selection techniques that can be
-applied <span id="id1">[<a class="reference internal" href="../References.html#id85"><span>GE03</span></a>]</span>, e.g., filter-based, wrapper-based, and
+applied <span id="id1">[<a class="reference internal" href="../References.html#id83"><span>GE03</span></a>]</span>, e.g., filter-based, wrapper-based, and
 embedded-based families. In this book, we would like to select a manageable set of feature
 selection techniques from filter-based and wrapper-based familites for preparing interactive tutorials.</p>
 </div>
@@ -403,7 +403,7 @@ metrics according to an evaluation criterion regardless of model
 construction. Since constructing models is not required, the use of
 filter-based feature selection techniques is considered low cost and
 widely used.</p>
-<p><strong>Chi-Squared-based feature selection</strong> <span id="id2">[<a class="reference internal" href="../References.html#id193"><span>McH13</span></a>]</span> assesses the
+<p><strong>Chi-Squared-based feature selection</strong> <span id="id2">[<a class="reference internal" href="../References.html#id190"><span>McH13</span></a>]</span> assesses the
 importance of metrics with the <span class="math notranslate nohighlight">\(\chi^2\)</span> statistic which is a
 non-parametric statistical test of independence.</p>
 <div class="cell docutils container">
@@ -437,7 +437,7 @@ non-parametric statistical test of independence.</p>
 <div class="section" id="wrapper-based-family">
 <h2>Wrapper-based Family<a class="headerlink" href="#wrapper-based-family" title="Permalink to this headline">¶</a></h2>
 <p>Wrapper-based feature selection
-techniques <span id="id3">[<a class="reference internal" href="../References.html#id130"><span>JKP94</span></a>]</span><span id="id4">[<a class="reference internal" href="../References.html#id151"><span>KJ97</span></a>]</span> use classification
+techniques <span id="id3">[<a class="reference internal" href="../References.html#id128"><span>JKP94</span></a>]</span><span id="id4">[<a class="reference internal" href="../References.html#id149"><span>KJ97</span></a>]</span> use classification
 techniques to assess each subset of metrics and find the best subset of
 metrics according to an evaluation criterion. Wrapper-based feature
 selection is made up of three steps, which we described below.</p>
@@ -459,7 +459,7 @@ repeats Steps 2 and 3 in order to find the best subset of metrics
 according to the evaluation criterion. Finally, it provides the best
 subset of metrics that yields the highest performance according to the
 evaluation criterion.</p>
-<p><strong>Recursive Feature Elimination</strong> (RFE) <span id="id5">[<a class="reference internal" href="../References.html#id85"><span>GE03</span></a>]</span>
+<p><strong>Recursive Feature Elimination</strong> (RFE) <span id="id5">[<a class="reference internal" href="../References.html#id83"><span>GE03</span></a>]</span>
 searches for the best subset of metrics by recursively eliminating the
 least important metric. First, RFE constructs a model using all metrics
 and ranks metrics according to their importance score (e.g., Breiman’s

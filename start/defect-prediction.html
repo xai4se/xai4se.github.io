@@ -362,9 +362,31 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-risks-of-unsound-software-analytics">
-   3.3. The Risks of Unsound Software Analytics
+  <a class="reference internal nav-link" href="#mining-software-defects">
+   3.3. Mining Software Defects
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-heuristic-approach">
+     The heuristic approach
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-realistic-approach">
+     The realistic approach
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#challenges-of-mining-software-defects">
+     Challenges of mining software defects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#software-metrics">
+     Software Metrics
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -380,39 +402,128 @@
                 
   <div class="section" id="defect-prediction-models">
 <h1><span class="section-number">3. </span>Defect Prediction Models<a class="headerlink" href="#defect-prediction-models" title="Permalink to this headline">¶</a></h1>
-<p>Defect prediction models have been proposed to predict the most risky areas of source code that are likely to have post-release defects <span id="id1">[<a class="reference internal" href="../References.html#id203"><span>MGF07</span></a>]</span> <span id="id2">[<a class="reference internal" href="../References.html#id228"><span>NZZ+10</span></a>]</span> <span id="id3">[<a class="reference internal" href="../References.html#id50"><span>DAmbrosLR10</span></a>]</span> <span id="id4">[<a class="reference internal" href="../References.html#id300"><span>TMHM18</span></a>]</span> <span id="id5">[<a class="reference internal" href="../References.html#id293"><span>TMHM16a</span></a>]</span> <span id="id6">[<a class="reference internal" href="../References.html#id325"><span>WLT16</span></a>]</span> <span id="id7">[<a class="reference internal" href="../References.html#id328"><span>WLNT18</span></a>]</span>.
+<p>Defect prediction models have been proposed to predict the most risky areas of source code that are likely to have post-release defects <span id="id1">[<a class="reference internal" href="../References.html#id200"><span>MGF07</span></a>]</span> <span id="id2">[<a class="reference internal" href="../References.html#id225"><span>NZZ+10</span></a>]</span> <span id="id3">[<a class="reference internal" href="../References.html#id48"><span>DAmbrosLR10</span></a>]</span> <span id="id4">[<a class="reference internal" href="../References.html#id296"><span>TMHM18</span></a>]</span> <span id="id5">[<a class="reference internal" href="../References.html#id289"><span>TMHM16a</span></a>]</span> <span id="id6">[<a class="reference internal" href="../References.html#id321"><span>WLT16</span></a>]</span> <span id="id7">[<a class="reference internal" href="../References.html#id324"><span>WLNT18</span></a>]</span>.
 A defect prediction model is a classification model that estimates the likelihood that a file will have post-release defects.
 One of the main purposes is to help practitioners effectively spend their limited SQA resources on the most risky areas of code in a cost-effective manner.
 s</p>
 <div class="section" id="the-modelling-pipeline-of-defect-prediction-models">
 <h2><span class="section-number">3.1. </span>The modelling pipeline of defect prediction models<a class="headerlink" href="#the-modelling-pipeline-of-defect-prediction-models" title="Permalink to this headline">¶</a></h2>
 <p>The predictive accuracy of the defect prediction model heavily relies on the modelling pipelines of defect prediction models
-<span id="id8">[<a class="reference internal" href="../References.html#id292"><span>TMH+15</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id294"><span>TMHM16b</span></a>]</span><span id="id10">[<a class="reference internal" href="../References.html#id301"><span>TH18</span></a>]</span><span id="id11">[<a class="reference internal" href="../References.html#id212"><span>MS19</span></a>]</span><span id="id12">[<a class="reference internal" href="../References.html#id78"><span>GMH15</span></a>]</span><span id="id13">[<a class="reference internal" href="../References.html#id4"><span>AM18</span></a>]</span><span id="id14">[<a class="reference internal" href="../References.html#id295"><span>Tan16</span></a>]</span>.
+<span id="id8">[<a class="reference internal" href="../References.html#id288"><span>TMH+15b</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id290"><span>TMHM16b</span></a>]</span><span id="id10">[<a class="reference internal" href="../References.html#id297"><span>TH18</span></a>]</span><span id="id11">[<a class="reference internal" href="../References.html#id209"><span>MS19</span></a>]</span><span id="id12">[<a class="reference internal" href="../References.html#id76"><span>GMH15</span></a>]</span><span id="id13">[<a class="reference internal" href="../References.html#id3"><span>AM18</span></a>]</span><span id="id14">[<a class="reference internal" href="../References.html#id291"><span>Tan16</span></a>]</span>.
 To accurately predicting defective areas of code, prior studies conducted a comprehensive evaluation to identify the best technique of the modelling pipelines for defect models.
-For example, feature selection techniques <span id="id15">[<a class="reference internal" href="../References.html#id79"><span>GMH17</span></a>]</span><span id="id16">[<a class="reference internal" href="../References.html#id119"><span>JTT18b</span></a>]</span><span id="id17">[<a class="reference internal" href="../References.html#id125"><span>JTT20a</span></a>]</span>,
+For example, feature selection techniques <span id="id15">[<a class="reference internal" href="../References.html#id77"><span>GMH17</span></a>]</span><span id="id16">[<a class="reference internal" href="../References.html#id117"><span>JTT18b</span></a>]</span><span id="id17">[<a class="reference internal" href="../References.html#id123"><span>JTT20a</span></a>]</span>,
 collinearity analysis
-<span id="id18">[<a class="reference internal" href="../References.html#id119"><span>JTT18b</span></a>]</span><span id="id19">[<a class="reference internal" href="../References.html#id118"><span>JTIM16</span></a>]</span><span id="id20">[<a class="reference internal" href="../References.html#id123"><span>JTH19</span></a>]</span>,
-class rebalancing techniques <span id="id21">[<a class="reference internal" href="../References.html#id299"><span>THM19</span></a>]</span>,
-classification techniques <span id="id22">[<a class="reference internal" href="../References.html#id78"><span>GMH15</span></a>]</span>,
-parameter optimization <span id="id23">[<a class="reference internal" href="../References.html#id293"><span>TMHM16a</span></a>]</span><span id="id24">[<a class="reference internal" href="../References.html#id76"><span>FMS16</span></a>]</span><span id="id25">[<a class="reference internal" href="../References.html#id300"><span>TMHM18</span></a>]</span><span id="id26">[<a class="reference internal" href="../References.html#id4"><span>AM18</span></a>]</span>,
-model validation <span id="id27">[<a class="reference internal" href="../References.html#id298"><span>TMHM17a</span></a>]</span>, and model interpretation <span id="id28">[<a class="reference internal" href="../References.html#id123"><span>JTH19</span></a>]</span><span id="id29">[<a class="reference internal" href="../References.html#id124"><span>JTDG20a</span></a>]</span>.
+<span id="id18">[<a class="reference internal" href="../References.html#id117"><span>JTT18b</span></a>]</span><span id="id19">[<a class="reference internal" href="../References.html#id116"><span>JTIM16</span></a>]</span><span id="id20">[<a class="reference internal" href="../References.html#id121"><span>JTH19</span></a>]</span>,
+class rebalancing techniques <span id="id21">[<a class="reference internal" href="../References.html#id295"><span>THM19</span></a>]</span>,
+classification techniques <span id="id22">[<a class="reference internal" href="../References.html#id76"><span>GMH15</span></a>]</span>,
+parameter optimization <span id="id23">[<a class="reference internal" href="../References.html#id289"><span>TMHM16a</span></a>]</span><span id="id24">[<a class="reference internal" href="../References.html#id74"><span>FMS16</span></a>]</span><span id="id25">[<a class="reference internal" href="../References.html#id296"><span>TMHM18</span></a>]</span><span id="id26">[<a class="reference internal" href="../References.html#id3"><span>AM18</span></a>]</span>,
+model validation <span id="id27">[<a class="reference internal" href="../References.html#id294"><span>TMHM17a</span></a>]</span>, and model interpretation <span id="id28">[<a class="reference internal" href="../References.html#id121"><span>JTH19</span></a>]</span><span id="id29">[<a class="reference internal" href="../References.html#id122"><span>JTDG20a</span></a>]</span>.
 Despite the recent advances in the modelling pipelines for defect prediction models, the cost-effectiveness of the SQA resource prioritization still relies on the granularity of the predictions.</p>
 </div>
 <div class="section" id="the-granularity-levels-of-defect-predictions-models">
 <h2><span class="section-number">3.2. </span>The granularity levels of defect predictions models<a class="headerlink" href="#the-granularity-levels-of-defect-predictions-models" title="Permalink to this headline">¶</a></h2>
 <p>The cost-effectiveness of the SQA resource prioritization heavily relies on the granularity levels of defect prediction.
-Prior studies argued that prioritizing software modules at the finer granularity is more cost-effective <span id="id30">[<a class="reference internal" href="../References.html#id239"><span>PPB19</span></a>]</span> <span id="id31">[<a class="reference internal" href="../References.html#id137"><span>KMM+10</span></a>]</span> <span id="id32">[<a class="reference internal" href="../References.html#id100"><span>HMK12</span></a>]</span>.
-For example, Kamei et al. <span id="id33">[<a class="reference internal" href="../References.html#id137"><span>KMM+10</span></a>]</span> found that the file-level defect prediction is more effective than the package-level defect prediction.
-Hata et al. <span id="id34">[<a class="reference internal" href="../References.html#id100"><span>HMK12</span></a>]</span> found that the method-level defect prediction is more effective than file-level defect prediction.
-Defect models at various granularity levels have been proposed, e.g., packages <span id="id35">[<a class="reference internal" href="../References.html#id137"><span>KMM+10</span></a>]</span>, components <span id="id36">[<a class="reference internal" href="../References.html#id303"><span>TMHI16</span></a>]</span>, modules <span id="id37">[<a class="reference internal" href="../References.html#id136"><span>KMM+07a</span></a>]</span>, files <span id="id38">[<a class="reference internal" href="../References.html#id137"><span>KMM+10</span></a>]</span> <span id="id39">[<a class="reference internal" href="../References.html#id201"><span>MK10</span></a>]</span>, methods <span id="id40">[<a class="reference internal" href="../References.html#id100"><span>HMK12</span></a>]</span>.
-However, developers could still waste an SQA effort on manually identifying the most risky lines, since the current prediction granularity is still perceived as coarse-grained <span id="id41">[<a class="reference internal" href="../References.html#id323"><span>WXH+18</span></a>]</span>.
+Prior studies argued that prioritizing software modules at the finer granularity is more cost-effective <span id="id30">[<a class="reference internal" href="../References.html#id236"><span>PPB19</span></a>]</span> <span id="id31">[<a class="reference internal" href="../References.html#id135"><span>KMM+10</span></a>]</span> <span id="id32">[<a class="reference internal" href="../References.html#id98"><span>HMK12</span></a>]</span>.
+For example, Kamei et al. <span id="id33">[<a class="reference internal" href="../References.html#id135"><span>KMM+10</span></a>]</span> found that the file-level defect prediction is more effective than the package-level defect prediction.
+Hata et al. <span id="id34">[<a class="reference internal" href="../References.html#id98"><span>HMK12</span></a>]</span> found that the method-level defect prediction is more effective than file-level defect prediction.
+Defect models at various granularity levels have been proposed, e.g., packages <span id="id35">[<a class="reference internal" href="../References.html#id135"><span>KMM+10</span></a>]</span>, components <span id="id36">[<a class="reference internal" href="../References.html#id299"><span>TMHI16</span></a>]</span>, modules <span id="id37">[<a class="reference internal" href="../References.html#id134"><span>KMM+07</span></a>]</span>, files <span id="id38">[<a class="reference internal" href="../References.html#id135"><span>KMM+10</span></a>]</span> <span id="id39">[<a class="reference internal" href="../References.html#id198"><span>MK10</span></a>]</span>, methods <span id="id40">[<a class="reference internal" href="../References.html#id98"><span>HMK12</span></a>]</span>.
+However, developers could still waste an SQA effort on manually identifying the most risky lines, since the current prediction granularity is still perceived as coarse-grained <span id="id41">[<a class="reference internal" href="../References.html#id319"><span>WXH+18</span></a>]</span>.
 Hence, the line-level defect prediction should be beneficial to SQA teams to spend optimal effort on identifying and analyzing defects.</p>
 </div>
-<div class="section" id="the-risks-of-unsound-software-analytics">
-<h2><span class="section-number">3.3. </span>The Risks of Unsound Software Analytics<a class="headerlink" href="#the-risks-of-unsound-software-analytics" title="Permalink to this headline">¶</a></h2>
-<p>However, such predictions and explanations may be invalid if practitioners do not consider the risks of building unsound software analytics, leading to outdated analytical models, invalid predictions and explanations, erroneous and costly business decisions.
-Thus, if care is not taken when analyzing and modeling software data, the predictions and insights that are derived from analytical models may be inaccurate and unreliable.</p>
-<p>Below, we provide a hands-on tutorial to guide practitioners on how to (1) analyze software data using statistical techniques like correlation analysis, hypothesis testing, effect size analysis, and multiple comparisons, (2) develop accurate, reliable, and reproducible analytical models, (3) interpret the models to uncover relationships and insights, and (4) discuss pitfalls associated with analytical techniques including hands-on examples with real software data.</p>
+<div class="section" id="mining-software-defects">
+<h2><span class="section-number">3.3. </span>Mining Software Defects<a class="headerlink" href="#mining-software-defects" title="Permalink to this headline">¶</a></h2>
+<p>Defect data preparation involves several key steps.
+Figure~\ref{fig:defect-data-preparation} provides an overview of defect data preparation steps.
+First, one must extract issue reports, which describe defects, feature requests, or general maintenance tasks from an Issue Tracking System (ITS, e.g., JIRA).
+Second, one must extract commit logs, code snapshots, and historical code changes that are recorded in a Version Control System (VCS, e.g., Git).
+Third, one must extract software metrics of each module (e.g., size, and complexity) from the VCS.
+To extract such software metrics, one must focus on development activities that occur prior to a release of interest that corresponds to the release branch of a studied system to ensure that activities that we study correspond to the development and maintenance of the official software releases.
+Finally, one must identify and label modules as defective if they have been affected by code changes that address issue reports that were classified as defects after the software is released (i.e., post-release defects).
+On the other hand, modules that are not changed to address any issue reports are labelled as clean.</p>
+<p>Prior studies proposed several approaches to identify post-release defects, which we describe below.</p>
+<div class="section" id="the-heuristic-approach">
+<h3>The heuristic approach<a class="headerlink" href="#the-heuristic-approach" title="Permalink to this headline">¶</a></h3>
+<p>Post-release defects are defined as modules that are changed to address a defect report within a post-release window period (e.g., 6 months) <span id="id42">[<a class="reference internal" href="../References.html#id342"><span>ZPZ07</span></a>,<a class="reference internal" href="../References.html#id64"><span>FPG03</span></a>,<a class="reference internal" href="../References.html#id48"><span>DAmbrosLR10</span></a>,<a class="reference internal" href="../References.html#id49"><span>DAmbrosLR12b</span></a>,<a class="reference internal" href="../References.html#id136"><span>KSA+13</span></a>,<a class="reference internal" href="../References.html#id459"><span>SliwerskiZZ05</span></a>]</span>.
+The commonly-used approach is to infer the relationship between the defect-fixing commits that are referred in commit logs and their associated defect reports.
+To identify defect-fixing commits, Fischer et al. <span id="id43">[<a class="reference internal" href="../References.html#id64"><span>FPG03</span></a>]</span> are among the first to introduce a heuristic approach by using regular expression to search for specific keywords (e.g., \texttt{fix(e[ds])?}, \texttt{bugs?}, \texttt{defects?}) and issue IDs (e.g., \texttt{[0-9]+}) in commit logs after the release of interest.</p>
+<p>To illustration, we use Figure X to provide an example of defect identification of the heuristic approach for the release \texttt{v1.0}.
+First, the heuristic approach will apply a collection of regular expression patterns to search through the commit logs to find defect-fixing commits within a specific window period (i.e., 6 months).
+According to Figure X, the heuristic approach will label commits \texttt{C1}, \texttt{C2}, and \texttt{C3} as defect-fixing commits, since their commit logs match with the collection of regular expression patterns that contain specific keywords and issue IDs.
+Then, the heuristic approach will label modules \texttt{A.java}, \texttt{B.java}, and \texttt{C.java} as defective modules.
+The remaining module (i.e., \texttt{D.java}) will be labelled as clean.</p>
+<p>Unfortunately, such the heuristic approach has several limitations.
+First, the heuristic approach assumes that all defect-fixing commits that are identified within the post-release window period of the release of interest (i.e., \texttt{v1.0}) are the defect-fixing commits that affect the release of interest.
+However, Figure~\ref{fig:defect-identification} shows that the commit \texttt{C2} was changed to address the issue report \texttt{ID-2} where the release \texttt{v0.9} was affected.
+Thus, the module \texttt{B.java} that was labelled as defective by the heuristic approach is actually clean.
+Second, the heuristic approach assumes that all defect-fixing commits that affect the release of interest (i.e., \texttt{v1.0}) only occur within the post-release window period of the release of interest.
+Figure~\ref{fig:defect-identification} shows that the commit \texttt{C4} was made to address the issue report \texttt{ID-4} where the release \texttt{v1.0} was affected, however the commit \texttt{C4} was made outside the post-release window period.
+Thus, the module \texttt{D.java} that was labelled as clean by the heuristic approach is actually defective.</p>
+</div>
+<div class="section" id="the-realistic-approach">
+<h3>The realistic approach<a class="headerlink" href="#the-realistic-approach" title="Permalink to this headline">¶</a></h3>
+<p>Recently, da Costa et al. <span id="id44">[<a class="reference internal" href="../References.html#id50"><span>dCMS+17</span></a>]</span> suggest that the affected-release field in an ITS should be considered when identifying defect-introducing changes.
+To address the limitations of the heuristic approach, one should use the realistic approach, i.e., the use of the earliest affected release that is realistically estimated by a software development team for a given defect to generate post-release defects.
+The affected-release field in an ITS allows developers to record the actual releases of the system that are affected by a given defect.
+To identify defect-fixing commits, the realistic approach retrieves defect reports that affect a release of interest in the ITS.
+Since modern ITSs, like JIRA, provide traceable links between defect reports and code commits in VCS, the realistic approach can identify modules that are changed to address those defect reports.
+Then, the modules that are changed to address those defect reports are then identified as defective, otherwise clean.</p>
+<p>To illustration, Figure~\ref{fig:defect-identification} shows that there are three issue reports (i.e., \texttt{ID-1}, \texttt{ID-3}, and \texttt{ID-4}) that affect the studied release \texttt{v1.0}.
+Then, commits \texttt{C1}, \texttt{C3}, and \texttt{C4} which are linked to those three issue reports are identified as defect-fixing commits by the realistic approach.
+Finally, modules \texttt{A.java}, \texttt{C.java}, and \texttt{D.java} which are impacted by commits \texttt{C1}, \texttt{C3}, and \texttt{C4} are labelled as defective modules.</p>
+</div>
+<div class="section" id="challenges-of-mining-software-defects">
+<h3>Challenges of mining software defects<a class="headerlink" href="#challenges-of-mining-software-defects" title="Permalink to this headline">¶</a></h3>
+<p>Software repositories are often noisy (e.g., incorrect, missing information) <span id="id45">[<a class="reference internal" href="../References.html#id460"><span>LS08</span></a>,<a class="reference internal" href="../References.html#id358"><span>BRB+09</span></a>]</span>.
+For example, Aranda and Venolia <span id="id46">[<a class="reference internal" href="../References.html#id474"><span>AV09</span></a>]</span> point out that ITS and VCS repositories are noisy sources of data.
+Thus, the usage of such noisy data may pose a critical threat to the validity in many empirical studies.</p>
+<p>Prior studies show that noise may creep into defect datasets and impact defect models if care is not taken when collecting data from software repositories.
+The first line of studies includes an investigation of the impact of noises that are generated by issue report misclassification.
+For example, Antoniol <span id="id47">[<a class="reference internal" href="../References.html#id619"><span>AAPK08</span></a>]</span> and Herzig <span id="id48">[<a class="reference internal" href="../References.html#id515"><span>HJZ13</span></a>]</span> find that many issue reports are misclassified.
+However, recent work shows that issue report mislabelling rarely impacts the precision of defect models or the interpretation of the most important software metrics <span id="id49">[<a class="reference internal" href="../References.html#id408"><span>TMH+15a</span></a>]</span>.
+The second line of studies includes studies an investigation of the impact of noises that are generated by defect identification approaches.
+For example, Bachmann et al. <span id="id50">[<a class="reference internal" href="../References.html#id624"><span>BBR+10</span></a>]</span> find that the defect reports are not recorded in the commit logs and thus are not visible to the automated linking tools used to extract defect datasets, which generate many missing links between code changes and defect reports.
+Bird et al. <span id="id51">[<a class="reference internal" href="../References.html#id22"><span>BNM+09</span></a>]</span> point out that more experienced developers are more likely to explicitly link issue reports to the corresponding code changes.
+Nguyen et al. <span id="id52">[<a class="reference internal" href="../References.html#id562"><span>NAH10</span></a>]</span> show that such noises also exist in commercial datasets.
+Furthermore, Rahman et al. <span id="id53">[<a class="reference internal" href="../References.html#id245"><span>RD13</span></a>]</span> argue that the size of the defect datasets matters more than the dataset quality.
+To address this challenge, prior studies <span id="id54">[<a class="reference internal" href="../References.html#id745"><span>WZKC11</span></a>,<a class="reference internal" href="../References.html#id561"><span>NNNN12</span></a>]</span> introduce the textual similarity approaches between issue reports and commit messages to automatically recover the missing links between issue reports to the corresponding code changes.</p>
+<p>To prepare a defect dataset, we first \textit{extract metrics} of software modules (e.g., size, complexity, process metrics) from a version control system (VCS).
+We focus on the development activity that occurs prior to a release that corresponds to the \texttt{release} branch of a studied system.
+With this strictly controlled setting, we ensure that changes that we study correspond to the development and maintenance of official software releases.
+Since modern issue tracking systems, like JIRA, often provide traceable links between issue reports (i.e., a report described defects or feature requests) and code changes, we can identify the modules that are changed to address a particular issue report.
+Finally, we \textit{label defective modules} if they have been affected by a code change that addresses an issue report that is classified as a defect.
+Similar to prior studies <span id="id55">[<a class="reference internal" href="../References.html#id342"><span>ZPZ07</span></a>,<a class="reference internal" href="../References.html#id498"><span>DAmbrosLR12a</span></a>,<a class="reference internal" href="../References.html#id136"><span>KSA+13</span></a>]</span>, we define post-release defects as modules that are changed to address an issue report within the six-month period after the release date.</p>
+</div>
+<div class="section" id="software-metrics">
+<h3>Software Metrics<a class="headerlink" href="#software-metrics" title="Permalink to this headline">¶</a></h3>
+<p>To understand the characteristics of defect-proneness, prior studies proposed a variety of metrics that are related to software quality.
+We provide a brief summary of software metrics below.</p>
+<p><strong>Code metrics</strong> describe the relationship between code properties and software quality.
+For example, in 1971, Akiyama <span id="id56">[<a class="reference internal" href="../References.html#id7"><span>Aki71</span></a>]</span> is among the first research to show that the size of modules (e.g., lines of code) shares a relationship with defect-proneness.
+McCabe et al. <span id="id57">[<a class="reference internal" href="../References.html#id189"><span>McC76</span></a>]</span> and Halstead also show that the high complexity of modules (e.g., the number of distinct operators and operands) are likely to be more defective.
+Chidamber and Kemerer <span id="id58">[<a class="reference internal" href="../References.html#id44"><span>CK94</span></a>]</span> also propose CK metrics suites, a set of six metrics that describe the structure of a class (e.g., the number of methods defined in a class), that may share a relationship with defect-proneness.
+An independent evaluation by Basili et al. <span id="id59">[<a class="reference internal" href="../References.html#id17"><span>BBM96</span></a>]</span> and Gyimothy et al. <span id="id60">[<a class="reference internal" href="../References.html#id859"><span>GyimothyFS05</span></a>]</span> confirms that the CK metrics suites can be effectively used as software quality indicators.
+An in-depth investigation on the size-defect relationship by Syer <span id="id61">[<a class="reference internal" href="../References.html#id858"><span>SNAH14</span></a>]</span> shows that defect density has an inverted “U” shaped pattern (i.e., defect density increases in smaller files, peaks in the largest small-sized files/smallest medium-sized files, then decreases in medium and larger files).
+Such code metrics are typically extracted from a code snapshot at a release using various available static analysis tools (e.g., SLOCcount (<a class="reference external" href="https://sourceforge.net/projects/sloccount/">https://sourceforge.net/projects/sloccount/</a>), Understand tool (<a class="reference external" href="https://scitools.com/">https://scitools.com/</a>), the <em>mccabe</em> python package\footnote{\url{<a class="reference external" href="https://pypi.python.org/pypi/mccabe">https://pypi.python.org/pypi/mccabe</a>}}, and the <em>radon</em> python package (<a class="reference external" href="https://pypi.python.org/pypi/radon">https://pypi.python.org/pypi/radon</a>).</p>
+<p><strong>Process metrics</strong> describe the relationship between change activities during software development process and software quality.
+Prior work has shown that historical software development process can be used to describe the characteristics of defect-proneness.
+For example, Graves <span id="id62">[<a class="reference internal" href="../References.html#id771"><span>GKMS00</span></a>]</span> find that the software defects may still exist in modules that were recently defective.
+Nagappan and Ball <span id="id63">[<a class="reference internal" href="../References.html#id222"><span>NB05b</span></a>,<a class="reference internal" href="../References.html#id856"><span>NB07</span></a>]</span> find that modules that have undergone a lot of change are likely to be more defective.
+Hassan <span id="id64">[<a class="reference internal" href="../References.html#id855"><span>Has09</span></a>]</span> find that modules with a volatile change process, where changes are spread amongst several files are likely defective.
+Hassan and Holt <span id="id65">[<a class="reference internal" href="../References.html#id513"><span>aEHH05</span></a>]</span> find that modules that are recently changed are more likely to be defective.
+Zimmermann and Nagappan <span id="id66">[<a class="reference internal" href="../References.html#id343"><span>ZNG+09</span></a>,<a class="reference internal" href="../References.html#id749"><span>ZN08</span></a>,<a class="reference internal" href="../References.html#id342"><span>ZPZ07</span></a>]</span> find that program dependency graphs share a relationship with software quality.
+Zimmermann et al. <span id="id67">[<a class="reference internal" href="../References.html#id342"><span>ZPZ07</span></a>]</span> find that the number of defects that were reported in the last six months before release for a module shares a relationship with software quality.
+Such process metrics are typically extracted using code changes that are stored in VCSs.</p>
+<p><strong>Organization metrics</strong> describe the relationship between organization structure and software quality <span id="id68">[<a class="reference internal" href="../References.html#id356"><span>NMB08</span></a>]</span>.
+For example, Graves et al. <span id="id69">[<a class="reference internal" href="../References.html#id771"><span>GKMS00</span></a>]</span> find that modules that are changed by a large number of developers are likely to be more defective.
+Despite of the organization structure, prior studies have shown that code ownership shares a relationship with software quality.
+Thus, we focus on the two dimensions for an approximation of code ownership.
+First, <strong>authoring activity</strong> has been widely used to approximate code ownership.
+For example, Mockus and Herbslerb <span id="id70">[<a class="reference internal" href="../References.html#id857"><span>MH02</span></a>]</span> identify developers who responsible for a module using the number of tasks that a developer has completed.
+Furthermore, Bird et al. <span id="id71">[<a class="reference internal" href="../References.html#id25"><span>BMG11</span></a>]</span> find that modules that are written by many experts are less likely to be defect-prone.
+Second, <strong>reviewing activity</strong> has been also used to approximate code ownership.
+For example, Thongtanunam <span id="id72">[<a class="reference internal" href="../References.html#id299"><span>TMHI16</span></a>]</span> find that reviewing expertise also shares a relationship with defect-proneness (e.g., modules that are reviewed by experts are less likely to be defect-prone).</p>
+<p>ADD: Social Network, Geographical, Social, Human-Factor, Test</p>
+</div>
 </div>
 </div>
 

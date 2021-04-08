@@ -456,7 +456,7 @@ Below, we provide a tutorial for using and visualising Spearman correlation test
 <div class="section" id="multicollinearity">
 <h2><span class="section-number">1.2. </span>Multicollinearity<a class="headerlink" href="#multicollinearity" title="Permalink to this headline">¶</a></h2>
 <p>Multicollinearity is a phenomenon in which one metric can be linearly predicted by a combination of two or more metrics.
-Multicollinearity can be detected using Variance Inflation Factor (VIF) analysis <span id="id1">[<a class="reference internal" href="../References.html#id71"><span>FM92</span></a>]</span>.
+Multicollinearity can be detected using Variance Inflation Factor (VIF) analysis <span id="id1">[<a class="reference internal" href="../References.html#id69"><span>FM92</span></a>]</span>.
 The idea behind variance inflation factor analysis is to construct an ordinary least square regression to predict a metric by using the other metrics in the dataset.
 Having a model that is well fit indicates that the metric can be predicted by other metrics, linearly highly-correlated with other metrics.
 There are 3 steps in variance inflation factor analysis.</p>
@@ -468,13 +468,14 @@ A high VIF score of a metric indicates that a given metric can be accurately pre
 Thus, that given metric is considered redundant and should be removed from our model.</p>
 <p><em>(Step 3) Remove metrics with a VIF score that is higher than a given threshold.</em>
 We remove metrics with a VIF score that is higher than a given threshold.
-We use a VIF threshold of 5 to determine the magnitude of multi-collinearity, as it is suggested by Fox <span id="id2">[<a class="reference internal" href="../References.html#id72"><span>Fox15</span></a>]</span>.
+We use a VIF threshold of 5 to determine the magnitude of multi-collinearity, as it is suggested by Fox <span id="id2">[<a class="reference internal" href="../References.html#id70"><span>Fox15</span></a>]</span>.
 Then, we repeat the above three steps until the VIF scores of all remaining metrics are lower than the pre-defined threshold.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for VIF</span>
 <span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
 <span class="kn">from</span> <span class="nn">statsmodels.tools.tools</span> <span class="kn">import</span> <span class="n">add_constant</span>
+
 
 <span class="c1"># Prepare a dataframe for VIF</span>
 <span class="n">X_VIF</span> <span class="o">=</span> <span class="n">add_constant</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
@@ -523,37 +524,37 @@ Then, we repeat the above three steps until the VIF scores of all remaining metr
     <tr>
       <th>2</th>
       <td>AddedLOC</td>
-      <td>3.512440e+06</td>
+      <td>3.363851e+06</td>
     </tr>
     <tr>
       <th>7</th>
       <td>B</td>
-      <td>2.372701e+06</td>
+      <td>2.421962e+06</td>
     </tr>
     <tr>
       <th>6</th>
       <td>A</td>
-      <td>1.047258e+06</td>
+      <td>1.078763e+06</td>
     </tr>
     <tr>
       <th>3</th>
       <td>nCoupledClass</td>
-      <td>1.221647e+00</td>
+      <td>1.220642e+00</td>
     </tr>
     <tr>
       <th>5</th>
       <td>CommentToCodeRatio</td>
-      <td>1.122744e+00</td>
+      <td>1.126280e+00</td>
     </tr>
     <tr>
       <th>1</th>
       <td>nCommit</td>
-      <td>1.040476e+00</td>
+      <td>1.044982e+00</td>
     </tr>
     <tr>
       <th>4</th>
       <td>LOC</td>
-      <td>1.018280e+00</td>
+      <td>1.019733e+00</td>
     </tr>
   </tbody>
 </table>
@@ -621,11 +622,11 @@ Step 1 - exclude AddedLOC
 Step 2 - exclude B
 The following features are selected according to Stepwise VIF with the VIF threshold value of 5:
               Feature  VIFscore
-1       nCoupledClass  1.220604
-4                   A  1.122349
-3  CommentToCodeRatio  1.120932
-0             nCommit  1.039831
-5                 LOC  1.017051
+4       nCoupledClass  1.220647
+5                   A  1.122400
+2  CommentToCodeRatio  1.120934
+3             nCommit  1.039827
+0                 LOC  1.017052
 </pre></div>
 </div>
 </div>
@@ -636,7 +637,7 @@ The following features are selected according to Stepwise VIF with the VIF thres
 <p>Feature selection is a data preprocessing technique for selecting a
 subset of the best software metrics prior to constructing a defect
 model. There is a plethora of feature selection techniques that can be
-applied <span id="id3">[<a class="reference internal" href="../References.html#id85"><span>GE03</span></a>]</span>, e.g., filter-based, wrapper-based, and
+applied <span id="id3">[<a class="reference internal" href="../References.html#id83"><span>GE03</span></a>]</span>, e.g., filter-based, wrapper-based, and
 embedded-based families.</p>
 <div class="section" id="filter-based-family">
 <h3>Filter-based Family<a class="headerlink" href="#filter-based-family" title="Permalink to this headline">¶</a></h3>
@@ -645,7 +646,7 @@ metrics according to an evaluation criterion regardless of model
 construction. Since constructing models is not required, the use of
 filter-based feature selection techniques is considered low cost and
 widely used.</p>
-<p><strong>Chi-Squared-based feature selection</strong> <span id="id4">[<a class="reference internal" href="../References.html#id193"><span>McH13</span></a>]</span> assesses the
+<p><strong>Chi-Squared-based feature selection</strong> <span id="id4">[<a class="reference internal" href="../References.html#id190"><span>McH13</span></a>]</span> assesses the
 importance of metrics with the <span class="math notranslate nohighlight">\(\chi^2\)</span> statistic which is a
 non-parametric statistical test of independence.</p>
 <div class="cell docutils container">
@@ -679,7 +680,7 @@ non-parametric statistical test of independence.</p>
 <div class="section" id="wrapper-based-family">
 <h3>Wrapper-based Family<a class="headerlink" href="#wrapper-based-family" title="Permalink to this headline">¶</a></h3>
 <p>Wrapper-based feature selection
-techniques <span id="id5">[<a class="reference internal" href="../References.html#id130"><span>JKP94</span></a>]</span><span id="id6">[<a class="reference internal" href="../References.html#id151"><span>KJ97</span></a>]</span> use classification
+techniques <span id="id5">[<a class="reference internal" href="../References.html#id128"><span>JKP94</span></a>]</span><span id="id6">[<a class="reference internal" href="../References.html#id149"><span>KJ97</span></a>]</span> use classification
 techniques to assess each subset of metrics and find the best subset of
 metrics according to an evaluation criterion. Wrapper-based feature
 selection is made up of three steps, which we described below.</p>
@@ -701,7 +702,7 @@ repeats Steps 2 and 3 in order to find the best subset of metrics
 according to the evaluation criterion. Finally, it provides the best
 subset of metrics that yields the highest performance according to the
 evaluation criterion.</p>
-<p><strong>Recursive Feature Elimination</strong> (RFE) <span id="id7">[<a class="reference internal" href="../References.html#id85"><span>GE03</span></a>]</span>
+<p><strong>Recursive Feature Elimination</strong> (RFE) <span id="id7">[<a class="reference internal" href="../References.html#id83"><span>GE03</span></a>]</span>
 searches for the best subset of metrics by recursively eliminating the
 least important metric. First, RFE constructs a model using all metrics
 and ranks metrics according to their importance score (e.g., Breiman’s
@@ -770,8 +771,8 @@ These findings suggest that feature selection techniques may select highly-corre
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Top-k features (k =3) according to Chi-squared statistics are as follows:
     Feature         Score
-7         B  80338.280839
-6         A  53497.413529
+7         B  80329.360766
+6         A  53507.874728
 2  AddedLOC  26834.488115
 Top-k (k =3) according to the RFE teachnique are as follows:
 [&#39;nCoupledClass&#39;, &#39;A&#39;, &#39;B&#39;]
@@ -788,7 +789,7 @@ To mitigate this, we have to select one of them but the question is <em>Which on
 </div>
 <div class="section" id="autospearman-an-automated-feature-selection-approach-that-address-collinearity-and-multicollinearity">
 <h2><span class="section-number">1.4. </span>AutoSpearman: An automated feature selection approach that address collinearity and multicollinearity<a class="headerlink" href="#autospearman-an-automated-feature-selection-approach-that-address-collinearity-and-multicollinearity" title="Permalink to this headline">¶</a></h2>
-<p>Jiarpakdee <em>et al.</em> <span id="id8">[<a class="reference internal" href="../References.html#id122"><span>JTT18a</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id126"><span>JTT20b</span></a>]</span> [&#64;jiarpakdee2018autospearman] introduce , an
+<p>Jiarpakdee <em>et al.</em> <span id="id8">[<a class="reference internal" href="../References.html#id120"><span>JTT18a</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id124"><span>JTT20b</span></a>]</span> [&#64;jiarpakdee2018autospearman] introduce , an
 automated metric selection approach based on the Spearman rank
 correlation test and the VIF analysis for statistical inference.
 The high-level concept of can be summarised into 2 parts:</p>
@@ -796,7 +797,7 @@ The high-level concept of can be summarised into 2 parts:</p>
 Spearman rank correlation test.</em> We first measure the correlation of all
 metrics using the Spearman rank correlation test (<span class="math notranslate nohighlight">\(\rho\)</span>) (<em>cf.</em> Line
 2). We use the interpretation of correlation coefficients (<span class="math notranslate nohighlight">\(|\rho|\)</span>) as
-provided by Kraemer <span id="id10">[<a class="reference internal" href="../References.html#id154"><span>KML+03</span></a>]</span>—i.e., a Spearman
+provided by Kraemer <span id="id10">[<a class="reference internal" href="../References.html#id152"><span>KML+03</span></a>]</span>—i.e., a Spearman
 correlation coefficient of above or equal to 0.7 is considered a strong
 correlation. Thus, we only consider the pairs that have an absolute
 Spearman correlation coefficient of above or equal to the threshold
@@ -816,12 +817,85 @@ Finally, we exclude the removed metric from the set of the remaining
 metrics (<span class="math notranslate nohighlight">\(M'\)</span>). We repeat this process until all pairs of
 metrics have their Spearman correlation coefficient below a threshold
 value of 0.7.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Prepare a dataframe for AutoSpearman demo</span>
+<span class="n">X_AS_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># Simulate a multicollinearity situation of AddedLOC, A, and B</span>
+<span class="n">X_AS_train</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x_i</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">X_AS_train</span><span class="p">[</span><span class="s1">&#39;AddedLOC&#39;</span><span class="p">]]</span>
+<span class="n">X_AS_train</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x_i</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">X_AS_train</span><span class="p">[</span><span class="s1">&#39;AddedLOC&#39;</span><span class="p">]]</span>
+
+<span class="n">AS_metrics</span> <span class="o">=</span> <span class="n">X_AS_train</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># (Part 1) Automatically select non-correlated metrics based on a Spearman rank correlation test.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(Part 1) Automatically select non-correlated metrics based on a Spearman rank correlation test&#39;</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">corrmat</span> <span class="o">=</span> <span class="n">X_AS_train</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+    <span class="n">top_corr_features</span> <span class="o">=</span> <span class="n">corrmat</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">abs_corrmat</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">corrmat</span><span class="p">)</span>
+    
+    <span class="c1"># identify correlated metrics with the correlation threshold of 0.7</span>
+    <span class="n">highly_correlated_metrics</span> <span class="o">=</span> <span class="p">((</span><span class="n">corrmat</span> <span class="o">&gt;</span> <span class="o">.</span><span class="mi">7</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">corrmat</span> <span class="o">&lt;</span> <span class="o">-.</span><span class="mi">7</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">corrmat</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">n_correlated_metrics</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">highly_correlated_metrics</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">n_correlated_metrics</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># find the strongest pair-wise correlation</span>
+        <span class="n">find_top_corr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">abs_corrmat</span><span class="p">,</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="n">find_top_corr</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">find_top_corr</span> <span class="o">=</span> <span class="n">find_top_corr</span><span class="p">[</span><span class="n">find_top_corr</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">top_corr_index</span> <span class="o">=</span> <span class="n">find_top_corr</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+        <span class="n">top_corr_i</span> <span class="o">=</span> <span class="n">find_top_corr</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">top_corr_index</span><span class="p">,</span> <span class="p">:]</span>
+
+        <span class="c1"># get the 2 correlated metrics with the strongest correlation</span>
+        <span class="n">correlated_metric_1</span> <span class="o">=</span> <span class="n">top_corr_i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">correlated_metric_2</span> <span class="o">=</span> <span class="n">top_corr_i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Step&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span><span class="s1">&#39;comparing between&#39;</span><span class="p">,</span> <span class="n">correlated_metric_1</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="n">correlated_metric_2</span><span class="p">)</span>
+        
+        <span class="c1"># compute their correlation with other metrics outside of the pair</span>
+        <span class="n">correlation_with_other_metrics_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">abs_corrmat</span><span class="p">[</span><span class="n">correlated_metric_1</span><span class="p">][[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">top_corr_features</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">correlated_metric_1</span><span class="p">,</span> <span class="n">correlated_metric_2</span><span class="p">]]])</span>
+        <span class="n">correlation_with_other_metrics_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">abs_corrmat</span><span class="p">[</span><span class="n">correlated_metric_2</span><span class="p">][[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">top_corr_features</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">correlated_metric_1</span><span class="p">,</span> <span class="n">correlated_metric_2</span><span class="p">]]])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="n">correlated_metric_1</span><span class="p">,</span> <span class="s1">&#39;has the average correlation of&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">correlation_with_other_metrics_1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="s1">&#39;with other metrics&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="n">correlated_metric_2</span><span class="p">,</span> <span class="s1">&#39;has the average correlation of&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">correlation_with_other_metrics_2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="p">,</span> <span class="s1">&#39;with other metrics&#39;</span><span class="p">)</span>
+        <span class="c1"># select the metric that shares the least correlation outside of the pair and exclude the other</span>
+        <span class="k">if</span> <span class="n">correlation_with_other_metrics_1</span> <span class="o">&lt;</span> <span class="n">correlation_with_other_metrics_2</span><span class="p">:</span>
+            <span class="n">exclude_metric</span> <span class="o">=</span> <span class="n">correlated_metric_2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">exclude_metric</span> <span class="o">=</span> <span class="n">correlated_metric_1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;Exclude&#39;</span><span class="p">,</span><span class="n">exclude_metric</span><span class="p">)</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">AS_metrics</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">AS_metrics</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">([</span><span class="n">exclude_metric</span><span class="p">]))</span>
+        <span class="n">X_AS_train</span> <span class="o">=</span> <span class="n">X_AS_train</span><span class="p">[</span><span class="n">AS_metrics</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">break</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;According to Part 1 of AutoSpearman,&#39;</span><span class="p">,</span> <span class="n">AS_metrics</span><span class="p">,</span><span class="s1">&#39;are selected.&#39;</span><span class="p">)</span>
+<span class="n">generate_heatmap</span><span class="p">(</span><span class="n">X_AS_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Part 1) Automatically select non-correlated metrics based on a Spearman rank correlation test
+Step 1 comparing between A and AddedLOC
+&gt; A has the average correlation of 0.382 with other metrics
+&gt; AddedLOC has the average correlation of 0.387 with other metrics
+&gt; Exclude AddedLOC
+Step 2 comparing between A and B
+&gt; A has the average correlation of 0.231 with other metrics
+&gt; B has the average correlation of 0.235 with other metrics
+&gt; Exclude B
+According to Part 1 of AutoSpearman, [&#39;nCommit&#39;, &#39;CommentToCodeRatio&#39;, &#39;LOC&#39;, &#39;nCoupledClass&#39;, &#39;A&#39;] are selected.
+</pre></div>
+</div>
+<img alt="../_images/correlation-analysis_16_1.png" src="../_images/correlation-analysis_16_1.png" />
+</div>
+</div>
 <p><em>(Part 2) Automatically select non-correlated metrics based on a
 Variance Inflation Factor analysis.</em> We first measure the magnitude of
 multicollinearity of the remaining metrics (<span class="math notranslate nohighlight">\(M'\)</span>) from <code class="docutils literal notranslate"><span class="pre">Part</span> <span class="pre">1</span></code> using
 the Variance Inflation Factor analysis (<em>cf.</em> Line 12). We use a VIF
 threshold value (<span class="math notranslate nohighlight">\(vif.t\)</span>) of 5 to identify the presence of
-multicollinearity, as suggested by Fox <span id="id11">[<a class="reference internal" href="../References.html#id72"><span>Fox15</span></a>]</span>.</p>
+multicollinearity, as suggested by Fox <span id="id11">[<a class="reference internal" href="../References.html#id70"><span>Fox15</span></a>]</span>.</p>
 <p>To automatically remove correlated metrics from the Variance Inflation
 Factor analysis, we identify the removed metric as the metric that has
 the highest VIF score. We then exclude the removed
@@ -839,6 +913,163 @@ regression models to measure the magnitude of multicollinearity of
 metrics. Thus, we consider  as a hybrid feature selection technique
 (both filter-based and wrapper-based).</p>
 <p>TODO - include Tutorials for AutoSpearman</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Prepare a dataframe for VIF</span>
+<span class="n">X_AS_train</span> <span class="o">=</span> <span class="n">add_constant</span><span class="p">(</span><span class="n">X_AS_train</span><span class="p">)</span>
+
+<span class="n">selected_features</span> <span class="o">=</span> <span class="n">X_AS_train</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1"># (Part 2) Automatically select non-correlated metrics based on a Variance Inflation Factor analysis.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(Part 2) Automatically select non-correlated metrics based on a Variance Inflation Factor analysis&#39;</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Calculate VIF scores</span>
+    <span class="n">vif_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">X_AS_train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> 
+                   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X_AS_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])],</span> 
+                  <span class="n">index</span><span class="o">=</span><span class="n">X_AS_train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="c1"># Prepare a final dataframe of VIF scores</span>
+    <span class="n">vif_scores</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">vif_scores</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">,</span> <span class="s1">&#39;VIFscore&#39;</span><span class="p">]</span>
+    <span class="n">vif_scores</span> <span class="o">=</span> <span class="n">vif_scores</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">vif_scores</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;const&#39;</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">vif_scores</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;VIFscore&#39;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Find features that have their VIF scores of above 5.0</span>
+    <span class="n">filtered_vif_scores</span> <span class="o">=</span> <span class="n">vif_scores</span><span class="p">[</span><span class="n">vif_scores</span><span class="p">[</span><span class="s1">&#39;VIFscore&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">5.0</span><span class="p">]</span>
+    
+    <span class="c1"># Terminate when there is no features with the VIF scores of above 5.0</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">filtered_vif_scores</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span>
+        
+    <span class="c1"># exclude the metric with the highest VIF score</span>
+    <span class="n">metric_to_exclude</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">filtered_vif_scores</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Step&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span><span class="s1">&#39;- exclude&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">metric_to_exclude</span><span class="p">))</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+        
+    <span class="n">selected_features</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">selected_features</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">([</span><span class="n">metric_to_exclude</span><span class="p">]))</span>
+    
+    <span class="n">X_AS_train</span> <span class="o">=</span> <span class="n">X_AS_train</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">selected_features</span><span class="p">]</span>
+
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finally, according to Part 2 of AutoSpearman,&#39;</span><span class="p">,</span> <span class="n">AS_metrics</span><span class="p">,</span><span class="s1">&#39;are selected.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Part 2) Automatically select non-correlated metrics based on a Variance Inflation Factor analysis
+Finally, according to Part 2 of AutoSpearman, [&#39;nCommit&#39;, &#39;CommentToCodeRatio&#39;, &#39;LOC&#39;, &#39;nCoupledClass&#39;, &#39;A&#39;] are selected.
+</pre></div>
+</div>
+</div>
+</div>
+<p>To foster future replication, we provide a python implementation of AutoSpearman as a function below.</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for AutoSpearman</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tools.tools</span> <span class="kn">import</span> <span class="n">add_constant</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    For more detail and citation, please refer to:</span>
+<span class="sd">    [1] Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, Christoph Treude:</span>
+<span class="sd">    The Impact of Automated Feature Selection Techniques on the Interpretation of Defect Models. Empir. Softw. Eng. 25(5): 3590-3638 (2020)</span>
+
+<span class="sd">    [2] Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, Christoph Treude:</span>
+<span class="sd">    AutoSpearman: Automatically Mitigating Correlated Software Metrics for Interpreting Defect Models. ICSME 2018: 92-103</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="k">def</span> <span class="nf">AutoSpearman</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">correlation_threshold</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">,</span> <span class="n">correlation_method</span> <span class="o">=</span> <span class="s1">&#39;spearman&#39;</span><span class="p">,</span> <span class="n">VIF_threshold</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span>
+    
+    <span class="n">X_AS_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">AS_metrics</span> <span class="o">=</span> <span class="n">X_AS_train</span><span class="o">.</span><span class="n">columns</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="c1"># (Part 1) Automatically select non-correlated metrics based on a Spearman rank correlation test.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(Part 1) Automatically select non-correlated metrics based on a Spearman rank correlation test&#39;</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">corrmat</span> <span class="o">=</span> <span class="n">X_AS_train</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">correlation_method</span><span class="p">)</span>
+        <span class="n">top_corr_features</span> <span class="o">=</span> <span class="n">corrmat</span><span class="o">.</span><span class="n">index</span>
+        <span class="n">abs_corrmat</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">corrmat</span><span class="p">)</span>
+
+        <span class="c1"># identify correlated metrics with the correlation threshold of the threshold</span>
+        <span class="n">highly_correlated_metrics</span> <span class="o">=</span> <span class="p">((</span><span class="n">corrmat</span> <span class="o">&gt;</span> <span class="n">correlation_threshold</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">corrmat</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">correlation_threshold</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">corrmat</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">n_correlated_metrics</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">highly_correlated_metrics</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">n_correlated_metrics</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># find the strongest pair-wise correlation</span>
+            <span class="n">find_top_corr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">abs_corrmat</span><span class="p">,</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+            <span class="n">find_top_corr</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="n">find_top_corr</span> <span class="o">=</span> <span class="n">find_top_corr</span><span class="p">[</span><span class="n">find_top_corr</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">top_corr_index</span> <span class="o">=</span> <span class="n">find_top_corr</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+            <span class="n">top_corr_i</span> <span class="o">=</span> <span class="n">find_top_corr</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">top_corr_index</span><span class="p">,</span> <span class="p">:]</span>
+
+            <span class="c1"># get the 2 correlated metrics with the strongest correlation</span>
+            <span class="n">correlated_metric_1</span> <span class="o">=</span> <span class="n">top_corr_i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">correlated_metric_2</span> <span class="o">=</span> <span class="n">top_corr_i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt; Step&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span><span class="s1">&#39;comparing between&#39;</span><span class="p">,</span> <span class="n">correlated_metric_1</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="n">correlated_metric_2</span><span class="p">)</span>
+
+            <span class="c1"># compute their correlation with other metrics outside of the pair</span>
+            <span class="n">correlation_with_other_metrics_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">abs_corrmat</span><span class="p">[</span><span class="n">correlated_metric_1</span><span class="p">][[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">top_corr_features</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">correlated_metric_1</span><span class="p">,</span> <span class="n">correlated_metric_2</span><span class="p">]]])</span>
+            <span class="n">correlation_with_other_metrics_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">abs_corrmat</span><span class="p">[</span><span class="n">correlated_metric_2</span><span class="p">][[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">top_corr_features</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">correlated_metric_1</span><span class="p">,</span> <span class="n">correlated_metric_2</span><span class="p">]]])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt;&#39;</span><span class="p">,</span> <span class="n">correlated_metric_1</span><span class="p">,</span> <span class="s1">&#39;has the average correlation of&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">correlation_with_other_metrics_1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="s1">&#39;with other metrics&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt;&#39;</span><span class="p">,</span> <span class="n">correlated_metric_2</span><span class="p">,</span> <span class="s1">&#39;has the average correlation of&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">correlation_with_other_metrics_2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="p">,</span> <span class="s1">&#39;with other metrics&#39;</span><span class="p">)</span>
+            <span class="c1"># select the metric that shares the least correlation outside of the pair and exclude the other</span>
+            <span class="k">if</span> <span class="n">correlation_with_other_metrics_1</span> <span class="o">&lt;</span> <span class="n">correlation_with_other_metrics_2</span><span class="p">:</span>
+                <span class="n">exclude_metric</span> <span class="o">=</span> <span class="n">correlated_metric_2</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">exclude_metric</span> <span class="o">=</span> <span class="n">correlated_metric_1</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;Exclude&#39;</span><span class="p">,</span><span class="n">exclude_metric</span><span class="p">)</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="n">count</span><span class="o">+</span><span class="mi">1</span>
+            <span class="n">AS_metrics</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">AS_metrics</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">([</span><span class="n">exclude_metric</span><span class="p">]))</span>
+            <span class="n">X_AS_train</span> <span class="o">=</span> <span class="n">X_AS_train</span><span class="p">[</span><span class="n">AS_metrics</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;According to Part 1 of AutoSpearman,&#39;</span><span class="p">,</span> <span class="n">AS_metrics</span><span class="p">,</span><span class="s1">&#39;are selected.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># (Part 2) Automatically select non-correlated metrics based on a Variance Inflation Factor analysis.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(Part 2) Automatically select non-correlated metrics based on a Variance Inflation Factor analysis&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Prepare a dataframe for VIF</span>
+    <span class="n">X_AS_train</span> <span class="o">=</span> <span class="n">add_constant</span><span class="p">(</span><span class="n">X_AS_train</span><span class="p">)</span>
+
+    <span class="n">selected_features</span> <span class="o">=</span> <span class="n">X_AS_train</span><span class="o">.</span><span class="n">columns</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="c1"># Calculate VIF scores</span>
+        <span class="n">vif_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">X_AS_train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> 
+                       <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X_AS_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])],</span> 
+                      <span class="n">index</span><span class="o">=</span><span class="n">X_AS_train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="c1"># Prepare a final dataframe of VIF scores</span>
+        <span class="n">vif_scores</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">vif_scores</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">,</span> <span class="s1">&#39;VIFscore&#39;</span><span class="p">]</span>
+        <span class="n">vif_scores</span> <span class="o">=</span> <span class="n">vif_scores</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">vif_scores</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;const&#39;</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">vif_scores</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;VIFscore&#39;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Find features that have their VIF scores of above the threshold</span>
+        <span class="n">filtered_vif_scores</span> <span class="o">=</span> <span class="n">vif_scores</span><span class="p">[</span><span class="n">vif_scores</span><span class="p">[</span><span class="s1">&#39;VIFscore&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">VIF_threshold</span><span class="p">]</span>
+
+        <span class="c1"># Terminate when there is no features with the VIF scores of above the threshold</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">filtered_vif_scores</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="c1"># exclude the metric with the highest VIF score</span>
+        <span class="n">metric_to_exclude</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">filtered_vif_scores</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt; Step&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span><span class="s1">&#39;- exclude&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">metric_to_exclude</span><span class="p">))</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+
+        <span class="n">selected_features</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">selected_features</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">([</span><span class="n">metric_to_exclude</span><span class="p">]))</span>
+
+        <span class="n">X_AS_train</span> <span class="o">=</span> <span class="n">X_AS_train</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">selected_features</span><span class="p">]</span>
+
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finally, according to Part 2 of AutoSpearman,&#39;</span><span class="p">,</span> <span class="n">AS_metrics</span><span class="p">,</span><span class="s1">&#39;are selected.&#39;</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">AS_metrics</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Parts of this chapter have been published by Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, Ahmed E. Hassan: The Impact of Correlated Metrics on the Interpretation of Defect Models. IEEE Trans. Software Eng. 47(2): 320-331 (2021) <a class="reference external" href="https://doi.org/10.1109/TSE.2019.2891758">https://doi.org/10.1109/TSE.2019.2891758</a>”</p>
@@ -847,7 +1078,7 @@ metrics. Thus, we consider  as a hybrid feature selection technique
 <h3>Suggested Readings<a class="headerlink" href="#suggested-readings" title="Permalink to this headline">¶</a></h3>
 <p>[1] Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, Ahmed E. Hassan: The Impact of Correlated Metrics on the Interpretation of Defect Models. IEEE Trans. Software Eng. 47(2): 320-331 (2021)</p>
 <p>[2] Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, Christoph Treude:
-The impact of automated feature selection techniques on the interpretation of defect models. Empir. Softw. Eng. 25(5): 3590-3638 (2020)</p>
+The Impact of Automated Feature Selection Techniques on the Interpretation of Defect Models. Empir. Softw. Eng. 25(5): 3590-3638 (2020)</p>
 <p>[3] Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, Christoph Treude:
 AutoSpearman: Automatically Mitigating Correlated Software Metrics for Interpreting Defect Models. ICSME 2018: 92-103</p>
 </div>
