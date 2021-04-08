@@ -12,10 +12,10 @@
   
 - part: 'Part1-Software Analytics Recipes'
   chapters:      
-  - file: software-analytics/feature-selection.ipynb
+#   - file: software-analytics/feature-selection.ipynb
   - file: software-analytics/correlation-analysis.ipynb
   - file: software-analytics/class-imbalance.ipynb
-  - file: software-analytics/hypothesis-testing.ipynb    
+#   - file: software-analytics/hypothesis-testing.ipynb    
   - file: software-analytics/classification.ipynb
   - file: software-analytics/parameter-settings.ipynb
   - file: software-analytics/model-validation.ipynb
