@@ -9,6 +9,9 @@
   - file: start/index.ipynb
   - file: start/software-quality-assurance.ipynb
   - file: start/defect-prediction.ipynb
+    sections:
+      - file: start/mining-software-defects.ipynb
+      - file: start/software-metrics.ipynb
   
 - part: 'Part1-Software Analytics Recipes'
   chapters:      
