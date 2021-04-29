@@ -1,13 +1,13 @@
-[![Website analytics-cookbook.github.io](https://img.shields.io/website-up-down-green-red/https/analytics-cookbook.github.io.svg)](https://analytics-cookbook.github.io)
+[![Website analytics-cookbook.github.io](https://img.shields.io/website-up-down-green-red/https/xai4se.github.io.svg)](https://xai4se.github.io/book)
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue.svg)](https://www.python.org/)
 &nbsp;
 [![Made with Jupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange.svg)](https://www.jupyter.org/)
 &nbsp;
-[![License: MIT (Code), CC BY-NC-SA (Book)](https://img.shields.io/badge/License-MIT_(Code),_CC_BY--NC--SA_4.0_(Book)-blue.svg)](https://github.com/analytics-cookbook/analytics-cookbook.github.io/blob/master/LICENSE.md)
+[![License: MIT (Code), CC BY-NC-SA (Book)](https://img.shields.io/badge/License-MIT_(Code),_CC_BY--NC--SA_4.0_(Book)-blue.svg)](https://github.com/xai4se/xai4se.github.io/blob/master/LICENSE.md)
 
-# The Software Analytics Cookbook
+# Explainable AI for SE
 
-A Hands-on Guide on How To Make Software Analytics More Practical, Explainable, and Actionable
+A Hands-on Guide on How to Make Software Analytics More Practical, Explainable, and Actionable
 
 ## About this Book
 
