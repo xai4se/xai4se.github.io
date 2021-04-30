@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Software Analytics &#8212; The Software Analytics Cookbook</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -55,23 +52,14 @@
     <link rel="canonical" href="https://analytics-cookbook.github.io/software-analytics/motivation.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://analytics-cookbook.github.io/software-analytics/motivation.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Software Analytics" />
-<meta property="og:description" content="Software Analytics  The success of software engineering projects largely depends on complex decision-making. For example, which tasks should a developer do firs" />
-
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -80,30 +68,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  
-  <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
    The Software Analytics Cookbook
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Getting Started
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../start/index.html">
    1. Software Analytics in a Nutshell
@@ -114,11 +104,16 @@
    2. Software Quality Assurance
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../start/defect-prediction.html">
    3. Defect Prediction
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../start/mining-software-defects.html">
      Mining Software Defects
@@ -130,16 +125,14 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part1-Software Analytics Recipes
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="correlation-analysis.html">
    1. Always handle collinearity and multicollinearity
@@ -176,12 +169,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part2-Explainable AI for SE
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../xai4se/index.html">
    1. Introduction
@@ -192,11 +185,16 @@
    2. Explainability in Software Engineering
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../xai4se/model-level/Model-level.html">
    3. Model-level
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../xai4se/model-level/ANOVA.html">
      3.1. ANOVA analysis
@@ -218,14 +216,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../xai4se/instance-level/Instance-level.html">
    4. Instance-level
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../xai4se/instance-level/LIME.html">
      4.1. LIME
@@ -237,8 +238,6 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../xai4se/actionable-analytics.html">
@@ -246,31 +245,20 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part3-Case Study Examples
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../examples/defect-prediction.html">
    1. Defect Prediction
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../references.html">
-   1. References
-  </a>
- </li>
-</ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -338,12 +326,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -352,12 +340,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    Software Analytics
@@ -372,7 +359,7 @@
   <a class="reference internal nav-link" href="#is-the-community-moving-to-the-right-direction">
    Is the Community Moving to the Right Direction?
   </a>
-  <ul class="nav section-nav flex-column">
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#researchers-focuses">
      Researchers’ Focuses
@@ -402,8 +389,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -431,7 +417,7 @@ threads.</p>
 <p>Software Analytics is a sub-field in software engineering that focuses
 on leveraging AI/ML and data <em>analytics</em> techniques to uncover
 interesting and actionable knowledge from the unprecedented amount of
-<em>software data</em> <span id="id1">[<a class="reference internal" href="../references.html#id207"><span>MZ18</span></a>]</span> <span id="id2">[<a class="reference internal" href="../references.html#id297"><span>TH18</span></a>]</span>.
+<em>software data</em> <span id="id1">[<a class="reference internal" href="../References.html#id207"><span>MZ18</span></a>]</span> <span id="id2">[<a class="reference internal" href="../References.html#id297"><span>TH18</span></a>]</span>.
 Many software organisations (e.g., Microsoft, Facebook, and Google)
 currently use powerful AI/ML techniques to make data-driven engineering
 decisions and automate software engineering tasks. For example, software
@@ -445,9 +431,9 @@ detection.</p>
 <p>While the adoption of software analytics enables software organisations
 to distill actionable insights and support decision-making, there are
 still many barriers to the successful adoption of such software
-analytics in software organizations <span id="id3">[<a class="reference internal" href="../references.html#id52"><span>DTG18</span></a>]</span>.</p>
+analytics in software organizations <span id="id3">[<a class="reference internal" href="../References.html#id52"><span>DTG18</span></a>]</span>.</p>
 <p>First, most software practitioners do not understand the reason behind
-the predictions from software analytics systems <span id="id4">[<a class="reference internal" href="../references.html#id52"><span>DTG18</span></a>]</span>.
+the predictions from software analytics systems <span id="id4">[<a class="reference internal" href="../References.html#id52"><span>DTG18</span></a>]</span>.
 They often ask the following questions:</p>
 <ul class="simple">
 <li><p>Why is this person best suited for this task?</p></li>
@@ -467,15 +453,15 @@ are very concerned about their privacy and fairness if defect prediction
 models were deployed in practice. Practitioners even asked “Would
 developers be laid-off due to the use of defect prediction models for
 identifying who are most likely to introduce software
-defects?” <span id="id5">[<a class="reference internal" href="../references.html#id126"><span>JTG21</span></a>]</span>. Article 22 of the European
+defects?” <span id="id5">[<a class="reference internal" href="../References.html#id126"><span>JTG21</span></a>]</span>. Article 22 of the European
 Union’s General Data Protection Regulation (GDPR) states that the use of
 data in decision-making that affects an individual or group requires an
 <strong>explanation</strong> for any decision made by an algorithm. Unfortunately,
 current software analytics still often do not uphold privacy
-laws <span id="id6">[<a class="reference internal" href="../references.html#id125"><span>JTDG20b</span></a>]</span>. Thus, the risks of unjustified
+laws <span id="id6">[<a class="reference internal" href="../References.html#id125"><span>JTDG20b</span></a>]</span>. Thus, the risks of unjustified
 decision-making of software analytics systems can be catastrophic,
 leading to potentially erroneous and costly business
-decisions <span id="id7">[<a class="reference internal" href="../references.html#id52"><span>DTG18</span></a>]</span>.</p>
+decisions <span id="id7">[<a class="reference internal" href="../References.html#id52"><span>DTG18</span></a>]</span>.</p>
 </div>
 <div class="section" id="is-the-community-moving-to-the-right-direction">
 <h1>Is the Community Moving to the Right Direction?<a class="headerlink" href="#is-the-community-moving-to-the-right-direction" title="Permalink to this headline">¶</a></h1>
@@ -488,7 +474,7 @@ Software Engineering venues (i.e., TSE, ICSE, EMSE, FSE, and MSR) during
 2015-2020 (as of 11 January 2021). We then characterized the key goals
 of each defect prediction study into three main goals: (1) predictions;
 (2) model explanation; and (3) instance
-explanation <span id="id8">[<a class="reference internal" href="../references.html#id126"><span>JTG21</span></a>]</span> <strong>TODO (see
+explanation <span id="id8">[<a class="reference internal" href="../References.html#id126"><span>JTG21</span></a>]</span> <strong>TODO (see
 Figure</strong>. We found that 91% (81/96) of the defect
 prediction studies only focus on making predictions, without considering
 explaining the predictions. As few as 4% of the defect prediction
@@ -502,7 +488,7 @@ actionability of software analytics is still very under researched.</p>
 practitioners perceive as the usefulness of each goal of defect
 prediction models. We found that practitioners perceive that the
 explainability and actionability of software analytics are as <strong>equally
-useful</strong> as the predictions <span id="id9">[<a class="reference internal" href="../references.html#id126"><span>JTG21</span></a>]</span>. 82% of our
+useful</strong> as the predictions <span id="id9">[<a class="reference internal" href="../References.html#id126"><span>JTG21</span></a>]</span>. 82% of our
 respondents said that the explanability goal (generating model
 explanations and instance explanations) is as useful as the prediction
 goal. Thus, we argue that <strong>explainable and actionable software
@@ -528,7 +514,7 @@ explainability. Thus, users can only understand how the model works
 globally (e.g., by inspecting a branch of decision trees). However,
 users often do not understand why the model makes that prediction.</p></li>
 <li><p><strong>“Local Explanability”:</strong> Using model-agnostic techniques (e.g.,
-LIME <span id="id10">[<a class="reference internal" href="../references.html#id256"><span>RSG16</span></a>]</span>) to explain the predictions of the
+LIME <span id="id10">[<a class="reference internal" href="../References.html#id256"><span>RSG16</span></a>]</span>) to explain the predictions of the
 software analytics models (e.g., neural network, random forest).
 Such post-hoc model-agnostic techniques can provide an explanation
 for each prediction (i.e., an instance to be explained). Users can
@@ -541,7 +527,7 @@ models.</p></li>
 <h1>Please Tell Me What To Do!<a class="headerlink" href="#please-tell-me-what-to-do" title="Permalink to this headline">¶</a></h1>
 <p>We discuss some initial evidence from a successful case study of using
 Explainable AI for Software Engineering in the context of software
-defect prediction <span id="id11">[<a class="reference internal" href="../references.html#id249"><span>RTJ+21</span></a>]</span>.</p>
+defect prediction <span id="id11">[<a class="reference internal" href="../References.html#id249"><span>RTJ+21</span></a>]</span>.</p>
 <p><strong>Background.</strong> In today’s increasingly digitalized world, software
 defects are widespread and enormously expensive, but they are very hard
 to detect, predict, and prevent. Thus, a failure to eliminate software
@@ -559,7 +545,7 @@ software quality assurance resources on the most risky files/commits.</p>
 <p><strong>Gaps.</strong> However, developers often do not understand why a file is
 being predicted as defective. In addition, such predictions and global
 explanations are still often not
-actionable <span id="id12">[<a class="reference internal" href="../references.html#id121"><span>JTH19</span></a>]</span>—i.e., developers do not know what
+actionable <span id="id12">[<a class="reference internal" href="../References.html#id121"><span>JTH19</span></a>]</span>—i.e., developers do not know what
 to actually do – or what to avoid doing – in order to improve the
 quality of the software system. These limitations often lead to a lack
 of trust in the predictions, hindering the adoption of defect prediction
@@ -576,7 +562,7 @@ of such actionable guidance remains an extremely challenging problem,
 often leading to ineffective software quality improvement plans.</p>
 <p><strong>Approach.</strong> To generate actionable guidance, we used a rule-based
 model-agnostic technique to generate a rule-based explanation for each
-prediction of defect prediction models <span id="id13">[<a class="reference internal" href="../references.html#id249"><span>RTJ+21</span></a>]</span>. We
+prediction of defect prediction models <span id="id13">[<a class="reference internal" href="../References.html#id249"><span>RTJ+21</span></a>]</span>. We
 first build file-level defect prediction models that are trained using
 traditional software features (e.g., lines of code, code complexity, the
 number of developers who edited a file) with a random forest
@@ -628,11 +614,11 @@ our approach.</p>
 <p>Based on these findings, we summarise our key lessons learned:</p>
 <ol class="simple">
 <li><p>Explainable AI is very important in software engineering, but is
-still under-researched <span id="id14">[<a class="reference internal" href="../references.html#id126"><span>JTG21</span></a>]</span>.</p></li>
+still under-researched <span id="id14">[<a class="reference internal" href="../References.html#id126"><span>JTG21</span></a>]</span>.</p></li>
 <li><p>Explainable AI techniques can be used in software engineering to
 provide explanations of the predictions and actionable guidance to
-support software engineering tasks <span id="id15">[<a class="reference internal" href="../references.html#id249"><span>RTJ+21</span></a>]</span>.
-Other initial successful evidence can be found at <span id="id16">[<a class="reference internal" href="../references.html#id42"><span>CFKM18</span></a>]</span><span id="id17">[<a class="reference internal" href="../references.html#id125"><span>JTDG20b</span></a>]</span><span id="id18">[<a class="reference internal" href="../references.html#id157"><span>KM20</span></a>]</span><span id="id19">[<a class="reference internal" href="../references.html#id239"><span>PM20</span></a>]</span><span id="id20">[<a class="reference internal" href="../references.html#id325"><span>WTT+20</span></a>]</span>.</p></li>
+support software engineering tasks <span id="id15">[<a class="reference internal" href="../References.html#id249"><span>RTJ+21</span></a>]</span>.
+Other initial successful evidence can be found at <span id="id16">[<a class="reference internal" href="../References.html#id42"><span>CFKM18</span></a>]</span><span id="id17">[<a class="reference internal" href="../References.html#id125"><span>JTDG20b</span></a>]</span><span id="id18">[<a class="reference internal" href="../References.html#id157"><span>KM20</span></a>]</span><span id="id19">[<a class="reference internal" href="../References.html#id239"><span>PM20</span></a>]</span><span id="id20">[<a class="reference internal" href="../References.html#id325"><span>WTT+20</span></a>]</span>.</p></li>
 </ol>
 <p>However, there are several open research questions that remain largely
 unexplored:</p>
@@ -708,21 +694,19 @@ Engineering).</p>
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-54962993-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
 
-
-    
-    <!-- Google Analytics -->
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-54962993-1', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
-    
   </body>
 </html>

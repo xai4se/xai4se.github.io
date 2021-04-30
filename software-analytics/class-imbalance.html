@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2. Always handle class imbalance &#8212; The Software Analytics Cookbook</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -59,23 +56,14 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3. Always find the best classification technique" href="classification.html" />
     <link rel="prev" title="1. Always handle collinearity and multicollinearity" href="correlation-analysis.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://analytics-cookbook.github.io/software-analytics/class-imbalance.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Always handle class imbalance" />
-<meta property="og:description" content="Always handle class imbalance  Class Rebalancing Techniques for Software Analytics  A plethora of class rebalancing techniques exist [HG09], e.g., (1) sampling " />
-
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -84,30 +72,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  
-  <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
    The Software Analytics Cookbook
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Getting Started
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../start/index.html">
    1. Software Analytics in a Nutshell
@@ -118,11 +108,16 @@
    2. Software Quality Assurance
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../start/defect-prediction.html">
    3. Defect Prediction
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../start/mining-software-defects.html">
      Mining Software Defects
@@ -134,16 +129,14 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part1-Software Analytics Recipes
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="correlation-analysis.html">
    1. Always handle collinearity and multicollinearity
@@ -180,12 +173,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part2-Explainable AI for SE
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../xai4se/index.html">
    1. Introduction
@@ -196,11 +189,16 @@
    2. Explainability in Software Engineering
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../xai4se/model-level/Model-level.html">
    3. Model-level
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../xai4se/model-level/ANOVA.html">
      3.1. ANOVA analysis
@@ -222,14 +220,17 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../xai4se/instance-level/Instance-level.html">
    4. Instance-level
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../xai4se/instance-level/LIME.html">
      4.1. LIME
@@ -241,8 +242,6 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../xai4se/actionable-analytics.html">
@@ -250,31 +249,20 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part3-Case Study Examples
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../examples/defect-prediction.html">
    1. Defect Prediction
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Appendix
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../references.html">
-   1. References
-  </a>
- </li>
-</ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -342,12 +330,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -378,12 +366,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#class-rebalancing-techniques-for-software-analytics">
    2.1. Class Rebalancing Techniques for Software Analytics
@@ -413,8 +400,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -427,19 +413,19 @@
 <h1><span class="section-number">2. </span>Always handle class imbalance<a class="headerlink" href="#always-handle-class-imbalance" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="class-rebalancing-techniques-for-software-analytics">
 <h2><span class="section-number">2.1. </span>Class Rebalancing Techniques for Software Analytics<a class="headerlink" href="#class-rebalancing-techniques-for-software-analytics" title="Permalink to this headline">¶</a></h2>
-<p>A plethora of class rebalancing techniques exist <span id="id1">[<a class="reference internal" href="../references.html#id99"><span>HG09</span></a>]</span>,
+<p>A plethora of class rebalancing techniques exist <span id="id1">[<a class="reference internal" href="../References.html#id99"><span>HG09</span></a>]</span>,
 e.g., (1) sampling methods for imbalanced learning, (2) cost-sensitive
 methods for imbalanced learning, (3) kernel-based methods for imbalanced
 learning, and (4) active learning for imbalanced learning. Since it is
 impractical to study all of these techniques, we select a manageable set
 of class rebalancing techniques for our study. As discussed by
-He <span id="id2">[<a class="reference internal" href="../references.html#id99"><span>HG09</span></a>]</span>, we start from the four families of imbalance
-learning techniques. Based on a literature surveys by Hall <em>et al.</em> <span id="id3">[<a class="reference internal" href="../references.html#id88"><span>HBB+12</span></a>]</span>,
-Shihab <span id="id4">[<a class="reference internal" href="../references.html#id276"><span>Shi12</span></a>]</span>, and Nam <span id="id5">[<a class="reference internal" href="../references.html#id226"><span>Nam14</span></a>]</span>, we then select only the
+He <span id="id2">[<a class="reference internal" href="../References.html#id99"><span>HG09</span></a>]</span>, we start from the four families of imbalance
+learning techniques. Based on a literature surveys by Hall <em>et al.</em> <span id="id3">[<a class="reference internal" href="../References.html#id88"><span>HBB+12</span></a>]</span>,
+Shihab <span id="id4">[<a class="reference internal" href="../References.html#id276"><span>Shi12</span></a>]</span>, and Nam <span id="id5">[<a class="reference internal" href="../References.html#id226"><span>Nam14</span></a>]</span>, we then select only the
 family of sampling techniques for the context of defect prediction.</p>
 <p>We first select the three commonly-used techniques (i.e., over-sampling,
-under-sampling, and Default SMOTE <span id="id6">[<a class="reference internal" href="../references.html#id41"><span>CBHK02</span></a>]</span>) that were
-previously used in the literature <span id="id7">[<a class="reference internal" href="../references.html#id133"><span>KameiMondenMatsumoto+07</span></a>]</span><span id="id8">[<a class="reference internal" href="../references.html#id142"><span>KGS10</span></a>]</span><span id="id9">[<a class="reference internal" href="../references.html#id238"><span>PD07</span></a>]</span><span id="id10">[<a class="reference internal" href="../references.html#id271"><span>SKVanHulseF14</span></a>]</span><span id="id11">[<a class="reference internal" href="../references.html#id287"><span>TTDM15</span></a>]</span><span id="id12">[<a class="reference internal" href="../references.html#id320"><span>WY13</span></a>]</span><span id="id13">[<a class="reference internal" href="../references.html#id331"><span>XLS+15</span></a>]</span><span id="id14">[<a class="reference internal" href="../references.html#id333"><span>YLH+16</span></a>]</span><span id="id15">[<a class="reference internal" href="../references.html#id334"><span>YLX+17</span></a>]</span></p>
+under-sampling, and Default SMOTE <span id="id6">[<a class="reference internal" href="../References.html#id41"><span>CBHK02</span></a>]</span>) that were
+previously used in the literature <span id="id7">[<a class="reference internal" href="../References.html#id133"><span>KameiMondenMatsumoto+07</span></a>]</span><span id="id8">[<a class="reference internal" href="../References.html#id142"><span>KGS10</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id238"><span>PD07</span></a>]</span><span id="id10">[<a class="reference internal" href="../References.html#id271"><span>SKVanHulseF14</span></a>]</span><span id="id11">[<a class="reference internal" href="../References.html#id287"><span>TTDM15</span></a>]</span><span id="id12">[<a class="reference internal" href="../References.html#id320"><span>WY13</span></a>]</span><span id="id13">[<a class="reference internal" href="../References.html#id331"><span>XLS+15</span></a>]</span><span id="id14">[<a class="reference internal" href="../References.html#id333"><span>YLH+16</span></a>]</span><span id="id15">[<a class="reference internal" href="../References.html#id334"><span>YLX+17</span></a>]</span></p>
 <div class="figure align-default" id="class-imbalance-overview">
 <img alt="../_images/class-imbalance-overview.png" src="../_images/class-imbalance-overview.png" />
 <p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">An illustrative overview of the 3 selected class rebalancing techniques.</span><a class="headerlink" href="#class-imbalance-overview" title="Permalink to this image">¶</a></p>
@@ -530,7 +516,7 @@ lose important information pertaining to the majority class.</p>
 </div>
 <div class="section" id="synthetic-minority-oversampling-technique-smote">
 <h3>Synthetic Minority Oversampling Technique (SMOTE)<a class="headerlink" href="#synthetic-minority-oversampling-technique-smote" title="Permalink to this headline">¶</a></h3>
-<p>The SMOTE technique <span id="id16">[<a class="reference internal" href="../references.html#id41"><span>CBHK02</span></a>]</span> was proposed to combat the
+<p>The SMOTE technique <span id="id16">[<a class="reference internal" href="../References.html#id41"><span>CBHK02</span></a>]</span> was proposed to combat the
 disavantages of the simple over-sampling and under-sampling techniques.
 The SMOTE technique creates artificial data based on the feature space
 (rather than the data space) similarities from the minority modules. The
@@ -631,21 +617,19 @@ Is “better data” better than “better data miners”?: on the benefits of t
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-54962993-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
 
-
-    
-    <!-- Google Analytics -->
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-54962993-1', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
-    
   </body>
 </html>
