@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.4. Decision Tree/Decision Rules &#8212; The Software Analytics Cookbook</title>
+    <title>6.1. Help developers localize which lines of code are the most risky &#8212; The Software Analytics Cookbook</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,11 +49,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://analytics-cookbook.github.io/xai4se/model-level/DTDR.html" />
+    <link rel="canonical" href="https://analytics-cookbook.github.io/xai4se/use-case/defective-line-localization.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4. Instance-level" href="../instance-level/Instance-level.html" />
-    <link rel="prev" title="3.3. Partial Dependence Plot (PDP)" href="PDP.html" />
+    <link rel="next" title="6.2. Help developers understand why a file is predicted as defective" href="local-defect-explanation.html" />
+    <link rel="prev" title="6. Use-case Scenario" href="../use-case.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -187,9 +187,24 @@
    2. Explainability in Software Engineering
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actionable-analytics.html">
+   3. Please Tell Me What To Do!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Model-level.html">
+   4. Techniques for Global Explanation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Instance-level.html">
+   5. Techniques for Local Explanation
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="Model-level.html">
-   3. Model-level
+  <a class="reference internal" href="../use-case.html">
+   6. Use-case Scenario
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -197,54 +212,22 @@
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="ANOVA.html">
-     3.1. ANOVA analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="VarImp.html">
-     3.2. Variable Importance analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="PDP.html">
-     3.3. Partial Dependence Plot (PDP)
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.4. Decision Tree/Decision Rules
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../instance-level/Instance-level.html">
-   4. Instance-level
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../instance-level/LIME.html">
-     4.1. LIME
+     6.1. Help developers localize which lines of code are the most risky
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../instance-level/SHAP.html">
-     4.2. SHAP
+    <a class="reference internal" href="local-defect-explanation.html">
+     6.2. Help developers understand why a file is predicted as defective
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="specific-sq-plan.html">
+     6.3. Help managers develop software quality improvement plans
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../actionable-analytics.html">
-   5. Please Tell Me What To Do!
-  </a>
  </li>
 </ul>
 <p class="caption">
@@ -299,7 +282,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/xai4se/model-level/DTDR.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/xai4se/use-case/defective-line-localization.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -319,10 +302,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/issues/new?title=Issue%20on%20page%20%2Fxai4se/model-level/DTDR.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/issues/new?title=Issue%20on%20page%20%2Fxai4se/use-case/defective-line-localization.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/edit/master/docs/xai4se/model-level/DTDR.ipynb"><button
+        <a class="edit-button" href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/edit/master/docs/xai4se/use-case/defective-line-localization.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -342,7 +325,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/analytics-cookbook/analytics-cookbook.github.io/master?urlpath=lab/tree/docs/xai4se/model-level/DTDR.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/analytics-cookbook/analytics-cookbook.github.io/master?urlpath=lab/tree/docs/xai4se/use-case/defective-line-localization.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -350,7 +333,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/analytics-cookbook/analytics-cookbook.github.io/blob/master/docs/xai4se/model-level/DTDR.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/analytics-cookbook/analytics-cookbook.github.io/blob/master/docs/xai4se/use-case/defective-line-localization.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -370,8 +353,18 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tutorial">
-   Tutorial
+  <a class="reference internal nav-link" href="#motivation">
+   Motivation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#approach">
+   Approach
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results">
+   Results
   </a>
  </li>
 </ul>
@@ -385,106 +378,32 @@
         
               <div>
                 
-  <div class="section" id="decision-tree-decision-rules">
-<h1><span class="section-number">3.4. </span>Decision Tree/Decision Rules<a class="headerlink" href="#decision-tree-decision-rules" title="Permalink to this headline">¶</a></h1>
-<p><strong>Decision Tree</strong> or Decision Rule is a technique to generate tree-based
-model explanations. A decision tree is constructed in a top-down
-direction from a root node. Then, a decision tree partitions the data
-into subsets of similar instances (homogeneous). Typically, an entropy
-or an information gain score are used to calculate the homogeneity of
-among instances. Finally, the constructed decision tree can be converted
-into a set of if-then-else decision rules.</p>
-<div class="section" id="tutorial">
-<h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Load Data and preparing datasets</span>
-
-<span class="c1"># Import for Load Data</span>
-<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
-<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="c1"># Import for Split Data into Training and Testing Samples</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-
-<span class="c1"># Import for Construct a black-box model (Regression and Random Forests)</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
-<span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
-
-<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../../datasets/lucene-2.9.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
-<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../../datasets/lucene-3.0.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
-
-<span class="n">outcome</span> <span class="o">=</span> <span class="s1">&#39;RealBug&#39;</span>
-<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;OWN_COMMIT&#39;</span><span class="p">,</span> <span class="s1">&#39;Added_lines&#39;</span><span class="p">,</span> <span class="s1">&#39;CountClassCoupled&#39;</span><span class="p">,</span> <span class="s1">&#39;AvgLine&#39;</span><span class="p">,</span> <span class="s1">&#39;RatioCommentToCode&#39;</span><span class="p">]</span>
-
-<span class="c1"># process outcome to 0 and 1</span>
-<span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">])</span>
-<span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
-
-<span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">])</span>
-<span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
-
-<span class="n">X_train</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">features</span><span class="p">]</span>
-<span class="n">X_test</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">features</span><span class="p">]</span>
-
-<span class="n">y_train</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">outcome</span><span class="p">]</span>
-<span class="n">y_test</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">outcome</span><span class="p">]</span>
-
-
-<span class="c1"># commits - # of commits that modify the file of interest</span>
-<span class="c1"># Added lines - # of added lines of code</span>
-<span class="c1"># Count class coupled - # of classes that interact or couple with the class of interest</span>
-<span class="c1"># LOC - # of lines of code</span>
-<span class="c1"># RatioCommentToCode - The ratio of lines of comments to lines of code</span>
-<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nCommit&#39;</span><span class="p">,</span> <span class="s1">&#39;AddedLOC&#39;</span><span class="p">,</span> <span class="s1">&#39;nCoupledClass&#39;</span><span class="p">,</span> <span class="s1">&#39;LOC&#39;</span><span class="p">,</span> <span class="s1">&#39;CommentToCodeRatio&#39;</span><span class="p">]</span>
-
-<span class="n">X_train</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">features</span>
-<span class="n">X_test</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">features</span>
-<span class="n">training_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">testing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
+  <div class="section" id="help-developers-localize-which-lines-of-code-are-the-most-risky">
+<h1><span class="section-number">6.1. </span>Help developers localize which lines of code are the most risky<a class="headerlink" href="#help-developers-localize-which-lines-of-code-are-the-most-risky" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<p>Traditionally, software defect predictions are proposed to predict which files are likely to be defective in the future.
+However, the proportion of critically-important defective lines are extremely low.
+Our prior studies found that the ratio of defective lines in a file is as low as 1%-3%.
+Thus, traditional file-level defect prediction models are still not practical to be used in practice.
+However, there exists no features at the line level.
+Thus, line-level defect prediction remains an extremely challenging problem.</p>
 </div>
+<div class="section" id="approach">
+<h2>Approach<a class="headerlink" href="#approach" title="Permalink to this headline">¶</a></h2>
+<p>To address this problem, we proposed to use the LIME’s model-agnostic technique<span id="id1">[<a class="reference internal" href="../../References.html#id255"><span>RSG16a</span></a>]</span> to explain the predictions of file-level defect prediction models.
+In particular, we first build file-level defect prediction models using textual features (i.e., bag of tokens that appear in a file) with a random forest classification technique.
+For each prediction, we apply LIME to understand the prediction.
+This approach allows us to identify which tokens and which lines contribute to the prediction of each file, which can be used to help developers localize which lines of code are the most risky.</p>
 </div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="figure-defective-line-localization">
+<img alt="../../_images/defective-line-localization.png" src="../../_images/defective-line-localization.png" />
+<p class="caption"><span class="caption-number">Fig. 6.1 </span><span class="caption-text">An illustrative example of the use of LIME to identify which lines of code are the most risky.</span><a class="headerlink" href="#figure-defective-line-localization" title="Permalink to this image">¶</a></p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for Decision Rules/Decision Trees</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
-<span class="kn">from</span> <span class="nn">six</span> <span class="kn">import</span> <span class="n">StringIO</span>  
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>  
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">export_graphviz</span>
-<span class="kn">import</span> <span class="nn">pydotplus</span>
-<span class="kn">import</span> <span class="nn">collections</span>
-
-<span class="c1"># construct a decision rules/decision trees model</span>
-<span class="n">dt_model</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">dt_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  
-<span class="n">dt_text</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">export_text</span><span class="p">(</span><span class="n">dt_model</span><span class="p">,</span> 
-                          <span class="n">feature_names</span> <span class="o">=</span> <span class="n">features</span><span class="p">)</span>
-  
-
-<span class="c1"># visualize </span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dt_text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- nCoupledClass &lt;= 5.50
-|   |--- AddedLOC &lt;= 145.50
-|   |   |--- class: 0
-|   |--- AddedLOC &gt;  145.50
-|   |   |--- class: 0
-|--- nCoupledClass &gt;  5.50
-|   |--- AddedLOC &lt;= 113.00
-|   |   |--- class: 0
-|   |--- AddedLOC &gt;  113.00
-|   |   |--- class: 1
-</pre></div>
-</div>
-</div>
-</div>
+<p><a class="reference internal" href="#figure-defective-line-localization"><span class="std std-numref">Fig. 6.1</span></a> shows an example of the use of LIME to identify which lines of code are the most risky.
+The results show that this approach can correctly identify 61% of actual defective lines in a file, suggesting our approach could potentially help developers reduce SQA effort that need to be spent by 52% on clean lines, while accurately identifying 61% of actual defective lines.</p>
 </div>
 </div>
 
@@ -501,7 +420,7 @@ into a set of if-then-else decision rules.</p>
         },
         kernelOptions: {
             kernelName: "xaitools",
-            path: "./xai4se/model-level"
+            path: "./xai4se/use-case"
         },
         predefinedOutput: true
     }
@@ -513,8 +432,8 @@ into a set of if-then-else decision rules.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="PDP.html" title="previous page"><span class="section-number">3.3. </span>Partial Dependence Plot (PDP)</a>
-    <a class='right-next' id="next-link" href="../instance-level/Instance-level.html" title="next page"><span class="section-number">4. </span>Instance-level</a>
+    <a class='left-prev' id="prev-link" href="../use-case.html" title="previous page"><span class="section-number">6. </span>Use-case Scenario</a>
+    <a class='right-next' id="next-link" href="local-defect-explanation.html" title="next page"><span class="section-number">6.2. </span>Help developers understand why a file is predicted as defective</a>
 
         </div>
         

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Model-level &#8212; The Software Analytics Cookbook</title>
+    <title>6.2. Help developers understand why a file is predicted as defective &#8212; The Software Analytics Cookbook</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,11 +49,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://analytics-cookbook.github.io/xai4se/model-level/Model-level.html" />
+    <link rel="canonical" href="https://analytics-cookbook.github.io/xai4se/use-case/local-defect-explanation.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.1. ANOVA analysis" href="ANOVA.html" />
-    <link rel="prev" title="2. Explainability in Software Engineering" href="../explainability-in-se.html" />
+    <link rel="next" title="6.3. Help managers develop software quality improvement plans" href="specific-sq-plan.html" />
+    <link rel="prev" title="6.1. Help developers localize which lines of code are the most risky" href="defective-line-localization.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -187,64 +187,47 @@
    2. Explainability in Software Engineering
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actionable-analytics.html">
+   3. Please Tell Me What To Do!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Model-level.html">
+   4. Techniques for Global Explanation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Instance-level.html">
+   5. Techniques for Local Explanation
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
-   3. Model-level
+  <a class="reference internal" href="../use-case.html">
+   6. Use-case Scenario
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="ANOVA.html">
-     3.1. ANOVA analysis
+    <a class="reference internal" href="defective-line-localization.html">
+     6.1. Help developers localize which lines of code are the most risky
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     6.2. Help developers understand why a file is predicted as defective
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="VarImp.html">
-     3.2. Variable Importance analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="PDP.html">
-     3.3. Partial Dependence Plot (PDP)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="DTDR.html">
-     3.4. Decision Tree/Decision Rules
+    <a class="reference internal" href="specific-sq-plan.html">
+     6.3. Help managers develop software quality improvement plans
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../instance-level/Instance-level.html">
-   4. Instance-level
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../instance-level/LIME.html">
-     4.1. LIME
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../instance-level/SHAP.html">
-     4.2. SHAP
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../actionable-analytics.html">
-   5. Please Tell Me What To Do!
-  </a>
  </li>
 </ul>
 <p class="caption">
@@ -299,7 +282,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/xai4se/model-level/Model-level.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/xai4se/use-case/local-defect-explanation.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -319,10 +302,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/issues/new?title=Issue%20on%20page%20%2Fxai4se/model-level/Model-level.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/issues/new?title=Issue%20on%20page%20%2Fxai4se/use-case/local-defect-explanation.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/edit/master/docs/xai4se/model-level/Model-level.ipynb"><button
+        <a class="edit-button" href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/edit/master/docs/xai4se/use-case/local-defect-explanation.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -342,7 +325,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/analytics-cookbook/analytics-cookbook.github.io/master?urlpath=lab/tree/docs/xai4se/model-level/Model-level.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/analytics-cookbook/analytics-cookbook.github.io/master?urlpath=lab/tree/docs/xai4se/use-case/local-defect-explanation.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -350,7 +333,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/analytics-cookbook/analytics-cookbook.github.io/blob/master/docs/xai4se/model-level/Model-level.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/analytics-cookbook/analytics-cookbook.github.io/blob/master/docs/xai4se/use-case/local-defect-explanation.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -364,6 +347,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation">
+   Motivation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#approach">
+   Approach
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results">
+   Results
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -372,10 +378,32 @@
         
               <div>
                 
-  <div class="section" id="model-level">
-<h1><span class="section-number">3. </span>Model-level<a class="headerlink" href="#model-level" title="Permalink to this headline">¶</a></h1>
-<p>TODO</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="help-developers-understand-why-a-file-is-predicted-as-defective">
+<h1><span class="section-number">6.2. </span>Help developers understand why a file is predicted as defective<a class="headerlink" href="#help-developers-understand-why-a-file-is-predicted-as-defective" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<p>Traditionally, the predictions of defect models can help developers prioritize which files are the most risky.
+However, developers do not understand why a file is predicted as defective, leading to a lack of trust in the predictions and hindering the adoption of defect prediction models in practice.
+Thus, a lack of explainability of defect prediction models remains an extremely challenging problem.</p>
+</div>
+<div class="section" id="approach">
+<h2>Approach<a class="headerlink" href="#approach" title="Permalink to this headline">¶</a></h2>
+<p>To address this problem, we proposed to use a model-agnostic technique called LIME<span id="id1">[<a class="reference internal" href="../../References.html#id255"><span>RSG16a</span></a>]</span> to explain the predictions of file-level defect prediction models.
+In particular, we first build file-level defect prediction models that are trained using traditional software features (e.g., lines of code, code complexity, the number of developers who edited a file) with a random forest classification technique.
+For each prediction, we apply LIME to understand the prediction.
+This approach allows us to identify which features contribute to the prediction of each file.
+This will help developers understand why a file is predicted as defective.</p>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="figure-defect-explanation">
+<img alt="../../_images/defect-explanation.png" src="../../_images/defect-explanation.png" />
+<p class="caption"><span class="caption-number">Fig. 6.2 </span><span class="caption-text">An example of a visual explanation generated by LIME.</span><a class="headerlink" href="#figure-defect-explanation" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#figure-defect-explanation"><span class="std std-numref">Fig. 6.2</span></a> presents an example of a visual explanation generated by LIME to understand why a file is predicted as defective.
+According to this visual explanation, this file is predicted as defective with a risk score of 70%.
+The top-3 important factors that support this prediction are (1) the high number of class and method declaration lines, (2) the high number of distinct developers that contributed to the file, and (3) the low proportion of code ownership.
+Thus, to mitigate the risk of having defects for this file, developers should consider decreasing the number of class and method declaration lines, reducing the number of distinct developers, and increasing the proportion of code ownership.</p>
 </div>
 </div>
 
@@ -392,7 +420,7 @@
         },
         kernelOptions: {
             kernelName: "xaitools",
-            path: "./xai4se/model-level"
+            path: "./xai4se/use-case"
         },
         predefinedOutput: true
     }
@@ -404,8 +432,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../explainability-in-se.html" title="previous page"><span class="section-number">2. </span>Explainability in Software Engineering</a>
-    <a class='right-next' id="next-link" href="ANOVA.html" title="next page"><span class="section-number">3.1. </span>ANOVA analysis</a>
+    <a class='left-prev' id="prev-link" href="defective-line-localization.html" title="previous page"><span class="section-number">6.1. </span>Help developers localize which lines of code are the most risky</a>
+    <a class='right-next' id="next-link" href="specific-sq-plan.html" title="next page"><span class="section-number">6.3. </span>Help managers develop software quality improvement plans</a>
 
         </div>
         

@@ -5,55 +5,55 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Always optimize hyperparameter settings &#8212; The Software Analytics Cookbook</title>
+    <title>6.3. Help managers develop software quality improvement plans &#8212; The Software Analytics Cookbook</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/togglebutton.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://analytics-cookbook.github.io/software-analytics/parameter-settings.html" />
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Avoid using testing dataset in model training" href="model-validation.html" />
-    <link rel="prev" title="3. Always find the best classification technique" href="classification.html" />
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://analytics-cookbook.github.io/xai4se/use-case/specific-sq-plan.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../../examples/index.html" />
+    <link rel="prev" title="6.2. Help developers understand why a file is predicted as defective" href="local-defect-explanation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -70,22 +70,22 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <img src="../_static/logo.png" class="logo" alt="logo">
+      <img src="../../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
+  <a class="reference internal" href="../../index.html">
    The Software Analytics Cookbook
   </a>
  </li>
@@ -97,17 +97,17 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../start/index.html">
+  <a class="reference internal" href="../../start/index.html">
    1. Software Analytics in a Nutshell
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../start/software-quality-assurance.html">
+  <a class="reference internal" href="../../start/software-quality-assurance.html">
    2. Software Quality Assurance
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../start/defect-prediction.html">
+  <a class="reference internal" href="../../start/defect-prediction.html">
    3. Defect Prediction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -117,12 +117,12 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../start/mining-software-defects.html">
+    <a class="reference internal" href="../../start/mining-software-defects.html">
      Mining Software Defects
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../start/software-metrics.html">
+    <a class="reference internal" href="../../start/software-metrics.html">
      Software Metrics
     </a>
    </li>
@@ -134,39 +134,39 @@
   Part1-Software Analytics Recipes
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="correlation-analysis.html">
+  <a class="reference internal" href="../../software-analytics/correlation-analysis.html">
    1. Always handle collinearity and multicollinearity
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="class-imbalance.html">
+  <a class="reference internal" href="../../software-analytics/class-imbalance.html">
    2. Always handle class imbalance
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="classification.html">
+  <a class="reference internal" href="../../software-analytics/classification.html">
    3. Always find the best classification technique
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../software-analytics/parameter-settings.html">
    4. Always optimize hyperparameter settings
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="model-validation.html">
+  <a class="reference internal" href="../../software-analytics/model-validation.html">
    5. Avoid using testing dataset in model training
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="evaluation-measures.html">
+  <a class="reference internal" href="../../software-analytics/evaluation-measures.html">
    6. Always evaluate using business-driven measures
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ranking-and-multiple-comparison.html">
+  <a class="reference internal" href="../../software-analytics/ranking-and-multiple-comparison.html">
    7. Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison
   </a>
  </li>
@@ -176,54 +176,54 @@
   Part2-Explainable AI for SE
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/index.html">
+  <a class="reference internal" href="../index.html">
    1. Introduction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/explainability-in-se.html">
+  <a class="reference internal" href="../explainability-in-se.html">
    2. Explainability in Software Engineering
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/actionable-analytics.html">
+  <a class="reference internal" href="../actionable-analytics.html">
    3. Please Tell Me What To Do!
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/Model-level.html">
+  <a class="reference internal" href="../Model-level.html">
    4. Techniques for Global Explanation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/Instance-level.html">
+  <a class="reference internal" href="../Instance-level.html">
    5. Techniques for Local Explanation
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../xai4se/use-case.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../use-case.html">
    6. Use-case Scenario
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../xai4se/use-case/defective-line-localization.html">
+    <a class="reference internal" href="defective-line-localization.html">
      6.1. Help developers localize which lines of code are the most risky
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../xai4se/use-case/local-defect-explanation.html">
+    <a class="reference internal" href="local-defect-explanation.html">
      6.2. Help developers understand why a file is predicted as defective
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xai4se/use-case/specific-sq-plan.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      6.3. Help managers develop software quality improvement plans
     </a>
    </li>
@@ -237,7 +237,7 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../examples/defect-prediction.html">
+  <a class="reference internal" href="../../examples/defect-prediction.html">
    1. Defect Prediction
   </a>
  </li>
@@ -282,7 +282,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/software-analytics/parameter-settings.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/xai4se/use-case/specific-sq-plan.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -302,10 +302,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/issues/new?title=Issue%20on%20page%20%2Fsoftware-analytics/parameter-settings.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/issues/new?title=Issue%20on%20page%20%2Fxai4se/use-case/specific-sq-plan.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/edit/master/docs/software-analytics/parameter-settings.ipynb"><button
+        <a class="edit-button" href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/edit/master/docs/xai4se/use-case/specific-sq-plan.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -325,17 +325,17 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/analytics-cookbook/analytics-cookbook.github.io/master?urlpath=lab/tree/docs/software-analytics/parameter-settings.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/analytics-cookbook/analytics-cookbook.github.io/master?urlpath=lab/tree/docs/xai4se/use-case/specific-sq-plan.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
+                    src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/analytics-cookbook/analytics-cookbook.github.io/blob/master/docs/software-analytics/parameter-settings.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/analytics-cookbook/analytics-cookbook.github.io/blob/master/docs/xai4se/use-case/specific-sq-plan.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
+                    src="../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
         
@@ -353,8 +353,18 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#todo-content">
-   4.1. TODO - Content
+  <a class="reference internal nav-link" href="#motivation">
+   Motivation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#approach">
+   Approach
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results">
+   Results
   </a>
  </li>
 </ul>
@@ -368,10 +378,32 @@
         
               <div>
                 
-  <div class="section" id="always-optimize-hyperparameter-settings">
-<h1><span class="section-number">4. </span>Always optimize hyperparameter settings<a class="headerlink" href="#always-optimize-hyperparameter-settings" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="todo-content">
-<h2><span class="section-number">4.1. </span>TODO - Content<a class="headerlink" href="#todo-content" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="help-managers-develop-software-quality-improvement-plans">
+<h1><span class="section-number">6.3. </span>Help managers develop software quality improvement plans<a class="headerlink" href="#help-managers-develop-software-quality-improvement-plans" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<p>Traditionally, software defect predictions can only generate predictions and provide an understanding at the global level through the use of ANOVA analysis or Random Forest’s feature importance<span id="id1">[<a class="reference internal" href="../../References.html#id121"><span>JTH19</span></a>]</span>.
+However, such predictions and global insights are still not actionable—i.e., developers do not know what actions they should follow or should not follow to improve the quality of software systems.</p>
+<p>Let’s consider a scenario where a defect prediction model indicates that large file size is associated with defect-proneness.
+While this insight can help managers develop quality improvement plans that in the next development iteration, developers should maintain the lower file size to mitigate the risk of having defects.
+However, such insights do not provide a concrete suggestion of the optimal threshold of file size—i.e., what is the optimal file size that a file should be.
+Thus, a lack of such actionable guidance and a lack of optimal  thresholds often leads to ineffective software quality improvement plans.</p>
+</div>
+<div class="section" id="approach">
+<h2>Approach<a class="headerlink" href="#approach" title="Permalink to this headline">¶</a></h2>
+<p>To generate actionable guidance, we propose to use a rule-based model-agnostic technique to generate a rule-based explanation for each  prediction of defect prediction models.
+In particular, we first build file-level defect prediction models that are trained using traditional software features (e.g., lines of code, code complexity, the number of developers who edited a file) with a random forest classification technique.
+For each prediction, we apply a rule-based model-agnostic technique called LoRMikA<span id="id2">[<span>rajapaksha2020lormika</span>]</span> to generate two types of actionable guidance (i.e., what developers should do to mitigate the risk of having defects and what developers should not do to avoid increasing the risk of having defects).</p>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="figure-specific-sq-plan">
+<img alt="../../_images/specific-sq-plan.png" src="../../_images/specific-sq-plan.png" />
+<p class="caption"><span class="caption-number">Fig. 6.3 </span><span class="caption-text">An example of actionable guidance to help managers developing quality improvement plans.</span><a class="headerlink" href="#figure-specific-sq-plan" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#figure-specific-sq-plan"><span class="std std-numref">Fig. 6.3</span></a> presents an example of actionable guidance to help managers developing quality improvement plans.
+To decrease the risk of having defects, developers should consider (1) decrease the number of class and method declaration lines to less than 29 lines, (2) decrease the number of distinct developers to less than 2 developers, (3) increase the proportion of code ownership to more than 0.85, (4) decrease the number of blank lines to less than 8 lines, (5) decrease the number of output variables to less than 2 variables.</p>
+<p>Nevertheless, to not increase the risk of having defects, developers should consider avoid decreasing the comment to code ratio and avoid increasing the number of minor or junior developers.</p>
 </div>
 </div>
 
@@ -388,7 +420,7 @@
         },
         kernelOptions: {
             kernelName: "xaitools",
-            path: "./software-analytics"
+            path: "./xai4se/use-case"
         },
         predefinedOutput: true
     }
@@ -400,8 +432,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="classification.html" title="previous page"><span class="section-number">3. </span>Always find the best classification technique</a>
-    <a class='right-next' id="next-link" href="model-validation.html" title="next page"><span class="section-number">5. </span>Avoid using testing dataset in model training</a>
+    <a class='left-prev' id="prev-link" href="local-defect-explanation.html" title="previous page"><span class="section-number">6.2. </span>Help developers understand why a file is predicted as defective</a>
+    <a class='right-next' id="next-link" href="../../examples/index.html" title="next page">&lt;no title&gt;</a>
 
         </div>
         
@@ -426,7 +458,7 @@
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
 <script async="" src="https://www.google-analytics.com/analytics.js"></script>

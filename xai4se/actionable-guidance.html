@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Software Metrics &#8212; The Software Analytics Cookbook</title>
+    <title>Techniques for generating actionable guidance &#8212; The Software Analytics Cookbook</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,11 +49,9 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://analytics-cookbook.github.io/start/software-metrics.html" />
+    <link rel="canonical" href="https://analytics-cookbook.github.io/xai4se/actionable-guidance.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Always handle collinearity and multicollinearity" href="../software-analytics/correlation-analysis.html" />
-    <link rel="prev" title="Mining Software Defects" href="mining-software-defects.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -95,34 +93,34 @@
   Getting Started
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="index.html">
+  <a class="reference internal" href="../start/index.html">
    1. Software Analytics in a Nutshell
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="software-quality-assurance.html">
+  <a class="reference internal" href="../start/software-quality-assurance.html">
    2. Software Quality Assurance
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="defect-prediction.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../start/defect-prediction.html">
    3. Defect Prediction
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="mining-software-defects.html">
+    <a class="reference internal" href="../start/mining-software-defects.html">
      Mining Software Defects
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/software-metrics.html">
      Software Metrics
     </a>
    </li>
@@ -178,32 +176,32 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/index.html">
+  <a class="reference internal" href="index.html">
    1. Introduction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/explainability-in-se.html">
+  <a class="reference internal" href="explainability-in-se.html">
    2. Explainability in Software Engineering
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/actionable-analytics.html">
+  <a class="reference internal" href="actionable-analytics.html">
    3. Please Tell Me What To Do!
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/Model-level.html">
+  <a class="reference internal" href="Model-level.html">
    4. Techniques for Global Explanation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/Instance-level.html">
+  <a class="reference internal" href="Instance-level.html">
    5. Techniques for Local Explanation
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../xai4se/use-case.html">
+  <a class="reference internal" href="use-case.html">
    6. Use-case Scenario
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -213,17 +211,17 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../xai4se/use-case/defective-line-localization.html">
+    <a class="reference internal" href="use-case/defective-line-localization.html">
      6.1. Help developers localize which lines of code are the most risky
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../xai4se/use-case/local-defect-explanation.html">
+    <a class="reference internal" href="use-case/local-defect-explanation.html">
      6.2. Help developers understand why a file is predicted as defective
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../xai4se/use-case/specific-sq-plan.html">
+    <a class="reference internal" href="use-case/specific-sq-plan.html">
      6.3. Help managers develop software quality improvement plans
     </a>
    </li>
@@ -282,7 +280,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/start/software-metrics.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/xai4se/actionable-guidance.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -302,10 +300,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/issues/new?title=Issue%20on%20page%20%2Fstart/software-metrics.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/issues/new?title=Issue%20on%20page%20%2Fxai4se/actionable-guidance.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/edit/master/docs/start/software-metrics.ipynb"><button
+        <a class="edit-button" href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/edit/master/docs/xai4se/actionable-guidance.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -325,7 +323,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/analytics-cookbook/analytics-cookbook.github.io/master?urlpath=lab/tree/docs/start/software-metrics.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/analytics-cookbook/analytics-cookbook.github.io/master?urlpath=lab/tree/docs/xai4se/actionable-guidance.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -333,7 +331,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/analytics-cookbook/analytics-cookbook.github.io/blob/master/docs/start/software-metrics.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/analytics-cookbook/analytics-cookbook.github.io/blob/master/docs/xai4se/actionable-guidance.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -355,42 +353,8 @@
         
               <div>
                 
-  <div class="section" id="software-metrics">
-<h1>Software Metrics<a class="headerlink" href="#software-metrics" title="Permalink to this headline">¶</a></h1>
-<p>To prepare a defect dataset, we first \textit{extract metrics} of software modules (e.g., size, complexity, process metrics) from a version control system (VCS).
-We focus on the development activity that occurs prior to a release that corresponds to the \texttt{release} branch of a studied system.
-With this strictly controlled setting, we ensure that changes that we study correspond to the development and maintenance of official software releases.
-Since modern issue tracking systems, like JIRA, often provide traceable links between issue reports (i.e., a report described defects or feature requests) and code changes, we can identify the modules that are changed to address a particular issue report.
-Finally, we \textit{label defective modules} if they have been affected by a code change that addresses an issue report that is classified as a defect.
-Similar to prior studies <span id="id1">[<a class="reference internal" href="../References.html#id342"><span>ZPZ07</span></a>,<a class="reference internal" href="../References.html#id498"><span>DAmbrosLR12a</span></a>,<a class="reference internal" href="../References.html#id136"><span>KSA+13</span></a>]</span>, we define post-release defects as modules that are changed to address an issue report within the six-month period after the release date.</p>
-<p>To understand the characteristics of defect-proneness, prior studies proposed a variety of metrics that are related to software quality.
-We provide a brief summary of software metrics below.</p>
-<p><strong>Code metrics</strong> describe the relationship between code properties and software quality.
-For example, in 1971, Akiyama <span id="id2">[<a class="reference internal" href="../References.html#id7"><span>Aki71</span></a>]</span> is among the first research to show that the size of modules (e.g., lines of code) shares a relationship with defect-proneness.
-McCabe et al. <span id="id3">[<a class="reference internal" href="../References.html#id189"><span>McC76</span></a>]</span> and Halstead also show that the high complexity of modules (e.g., the number of distinct operators and operands) are likely to be more defective.
-Chidamber and Kemerer <span id="id4">[<a class="reference internal" href="../References.html#id44"><span>CK94</span></a>]</span> also propose CK metrics suites, a set of six metrics that describe the structure of a class (e.g., the number of methods defined in a class), that may share a relationship with defect-proneness.
-An independent evaluation by Basili et al. <span id="id5">[<a class="reference internal" href="../References.html#id17"><span>BBM96</span></a>]</span> and Gyimothy et al. <span id="id6">[<a class="reference internal" href="../References.html#id859"><span>GyimothyFS05</span></a>]</span> confirms that the CK metrics suites can be effectively used as software quality indicators.
-An in-depth investigation on the size-defect relationship by Syer <span id="id7">[<a class="reference internal" href="../References.html#id858"><span>SNAH14</span></a>]</span> shows that defect density has an inverted “U” shaped pattern (i.e., defect density increases in smaller files, peaks in the largest small-sized files/smallest medium-sized files, then decreases in medium and larger files).
-Such code metrics are typically extracted from a code snapshot at a release using various available static analysis tools (e.g., SLOCcount (<a class="reference external" href="https://sourceforge.net/projects/sloccount/">https://sourceforge.net/projects/sloccount/</a>), Understand tool (<a class="reference external" href="https://scitools.com/">https://scitools.com/</a>), the <em>mccabe</em> python package\footnote{\url{<a class="reference external" href="https://pypi.python.org/pypi/mccabe">https://pypi.python.org/pypi/mccabe</a>}}, and the <em>radon</em> python package (<a class="reference external" href="https://pypi.python.org/pypi/radon">https://pypi.python.org/pypi/radon</a>).</p>
-<p><strong>Process metrics</strong> describe the relationship between change activities during software development process and software quality.
-Prior work has shown that historical software development process can be used to describe the characteristics of defect-proneness.
-For example, Graves <span id="id8">[<a class="reference internal" href="../References.html#id771"><span>GKMS00</span></a>]</span> find that the software defects may still exist in modules that were recently defective.
-Nagappan and Ball <span id="id9">[<a class="reference internal" href="../References.html#id222"><span>NB05b</span></a>,<a class="reference internal" href="../References.html#id856"><span>NB07</span></a>]</span> find that modules that have undergone a lot of change are likely to be more defective.
-Hassan <span id="id10">[<a class="reference internal" href="../References.html#id855"><span>Has09</span></a>]</span> find that modules with a volatile change process, where changes are spread amongst several files are likely defective.
-Hassan and Holt <span id="id11">[<a class="reference internal" href="../References.html#id513"><span>aEHH05</span></a>]</span> find that modules that are recently changed are more likely to be defective.
-Zimmermann and Nagappan <span id="id12">[<a class="reference internal" href="../References.html#id343"><span>ZNG+09</span></a>,<a class="reference internal" href="../References.html#id749"><span>ZN08</span></a>,<a class="reference internal" href="../References.html#id342"><span>ZPZ07</span></a>]</span> find that program dependency graphs share a relationship with software quality.
-Zimmermann et al. <span id="id13">[<a class="reference internal" href="../References.html#id342"><span>ZPZ07</span></a>]</span> find that the number of defects that were reported in the last six months before release for a module shares a relationship with software quality.
-Such process metrics are typically extracted using code changes that are stored in VCSs.</p>
-<p><strong>Organization metrics</strong> describe the relationship between organization structure and software quality <span id="id14">[<a class="reference internal" href="../References.html#id356"><span>NMB08</span></a>]</span>.
-For example, Graves et al. <span id="id15">[<a class="reference internal" href="../References.html#id771"><span>GKMS00</span></a>]</span> find that modules that are changed by a large number of developers are likely to be more defective.
-Despite of the organization structure, prior studies have shown that code ownership shares a relationship with software quality.
-Thus, we focus on the two dimensions for an approximation of code ownership.
-First, <strong>authoring activity</strong> has been widely used to approximate code ownership.
-For example, Mockus and Herbslerb <span id="id16">[<a class="reference internal" href="../References.html#id857"><span>MH02</span></a>]</span> identify developers who responsible for a module using the number of tasks that a developer has completed.
-Furthermore, Bird et al. <span id="id17">[<a class="reference internal" href="../References.html#id25"><span>BMG11</span></a>]</span> find that modules that are written by many experts are less likely to be defect-prone.
-Second, <strong>reviewing activity</strong> has been also used to approximate code ownership.
-For example, Thongtanunam <span id="id18">[<a class="reference internal" href="../References.html#id299"><span>TMHI16</span></a>]</span> find that reviewing expertise also shares a relationship with defect-proneness (e.g., modules that are reviewed by experts are less likely to be defect-prone).</p>
-<p>ADD: Social Network, Geographical, Social, Human-Factor, Test</p>
+  <div class="section" id="techniques-for-generating-actionable-guidance">
+<h1>Techniques for generating actionable guidance<a class="headerlink" href="#techniques-for-generating-actionable-guidance" title="Permalink to this headline">¶</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -406,7 +370,7 @@ For example, Thongtanunam <span id="id18">[<a class="reference internal" href=".
         },
         kernelOptions: {
             kernelName: "xaitools",
-            path: "./start"
+            path: "./xai4se"
         },
         predefinedOutput: true
     }
@@ -418,8 +382,6 @@ For example, Thongtanunam <span id="id18">[<a class="reference internal" href=".
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="mining-software-defects.html" title="previous page">Mining Software Defects</a>
-    <a class='right-next' id="next-link" href="../software-analytics/correlation-analysis.html" title="next page"><span class="section-number">1. </span>Always handle collinearity and multicollinearity</a>
 
         </div>
         
