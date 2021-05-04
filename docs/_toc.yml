@@ -29,17 +29,17 @@
   chapters:        
   - file: xai4se/index.ipynb
   - file: xai4se/explainability-in-se.ipynb
-  - file: xai4se/model-level/Model-level.ipynb
-    sections:
-      - file: xai4se/model-level/ANOVA.ipynb
-      - file: xai4se/model-level/VarImp.ipynb
-      - file: xai4se/model-level/PDP.ipynb
-      - file: xai4se/model-level/DTDR.ipynb
-  - file: xai4se/instance-level/Instance-level.ipynb
-    sections:
-      - file: xai4se/instance-level/LIME.ipynb
-      - file: xai4se/instance-level/SHAP.ipynb
   - file: xai4se/actionable-analytics.ipynb
+  - file: xai4se/Model-level.ipynb
+  - file: xai4se/Instance-level.ipynb
+#   - file: xai4se/actionable-guidance.ipynb
+  - file: xai4se/use-case.ipynb
+    sections:
+      - file: xai4se/use-case/defective-line-localization.ipynb
+      - file: xai4se/use-case/local-defect-explanation.ipynb
+      - file: xai4se/use-case/specific-sq-plan.ipynb
+      
+
 
   
 - part: 'Part3-Case Study Examples'
