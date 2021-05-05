@@ -1,0 +1,52 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+#
+- file: index.ipynb
+  numbered: 2
+
+- part: 'Getting Started'
+  chapters:      
+  - file: start/index.ipynb
+  - file: start/software-quality-assurance.ipynb
+  - file: start/defect-prediction.ipynb
+    sections:
+      - file: start/mining-software-defects.ipynb
+      - file: start/software-metrics.ipynb
+  
+- part: 'Part1-Software Analytics Recipes'
+  chapters:      
+#   - file: software-analytics/feature-selection.ipynb
+  - file: software-analytics/correlation-analysis.ipynb
+  - file: software-analytics/class-imbalance.ipynb
+#   - file: software-analytics/hypothesis-testing.ipynb    
+  - file: software-analytics/classification.ipynb
+  - file: software-analytics/parameter-settings.ipynb
+  - file: software-analytics/model-validation.ipynb
+  - file: software-analytics/evaluation-measures.ipynb
+  - file: software-analytics/ranking-and-multiple-comparison.ipynb
+
+- part: 'Part2-Explainable AI for SE'
+  chapters:        
+  - file: xai4se/index.ipynb
+  - file: xai4se/explainability-in-se.ipynb
+  - file: xai4se/actionable-analytics.ipynb
+  - file: xai4se/Model-level.ipynb
+  - file: xai4se/Instance-level.ipynb
+#   - file: xai4se/actionable-guidance.ipynb
+  - file: xai4se/use-case.ipynb
+    sections:
+      - file: xai4se/use-case/defective-line-localization.ipynb
+      - file: xai4se/use-case/local-defect-explanation.ipynb
+      - file: xai4se/use-case/specific-sq-plan.ipynb
+      
+
+
+  
+- part: 'Part3-Case Study Examples'
+  chapters:
+  - file: examples/index.ipynb  
+  - file: examples/defect-prediction.ipynb
+  
+- part: 'Appendix'
+  chapters:
+  - file: references.md

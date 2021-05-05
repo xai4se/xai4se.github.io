@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Please Tell Me What To Do! &#8212; The Software Analytics Cookbook</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://analytics-cookbook.github.io/xai4se/actionable-analytics.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Techniques for Global Explanation" href="Model-level.html" />
+    <link rel="prev" title="2. Explainability in Software Engineering" href="explainability-in-se.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   The Software Analytics Cookbook
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../start/index.html">
+   1. Software Analytics in a Nutshell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../start/software-quality-assurance.html">
+   2. Software Quality Assurance
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../start/defect-prediction.html">
+   3. Defect Prediction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/mining-software-defects.html">
+     Mining Software Defects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/software-metrics.html">
+     Software Metrics
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part1-Software Analytics Recipes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/correlation-analysis.html">
+   1. Always handle collinearity and multicollinearity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/class-imbalance.html">
+   2. Always handle class imbalance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/classification.html">
+   3. Always find the best classification technique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/parameter-settings.html">
+   4. Always optimize hyperparameter settings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/model-validation.html">
+   5. Avoid using testing dataset in model training
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/evaluation-measures.html">
+   6. Always evaluate using business-driven measures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/ranking-and-multiple-comparison.html">
+   7. Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part2-Explainable AI for SE
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="explainability-in-se.html">
+   2. Explainability in Software Engineering
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Please Tell Me What To Do!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Model-level.html">
+   4. Techniques for Global Explanation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Instance-level.html">
+   5. Techniques for Local Explanation
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="use-case.html">
+   6. Use-case Scenario
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="use-case/defective-line-localization.html">
+     6.1. Help developers localize which lines of code are the most risky
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="use-case/local-defect-explanation.html">
+     6.2. Help developers understand why a file is predicted as defective
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="use-case/specific-sq-plan.html">
+     6.3. Help managers develop software quality improvement plans
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part3-Case Study Examples
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../examples/defect-prediction.html">
+   1. Defect Prediction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/xai4se/actionable-analytics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/issues/new?title=Issue%20on%20page%20%2Fxai4se/actionable-analytics.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/edit/master/docs/xai4se/actionable-analytics.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/analytics-cookbook/analytics-cookbook.github.io/master?urlpath=lab/tree/docs/xai4se/actionable-analytics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/analytics-cookbook/analytics-cookbook.github.io/blob/master/docs/xai4se/actionable-analytics.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lessons-learned">
+   3.1. Lessons Learned
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="please-tell-me-what-to-do">
+<h1><span class="section-number">3. </span>Please Tell Me What To Do!<a class="headerlink" href="#please-tell-me-what-to-do" title="Permalink to this headline">¶</a></h1>
+<p>TODO - merge with PyExplainer</p>
+<p>We discuss some initial evidence from a successful case study of using
+Explainable AI for Software Engineering in the context of software
+defect prediction <span id="id1">[<a class="reference internal" href="../References.html#id249"><span>RTJ+21</span></a>]</span>.</p>
+<p><strong>Background.</strong> In today’s increasingly digitalized world, software
+defects are widespread and enormously expensive, but they are very hard
+to detect, predict, and prevent. Thus, a failure to eliminate software
+defects in safety-critical systems could result in serious injury to
+people, threats to life, death, and disasters.</p>
+<p>Traditionally, software quality assurance activities – software testing
+and code review – are widely adopted to discover software defects in
+software systems. However, ultra-large-scale systems, such as, Google,
+can have more than two billion lines of code. Thus, exhaustively
+reviewing and testing every single line of code is not feasible with
+limited time and resources. Defect prediction—an AI/ML model trained
+on historical data to predict if a file/commit will be defective in the
+future—has been proposed to help developers prioritize their limited
+software quality assurance resources on the most risky files/commits.</p>
+<p><strong>Gaps.</strong> However, developers often do not understand why a file is
+being predicted as defective. In addition, such predictions and global
+explanations are still often not
+actionable <span id="id2">[<a class="reference internal" href="../References.html#id121"><span>JTH19</span></a>]</span>—i.e., developers do not know what
+to actually do – or what to avoid doing – in order to improve the
+quality of the software system. These limitations often lead to a lack
+of trust in the predictions, hindering the adoption of defect prediction
+models in practice.</p>
+<p>Let’s consider a scenario where a defect prediction model indicates that
+<em>file size</em> is associated with defect-proneness i.e. code in bigger
+files is likely to be more defective. This insight may help managers
+develop quality improvement plans that, in the next development
+iteration, developers should pay attention to the file size to mitigate
+the risk of having defects. However, such insights do not provide a
+concrete suggestion of what to do and what to avoid (i.e. does
+increasing or decreasing size reduce or increase defects?). Thus, a lack
+of such actionable guidance remains an extremely challenging problem,
+often leading to ineffective software quality improvement plans.</p>
+<p><strong>Approach.</strong> To generate actionable guidance, we used a rule-based
+model-agnostic technique to generate a rule-based explanation for each
+prediction of defect prediction models <span id="id3">[<a class="reference internal" href="../References.html#id249"><span>RTJ+21</span></a>]</span>. We
+first build file-level defect prediction models that are trained using
+traditional software features (e.g., lines of code, code complexity, the
+number of developers who edited a file) with a random forest
+classification technique. For each prediction, we applied a rule-based
+model-agnostic technique to generate two types of actionable guidance
+(i.e., what developers should do to mitigate the risk of having defects
+and what developers should not do to avoid increasing the risk of having
+defects).</p>
+<p><strong>TODO Figure-Rules</strong></p>
+<p><strong>Visualizing the actionable guidance.</strong> For each guidance, we
+translated a rule-based explanation into an actionable guidance. Then,
+we developed a proof-of-concept to visualize the actionable guidance
+using a bullet plot <strong>(see
+Figure)</strong>. The visualization is designed to provide the
+following key information: (1) the list of guidance that practitioners
+should follow and should avoid; (2) the actual feature value of that
+file; and (3) its threshold and range values for practitioners to follow
+to mitigate the risk of having defects. The green shades indicate the
+non-risky range values of features, while the red shades indicate the
+risky range values of features. The vertical bars indicate the actual
+values of features for a given file. The green arrows provide directions
+of how a feature should be changed (i.e., increase or decrease). The
+provided guidance is structured into two parts: (1) what to do to
+<em>decrease the risk</em> of being defective; and (2) what to avoid to <em>not
+increase the risk</em> of being defective.</p>
+<p><strong>TODO Figure X</strong> shows an example of such actionable guidance to
+help managers develop their quality improvement plans. In this example,
+to decrease the risk of having defects, developers should consider (1)
+decrease the number of class and method declaration lines to less than
+29 lines, (2) decrease the number of distinct developers to less than 2
+developers, (3) increase the proportion of code ownership to more than
+0.85, (4) decrease the number of blank lines to less than 8 lines, (5)
+decrease the number of output variables to less than 2 variables.
+Nevertheless, to not increase the risk of having defects, developers
+should consider avoid decreasing the comment to code ratio and avoid
+increasing the number of minor or junior developers.</p>
+<p><strong>User Study Evaluation.</strong> We conducted a qualitative survey to
+investigate the practitioners’ perceptions of our visualization
+approach. We also used the visualization of Microsoft’s Code Defect AI
+as a baseline comparison.</p>
+<p><strong>Results.</strong> We found that 80% of our respondents agree that our
+visualization is better for providing actionable guidance when compared
+to the visualization of Microsoft’s Code Defect AI. In addition, 63%-90%
+of the respondents agree with the seven actionable guidance provided by
+our approach.</p>
+<div class="section" id="lessons-learned">
+<h2><span class="section-number">3.1. </span>Lessons Learned<a class="headerlink" href="#lessons-learned" title="Permalink to this headline">¶</a></h2>
+<p>Based on these findings, we summarise our key lessons learned:</p>
+<ol class="simple">
+<li><p>Explainable AI is very important in software engineering, but is
+still under-researched <span id="id4">[<a class="reference internal" href="../References.html#id126"><span>JTG21</span></a>]</span>.</p></li>
+<li><p>Explainable AI techniques can be used in software engineering to
+provide explanations of the predictions and actionable guidance to
+support software engineering tasks <span id="id5">[<a class="reference internal" href="../References.html#id249"><span>RTJ+21</span></a>]</span>.
+Other initial successful evidence can be found at <span id="id6">[<a class="reference internal" href="../References.html#id42"><span>CFKM18</span></a>]</span><span id="id7">[<a class="reference internal" href="../References.html#id125"><span>JTDG20b</span></a>]</span><span id="id8">[<a class="reference internal" href="../References.html#id157"><span>KM20</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id239"><span>PM20</span></a>]</span><span id="id10">[<a class="reference internal" href="../References.html#id325"><span>WTT+20</span></a>]</span>.</p></li>
+</ol>
+<p>However, there are several open research questions that remain largely
+unexplored:</p>
+<ul class="simple">
+<li><p>What is the best form of explanations for software engineering tasks
+that are most understandable to software developers?</p></li>
+<li><p>Do different stakeholders need different forms of explanations in
+software engineering?</p></li>
+<li><p>How can we measure the quality and value of explanations in software
+engineering?</p></li>
+<li><p>How do explanations from explainable AI domains impact software
+engineering practices?</p></li>
+<li><p>What are the other application areas in software engineering that
+need explanations?</p></li>
+<li><p>How can we improve the explanations for other complex AI/ML
+algorithms (e.g., deep learning, optimization, natural language
+processing) to address other software engineering tasks?</p></li>
+</ul>
+<p>We developed an interactive tutorial of Explainable AI tools for SE to
+support future research. This can be found at <a class="reference external" href="http://xai4se.github.io">http://xai4se.github.io</a>.
+We hope this article will motivate future work to address these
+important questions, which require the SE community to work together
+with other disciplines and communities (e.g., Explainable AI, Visual
+Analytics, Natural Language Processing, Human-Centric Software
+Engineering).</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "xaitools"
+        },
+        kernelOptions: {
+            kernelName: "xaitools",
+            path: "./xai4se"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'xaitools'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="explainability-in-se.html" title="previous page"><span class="section-number">2. </span>Explainability in Software Engineering</a>
+    <a class='right-next' id="next-link" href="Model-level.html" title="next page"><span class="section-number">4. </span>Techniques for Global Explanation</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chakkrit Tantithamthavorn and Jirayus Jiarpakdee<br/>
+        
+            &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            <script>mermaid.init();</script> <div class="row_footer"> This project has received funding from the <a href="https://www.arc.gov.au/">Australian Research Council</a>'s Discovery Early Career Researcher Award (ARC DECRA) funding scheme (DE200100941). This book reflects the views of the authors and neither Australian Research Council nor Monash University are liable for any use that may be made of the information contained herein. The content of this project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. The source code that is part of the content, as well as the source code used to format and display that content is licensed under the MIT License. </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-54962993-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

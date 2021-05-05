@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Introduction &#8212; The Software Analytics Cookbook</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://analytics-cookbook.github.io/xai4se/index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Explainability in Software Engineering" href="explainability-in-se.html" />
+    <link rel="prev" title="7. Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison" href="../software-analytics/ranking-and-multiple-comparison.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   The Software Analytics Cookbook
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../start/index.html">
+   1. Software Analytics in a Nutshell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../start/software-quality-assurance.html">
+   2. Software Quality Assurance
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../start/defect-prediction.html">
+   3. Defect Prediction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/mining-software-defects.html">
+     Mining Software Defects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/software-metrics.html">
+     Software Metrics
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part1-Software Analytics Recipes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/correlation-analysis.html">
+   1. Always handle collinearity and multicollinearity
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/class-imbalance.html">
+   2. Always handle class imbalance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/classification.html">
+   3. Always find the best classification technique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/parameter-settings.html">
+   4. Always optimize hyperparameter settings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/model-validation.html">
+   5. Avoid using testing dataset in model training
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/evaluation-measures.html">
+   6. Always evaluate using business-driven measures
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-analytics/ranking-and-multiple-comparison.html">
+   7. Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part2-Explainable AI for SE
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="explainability-in-se.html">
+   2. Explainability in Software Engineering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="actionable-analytics.html">
+   3. Please Tell Me What To Do!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Model-level.html">
+   4. Techniques for Global Explanation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Instance-level.html">
+   5. Techniques for Local Explanation
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="use-case.html">
+   6. Use-case Scenario
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="use-case/defective-line-localization.html">
+     6.1. Help developers localize which lines of code are the most risky
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="use-case/local-defect-explanation.html">
+     6.2. Help developers understand why a file is predicted as defective
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="use-case/specific-sq-plan.html">
+     6.3. Help managers develop software quality improvement plans
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part3-Case Study Examples
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../examples/defect-prediction.html">
+   1. Defect Prediction
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/xai4se/index.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/issues/new?title=Issue%20on%20page%20%2Fxai4se/index.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/edit/master/docs/xai4se/index.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/analytics-cookbook/analytics-cookbook.github.io/master?urlpath=lab/tree/docs/xai4se/index.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/analytics-cookbook/analytics-cookbook.github.io/blob/master/docs/xai4se/index.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stop-telling-me-what-it-is">
+   1.1. Stop Telling Me What It Is!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#is-the-community-moving-to-the-right-direction">
+   1.2. Is the Community Moving to the Right Direction?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#researchers-focuses">
+     Researchers’ Focuses
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#practitioners-needs">
+     Practitioners’ Needs
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction">
+<h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="stop-telling-me-what-it-is">
+<h2><span class="section-number">1.1. </span>Stop Telling Me What It Is!<a class="headerlink" href="#stop-telling-me-what-it-is" title="Permalink to this headline">¶</a></h2>
+<p>While the adoption of software analytics enables software organisations
+to distill actionable insights and support decision-making, there are
+still many barriers to the successful adoption of such software
+analytics in software organizations <span id="id1">[<a class="reference internal" href="../References.html#id52"><span>DTG18</span></a>]</span>.</p>
+<p>First, most software practitioners do not understand the reason behind
+the predictions from software analytics systems <span id="id2">[<a class="reference internal" href="../References.html#id52"><span>DTG18</span></a>]</span>.
+They often ask the following questions:</p>
+<ul class="simple">
+<li><p>Why is this person best suited for this task?</p></li>
+<li><p>Why is this file predicted as defective?</p></li>
+<li><p>Why is this task required the highest development effort?</p></li>
+<li><p>Why should this task be done first?</p></li>
+<li><p>Why is this developer predicted to have low productivity?</p></li>
+<li><p>How can we improve the quality of software systems in following
+iterations?</p></li>
+</ul>
+<p>These concerns about a lack of explanation often leads to a lack of
+trust and transparency, hindering the adoption of software analytics in
+practice.</p>
+<p>Second, software practitioners are often affected by the decision-making
+from software analytics. Our recent work also found that practitioners
+are very concerned about their privacy and fairness if defect prediction
+models were deployed in practice. Practitioners even asked “Would
+developers be laid-off due to the use of defect prediction models for
+identifying who are most likely to introduce software
+defects?” <span id="id3">[<a class="reference internal" href="../References.html#id126"><span>JTG21</span></a>]</span>. Article 22 of the European
+Union’s General Data Protection Regulation (GDPR) states that the use of
+data in decision-making that affects an individual or group requires an
+<strong>explanation</strong> for any decision made by an algorithm. Unfortunately,
+current software analytics still often do not uphold privacy
+laws <span id="id4">[<a class="reference internal" href="../References.html#id125"><span>JTDG20b</span></a>]</span>. Thus, the risks of unjustified
+decision-making of software analytics systems can be catastrophic,
+leading to potentially erroneous and costly business
+decisions <span id="id5">[<a class="reference internal" href="../References.html#id52"><span>DTG18</span></a>]</span>.</p>
+<div class="figure align-default" id="xai-concept">
+<img alt="../_images/xai-concept.png" src="../_images/xai-concept.png" />
+<p class="caption"><span class="caption-number">Fig. 1.5 </span><span class="caption-text">Most software analytics (i.e., defect prediction) studies  have three main goals: (1) predictions; (2) model explanation; and (3) instance explanation. We found that 82% of our study respondents perceived the explanability goal (generating model explanations and instance explanations) is equally useful as the prediction goal. However, we found that 91% (81/96) of defect prediction studies only focus on the prediction goal, and as few as 4% of defect prediction studies focus on the explainability goal.</span><a class="headerlink" href="#xai-concept" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="is-the-community-moving-to-the-right-direction">
+<h2><span class="section-number">1.2. </span>Is the Community Moving to the Right Direction?<a class="headerlink" href="#is-the-community-moving-to-the-right-direction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="researchers-focuses">
+<h3>Researchers’ Focuses<a class="headerlink" href="#researchers-focuses" title="Permalink to this headline">¶</a></h3>
+<p>We conducted a literature analysis to better understand what researchers
+are currently focusing on for defect explanation. We collected 96
+primary defect prediction studies that were published in top-tier
+Software Engineering venues (i.e., TSE, ICSE, EMSE, FSE, and MSR) during
+2015-2020 (as of 11 January 2021). We then characterized the key goals
+of each defect prediction study into three main goals: (1) predictions;
+(2) model explanation; and (3) instance
+explanation <span id="id6">[<a class="reference internal" href="../References.html#id126"><span>JTG21</span></a>]</span> (see <a class="reference internal" href="#xai-concept"><span class="std std-numref">Fig. 1.5</span></a>). We found that 91% (81/96) of the defect
+prediction studies only focus on making predictions, without considering
+explaining the predictions. As few as 4% of the defect prediction
+studies focus on explaining the predictions of defect prediction models. This indicates that the explainability and
+actionability of software analytics is still very under researched.</p>
+</div>
+<div class="section" id="practitioners-needs">
+<h3>Practitioners’ Needs<a class="headerlink" href="#practitioners-needs" title="Permalink to this headline">¶</a></h3>
+<p>We conducted a qualitative survey to better understand what
+practitioners perceive as the usefulness of each goal of defect
+prediction models. We found that practitioners perceive that the
+explainability and actionability of software analytics are as <strong>equally
+useful</strong> as the predictions <span id="id7">[<a class="reference internal" href="../References.html#id126"><span>JTG21</span></a>]</span>. 82% of our
+respondents said that the explanability goal (generating model
+explanations and instance explanations) is as useful as the prediction
+goal (see <a class="reference internal" href="#xai-concept"><span class="std std-numref">Fig. 1.5</span></a>). Thus, we argue that <strong>explainable and actionable software
+analytics is urgently and critically needed</strong>. The research and practice
+communities should thus start answering the key question: <em>“How can we
+make software analytics more explainable and actionable?”</em>.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "xaitools"
+        },
+        kernelOptions: {
+            kernelName: "xaitools",
+            path: "./xai4se"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'xaitools'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../software-analytics/ranking-and-multiple-comparison.html" title="previous page"><span class="section-number">7. </span>Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison</a>
+    <a class='right-next' id="next-link" href="explainability-in-se.html" title="next page"><span class="section-number">2. </span>Explainability in Software Engineering</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chakkrit Tantithamthavorn and Jirayus Jiarpakdee<br/>
+        
+            &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            <script>mermaid.init();</script> <div class="row_footer"> This project has received funding from the <a href="https://www.arc.gov.au/">Australian Research Council</a>'s Discovery Early Career Researcher Award (ARC DECRA) funding scheme (DE200100941). This book reflects the views of the authors and neither Australian Research Council nor Monash University are liable for any use that may be made of the information contained herein. The content of this project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. The source code that is part of the content, as well as the source code used to format and display that content is licensed under the MIT License. </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-54962993-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
