@@ -19,8 +19,9 @@
     sections:
       - file: xai4se/defect-prediction/software-quality-assurance.ipynb
       - file: xai4se/defect-prediction/defect-prediction.ipynb
-      - file: xai4se/defect-prediction/mining-software-defects.ipynb
-      - file: xai4se/defect-prediction/software-metrics.ipynb
+        sections:      
+          - file: xai4se/defect-prediction/mining-software-defects.ipynb
+          - file: xai4se/defect-prediction/software-metrics.ipynb
       - file: xai4se/defect-prediction/defective-line-localization.ipynb
       - file: xai4se/defect-prediction/local-defect-explanation.ipynb
       - file: xai4se/defect-prediction/specific-sq-plan.ipynb
