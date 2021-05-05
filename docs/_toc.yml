@@ -15,21 +15,21 @@
 #       - file: xai4se/actionable-analytics.ipynb
 #       - file: xai4se/actionable-guidance.ipynb
   - file: xai4se/explainability-for-se.ipynb
-  - file: xai4se/use-case.ipynb
+  - file: xai4se/a-case-study-of-defect-prediction.ipynb
     sections:
-      - file: xai4se/use-case/defective-line-localization.ipynb
-      - file: xai4se/use-case/local-defect-explanation.ipynb
-      - file: xai4se/use-case/specific-sq-plan.ipynb
-      
+      - file: xai4se/defect-prediction/software-quality-assurance.ipynb
+      - file: xai4se/defect-prediction/defect-prediction.ipynb
+      - file: xai4se/defect-prediction/mining-software-defects.ipynb
+      - file: xai4se/defect-prediction/software-metrics.ipynb
+      - file: xai4se/defect-prediction/defective-line-localization.ipynb
+      - file: xai4se/defect-prediction/local-defect-explanation.ipynb
+      - file: xai4se/defect-prediction/specific-sq-plan.ipynb
+  - file: xai4se/open-research-directions.ipynb
 
 # - part: 'Getting Started'
 #   chapters:      
 #   - file: start/index.ipynb
-#   - file: start/software-quality-assurance.ipynb
-#   - file: start/defect-prediction.ipynb
-#     sections:
-#       - file: start/mining-software-defects.ipynb
-#       - file: start/software-metrics.ipynb
+
 
 # - part: 'Part2-Software Analytics Recipes'
 #   chapters:      
@@ -46,11 +46,6 @@
 
 #   - file: software-analytics/feature-selection.ipynb
 #   - file: software-analytics/hypothesis-testing.ipynb 
-  
-- part: 'Part3-Case Study Examples'
-  chapters:
-  - file: examples/index.ipynb  
-  - file: examples/defect-prediction.ipynb
   
 - part: 'Appendix'
   chapters:
