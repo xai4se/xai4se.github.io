@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: 'The Software Analytics Cookbook'
+title: 'Explainable AI for SE'
 author: Chakkrit Tantithamthavorn and Jirayus Jiarpakdee
 logo: logo.png
 
@@ -23,7 +23,7 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/analytics-cookbook/analytics-cookbook.github.io  # Online location of your book
+  url: https://github.com/xai4se/book  # Online location of your book
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
@@ -45,7 +45,7 @@ html:
   use_repository_button     : true  # Whether to add a link to your repository button
   use_issues_button         : true  # Whether to add an "open an issue" button
   home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
-  baseurl                   : "https://analytics-cookbook.github.io"  # The base URL where your book will be hosted.
+  baseurl                   : "https://xai4se.github.io/book"  # The base URL where your book will be hosted.
 #   extra_navbar              : Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.
   extra_footer              :   # Will be displayed underneath the footer.
     <script>mermaid.init();</script>
