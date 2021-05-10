@@ -2,6 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
 - file: index.ipynb
+  title: 'Getting Started'
   numbered: 2
 
 - part: 'Part1-What is Explainable AI?'
