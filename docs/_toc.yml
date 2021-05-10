@@ -6,36 +6,36 @@
 
 - part: 'Part1-What is Explainable AI?'
   chapters:        
-  - file: xai4se/index.ipynb
-  - file: xai4se/theory-of-explanations.ipynb
-  - file: xai4se/techniques-for-generating-explanations.ipynb
-  - file: xai4se/model-specific-techniques.ipynb
-  - file: xai4se/model-agnostic-techniques.ipynb
+  - file: xai/index.ipynb
+  - file: xai/theory-of-explanations.ipynb
+  - file: xai/techniques-for-generating-explanations.ipynb
+  - file: xai/model-specific-techniques.ipynb
+  - file: xai/model-agnostic-techniques.ipynb
 # - file: xai4se/actionable-analytics.ipynb
 # - file: xai4se/actionable-guidance.ipynb
 
 
 - part: 'Part2-Defect Prediction Models'
   chapters:  
-  - file: xai4se/a-case-study-of-defect-prediction.ipynb
-  - file: xai4se/defect-prediction/software-quality-assurance.ipynb
-  - file: xai4se/defect-prediction/defect-prediction.ipynb  
-  - file: xai4se/defect-prediction/mining-software-defects.ipynb
-  - file: xai4se/defect-prediction/software-metrics.ipynb  
-  - file: software-analytics/correlation-analysis.ipynb
-  - file: software-analytics/class-imbalance.ipynb
-  - file: software-analytics/classification.ipynb
-  - file: software-analytics/parameter-settings.ipynb
-  - file: software-analytics/model-validation.ipynb
-  - file: software-analytics/evaluation-measures.ipynb
-  - file: software-analytics/ranking-and-multiple-comparison.ipynb  
+  - file: defect-prediction/software-quality-assurance.ipynb
+  - file: defect-prediction/defect-prediction.ipynb  
+  - file: defect-prediction/mining-software-defects.ipynb
+  - file: defect-prediction/software-metrics.ipynb  
+  - file: defect-prediction/correlation-analysis.ipynb
+  - file: defect-prediction/class-imbalance.ipynb
+  - file: defect-prediction/classification.ipynb
+  - file: defect-prediction/parameter-settings.ipynb
+  - file: defect-prediction/model-validation.ipynb
+  - file: defect-prediction/evaluation-measures.ipynb
+  - file: defect-prediction/ranking-and-multiple-comparison.ipynb  
   
 - part: 'Part3-Explainable AI for Software Engineering'
   chapters:  
   - file: xai4se/explainability-for-se.ipynb  
-  - file: xai4se/defect-prediction/defective-line-localization.ipynb
-  - file: xai4se/defect-prediction/local-defect-explanation.ipynb
-  - file: xai4se/defect-prediction/specific-sq-plan.ipynb
+  - file: xai4se/a-case-study-of-defect-prediction.ipynb
+  - file: xai4se/defective-line-localization.ipynb
+  - file: xai4se/local-defect-explanation.ipynb
+  - file: xai4se/specific-sq-plan.ipynb
   - file: xai4se/open-research-directions.ipynb     
   
 
