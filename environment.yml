@@ -75,4 +75,5 @@ dependencies:
     - traitlets==4.3.3
     - typing-extensions==3.7.4.3
     - wcwidth==0.2.5
+    - xgboost==1.4.1
     - zipp==3.4.1
