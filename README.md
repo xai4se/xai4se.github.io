@@ -1,4 +1,4 @@
-[![Website xai4se.github.io/book](https://img.shields.io/website-up-down-green-red/https/xai4se.github.io.svg)](https://xai4se.github.io/book)
+[![Website xai4se.github.io/book](https://img.shields.io/website-up-down-green-red/https/xai4se.github.io/book.svg)](https://xai4se.github.io/book)
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue.svg)](https://www.python.org/)
 &nbsp;
 [![Made with Jupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange.svg)](https://www.jupyter.org/)
