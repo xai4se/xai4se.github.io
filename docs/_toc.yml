@@ -21,17 +21,10 @@
   - file: defect-prediction/software-quality-assurance.ipynb
   - file: defect-prediction/defect-prediction.ipynb  
   - file: defect-prediction/data-collection.ipynb # Step 1
-#   - file: defect-prediction/software-metrics.ipynb  
   - file: defect-prediction/data-preprocessing.ipynb # Step 2
-#   - file: defect-prediction/correlation-analysis.ipynb
-#   - file: defect-prediction/class-imbalance.ipynb
   - file: defect-prediction/model-construction.ipynb # Step 3
-#   - file: defect-prediction/classification.ipynb
-#   - file: defect-prediction/parameter-settings.ipynb
   - file: defect-prediction/model-evaluation.ipynb # Step 4
-#   - file: defect-prediction/model-validation.ipynb
-#   - file: defect-prediction/evaluation-measures.ipynb
-  - file: defect-prediction/ranking-and-multiple-comparison.ipynb  
+  - file: defect-prediction/model-ranking.ipynb # Step 5
   
 - part: 'Part3-Explainable AI for Software Engineering'
   chapters:  
