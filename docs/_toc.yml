@@ -33,7 +33,7 @@
   - file: xai4se/defective-line-localization.ipynb
   - file: xai4se/local-defect-explanation.ipynb
   - file: xai4se/specific-sq-plan.ipynb
-  - file: xai4se/open-research-directions.ipynb     
+#   - file: xai4se/open-research-directions.ipynb     
   
 
 
