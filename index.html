@@ -5,10 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Explainable AI for SE &#8212; Explainable AI for SE</title>
+    <title>Explainable AI for Software Engineering &#8212; Explainable AI for SE</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -20,10 +19,14 @@
 
     
       
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -31,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -41,7 +44,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -53,14 +56,23 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="A Theory of Explanations" href="xai/theory-of-explanations.html" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-    
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://xai4se.github.io/book/index.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Explainable AI for Software Engineering" />
+<meta property="og:description" content="Explainable AI for Software Engineering  A Hands-on Guide on How To Make Software Analytics More Practical, Explainable, and Actionable      About this Book  Th" />
+<meta property="og:image"       content="https://xai4se.github.io/book/_static/logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
-
     
 
     <div class="container-xl">
@@ -69,32 +81,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="#">
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Explainable AI for SE</h1>
-      
-    </a>
+<a class="navbar-brand text-wrap" href="#">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Explainable AI for SE</h1>
+  
+</a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1 current active">
   <a class="reference internal" href="#">
-   Explainable AI for SE
+   Explainable AI for Software Engineering
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Part1-What is Explainable AI?
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="xai/theory-of-explanations.html">
    A Theory of Explanations
@@ -116,12 +128,12 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Part2-Defect Prediction Models
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="defect-prediction/software-quality-assurance.html">
    Software Quality Assurance
@@ -158,12 +170,12 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption collapsible-parent">
  <span class="caption-text">
   Part3-Explainable AI for Software Engineering
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="xai4se/explainability-for-se.html">
    Explainability in Software Engineering
@@ -191,7 +203,6 @@
  </li>
 </ul>
 
-    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -259,12 +270,12 @@
     </div>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -295,46 +306,50 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#about-this-book">
-   About this book
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-you-will-learn">
-   What you will learn
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#who-this-book-is-for">
-   Who this book is for
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#about-the-authors">
-   About the authors
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cite-this-book">
-   Cite this book:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#testimonials">
-   Testimonials
+   About this Book
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-you-will-learn">
+     What you will learn
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#who-this-book-is-for">
+     Who this book is for
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#about-the-authors">
+     About the authors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cite-this-book">
+     Cite this book:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testimonials">
+     Testimonials
+    </a>
+    <ul class="nav section-nav flex-column">
+    </ul>
+   </li>
   </ul>
  </li>
 </ul>
 
-            </nav>
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -343,31 +358,30 @@
         
               <div>
                 
-  <div class="section" id="explainable-ai-for-se">
-<h1><em>Explainable AI for SE</em><a class="headerlink" href="#explainable-ai-for-se" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="explainable-ai-for-software-engineering">
+<h1><em>Explainable AI for Software Engineering</em><a class="headerlink" href="#explainable-ai-for-software-engineering" title="Permalink to this headline">¶</a></h1>
 <p><em>A Hands-on Guide on How To Make Software Analytics More Practical, Explainable, and Actionable</em></p>
 <hr class="docutils" />
 <div class="figure align-default" id="software-tools">
 <img alt="_images/front-banner.png" src="_images/front-banner.png" />
 </div>
 <div class="section" id="about-this-book">
-<h2>About this book<a class="headerlink" href="#about-this-book" title="Permalink to this headline">¶</a></h2>
-<p>The success of software engineering projects largely depends on complex decision-making. For example, which tasks should a developer do first, who should perform this task, is the software of high quality, is a software system reliable and resilient enough to deploy, etc. However, erroneous decision-making for these complex questions is costly in terms of money and reputation. Thus, Artificial Intelligence/Machine Learning (AI/ML) techniques have been widely used in software engineering for developing software analytics tools and techniques to improve decision-makings, developer productivity, and software quality. However, the predictions of such AI/ML models for software engineering are still not practical (i.e., fine-grained), not explainable, and not actionable. These concerns often hinder the adoption of AI/ML models in software engineering practices. <strong>Are we moving to the right direction? How can we improve the SE community (both research and education)?</strong> In this book, we first provide a recipe to avoid building unsound software analytics. Then, we introduce the fundamental knowledge of Explainable AI for Software Engineering. Finally, we demonstrate three successful case studies on how Explainable AI techniques can be used to address the aforementioned challenges by making the predictions of software defect predction models more practical, explainable, and actionable.</p>
-</div>
+<h2>About this Book<a class="headerlink" href="#about-this-book" title="Permalink to this headline">¶</a></h2>
+<p>The success of software engineering projects largely depends on complex decision-making. For example, which tasks should a developer do first, who should perform this task, is the software of high quality, is a software system reliable and resilient enough to deploy, etc. However, erroneous decision-making for these complex questions is costly in terms of money and reputation. Thus, Artificial Intelligence/Machine Learning (AI/ML) techniques have been widely used in software engineering for developing software analytics tools and techniques to improve decision-making, developer productivity, and software quality. However, the predictions of such AI/ML models for software engineering are still not practical (i.e., fine-grained), not explainable, and not actionable. These concerns often hinder the adoption of AI/ML models in software engineering practices. In addition, many recent studies still focus on improving the accuracy, while a few of them focus on improving explainability. <strong>Are we moving in the right direction? How can we better improve the SE community (both research and education)?</strong> In this book, we first provide a concise yet essential introduction to the most important aspects of Explainable AI and a hands-on tutorial of Explainable AI tools and techniques. Then, we introduce the fundamental knowledge of defect prediction (an example application of AI for Software Engineering). Finally, we demonstrate three successful case studies on how Explainable AI techniques can be used to address the aforementioned challenges by making the predictions of software defect prediction models more practical, explainable, and actionable.</p>
 <div class="section" id="what-you-will-learn">
-<h2>What you will learn<a class="headerlink" href="#what-you-will-learn" title="Permalink to this headline">¶</a></h2>
-<p>In this book, we:</p>
+<h3>What you will learn<a class="headerlink" href="#what-you-will-learn" title="Permalink to this headline">¶</a></h3>
+<p>This book consists of three parts:</p>
 <ul class="simple">
-<li><p>Present a concise yet essential introduction to the most important aspects of software analytics.</p></li>
-<li><p>Introduce hands-on approaches to implementing software analytics.</p></li>
-<li><p>Demonstrate tools and techniques to make software analytics explainable and actionable.</p></li>
-<li><p>Provide examples case studies.</p></li>
+<li><p><strong>Part 1-Explainable AI:</strong> We first provide a concise yet essential introduction to the most important aspects of Explainable AI and a hands-on tutorial of Explainable AI tools and techniques.</p></li>
+<li><p><strong>Part 2-Defect Prediction Models:</strong> We introduce the fundamental knowledge of defect prediction (an example application of AI for Software Engineering)</p></li>
+<li><p><strong>Part 3-Explainable AI for Software Engineering:</strong> We demonstrate three successful case studies on how Explainable AI techniques can be used to address the aforementioned challenges by making the predictions of software defect prediction models more practical, explainable, and actionable.</p></li>
 </ul>
 </div>
 <div class="section" id="who-this-book-is-for">
-<h2>Who this book is for<a class="headerlink" href="#who-this-book-is-for" title="Permalink to this headline">¶</a></h2>
+<h3>Who this book is for<a class="headerlink" href="#who-this-book-is-for" title="Permalink to this headline">¶</a></h3>
 <p>Some of the potential readers of this book include:</p>
 <ol class="simple">
+<li><p>SE researchers and PhD students who want to learn more about the intersection of Explainable AI and Software Engineering.</p></li>
 <li><p>Software practitioners who already use Python for as data science, machine learning, research, and analysis and wish to apply their data science knowledge to software data.</p></li>
 <li><p>Software analysts and data scientists who want to understand and avoid pitfalls when desigining software analytics.</p></li>
 <li><p>Project managers who involve high-stakes decision-making and need software analytics to make smarter data-driven busineess decisions.</p></li>
@@ -375,27 +389,27 @@
 <p><strong>Caution:</strong> This book is not an introduction to data science, machine learning, or artifcial intelligence concepts. You must have some foundational knowledge and/or experience with machine learning libraries such as scikit-learn to make the most out of this book.</p>
 </div>
 <div class="section" id="about-the-authors">
-<h2>About the authors<a class="headerlink" href="#about-the-authors" title="Permalink to this headline">¶</a></h2>
+<h3>About the authors<a class="headerlink" href="#about-the-authors" title="Permalink to this headline">¶</a></h3>
 <p><strong>Dr. Chakkrit (Kla) Tantithamthavorn</strong> is a Senior Lecturer in Software Engineering and a 2020 ARC DECRA Fellow in the Faculty of Information Technology, Monash University, Australia. He is leading a new research area of Explaianble AI for Software Engineering. His current fellowship is focusing on the development of Practical and Explainable Analytics to Prevent Future Software Defects. His work has been published at several top-tier software engineering venues, such as TSE, ICSE, EMSE, MSR, IST. Contact him at <a class="reference external" href="mailto:chakkrit&#37;&#52;&#48;monash&#46;edu">chakkrit<span>&#64;</span>monash<span>&#46;</span>edu</a>.</p>
 <p><strong>Dr. Jirayus Jiarpakdee</strong> is graduated from Monash University, Australia. His research interests include empirical software engineering and mining software repositories (MSR). The goal of his Ph.D. is to apply the knowledge of statistical modelling, experimental design, and software engineering to improve the explainability of defect prediction models. Contact him at <a class="reference external" href="mailto:jirayus&#46;jiarpakdee&#37;&#52;&#48;monash&#46;edu">jirayus<span>&#46;</span>jiarpakdee<span>&#64;</span>monash<span>&#46;</span>edu</a>.</p>
 </div>
 <div class="section" id="cite-this-book">
-<h2>Cite this book:<a class="headerlink" href="#cite-this-book" title="Permalink to this headline">¶</a></h2>
+<h3>Cite this book:<a class="headerlink" href="#cite-this-book" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@incollection</span><span class="p">{</span><span class="n">xai4sebook</span><span class="p">,</span>
     <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Chakkrit</span> <span class="n">Tantithamthavorn</span> <span class="ow">and</span> <span class="n">Jirayus</span> <span class="n">Jiarpakdee</span><span class="p">},</span>
     <span class="n">booktitle</span> <span class="o">=</span> <span class="p">{</span><span class="n">Explainable</span> <span class="n">AI</span> <span class="k">for</span> <span class="n">Software</span> <span class="n">Engineering</span><span class="p">},</span>
     <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2021</span><span class="p">},</span>
     <span class="n">publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">Monash</span> <span class="n">University</span><span class="p">},</span>
     <span class="n">howpublished</span> <span class="o">=</span> <span class="p">{</span>\<span class="n">url</span><span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">xai4se</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">book</span><span class="p">}},</span>
-    <span class="n">note</span> <span class="o">=</span> <span class="p">{</span><span class="n">Retrieved</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span><span class="p">},</span>
+    <span class="n">note</span> <span class="o">=</span> <span class="p">{</span><span class="n">Retrieved</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">17</span><span class="p">},</span>
     <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">xai4se</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">book</span><span class="p">},</span>
-    <span class="n">urldate</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2021</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">09</span><span class="p">}</span>
+    <span class="n">urldate</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">17</span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="testimonials">
-<h2>Testimonials<a class="headerlink" href="#testimonials" title="Permalink to this headline">¶</a></h2>
+<h3>Testimonials<a class="headerlink" href="#testimonials" title="Permalink to this headline">¶</a></h3>
 <p>We are very excited to hear about how does this book help you (e.g., research, teaching, learning).</p>
 <script
    type="text/javascript"
@@ -420,6 +434,7 @@
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 </div>
@@ -473,19 +488,21 @@
 
       </div>
     </div>
-  
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-                        window.ga = window.ga || function () {
-                            (ga.q = ga.q || []).push(arguments) };
-                        ga.l = +new Date;
-                        ga('create', 'UA-54962993-1', 'auto');
-                        ga('set', 'anonymizeIp', true);
-                        ga('send', 'pageview');
-                    </script>
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-54962993-1', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
   </body>
 </html>
