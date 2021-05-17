@@ -57,9 +57,9 @@ Some of the potential readers of this book include:
     booktitle = {Explainable AI for Software Engineering},
     year = {2021},
     publisher = {Monash University},
-    howpublished = {\url{http://xai4se.github.io/book}},
+    howpublished = {\url{http://xai4se.github.io/}},
     note = {Retrieved 2021-05-17},
-    url = {http://xai4se.github.io/book},
+    url = {http://xai4se.github.io/},
     urldate = {2021-05-17}
 }
 ```
