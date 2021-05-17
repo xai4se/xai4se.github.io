@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Defect Prediction &#8212; The Software Analytics Cookbook</title>
+    <title>Defect Prediction &#8212; Explainable AI for SE</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,10 +49,9 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://analytics-cookbook.github.io/examples/defect-prediction.html" />
+    <link rel="canonical" href="https://xai4se.github.io/book/examples/defect-prediction.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -74,7 +73,7 @@
       <img src="../_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">The Software Analytics Cookbook</h1>
+      <h1 class="site-logo" id="site-title">Explainable AI for SE</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -85,159 +84,108 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
-   The Software Analytics Cookbook
+   Explainable AI for SE
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Getting Started
+  Part1-What is Explainable AI?
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../start/index.html">
-   1. Software Analytics in a Nutshell
+  <a class="reference internal" href="../xai/theory-of-explanations.html">
+   A Theory of Explanations
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../start/software-quality-assurance.html">
-   2. Software Quality Assurance
+  <a class="reference internal" href="../xai/techniques-for-generating-explanations.html">
+   Techniques for Generating Explanations
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../start/defect-prediction.html">
-   3. Defect Prediction
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai/model-specific-techniques.html">
+   Model-specific Techniques for Generating Global Explanations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../start/mining-software-defects.html">
-     Mining Software Defects
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../start/software-metrics.html">
-     Software Metrics
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai/model-agnostic-techniques.html">
+   Model-agnostic Techniques for Generating Local Explanations
+  </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Part1-Software Analytics Recipes
+  Part2-Defect Prediction Models
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/correlation-analysis.html">
-   1. Always handle collinearity and multicollinearity
+  <a class="reference internal" href="../defect-prediction/software-quality-assurance.html">
+   Software Quality Assurance
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/class-imbalance.html">
-   2. Always handle class imbalance
+  <a class="reference internal" href="../defect-prediction/defect-prediction.html">
+   Defect Prediction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/classification.html">
-   3. Always find the best classification technique
+  <a class="reference internal" href="../defect-prediction/data-collection.html">
+   (Step 1) Data Collection
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/parameter-settings.html">
-   4. Always optimize hyperparameter settings
+  <a class="reference internal" href="../defect-prediction/data-preprocessing.html">
+   (Step 2) Data Preprocessing
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/model-validation.html">
-   5. Avoid using testing dataset in model training
+  <a class="reference internal" href="../defect-prediction/model-construction.html">
+   (Step 3) Model Construction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/evaluation-measures.html">
-   6. Always evaluate using business-driven measures
+  <a class="reference internal" href="../defect-prediction/model-evaluation.html">
+   (Step 4) Model Evaluation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../software-analytics/ranking-and-multiple-comparison.html">
-   7. Using a Non-Parametric Scott-Knott ESD Test For Multiple Comparison
+  <a class="reference internal" href="../defect-prediction/model-ranking.html">
+   (Step 5) Model Ranking
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Part2-Explainable AI for SE
+  Part3-Explainable AI for Software Engineering
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/index.html">
-   1. Introduction
+  <a class="reference internal" href="../xai4se/explainability-for-se.html">
+   Explainability in Software Engineering
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/explainability-in-se.html">
-   2. Explainability in Software Engineering
+  <a class="reference internal" href="../xai4se/a-case-study-of-defect-prediction.html">
+   A Case Study of Defect Prediction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/actionable-analytics.html">
-   3. Please Tell Me What To Do!
+  <a class="reference internal" href="../xai4se/defective-line-localization.html">
+   (Example 1) Help developers localize which lines of code are the most risky
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/Model-level.html">
-   4. Techniques for Global Explanation
+  <a class="reference internal" href="../xai4se/local-defect-explanation.html">
+   (Example 2) Help developers understand why a file is predicted as defective
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/Instance-level.html">
-   5. Techniques for Local Explanation
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../xai4se/use-case.html">
-   6. Use-case Scenario
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xai4se/use-case/defective-line-localization.html">
-     6.1. Help developers localize which lines of code are the most risky
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xai4se/use-case/local-defect-explanation.html">
-     6.2. Help developers understand why a file is predicted as defective
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../xai4se/use-case/specific-sq-plan.html">
-     6.3. Help managers develop software quality improvement plans
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Part3-Case Study Examples
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   1. Defect Prediction
+  <a class="reference internal" href="../xai4se/specific-sq-plan.html">
+   (Example 3) Help managers develop software quality improvement plans
   </a>
  </li>
 </ul>
@@ -297,14 +245,14 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/xai4se/book"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/issues/new?title=Issue%20on%20page%20%2Fexamples/defect-prediction.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/xai4se/book/issues/new?title=Issue%20on%20page%20%2Fexamples/defect-prediction.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/analytics-cookbook/analytics-cookbook.github.io/edit/master/docs/examples/defect-prediction.ipynb"><button
+        <a class="edit-button" href="https://github.com/xai4se/book/edit/master/docs/examples/defect-prediction.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -324,7 +272,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/analytics-cookbook/analytics-cookbook.github.io/master?urlpath=lab/tree/docs/examples/defect-prediction.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/book/master?urlpath=lab/tree/docs/examples/defect-prediction.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -332,7 +280,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/analytics-cookbook/analytics-cookbook.github.io/blob/master/docs/examples/defect-prediction.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/book/blob/master/docs/examples/defect-prediction.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -355,7 +303,7 @@
               <div>
                 
   <div class="section" id="defect-prediction">
-<h1><span class="section-number">1. </span>Defect Prediction<a class="headerlink" href="#defect-prediction" title="Permalink to this headline">¶</a></h1>
+<h1>Defect Prediction<a class="headerlink" href="#defect-prediction" title="Permalink to this headline">¶</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -383,7 +331,6 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">&lt;no title&gt;</a>
 
         </div>
         

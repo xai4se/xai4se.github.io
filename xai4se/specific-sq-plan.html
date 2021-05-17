@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Explainable AI for SE</title>
+    <title>(Example 3) Help managers develop software quality improvement plans &#8212; Explainable AI for SE</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,9 +49,10 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://xai4se.github.io/book/examples/index.html" />
+    <link rel="canonical" href="https://xai4se.github.io/book/xai4se/specific-sq-plan.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="(Example 2) Help developers understand why a file is predicted as defective" href="local-defect-explanation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -162,29 +163,29 @@
   Part3-Explainable AI for Software Engineering
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/explainability-for-se.html">
+  <a class="reference internal" href="explainability-for-se.html">
    Explainability in Software Engineering
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/a-case-study-of-defect-prediction.html">
+  <a class="reference internal" href="a-case-study-of-defect-prediction.html">
    A Case Study of Defect Prediction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/defective-line-localization.html">
+  <a class="reference internal" href="defective-line-localization.html">
    (Example 1) Help developers localize which lines of code are the most risky
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/local-defect-explanation.html">
+  <a class="reference internal" href="local-defect-explanation.html">
    (Example 2) Help developers understand why a file is predicted as defective
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/specific-sq-plan.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    (Example 3) Help managers develop software quality improvement plans
   </a>
  </li>
@@ -229,7 +230,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/examples/index.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/xai4se/specific-sq-plan.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -249,10 +250,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/xai4se/book/issues/new?title=Issue%20on%20page%20%2Fexamples/index.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/xai4se/book/issues/new?title=Issue%20on%20page%20%2Fxai4se/specific-sq-plan.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/xai4se/book/edit/master/docs/examples/index.ipynb"><button
+        <a class="edit-button" href="https://github.com/xai4se/book/edit/master/docs/xai4se/specific-sq-plan.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -272,7 +273,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/book/master?urlpath=lab/tree/docs/examples/index.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/book/master?urlpath=lab/tree/docs/xai4se/specific-sq-plan.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -280,7 +281,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/book/blob/master/docs/examples/index.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/book/blob/master/docs/xai4se/specific-sq-plan.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -298,7 +299,22 @@
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivation">
+   Motivation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#approach">
+   Approach
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results">
+   Results
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -310,11 +326,32 @@
         
               <div>
                 
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Case Studies</span>
-</pre></div>
+  <div class="section" id="example-3-help-managers-develop-software-quality-improvement-plans">
+<h1>(Example 3) Help managers develop software quality improvement plans<a class="headerlink" href="#example-3-help-managers-develop-software-quality-improvement-plans" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<p>Traditionally, software defect predictions can only generate predictions and provide an understanding at the global level through the use of ANOVA analysis or Random Forest’s feature importance<span id="id1">[<a class="reference internal" href="../References.html#id121"><span>JTH19</span></a>]</span>.
+However, such predictions and global insights are still not actionable—i.e., developers do not know what actions they should follow or should not follow to improve the quality of software systems.</p>
+<p>Let’s consider a scenario where a defect prediction model indicates that large file size is associated with defect-proneness.
+While this insight can help managers develop quality improvement plans that in the next development iteration, developers should maintain the lower file size to mitigate the risk of having defects.
+However, such insights do not provide a concrete suggestion of the optimal threshold of file size—i.e., what is the optimal file size that a file should be.
+Thus, a lack of such actionable guidance and a lack of optimal  thresholds often leads to ineffective software quality improvement plans.</p>
 </div>
+<div class="section" id="approach">
+<h2>Approach<a class="headerlink" href="#approach" title="Permalink to this headline">¶</a></h2>
+<p>To generate actionable guidance, we propose to use a rule-based model-agnostic technique to generate a rule-based explanation for each  prediction of defect prediction models.
+In particular, we first build file-level defect prediction models that are trained using traditional software features (e.g., lines of code, code complexity, the number of developers who edited a file) with a random forest classification technique.
+For each prediction, we apply a rule-based model-agnostic technique called LoRMikA<span id="id2">[<a class="reference internal" href="../References.html#id250"><span>RTJ+21</span></a>]</span> to generate two types of actionable guidance (i.e., what developers should do to mitigate the risk of having defects and what developers should not do to avoid increasing the risk of having defects).</p>
+</div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="figure-specific-sq-plan">
+<img alt="../_images/specific-sq-plan.png" src="../_images/specific-sq-plan.png" />
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">An example of actionable guidance to help managers developing quality improvement plans.</span><a class="headerlink" href="#figure-specific-sq-plan" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#figure-specific-sq-plan"><span class="std std-numref">Fig. 11</span></a> presents an example of actionable guidance to help managers developing quality improvement plans.
+To decrease the risk of having defects, developers should consider (1) decrease the number of class and method declaration lines to less than 29 lines, (2) decrease the number of distinct developers to less than 2 developers, (3) increase the proportion of code ownership to more than 0.85, (4) decrease the number of blank lines to less than 8 lines, (5) decrease the number of output variables to less than 2 variables.</p>
+<p>Nevertheless, to not increase the risk of having defects, developers should consider avoid decreasing the comment to code ratio and avoid increasing the number of minor or junior developers.</p>
 </div>
 </div>
 
@@ -331,7 +368,7 @@
         },
         kernelOptions: {
             kernelName: "xaitools",
-            path: "./examples"
+            path: "./xai4se"
         },
         predefinedOutput: true
     }
@@ -343,6 +380,7 @@
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="local-defect-explanation.html" title="previous page">(Example 2) Help developers understand why a file is predicted as defective</a>
 
         </div>
         

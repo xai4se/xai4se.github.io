@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Explainable AI for SE</title>
+    <title>Techniques for Generating Explanations &#8212; Explainable AI for SE</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,9 +49,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://xai4se.github.io/book/examples/index.html" />
+    <link rel="canonical" href="https://xai4se.github.io/book/xai/techniques-for-generating-explanations.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Model-specific Techniques for Generating Global Explanations" href="model-specific-techniques.html" />
+    <link rel="prev" title="A Theory of Explanations" href="theory-of-explanations.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -93,24 +95,24 @@
   Part1-What is Explainable AI?
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai/theory-of-explanations.html">
+  <a class="reference internal" href="theory-of-explanations.html">
    A Theory of Explanations
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../xai/techniques-for-generating-explanations.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Techniques for Generating Explanations
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai/model-specific-techniques.html">
+  <a class="reference internal" href="model-specific-techniques.html">
    Model-specific Techniques for Generating Global Explanations
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai/model-agnostic-techniques.html">
+  <a class="reference internal" href="model-agnostic-techniques.html">
    Model-agnostic Techniques for Generating Local Explanations
   </a>
  </li>
@@ -229,7 +231,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/examples/index.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/xai/techniques-for-generating-explanations.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -249,10 +251,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/xai4se/book/issues/new?title=Issue%20on%20page%20%2Fexamples/index.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/xai4se/book/issues/new?title=Issue%20on%20page%20%2Fxai/techniques-for-generating-explanations.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/xai4se/book/edit/master/docs/examples/index.ipynb"><button
+        <a class="edit-button" href="https://github.com/xai4se/book/edit/master/docs/xai/techniques-for-generating-explanations.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -272,7 +274,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/book/master?urlpath=lab/tree/docs/examples/index.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/book/master?urlpath=lab/tree/docs/xai/techniques-for-generating-explanations.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -280,7 +282,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/book/blob/master/docs/examples/index.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/book/blob/master/docs/xai/techniques-for-generating-explanations.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -294,14 +296,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -310,12 +304,23 @@
         
               <div>
                 
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Case Studies</span>
-</pre></div>
+  <div class="section" id="techniques-for-generating-explanations">
+<h1>Techniques for Generating Explanations<a class="headerlink" href="#techniques-for-generating-explanations" title="Permalink to this headline">¶</a></h1>
+<p>Prior studies often leverage <em>white-box AI/ML techniques</em>, such as decision trees and decision rules.
+The transparency of such white-box AI/ML techniques allows us to meaningfully understand the magnitude of the contribution of each metric on the learned outcomes by directly inspecting the model components.
+For example, the coefficients of each metric in a regression model, paths in a decision tree, or rules of a decision rule model</p>
+<p>In contrast, white-box AI/ML techniques are often less accurate than complex black-box AI/ML techniques and often generate generic explanations (e.g., one decision node may cover 100 instances).
+Recently, model-agnostic techniques (e.g., LIME <span id="id1">[<a class="reference internal" href="../References.html#id257"><span>RSG16b</span></a>]</span> and BreakDown <span id="id2">[<a class="reference internal" href="../References.html#id79"><span>GB19</span></a>]</span>) have been used to explain the predictions of any black-box AI/ML models at an instance level.
+Below, we provide the definition of (1) model-specific techniques for generating global explanations and (2) model-agnostic techniques for generating local explanations.</p>
+<div class="figure align-default" id="figure-techniques-overview">
+<img alt="../_images/techniques-overview.png" src="../_images/techniques-overview.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">An illustration of model-specific techniques for generating global explanations and model-agnostic techniques for generating local explanations.</span><a class="headerlink" href="#figure-techniques-overview" title="Permalink to this image">¶</a></p>
 </div>
-</div>
+<p><strong><em>Model-specific explanation techniques</em></strong> focus on explaining the entire decision-making process of a specific black-box model.
+For example, an ANOVA analysis for logistic regression and a variable importance analysis for random forests.
+However, such global explanations are often derived from black-box models that are constructed from training data, which are not specific enough to explain an individual prediction.</p>
+<p><strong><em>Model-agnostic techniques</em></strong> (i.e., local explanation techniques), on the other hand, focus on explaining an individual prediction by diagnosing a black-box model.
+Unlike model-specific explanation techniques described above, the great advantage of model-agnostic techniques is their flexibility. Such model-agnostic techniques can (1) interpret any classification techniques (e.g., regression, random forest, and neural networks); (2) are not limited to a certain form of explanations (e.g., feature importance or rules); and (3) are able to process any input data (e.g., features, words, and images~\cite{ribeiro2016model}).</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -331,7 +336,7 @@
         },
         kernelOptions: {
             kernelName: "xaitools",
-            path: "./examples"
+            path: "./xai"
         },
         predefinedOutput: true
     }
@@ -343,6 +348,8 @@
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="theory-of-explanations.html" title="previous page">A Theory of Explanations</a>
+    <a class='right-next' id="next-link" href="model-specific-techniques.html" title="next page">Model-specific Techniques for Generating Global Explanations</a>
 
         </div>
         

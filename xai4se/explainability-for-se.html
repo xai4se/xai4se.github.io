@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Explainable AI for SE</title>
+    <title>Explainability in Software Engineering &#8212; Explainable AI for SE</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,9 +49,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://xai4se.github.io/book/examples/index.html" />
+    <link rel="canonical" href="https://xai4se.github.io/book/xai4se/explainability-for-se.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="A Case Study of Defect Prediction" href="a-case-study-of-defect-prediction.html" />
+    <link rel="prev" title="(Step 5) Model Ranking" href="../defect-prediction/model-ranking.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -162,29 +164,29 @@
   Part3-Explainable AI for Software Engineering
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/explainability-for-se.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Explainability in Software Engineering
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/a-case-study-of-defect-prediction.html">
+  <a class="reference internal" href="a-case-study-of-defect-prediction.html">
    A Case Study of Defect Prediction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/defective-line-localization.html">
+  <a class="reference internal" href="defective-line-localization.html">
    (Example 1) Help developers localize which lines of code are the most risky
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/local-defect-explanation.html">
+  <a class="reference internal" href="local-defect-explanation.html">
    (Example 2) Help developers understand why a file is predicted as defective
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../xai4se/specific-sq-plan.html">
+  <a class="reference internal" href="specific-sq-plan.html">
    (Example 3) Help managers develop software quality improvement plans
   </a>
  </li>
@@ -229,7 +231,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/examples/index.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/xai4se/explainability-for-se.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -249,10 +251,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/xai4se/book/issues/new?title=Issue%20on%20page%20%2Fexamples/index.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/xai4se/book/issues/new?title=Issue%20on%20page%20%2Fxai4se/explainability-for-se.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/xai4se/book/edit/master/docs/examples/index.ipynb"><button
+        <a class="edit-button" href="https://github.com/xai4se/book/edit/master/docs/xai4se/explainability-for-se.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -272,7 +274,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/book/master?urlpath=lab/tree/docs/examples/index.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/book/master?urlpath=lab/tree/docs/xai4se/explainability-for-se.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -280,7 +282,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/book/blob/master/docs/examples/index.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/book/blob/master/docs/xai4se/explainability-for-se.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -298,7 +300,34 @@
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-prevalence-of-ai-in-se">
+   The Prevalence of AI in SE
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lack-of-explainability-and-trust">
+   Lack of Explainability and Trust
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#is-the-community-moving-to-the-right-direction">
+   Is the Community Moving to the Right Direction?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#researchers-focuses">
+     Researchers’ Focuses
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#practitioners-needs">
+     Practitioners’ Needs
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -310,10 +339,104 @@
         
               <div>
                 
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Case Studies</span>
-</pre></div>
+  <div class="section" id="explainability-in-software-engineering">
+<h1>Explainability in Software Engineering<a class="headerlink" href="#explainability-in-software-engineering" title="Permalink to this headline">¶</a></h1>
+<p>Software engineering is by nature a collaborative social practice.
+Collaboration among different stakeholders (e.g., users, developers, and
+managers) is essential in modern software engineering. As a part of the
+collaboration, individuals are often expected to explain decisions made
+throughout software development processes to develop appropriate trust
+and enable effective communication. Since tool support in software
+development processes is an integral part of this collaborative process,
+similar expectations are also applied. Such tools should not only
+provide insights or generate predictions for recommendation, but also be
+able to explain such insights and recommendations.</p>
+<div class="section" id="the-prevalence-of-ai-in-se">
+<h2>The Prevalence of AI in SE<a class="headerlink" href="#the-prevalence-of-ai-in-se" title="Permalink to this headline">¶</a></h2>
+<p>Recent automated and advanced software development tools heavily rely on
+Artificial Intelligence and Machine Learning (AI/ML) capabilities to
+predict software defects, estimate development effort, and recommend API
+choices. However, such AI/ML algorithms are often “black-box”, which
+makes it hard for practitioners to understand how the models arrive at a
+decision. A lack of explainability of the black-box algorithms leads to
+a lack of trust in the predictions or recommendations produced by such
+algorithms.</p>
+</div>
+<div class="section" id="lack-of-explainability-and-trust">
+<h2>Lack of Explainability and Trust<a class="headerlink" href="#lack-of-explainability-and-trust" title="Permalink to this headline">¶</a></h2>
+<p>While the adoption of software analytics enables software organisations
+to distill actionable insights and support decision-making, there are
+still many barriers to the successful adoption of such software
+analytics in software organizations <span id="id1">[<a class="reference internal" href="../References.html#id52"><span>DTG18</span></a>]</span>.</p>
+<p>First, most software practitioners do not understand the reason behind
+the predictions from software analytics systems <span id="id2">[<a class="reference internal" href="../References.html#id52"><span>DTG18</span></a>]</span>.
+They often ask the following questions:</p>
+<ul class="simple">
+<li><p>Why is this person best suited for this task?</p></li>
+<li><p>Why is this file predicted as defective?</p></li>
+<li><p>Why is this task required the highest development effort?</p></li>
+<li><p>Why should this task be done first?</p></li>
+<li><p>Why is this developer predicted to have low productivity?</p></li>
+<li><p>How can we improve the quality of software systems in following
+iterations?</p></li>
+</ul>
+<p>These concerns about a lack of explanation often leads to a lack of
+trust and transparency, hindering the adoption of software analytics in
+practice.</p>
+<p>Second, software practitioners are often affected by the decision-making
+from software analytics. Our recent work also found that practitioners
+are very concerned about their privacy and fairness if defect prediction
+models were deployed in practice. Practitioners even asked “Would
+developers be laid-off due to the use of defect prediction models for
+identifying who are most likely to introduce software
+defects?” <span id="id3">[<a class="reference internal" href="../References.html#id126"><span>JTG21</span></a>]</span>. Article 22 of the European
+Union’s General Data Protection Regulation (GDPR) states that the use of
+data in decision-making that affects an individual or group requires an
+<strong>explanation</strong> for any decision made by an algorithm. Unfortunately,
+current software analytics still often do not uphold privacy
+laws <span id="id4">[<a class="reference internal" href="../References.html#id125"><span>JTDG20b</span></a>]</span>. Thus, the risks of unjustified
+decision-making of software analytics systems can be catastrophic,
+leading to potentially erroneous and costly business
+decisions <span id="id5">[<a class="reference internal" href="../References.html#id52"><span>DTG18</span></a>]</span>.</p>
+<div class="figure align-default" id="xai-concept">
+<img alt="../_images/xai-concept.png" src="../_images/xai-concept.png" />
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Most software analytics (i.e., defect prediction) studies  have three main goals: (1) predictions; (2) model explanation; and (3) instance explanation. We found that 82% of our study respondents perceived the explanability goal (generating model explanations and instance explanations) is equally useful as the prediction goal. However, we found that 91% (81/96) of defect prediction studies only focus on the prediction goal, and as few as 4% of defect prediction studies focus on the explainability goal.</span><a class="headerlink" href="#xai-concept" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="is-the-community-moving-to-the-right-direction">
+<h2>Is the Community Moving to the Right Direction?<a class="headerlink" href="#is-the-community-moving-to-the-right-direction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="researchers-focuses">
+<h3>Researchers’ Focuses<a class="headerlink" href="#researchers-focuses" title="Permalink to this headline">¶</a></h3>
+<p>We conducted a literature analysis to better understand what researchers
+are currently focusing on for defect explanation. We collected 96
+primary defect prediction studies that were published in top-tier
+Software Engineering venues (i.e., TSE, ICSE, EMSE, FSE, and MSR) during
+2015-2020 (as of 11 January 2021). We then characterized the key goals
+of each defect prediction study into three main goals: (1) predictions;
+(2) model explanation; and (3) instance
+explanation <span id="id6">[<a class="reference internal" href="../References.html#id126"><span>JTG21</span></a>]</span> (see <a class="reference internal" href="#xai-concept"><span class="std std-numref">Fig. 8</span></a>). We found that 91% (81/96) of the defect
+prediction studies only focus on making predictions, without considering
+explaining the predictions. As few as 4% of the defect prediction
+studies focus on explaining the predictions of defect prediction models. This indicates that the explainability and
+actionability of software analytics is still very under researched.</p>
+</div>
+<div class="section" id="practitioners-needs">
+<h3>Practitioners’ Needs<a class="headerlink" href="#practitioners-needs" title="Permalink to this headline">¶</a></h3>
+<p>We conducted a qualitative survey to better understand what
+practitioners perceive as the usefulness of each goal of defect
+prediction models. We found that practitioners perceive that the
+explainability and actionability of software analytics are as <strong>equally
+useful</strong> as the predictions <span id="id7">[<a class="reference internal" href="../References.html#id126"><span>JTG21</span></a>]</span>. 82% of our
+respondents said that the explanability goal (generating model
+explanations and instance explanations) is as useful as the prediction
+goal (see <a class="reference internal" href="#xai-concept"><span class="std std-numref">Fig. 8</span></a>). Thus, we argue that <strong>explainable and actionable software
+analytics is urgently and critically needed</strong>. The research and practice
+communities should thus start answering the key question: <em>“How can we
+make software analytics more explainable and actionable?”</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Parts of this chapter have been published by Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, John Grundy: Actionable Analytics: Stop Telling Me What It Is; Please Tell Me What To Do. IEEE Software 38.4 (2021)”</p>
+</div>
 </div>
 </div>
 </div>
@@ -331,7 +454,7 @@
         },
         kernelOptions: {
             kernelName: "xaitools",
-            path: "./examples"
+            path: "./xai4se"
         },
         predefinedOutput: true
     }
@@ -343,6 +466,8 @@
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="../defect-prediction/model-ranking.html" title="previous page">(Step 5) Model Ranking</a>
+    <a class='right-next' id="next-link" href="a-case-study-of-defect-prediction.html" title="next page">A Case Study of Defect Prediction</a>
 
         </div>
         
