@@ -774,14 +774,14 @@ To mitigate this, we have to select one of them but the question is <em>Which on
 </div>
 <div class="section" id="autospearman-an-automated-feature-selection-approach-that-address-collinearity-and-multicollinearity">
 <h3>AutoSpearman: An automated feature selection approach that address collinearity and multicollinearity<a class="headerlink" href="#autospearman-an-automated-feature-selection-approach-that-address-collinearity-and-multicollinearity" title="Permalink to this headline">¶</a></h3>
-<p>Jiarpakdee <em>et al.</em> <span id="id8">[<a class="reference internal" href="../References.html#id121"><span>JTT18a</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id125"><span>JTT20b</span></a>]</span> <a href="#id10"><span class="problematic" id="id11">:citee:`jiarpakdee2018autospearman`</span></a> introduce , an
+<p>Jiarpakdee <em>et al.</em> <span id="id8">[<a class="reference internal" href="../References.html#id121"><span>JTT18a</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id125"><span>JTT20b</span></a>]</span> <span id="id10">[<a class="reference internal" href="../References.html#id118"><span>JTT18b</span></a>]</span> introduce , an
 automated metric selection approach based on the Spearman rank
 correlation test and the VIF analysis for statistical inference.
 The high-level concept of can be summarised into 2 parts:</p>
 <p><em>(Part 1) Automatically select non-correlated metrics based on a
 Spearman rank correlation test.</em> We first measure the correlation of all
 metrics using the Spearman rank correlation test (<span class="math notranslate nohighlight">\(\rho\)</span>). We use the interpretation of correlation coefficients (<span class="math notranslate nohighlight">\(|\rho|\)</span>) as
-provided by Kraemer <span id="id12">[<a class="reference internal" href="../References.html#id153"><span>KML+03</span></a>]</span>—i.e., a Spearman
+provided by Kraemer <span id="id11">[<a class="reference internal" href="../References.html#id153"><span>KML+03</span></a>]</span>—i.e., a Spearman
 correlation coefficient of above or equal to 0.7 is considered a strong
 correlation. Thus, we only consider the pairs that have an absolute
 Spearman correlation coefficient of above or equal to the threshold
@@ -879,7 +879,7 @@ Variance Inflation Factor analysis.</em> We first measure the magnitude of
 multicollinearity of the remaining metrics (<span class="math notranslate nohighlight">\(M'\)</span>) from <code class="docutils literal notranslate"><span class="pre">Part</span> <span class="pre">1</span></code> using
 the Variance Inflation Factor analysis. We use a VIF
 threshold value (<span class="math notranslate nohighlight">\(vif.t\)</span>) of 5 to identify the presence of
-multicollinearity, as suggested by Fox <span id="id13">[<a class="reference internal" href="../References.html#id71"><span>Fox15</span></a>]</span>.</p>
+multicollinearity, as suggested by Fox <span id="id12">[<a class="reference internal" href="../References.html#id71"><span>Fox15</span></a>]</span>.</p>
 <p>To automatically remove correlated metrics from the Variance Inflation
 Factor analysis, we identify the removed metric as the metric that has
 the highest VIF score. We then exclude the removed
@@ -1059,19 +1059,19 @@ Finally, according to Part 2 of AutoSpearman, [&#39;nCommit&#39;, &#39;CommentTo
 <h2>Always handle class imbalance<a class="headerlink" href="#always-handle-class-imbalance" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="class-rebalancing-techniques-for-software-analytics">
 <h3>Class Rebalancing Techniques for Software Analytics<a class="headerlink" href="#class-rebalancing-techniques-for-software-analytics" title="Permalink to this headline">¶</a></h3>
-<p>A plethora of class rebalancing techniques exist <span id="id14">[<a class="reference internal" href="../References.html#id100"><span>HG09</span></a>]</span>,
+<p>A plethora of class rebalancing techniques exist <span id="id13">[<a class="reference internal" href="../References.html#id100"><span>HG09</span></a>]</span>,
 e.g., (1) sampling methods for imbalanced learning, (2) cost-sensitive
 methods for imbalanced learning, (3) kernel-based methods for imbalanced
 learning, and (4) active learning for imbalanced learning. Since it is
 impractical to study all of these techniques, we select a manageable set
 of class rebalancing techniques for our study. As discussed by
-He <span id="id15">[<a class="reference internal" href="../References.html#id100"><span>HG09</span></a>]</span>, we start from the four families of imbalance
-learning techniques. Based on a literature surveys by Hall <em>et al.</em> <span id="id16">[<a class="reference internal" href="../References.html#id89"><span>HBB+12</span></a>]</span>,
-Shihab <span id="id17">[<a class="reference internal" href="../References.html#id278"><span>Shi12</span></a>]</span>, and Nam <span id="id18">[<a class="reference internal" href="../References.html#id228"><span>Nam14</span></a>]</span>, we then select only the
+He <span id="id14">[<a class="reference internal" href="../References.html#id100"><span>HG09</span></a>]</span>, we start from the four families of imbalance
+learning techniques. Based on a literature surveys by Hall <em>et al.</em> <span id="id15">[<a class="reference internal" href="../References.html#id89"><span>HBB+12</span></a>]</span>,
+Shihab <span id="id16">[<a class="reference internal" href="../References.html#id278"><span>Shi12</span></a>]</span>, and Nam <span id="id17">[<a class="reference internal" href="../References.html#id228"><span>Nam14</span></a>]</span>, we then select only the
 family of sampling techniques for the context of defect prediction.</p>
 <p>We first select the three commonly-used techniques (i.e., over-sampling,
-under-sampling, and Default SMOTE <span id="id19">[<a class="reference internal" href="../References.html#id42"><span>CBHK02</span></a>]</span>) that were
-previously used in the literature <span id="id20">[<a class="reference internal" href="../References.html#id134"><span>KameiMondenMatsumoto+07</span></a>]</span><span id="id21">[<a class="reference internal" href="../References.html#id143"><span>KGS10</span></a>]</span><span id="id22">[<a class="reference internal" href="../References.html#id240"><span>PD07</span></a>]</span><span id="id23">[<a class="reference internal" href="../References.html#id273"><span>SKVanHulseF14</span></a>]</span><span id="id24">[<a class="reference internal" href="../References.html#id289"><span>TTDM15</span></a>]</span><span id="id25">[<a class="reference internal" href="../References.html#id322"><span>WY13</span></a>]</span><span id="id26">[<a class="reference internal" href="../References.html#id333"><span>XLS+15</span></a>]</span><span id="id27">[<a class="reference internal" href="../References.html#id335"><span>YLH+16</span></a>]</span><span id="id28">[<a class="reference internal" href="../References.html#id336"><span>YLX+17</span></a>]</span></p>
+under-sampling, and Default SMOTE <span id="id18">[<a class="reference internal" href="../References.html#id42"><span>CBHK02</span></a>]</span>) that were
+previously used in the literature <span id="id19">[<a class="reference internal" href="../References.html#id134"><span>KameiMondenMatsumoto+07</span></a>]</span><span id="id20">[<a class="reference internal" href="../References.html#id143"><span>KGS10</span></a>]</span><span id="id21">[<a class="reference internal" href="../References.html#id240"><span>PD07</span></a>]</span><span id="id22">[<a class="reference internal" href="../References.html#id273"><span>SKVanHulseF14</span></a>]</span><span id="id23">[<a class="reference internal" href="../References.html#id289"><span>TTDM15</span></a>]</span><span id="id24">[<a class="reference internal" href="../References.html#id322"><span>WY13</span></a>]</span><span id="id25">[<a class="reference internal" href="../References.html#id333"><span>XLS+15</span></a>]</span><span id="id26">[<a class="reference internal" href="../References.html#id335"><span>YLH+16</span></a>]</span><span id="id27">[<a class="reference internal" href="../References.html#id336"><span>YLX+17</span></a>]</span></p>
 <div class="figure align-default" id="class-imbalance-overview">
 <img alt="../_images/class-imbalance-overview.png" src="../_images/class-imbalance-overview.png" />
 <p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">An illustrative overview of the 3 selected class rebalancing techniques.</span><a class="headerlink" href="#class-imbalance-overview" title="Permalink to this image">¶</a></p>
@@ -1141,7 +1141,7 @@ lose important information pertaining to the majority class.</p>
 </div>
 <div class="section" id="synthetic-minority-oversampling-technique-smote">
 <h4>Synthetic Minority Oversampling Technique (SMOTE)<a class="headerlink" href="#synthetic-minority-oversampling-technique-smote" title="Permalink to this headline">¶</a></h4>
-<p>The SMOTE technique <span id="id29">[<a class="reference internal" href="../References.html#id42"><span>CBHK02</span></a>]</span> was proposed to combat the
+<p>The SMOTE technique <span id="id28">[<a class="reference internal" href="../References.html#id42"><span>CBHK02</span></a>]</span> was proposed to combat the
 disavantages of the simple over-sampling and under-sampling techniques.
 The SMOTE technique creates artificial data based on the feature space
 (rather than the data space) similarities from the minority modules. The
