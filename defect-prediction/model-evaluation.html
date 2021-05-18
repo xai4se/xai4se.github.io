@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>(Step 4) Model Evaluation &#8212; Explainable AI for Software Engineering</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -59,23 +56,14 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="(Step 5) Model Ranking" href="model-ranking.html" />
     <link rel="prev" title="(Step 3) Model Construction" href="model-construction.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://xai4se.github.io/defect-prediction/model-evaluation.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="(Step 4) Model Evaluation" />
-<meta property="og:description" content="(Step 4) Model Evaluation  &lt;!-- # - file: defect-prediction/model-validation.ipynb # - file: defect-prediction/evaluation-measures.ipynb --&gt;  Always select eval" />
-<meta property="og:image"       content="https://xai4se.github.io/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -84,32 +72,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Explainable AI for Software Engineering</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Explainable AI for Software Engineering</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
    Explainable AI for Software Engineering
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part1-What is Explainable AI?
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../xai/theory-of-explanations.html">
    A Theory of Explanations
@@ -131,12 +119,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part2-Defect Prediction Models
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="software-quality-assurance.html">
    Software Quality Assurance
@@ -173,12 +161,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part3-Explainable AI for Software Engineering
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../xai4se/explainability-for-se.html">
    Explainability in Software Engineering
@@ -206,6 +194,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -273,12 +262,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -309,12 +298,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#always-select-evaluation-measures-according-to-the-goals-of-studies">
    Always select evaluation measures according to the goals of studies
@@ -388,8 +376,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -404,11 +391,11 @@
 # - file: defect-prediction/evaluation-measures.ipynb --><div class="section" id="always-select-evaluation-measures-according-to-the-goals-of-studies">
 <h2>Always select evaluation measures according to the goals of studies<a class="headerlink" href="#always-select-evaluation-measures-according-to-the-goals-of-studies" title="Permalink to this headline">¶</a></h2>
 <p>Different studies often have different goals of developing defect models.
-For example, one study may want its defect models that yield the highest discriminatory power (i.e., optimise based on Area Under the receiver operator characteristic Curve (AUC) (AUC) <span id="id1">[<a class="reference internal" href="../References.html#id434"><span>HM82</span></a>]</span>).
-Another study may want its defect models to discover an actual defective module as early as possible (i.e., optimise based on initial false alarm <span id="id2">[<a class="reference internal" href="../References.html#id112"><span>HXL17</span></a>]</span>).
+For example, one study may want its defect models that yield the highest discriminatory power (i.e., optimise based on Area Under the receiver operator characteristic Curve (AUC) (AUC) <span id="id1">[<a class="reference internal" href="../References.html#id435"><span>HM82</span></a>]</span>).
+Another study may want its defect models to discover an actual defective module as early as possible (i.e., optimise based on initial false alarm <span id="id2">[<a class="reference internal" href="../References.html#id113"><span>HXL17</span></a>]</span>).
 Thus, several evaluation measures have been proposed to serve different goals of developing defect models.</p>
 <!-- Examples are predictive accuracy measures (e.g., Area Under the ROC Curve (AUC) {cite}`Hanley1982-uo` and Matthews Correlation Coefficients (MCC) {cite}`matthews1975comparison`) and effort-aware measures (e.g., Distance-to-heaven {cite}`agrawal2018better` and Top k% LOC precision {cite}`huang2017supervised`). -->
-<p>Below, we describe <strong>X</strong> predictive accuracy and <strong>Y</strong> effort-aware measures in detail with interactive tutorials.
+<p>Below, we describe <em>5</em> predictive accuracy and <em>3</em> effort-aware measures in detail with interactive tutorials.
 We also provide a code snippet for setting up the environment for interactive tutorials below, i.e., data preparation and model construction.</p>
 <div class="cell tag_remove-output tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -560,10 +547,10 @@ In other words, a low FAR value indicates that developers spend less effort when
 </div>
 <div class="section" id="area-under-the-receiver-operator-characteristic-curve-auc">
 <h4>Area Under the receiver operator characteristic Curve (AUC)<a class="headerlink" href="#area-under-the-receiver-operator-characteristic-curve-auc" title="Permalink to this headline">¶</a></h4>
-<p>AUC measures the discriminatory power of predictive models and is widely suggested by recent research <span id="id3">[<a class="reference internal" href="../References.html#id165"><span>LBMP08</span></a>]</span><span id="id4">[<a class="reference internal" href="../References.html#id76"><span>GMH15</span></a>]</span><span id="id5">[<a class="reference internal" href="../References.html#id246"><span>RD13</span></a>]</span>.
+<p>AUC measures the discriminatory power of predictive models and is widely suggested by recent research <span id="id3">[<a class="reference internal" href="../References.html#id166"><span>LBMP08</span></a>]</span><span id="id4">[<a class="reference internal" href="../References.html#id77"><span>GMH15</span></a>]</span><span id="id5">[<a class="reference internal" href="../References.html#id247"><span>RD13</span></a>]</span>.
 The axes of the curve of the AUC measure are the coverage of non-defective modules (true negative rate) for the x-axis and the coverage of defective modules (true positive rate) for the y-axis.
 The AUC measure is a threshold-independent performance measure that evaluates the ability of models in discriminating between defective and clean instances.
-The values of AUC range between 0 (worst), 0.5 (no better than random guessing), and 1 (best) <span id="id6">[<a class="reference internal" href="../References.html#id434"><span>HM82</span></a>]</span>.</p>
+The values of AUC range between 0 (worst), 0.5 (no better than random guessing), and 1 (best) <span id="id6">[<a class="reference internal" href="../References.html#id435"><span>HM82</span></a>]</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_auc_score</span> 
@@ -617,9 +604,9 @@ MCC (matthews_corrcoef function)	: 0.4249604383453459
 <h3>Effort-Aware Measures<a class="headerlink" href="#effort-aware-measures" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="initial-false-alarm-ifa">
 <h4>Initial False Alarm (IFA)<a class="headerlink" href="#initial-false-alarm-ifa" title="Permalink to this headline">¶</a></h4>
-<p>IFA measures the number of clean lines on which developers spend SQA effort until the first defective line is found when lines are ranked by their defect-proneness <span id="id7">[<a class="reference internal" href="../References.html#id112"><span>HXL17</span></a>]</span>.
+<p>IFA measures the number of clean lines on which developers spend SQA effort until the first defective line is found when lines are ranked by their defect-proneness <span id="id7">[<a class="reference internal" href="../References.html#id113"><span>HXL17</span></a>]</span>.
 A low IFA value indicates that few clean lines are ranked at the top, while a high IFA value indicates that developers will spend unnecessary effort on clean lines.
-The intuition behinds this measure is that developers may stop inspecting if they could not get promising results (i.e., find defective lines) within the first few inspected lines <span id="id8">[<a class="reference internal" href="../References.html#id235"><span>PO11</span></a>]</span>.</p>
+The intuition behinds this measure is that developers may stop inspecting if they could not get promising results (i.e., find defective lines) within the first few inspected lines <span id="id8">[<a class="reference internal" href="../References.html#id236"><span>PO11</span></a>]</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate a defect-proneness ranking of testing instances</span>
@@ -647,7 +634,7 @@ The intuition behinds this measure is that developers may stop inspecting if the
 </div>
 <div class="section" id="distance-to-heaven-d2h">
 <h4>Distance-to-Heaven (D2H)<a class="headerlink" href="#distance-to-heaven-d2h" title="Permalink to this headline">¶</a></h4>
-<p>D2H is a combination of recall and FAR proposed by Agrawal and Menzies <span id="id9">[<a class="reference internal" href="../References.html#id3"><span>AM18</span></a>]</span> <span id="id10">[<a class="reference internal" href="../References.html#id5"><span>AFC+19</span></a>]</span>.
+<p>D2H is a combination of recall and FAR proposed by Agrawal and Menzies <span id="id9">[<a class="reference internal" href="../References.html#id3"><span>AM18</span></a>]</span> <span id="id10">[<a class="reference internal" href="../References.html#id6"><span>AFC+19</span></a>]</span>.
 The calculation of D2H is the root mean square of the recall and false alarm values (i.e., <span class="math notranslate nohighlight">\(\sqrt{\frac{(1-Recall)^2 + (0-FAR)^2}{2}}\)</span>).
 A d2h value of 0 indicates that an approach achieves a perfect identification, i.e., an approach can identify all defective lines (Recall <span class="math notranslate nohighlight">\(= 1\)</span>) without any false positives (FAR <span class="math notranslate nohighlight">\(= 0\)</span>).
 A high d2h value indicates that the performance of an approach is far from perfect, e.g., achieving a high recall value but also have high a FAR value and vice versa.</p>
@@ -679,10 +666,10 @@ A high d2h value indicates that the performance of an approach is far from perfe
 </div>
 <div class="section" id="top-k-loc-precision">
 <h4>Top k% LOC Precision<a class="headerlink" href="#top-k-loc-precision" title="Permalink to this headline">¶</a></h4>
-<p>Top k% LOC Precision measures how many defective lines found when inspecting the top k% of lines ranked by the defect-proneness estimated by the models <span id="id11">[<a class="reference internal" href="../References.html#id112"><span>HXL17</span></a>]</span>.
+<p>Top k% LOC Precision measures how many defective lines found when inspecting the top k% of lines ranked by the defect-proneness estimated by the models <span id="id11">[<a class="reference internal" href="../References.html#id113"><span>HXL17</span></a>]</span>.
 A high value of Top k% LOC precision indicates that the model can rank many defective lines at the top and many defective lines can be found given the fixed amount of effort (i.e., k% of LOC).
 On the other hand, the low value of Top k% LOC precision indicates many clean lines are in the top k% LOC and developers need to inspect more lines to identify defects.
-Similar to prior studies <span id="id12">[<a class="reference internal" href="../References.html#id199"><span>MK10</span></a>]</span> <span id="id13">[<a class="reference internal" href="../References.html#id135"><span>KMM+10</span></a>]</span> <span id="id14">[<a class="reference internal" href="../References.html#id247"><span>RKBD14</span></a>]</span> <span id="id15">[<a class="reference internal" href="../References.html#id253"><span>RHG+16</span></a>]</span>, we use 20% of LOC as a fixed cutoff for an effort in this interactive tutorial.</p>
+Similar to prior studies <span id="id12">[<a class="reference internal" href="../References.html#id200"><span>MK10</span></a>]</span> <span id="id13">[<a class="reference internal" href="../References.html#id136"><span>KMM+10</span></a>]</span> <span id="id14">[<a class="reference internal" href="../References.html#id248"><span>RKBD14</span></a>]</span> <span id="id15">[<a class="reference internal" href="../References.html#id254"><span>RHG+16</span></a>]</span>, we use 20% of LOC as a fixed cutoff for an effort in this interactive tutorial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span>
@@ -727,7 +714,7 @@ Top 20% LOC Precision (precision_score function)	: 0.4025974025974026
 </div>
 <div class="section" id="top-k-loc-recall">
 <h4>Top k% LOC Recall<a class="headerlink" href="#top-k-loc-recall" title="Permalink to this headline">¶</a></h4>
-<p>Top k%LOC recall measures how many actual defective lines found given a fixed amount of effort, i.e., the top k% of lines ranked by their defect-proneness <span id="id16">[<a class="reference internal" href="../References.html#id112"><span>HXL17</span></a>]</span>.
+<p>Top k%LOC recall measures how many actual defective lines found given a fixed amount of effort, i.e., the top k% of lines ranked by their defect-proneness <span id="id16">[<a class="reference internal" href="../References.html#id113"><span>HXL17</span></a>]</span>.
 A high value of top k% LOC recall indicates that an approach can rank many actual defective lines at the top and many actual defective lines can be found given a fixed amount of effort.
 On the other hand, a low value of top k% LOC recall indicates many clean lines are in the top k% LOC and developers need to spend more effort to identify defective lines.
 Similarly, we use 20% of LOC as a fixed cutoff for an effort.</p>
@@ -838,21 +825,19 @@ Top 20% LOC Recall (recall_score function)	: 1.0
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-54962993-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
 
-
-    
-    <!-- Google Analytics -->
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-54962993-1', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
-    
   </body>
 </html>

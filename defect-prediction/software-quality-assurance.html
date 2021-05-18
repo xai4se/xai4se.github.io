@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Software Quality Assurance &#8212; Explainable AI for Software Engineering</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,23 +54,14 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Defect Prediction" href="defect-prediction.html" />
     <link rel="prev" title="Model-agnostic Techniques for Generating Local Explanations" href="../xai/model-agnostic-techniques.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://xai4se.github.io/defect-prediction/software-quality-assurance.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Software Quality Assurance" />
-<meta property="og:description" content="Software Quality Assurance  Our society is now driven by software. But, one software defect could have an ultimate impact on our society, financial economy, and" />
-<meta property="og:image"       content="https://xai4se.github.io/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -82,32 +70,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Explainable AI for Software Engineering</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Explainable AI for Software Engineering</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
    Explainable AI for Software Engineering
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part1-What is Explainable AI?
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../xai/theory-of-explanations.html">
    A Theory of Explanations
@@ -129,12 +117,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part2-Defect Prediction Models
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Software Quality Assurance
@@ -171,12 +159,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part3-Explainable AI for Software Engineering
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../xai4se/explainability-for-se.html">
    Explainability in Software Engineering
@@ -204,6 +192,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -271,12 +260,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -307,12 +296,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sqa-activities-during-the-development-stage">
    SQA activities during the development stage
@@ -325,8 +313,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -337,7 +324,7 @@
                 
   <div class="section" id="software-quality-assurance">
 <h1>Software Quality Assurance<a class="headerlink" href="#software-quality-assurance" title="Permalink to this headline">¶</a></h1>
-<p>Our society is now driven by software. But, one software defect could have an ultimate impact on our society, financial economy, and human lives, ranging from IT services disruption, massive overdose of radiotherapy of Therac-25, to an explosion of the Ariane 5 rocket. These failures are often due to the discovery of the majority of software defects after release, while they are often introduced in the early development life cycle like the requirements, design, release planning. Since the cost of fixing software defects is exponentially increased (Brooks 1995), finding and fixing software defects prior to releasing software is usually much cheaper and faster.</p>
+<p>Our society is now driven by software. But, one software defect could have an ultimate impact on our society, financial economy, and human lives, ranging from IT services disruption, massive overdose of radiotherapy of Therac-25, to an explosion of the Ariane 5 rocket. These failures are often due to the discovery of the majority of software defects after release, while they are often introduced in the early development life cycle like the requirements, design, release planning. Since the cost of fixing software defects is exponentially increased <span id="id1">[<a class="reference internal" href="../References.html#id4"><span>BJ95</span></a>]</span>, finding and fixing software defects prior to releasing software is usually much cheaper and faster.</p>
 <p><strong>Software Quality Assurance (SQA)</strong> is neither a process nor a phase but a must-need systematic practice to ensure that the product meets the quality standards, especially for the development of any life-impacting and safety-critical software systems. Thus, QA practices must be embedded as a quality culture throughout the life cycles from planning to release so teams can follow best practices to prevent defects, rather than wasting time detecting them.</p>
 <p>However, modern software development practices like Agile pose several challenges to the current SQA practices. In modern practices, everyone is accountable and quality is everyone’s responsibility. Thus, developers are encouraged to test their own code and to write sufficient and effective unit tests to ensure the new code has no obvious errors and to get notified quickly as soon as something is broken. Several defect detection tools are used during the software development life cycle. For example, automation testing (e.g., CI/CD) can be used to enable the automation of test execution where the code coverage is used to infer a certain level of quality in the meaningful test cases. Static analysis is used to detect bugs, but produce too many false positives or false alarms. Code review can be used to review all code changes prior to integrating a pull request into the main branch repository.</p>
 <p>Despite these SQA tools being invested and adopted, software defects might still occur since these tools do not guarantee a defect-free software product. They also neither identify the problematic areas that may lead to software defects after release (i.e., post-release software defects) nor provide any actionable guidance how to mitigate risks. As a result, it could lead to ineffective and inefficient software quality assurance practices. Teams may release poor quality of software products to customers, causing slow project progress and high costs of software development, unsatisfactory software products, unhappy end-users, and serious monetary and reputation losses for that software organization.</p>
@@ -349,23 +336,23 @@
 <div class="section" id="sqa-activities-during-the-development-stage">
 <h2>SQA activities during the development stage<a class="headerlink" href="#sqa-activities-during-the-development-stage" title="Permalink to this headline">¶</a></h2>
 <p>During the development stage, new features and other code changes are implemented by developers.
-Such code changes (or commits) must undergo rigorous SQA activities (e.g., Continuous Integration tests and code review) prior to merge into the main branch (e.g., a master branch) <span id="id1">[<a class="reference internal" href="../References.html#id80"><span>GPD14</span></a>]</span>.
-Since these commit-level SQA activities are time-consuming, Just-In-Time defect prediction has been proposed to support developers by prioritizing their limited SQA effort on the most risky code changes that will introduce software defects during the development cycle (i.e., pre-release defects) <span id="id2">[<a class="reference internal" href="../References.html#id136"><span>KSA+13</span></a>]</span> <span id="id3">[<a class="reference internal" href="../References.html#id237"><span>PPB19</span></a>]</span>.
+Such code changes (or commits) must undergo rigorous SQA activities (e.g., Continuous Integration tests and code review) prior to merge into the main branch (e.g., a master branch) <span id="id2">[<a class="reference internal" href="../References.html#id81"><span>GPD14</span></a>]</span>.
+Since these commit-level SQA activities are time-consuming, Just-In-Time defect prediction has been proposed to support developers by prioritizing their limited SQA effort on the most risky code changes that will introduce software defects during the development cycle (i.e., pre-release defects) <span id="id3">[<a class="reference internal" href="../References.html#id137"><span>KSA+13</span></a>]</span> <span id="id4">[<a class="reference internal" href="../References.html#id238"><span>PPB19</span></a>]</span>.
 Nevertheless, JIT defect prediction only early detects defect-inducing changes, rather than post-release defects (i.e., the areas of code that are likely to be defective after a release).
-Despite the SQA activities during the development cycle (e.g., code reviews), it is still possible that software defects still slip through to the official release of software products <span id="id4">[<a class="reference internal" href="../References.html#id302"><span>TMHI15</span></a>]</span> <span id="id5">[<a class="reference internal" href="../References.html#id300"><span>TMHI16</span></a>]</span>.
+Despite the SQA activities during the development cycle (e.g., code reviews), it is still possible that software defects still slip through to the official release of software products <span id="id5">[<a class="reference internal" href="../References.html#id303"><span>TMHI15</span></a>]</span> <span id="id6">[<a class="reference internal" href="../References.html#id301"><span>TMHI16</span></a>]</span>.
 Thus, SQA activities are still needed during the release preparation.</p>
 </div>
 <div class="section" id="sqa-activities-during-the-release-preparation">
 <h2>SQA activities during the release preparation<a class="headerlink" href="#sqa-activities-during-the-release-preparation" title="Permalink to this headline">¶</a></h2>
-<p>During the release preparation, intensive SQA activities must be performed to ensure that the software product is of high quality and is ready for release, i.e., reducing the likelihood that a software product will have post-release defects <span id="id6">[<a class="reference internal" href="../References.html#id2"><span>AM16</span></a>]</span> <span id="id7">[<a class="reference internal" href="../References.html#id223"><span>NB05b</span></a>]</span>.
-In other words, the files that are changed during the software development need to be checked and stabilized to ensure that these changes will not impact the overall quality of the software systems <span id="id8">[<a class="reference internal" href="../References.html#id178"><span>Luc0)</span></a>]</span> <span id="id9">[<a class="reference internal" href="../References.html#id106"><span>Her14</span></a>]</span> <span id="id10">[<a class="reference internal" href="../References.html#id248"><span>RR15</span></a>]</span>.
-Hence, several SQA activities (e.g., regression tests, manual tests) are performed <span id="id11">[<a class="reference internal" href="../References.html#id2"><span>AM16</span></a>]</span>.
+<p>During the release preparation, intensive SQA activities must be performed to ensure that the software product is of high quality and is ready for release, i.e., reducing the likelihood that a software product will have post-release defects <span id="id7">[<a class="reference internal" href="../References.html#id2"><span>AM16</span></a>]</span> <span id="id8">[<a class="reference internal" href="../References.html#id224"><span>NB05b</span></a>]</span>.
+In other words, the files that are changed during the software development need to be checked and stabilized to ensure that these changes will not impact the overall quality of the software systems <span id="id9">[<a class="reference internal" href="../References.html#id179"><span>Luc0)</span></a>]</span> <span id="id10">[<a class="reference internal" href="../References.html#id107"><span>Her14</span></a>]</span> <span id="id11">[<a class="reference internal" href="../References.html#id249"><span>RR15</span></a>]</span>.
+Hence, several SQA activities (e.g., regression tests, manual tests) are performed <span id="id12">[<a class="reference internal" href="../References.html#id2"><span>AM16</span></a>]</span>.
 However, given thousands of files that need to be checked and stabilized before release, it is intuitively infeasible to exhaustively perform SQA activities for all of the files of the codebase with the limited SQA resources (e.g., time constraints), especially in rapid-release development practices.
 To help practitioners effectively prioritize their limited SQA resources, it is of importance to identify <strong>what are the most defect-prone areas of source code that are likely to have post-release defects</strong>.</p>
-<p>Prior work also argued that it is beneficial to obtain early estimates of defect-proneness for areas of source code to help software development teams develop the most effective SQA resource management <span id="id12">[<a class="reference internal" href="../References.html#id224"><span>NB05a</span></a>]</span> <span id="id13">[<a class="reference internal" href="../References.html#id223"><span>NB05b</span></a>]</span>.
-Menzies et al. mentioned that software contractors tend to prioritize their effort on reviewing software modules tend to be fault-prone <span id="id14">[<a class="reference internal" href="../References.html#id201"><span>MGF07</span></a>]</span>.
-A case study at ST-Ericsson in Lund, Sweden by Engstr{“{o}}m et al. <span id="id15">[<a class="reference internal" href="../References.html#id60"><span>EngstromRW10</span></a>]</span> found that the selection of regression test cases guided by the defect-proneness of files is more efficient than the manual selection approaches.
-At the Tizen-wearable project by Samsung Electronics <span id="id16">[<a class="reference internal" href="../References.html#id146"><span>KNY+15</span></a>]</span>, they found that prioritizing APIs based on their defect-proneness increases the number of discovered defects and reduces the cost required for executing test cases.</p>
+<p>Prior work also argued that it is beneficial to obtain early estimates of defect-proneness for areas of source code to help software development teams develop the most effective SQA resource management <span id="id13">[<a class="reference internal" href="../References.html#id225"><span>NB05a</span></a>]</span> <span id="id14">[<a class="reference internal" href="../References.html#id224"><span>NB05b</span></a>]</span>.
+Menzies et al. mentioned that software contractors tend to prioritize their effort on reviewing software modules tend to be fault-prone <span id="id15">[<a class="reference internal" href="../References.html#id202"><span>MGF07</span></a>]</span>.
+A case study at ST-Ericsson in Lund, Sweden by Engstrom et al. <span id="id16">[<a class="reference internal" href="../References.html#id61"><span>EngstromRW10</span></a>]</span> found that the selection of regression test cases guided by the defect-proneness of files is more efficient than the manual selection approaches.
+At the Tizen-wearable project by Samsung Electronics <span id="id17">[<a class="reference internal" href="../References.html#id147"><span>KNY+15</span></a>]</span>, they found that prioritizing APIs based on their defect-proneness increases the number of discovered defects and reduces the cost required for executing test cases.</p>
 </div>
 </div>
 
@@ -419,21 +406,19 @@ At the Tizen-wearable project by Samsung Electronics <span id="id16">[<a class="
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-54962993-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
 
-
-    
-    <!-- Google Analytics -->
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-54962993-1', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
-    
   </body>
 </html>

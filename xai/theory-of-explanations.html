@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A Theory of Explanations &#8212; Explainable AI for Software Engineering</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,23 +54,14 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Techniques for Generating Explanations" href="techniques-for-generating-explanations.html" />
     <link rel="prev" title="Explainable AI for Software Engineering" href="../index.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://xai4se.github.io/xai/theory-of-explanations.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="A Theory of Explanations" />
-<meta property="og:description" content="A Theory of Explanations  A Theory of Explainability  According to philosophy, social science, and psychology theories, a common definition of explainability or" />
-<meta property="og:image"       content="https://xai4se.github.io/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -82,32 +70,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Explainable AI for Software Engineering</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Explainable AI for Software Engineering</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
    Explainable AI for Software Engineering
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part1-What is Explainable AI?
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    A Theory of Explanations
@@ -129,12 +117,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part2-Defect Prediction Models
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../defect-prediction/software-quality-assurance.html">
    Software Quality Assurance
@@ -171,12 +159,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part3-Explainable AI for Software Engineering
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../xai4se/explainability-for-se.html">
    Explainability in Software Engineering
@@ -204,6 +192,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -271,12 +260,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -307,12 +296,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-theory-of-explainability">
    A Theory of Explainability
@@ -350,8 +338,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -367,11 +354,11 @@
 <p>According to philosophy, social science, and psychology theories, a
 common definition of <em>explainability or interpretability</em> is <em>the degree
 to which a human can understand the reasons behind a decision or an
-action</em> <span id="id1">[<a class="reference internal" href="../References.html#id213"><span>Mil19</span></a>]</span>. The explainability of AI/ML algorithms can be
+action</em> <span id="id1">[<a class="reference internal" href="../References.html#id214"><span>Mil19</span></a>]</span>. The explainability of AI/ML algorithms can be
 achieved by (1) making the entire decision-making process transparent
 and comprehensible and (2) explicitly providing an explanation for each
-decision <span id="id2">[<a class="reference internal" href="../References.html#id172"><span>Lip18</span></a>]</span> (since an explanation is not likely applicable to
-all decisions <span id="id3">[<a class="reference internal" href="../References.html#id164"><span>Lea14</span></a>]</span>. Hence, research has emerged to
+decision <span id="id2">[<a class="reference internal" href="../References.html#id173"><span>Lip18</span></a>]</span> (since an explanation is not likely applicable to
+all decisions <span id="id3">[<a class="reference internal" href="../References.html#id165"><span>Lea14</span></a>]</span>. Hence, research has emerged to
 explore how to explain decisions made by complex, black-box models and
 how explanations are presented in a form that would be easily understood
 (and hence, accepted) by humans.</p>
@@ -390,20 +377,20 @@ Different stakeholders have different goals, thus require different forms of exp
 <div class="section" id="what-are-explanations">
 <h2>What are Explanations?<a class="headerlink" href="#what-are-explanations" title="Permalink to this headline">¶</a></h2>
 <p>According to a philosophical and psychological theory of explanations,
-Salmon  <span id="id4">[<a class="reference internal" href="../References.html#id268"><span>Sal84</span></a>]</span> argue that explanations can be presented as a causal
+Salmon  <span id="id4">[<a class="reference internal" href="../References.html#id269"><span>Sal84</span></a>]</span> argue that explanations can be presented as a causal
 chain of causes that lead to the decision. Causal chains can be
-classified into five categories <span id="id5">[<a class="reference internal" href="../References.html#id107"><span>HMS05</span></a>]</span>: temporal, coincidental,
+classified into five categories <span id="id5">[<a class="reference internal" href="../References.html#id108"><span>HMS05</span></a>]</span>: temporal, coincidental,
 unfolding, opportunity chains and pre-emptive. Each type of causal chain
 is thus associated with an explanation type. However, identifying the
 complete causal chain of causes is challenging, since most AI/ML
 techniques produce only correlations instead of causations.
-In contrast, Miller <span id="id6">[<a class="reference internal" href="../References.html#id213"><span>Mil19</span></a>]</span> argue that explanations can be presented
-as answers to why-questions. Similarly, Lipton <span id="id7">[<a class="reference internal" href="../References.html#id718"><span>Lip90</span></a>]</span> also share
+In contrast, Miller <span id="id6">[<a class="reference internal" href="../References.html#id214"><span>Mil19</span></a>]</span> argue that explanations can be presented
+as answers to why-questions. Similarly, Lipton <span id="id7">[<a class="reference internal" href="../References.html#id719"><span>Lip90</span></a>]</span> also share
 a similar view of explanations as being contrastive.</p>
 </div>
 <div class="section" id="types-of-intelligibility-questions">
 <h2>Types of Intelligibility Questions<a class="headerlink" href="#types-of-intelligibility-questions" title="Permalink to this headline">¶</a></h2>
-<p>Lim et al. <span id="id8">[<a class="reference internal" href="../References.html#id170"><span>LYAW19</span></a>]</span> categorized questions towards the inference mechanism of AI/ML systems into: What, Why, Why Not, What If, and How To.
+<p>Lim et al. <span id="id8">[<a class="reference internal" href="../References.html#id171"><span>LYAW19</span></a>]</span> categorized questions towards the inference mechanism of AI/ML systems into: What, Why, Why Not, What If, and How To.
 Below, we provide an example of questions for each type of the intelligibility questions.</p>
 <ul class="simple">
 <li><p><em>What</em>: What is the logic behind the AI/ML models?</p></li>
@@ -429,7 +416,7 @@ explainability. Thus, users can only understand how the model works
 globally (e.g., by inspecting a branch of decision trees). However,
 users often do not understand why the model makes that prediction.</p>
 <p><strong>Local Explanability:</strong> Using model-agnostic techniques (e.g.,
-LIME <span id="id9">[<a class="reference internal" href="../References.html#id257"><span>RSG16b</span></a>]</span>) to explain the predictions of the
+LIME <span id="id9">[<a class="reference internal" href="../References.html#id258"><span>RSG16b</span></a>]</span>) to explain the predictions of the
 software analytics models (e.g., neural network, random forest).
 Such post-hoc model-agnostic techniques can provide an explanation
 for each prediction (i.e., an instance to be explained). Users can
@@ -443,12 +430,12 @@ models.</p>
 Example: <em>A.java</em> is predicted as defective.</p>
 <p><strong>Foil</strong> refers to an expected or plausible-to-happen cause that is an alternative to Fact.<br />
 Examples: (1) <em>A.java</em> is predicted as clean. and (2) <em>B.java</em> is predicted as clean.</p>
-<p>With respect to the fact and foil, Lim et al. <span id="id10">[<a class="reference internal" href="../References.html#id170"><span>LYAW19</span></a>]</span> discussed 4 types of explanations as follows:</p>
+<p>With respect to the fact and foil, Lim et al. <span id="id10">[<a class="reference internal" href="../References.html#id171"><span>LYAW19</span></a>]</span> discussed 4 types of explanations as follows:</p>
 <ul class="simple">
 <li><p><strong>Causal Explanation</strong> refers to an explanation that is focused on selected causes relevant to interpreting the observation with respect to existing knowledge. An example of causal explanation presented as an answer to a question with respect to a fact cause example is provided below.<br />
 Example: [Why] Why <em>A.java</em> is predicted as defective?</p></li>
 <li><p><strong>Contrastive Explanation</strong> refers to an explanation that is focused on the contrastive between a fact and a foil.
-Recently, Van Bouwel and Weber <span id="id11">[<a class="reference internal" href="../References.html#id717"><span>VBW02</span></a>]</span> futher distinguised contrastive explanations into 3 types as follows:</p>
+Recently, Van Bouwel and Weber <span id="id11">[<a class="reference internal" href="../References.html#id718"><span>VBW02</span></a>]</span> futher distinguised contrastive explanations into 3 types as follows:</p>
 <ul>
 <li><p><em>Property-contrast</em> (P-contrast) is the differences in the Properties within an object.<br />
 Example: [Why not] Why <em>A.java</em> is predicted as defective, rather than clean?</p></li>
@@ -637,21 +624,19 @@ Why these Explanations? Selecting Intelligibility Types for Explanation Goals. I
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-54962993-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
 
-
-    
-    <!-- Google Analytics -->
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-54962993-1', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
-    
   </body>
 </html>

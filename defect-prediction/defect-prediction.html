@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Defect Prediction &#8212; Explainable AI for Software Engineering</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,23 +54,14 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="(Step 1) Data Collection" href="data-collection.html" />
     <link rel="prev" title="Software Quality Assurance" href="software-quality-assurance.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://xai4se.github.io/defect-prediction/defect-prediction.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Defect Prediction" />
-<meta property="og:description" content="Defect Prediction  Defect prediction models have been proposed to predict the most risky areas of source code that are likely to have post-release defects [MGF0" />
-<meta property="og:image"       content="https://xai4se.github.io/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -82,32 +70,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Explainable AI for Software Engineering</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Explainable AI for Software Engineering</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../index.html">
    Explainable AI for Software Engineering
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part1-What is Explainable AI?
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../xai/theory-of-explanations.html">
    A Theory of Explanations
@@ -129,12 +117,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part2-Defect Prediction Models
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="software-quality-assurance.html">
    Software Quality Assurance
@@ -171,12 +159,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Part3-Explainable AI for Software Engineering
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../xai4se/explainability-for-se.html">
    Explainability in Software Engineering
@@ -204,6 +192,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -271,12 +260,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -307,12 +296,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-modelling-pipeline-of-defect-prediction-models">
    The modelling pipeline of defect prediction models
@@ -325,8 +313,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -337,32 +324,32 @@
                 
   <div class="section" id="defect-prediction">
 <h1>Defect Prediction<a class="headerlink" href="#defect-prediction" title="Permalink to this headline">¶</a></h1>
-<p>Defect prediction models have been proposed to predict the most risky areas of source code that are likely to have post-release defects <span id="id1">[<a class="reference internal" href="../References.html#id201"><span>MGF07</span></a>]</span> <span id="id2">[<a class="reference internal" href="../References.html#id226"><span>NZZ+10</span></a>]</span> <span id="id3">[<a class="reference internal" href="../References.html#id48"><span>DAmbrosLR10</span></a>]</span> <span id="id4">[<a class="reference internal" href="../References.html#id297"><span>TMHM18</span></a>]</span> <span id="id5">[<a class="reference internal" href="../References.html#id290"><span>TMHM16a</span></a>]</span> <span id="id6">[<a class="reference internal" href="../References.html#id322"><span>WLT16</span></a>]</span> <span id="id7">[<a class="reference internal" href="../References.html#id325"><span>WLNT18</span></a>]</span>.
+<p>Defect prediction models have been proposed to predict the most risky areas of source code that are likely to have post-release defects <span id="id1">[<a class="reference internal" href="../References.html#id202"><span>MGF07</span></a>]</span> <span id="id2">[<a class="reference internal" href="../References.html#id227"><span>NZZ+10</span></a>]</span> <span id="id3">[<a class="reference internal" href="../References.html#id49"><span>DAmbrosLR10</span></a>]</span> <span id="id4">[<a class="reference internal" href="../References.html#id298"><span>TMHM18</span></a>]</span> <span id="id5">[<a class="reference internal" href="../References.html#id291"><span>TMHM16a</span></a>]</span> <span id="id6">[<a class="reference internal" href="../References.html#id323"><span>WLT16</span></a>]</span> <span id="id7">[<a class="reference internal" href="../References.html#id326"><span>WLNT18</span></a>]</span>.
 A defect prediction model is a classification model that estimates the likelihood that a file will have post-release defects.
 One of the main purposes is to help practitioners effectively spend their limited SQA resources on the most risky areas of code in a cost-effective manner.
 s</p>
 <div class="section" id="the-modelling-pipeline-of-defect-prediction-models">
 <h2>The modelling pipeline of defect prediction models<a class="headerlink" href="#the-modelling-pipeline-of-defect-prediction-models" title="Permalink to this headline">¶</a></h2>
 <p>The predictive accuracy of the defect prediction model heavily relies on the modelling pipelines of defect prediction models
-<span id="id8">[<a class="reference internal" href="../References.html#id289"><span>TMH+15</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id291"><span>TMHM16b</span></a>]</span><span id="id10">[<a class="reference internal" href="../References.html#id298"><span>TH18</span></a>]</span><span id="id11">[<a class="reference internal" href="../References.html#id210"><span>MS19</span></a>]</span><span id="id12">[<a class="reference internal" href="../References.html#id76"><span>GMH15</span></a>]</span><span id="id13">[<a class="reference internal" href="../References.html#id3"><span>AM18</span></a>]</span><span id="id14">[<a class="reference internal" href="../References.html#id292"><span>Tan16</span></a>]</span>.
+<span id="id8">[<a class="reference internal" href="../References.html#id290"><span>TMH+15</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id292"><span>TMHM16b</span></a>]</span><span id="id10">[<a class="reference internal" href="../References.html#id299"><span>TH18</span></a>]</span><span id="id11">[<a class="reference internal" href="../References.html#id211"><span>MS19</span></a>]</span><span id="id12">[<a class="reference internal" href="../References.html#id77"><span>GMH15</span></a>]</span><span id="id13">[<a class="reference internal" href="../References.html#id3"><span>AM18</span></a>]</span><span id="id14">[<a class="reference internal" href="../References.html#id293"><span>Tan16</span></a>]</span>.
 To accurately predicting defective areas of code, prior studies conducted a comprehensive evaluation to identify the best technique of the modelling pipelines for defect models.
-For example, feature selection techniques <span id="id15">[<a class="reference internal" href="../References.html#id77"><span>GMH17</span></a>]</span><span id="id16">[<a class="reference internal" href="../References.html#id117"><span>JTT18b</span></a>]</span><span id="id17">[<a class="reference internal" href="../References.html#id123"><span>JTT20a</span></a>]</span>,
+For example, feature selection techniques <span id="id15">[<a class="reference internal" href="../References.html#id78"><span>GMH17</span></a>]</span><span id="id16">[<a class="reference internal" href="../References.html#id118"><span>JTT18b</span></a>]</span><span id="id17">[<a class="reference internal" href="../References.html#id124"><span>JTT20a</span></a>]</span>,
 collinearity analysis
-<span id="id18">[<a class="reference internal" href="../References.html#id117"><span>JTT18b</span></a>]</span><span id="id19">[<a class="reference internal" href="../References.html#id116"><span>JTIM16</span></a>]</span><span id="id20">[<a class="reference internal" href="../References.html#id121"><span>JTH19</span></a>]</span>,
-class rebalancing techniques <span id="id21">[<a class="reference internal" href="../References.html#id296"><span>THM19</span></a>]</span>,
-classification techniques <span id="id22">[<a class="reference internal" href="../References.html#id76"><span>GMH15</span></a>]</span>,
-parameter optimization <span id="id23">[<a class="reference internal" href="../References.html#id290"><span>TMHM16a</span></a>]</span><span id="id24">[<a class="reference internal" href="../References.html#id74"><span>FMS16</span></a>]</span><span id="id25">[<a class="reference internal" href="../References.html#id297"><span>TMHM18</span></a>]</span><span id="id26">[<a class="reference internal" href="../References.html#id3"><span>AM18</span></a>]</span>,
-model validation <span id="id27">[<a class="reference internal" href="../References.html#id295"><span>TMHM17</span></a>]</span>, and model interpretation <span id="id28">[<a class="reference internal" href="../References.html#id121"><span>JTH19</span></a>]</span><span id="id29">[<a class="reference internal" href="../References.html#id122"><span>JTDG20a</span></a>]</span>.
+<span id="id18">[<a class="reference internal" href="../References.html#id118"><span>JTT18b</span></a>]</span><span id="id19">[<a class="reference internal" href="../References.html#id117"><span>JTIM16</span></a>]</span><span id="id20">[<a class="reference internal" href="../References.html#id122"><span>JTH19</span></a>]</span>,
+class rebalancing techniques <span id="id21">[<a class="reference internal" href="../References.html#id297"><span>THM19</span></a>]</span>,
+classification techniques <span id="id22">[<a class="reference internal" href="../References.html#id77"><span>GMH15</span></a>]</span>,
+parameter optimization <span id="id23">[<a class="reference internal" href="../References.html#id291"><span>TMHM16a</span></a>]</span><span id="id24">[<a class="reference internal" href="../References.html#id75"><span>FMS16</span></a>]</span><span id="id25">[<a class="reference internal" href="../References.html#id298"><span>TMHM18</span></a>]</span><span id="id26">[<a class="reference internal" href="../References.html#id3"><span>AM18</span></a>]</span>,
+model validation <span id="id27">[<a class="reference internal" href="../References.html#id296"><span>TMHM17</span></a>]</span>, and model interpretation <span id="id28">[<a class="reference internal" href="../References.html#id122"><span>JTH19</span></a>]</span><span id="id29">[<a class="reference internal" href="../References.html#id123"><span>JTDG20a</span></a>]</span>.
 Despite the recent advances in the modelling pipelines for defect prediction models, the cost-effectiveness of the SQA resource prioritization still relies on the granularity of the predictions.</p>
 </div>
 <div class="section" id="the-granularity-levels-of-defect-predictions-models">
 <h2>The granularity levels of defect predictions models<a class="headerlink" href="#the-granularity-levels-of-defect-predictions-models" title="Permalink to this headline">¶</a></h2>
 <p>The cost-effectiveness of the SQA resource prioritization heavily relies on the granularity levels of defect prediction.
-Prior studies argued that prioritizing software modules at the finer granularity is more cost-effective <span id="id30">[<a class="reference internal" href="../References.html#id237"><span>PPB19</span></a>]</span> <span id="id31">[<a class="reference internal" href="../References.html#id135"><span>KMM+10</span></a>]</span> <span id="id32">[<a class="reference internal" href="../References.html#id98"><span>HMK12</span></a>]</span>.
-For example, Kamei et al. <span id="id33">[<a class="reference internal" href="../References.html#id135"><span>KMM+10</span></a>]</span> found that the file-level defect prediction is more effective than the package-level defect prediction.
-Hata et al. <span id="id34">[<a class="reference internal" href="../References.html#id98"><span>HMK12</span></a>]</span> found that the method-level defect prediction is more effective than file-level defect prediction.
-Defect models at various granularity levels have been proposed, e.g., packages <span id="id35">[<a class="reference internal" href="../References.html#id135"><span>KMM+10</span></a>]</span>, components <span id="id36">[<a class="reference internal" href="../References.html#id300"><span>TMHI16</span></a>]</span>, modules <span id="id37">[<a class="reference internal" href="../References.html#id134"><span>KMM+07</span></a>]</span>, files <span id="id38">[<a class="reference internal" href="../References.html#id135"><span>KMM+10</span></a>]</span> <span id="id39">[<a class="reference internal" href="../References.html#id199"><span>MK10</span></a>]</span>, methods <span id="id40">[<a class="reference internal" href="../References.html#id98"><span>HMK12</span></a>]</span>.
-However, developers could still waste an SQA effort on manually identifying the most risky lines, since the current prediction granularity is still perceived as coarse-grained <span id="id41">[<a class="reference internal" href="../References.html#id320"><span>WXH+18</span></a>]</span>.
+Prior studies argued that prioritizing software modules at the finer granularity is more cost-effective <span id="id30">[<a class="reference internal" href="../References.html#id238"><span>PPB19</span></a>]</span> <span id="id31">[<a class="reference internal" href="../References.html#id136"><span>KMM+10</span></a>]</span> <span id="id32">[<a class="reference internal" href="../References.html#id99"><span>HMK12</span></a>]</span>.
+For example, Kamei et al. <span id="id33">[<a class="reference internal" href="../References.html#id136"><span>KMM+10</span></a>]</span> found that the file-level defect prediction is more effective than the package-level defect prediction.
+Hata et al. <span id="id34">[<a class="reference internal" href="../References.html#id99"><span>HMK12</span></a>]</span> found that the method-level defect prediction is more effective than file-level defect prediction.
+Defect models at various granularity levels have been proposed, e.g., packages <span id="id35">[<a class="reference internal" href="../References.html#id136"><span>KMM+10</span></a>]</span>, components <span id="id36">[<a class="reference internal" href="../References.html#id301"><span>TMHI16</span></a>]</span>, modules <span id="id37">[<a class="reference internal" href="../References.html#id135"><span>KMM+07</span></a>]</span>, files <span id="id38">[<a class="reference internal" href="../References.html#id136"><span>KMM+10</span></a>]</span> <span id="id39">[<a class="reference internal" href="../References.html#id200"><span>MK10</span></a>]</span>, methods <span id="id40">[<a class="reference internal" href="../References.html#id99"><span>HMK12</span></a>]</span>.
+However, developers could still waste an SQA effort on manually identifying the most risky lines, since the current prediction granularity is still perceived as coarse-grained <span id="id41">[<a class="reference internal" href="../References.html#id321"><span>WXH+18</span></a>]</span>.
 Hence, the line-level defect prediction should be beneficial to SQA teams to spend optimal effort on identifying and analyzing defects.</p>
 <div class="figure align-default" id="predictive-modelling">
 <img alt="../_images/predictive-modelling.png" src="../_images/predictive-modelling.png" />
@@ -421,21 +408,19 @@ Hence, the line-level defect prediction should be beneficial to SQA teams to spe
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-54962993-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
 
-
-    
-    <!-- Google Analytics -->
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-54962993-1', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
-    
   </body>
 </html>
