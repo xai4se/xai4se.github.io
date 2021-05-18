@@ -1,9 +1,9 @@
 [![Website xai4se.github.io](https://img.shields.io/website-up-down-green-red/https/xai4se.github.io.svg)](https://xai4se.github.io)
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue.svg)](https://www.python.org/)
-&nbsp;
 [![Made with Jupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange.svg)](https://www.jupyter.org/)
-&nbsp;
 [![License: MIT (Code), CC BY-NC-SA (Book)](https://img.shields.io/badge/License-MIT_(Code),_CC_BY--NC--SA_4.0_(Book)-blue.svg)](https://github.com/xai4se/xai4se.github.io/blob/master/LICENSE.md)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4769127.svg)](https://doi.org/10.5281/zenodo.4769127)
+
 
 # Explainable AI for Software Engineering: 
 
@@ -52,7 +52,7 @@ Some of the potential readers of this book include:
 ### Cite this book:
 
 ```
-@incollection{xai4sebook,
+@book{xai4sebook,
     author = {Chakkrit Tantithamthavorn and Jirayus Jiarpakdee},
     booktitle = {Explainable AI for Software Engineering},
     year = {2021},
@@ -60,7 +60,8 @@ Some of the potential readers of this book include:
     howpublished = {\url{http://xai4se.github.io/}},
     note = {Retrieved 2021-05-17},
     url = {http://xai4se.github.io/},
-    urldate = {2021-05-17}
+    urldate = {2021-05-17},
+    doi = {10.5281/zenodo.4769127}
 }
 ```
 
