@@ -337,7 +337,7 @@
   <div class="section" id="step-1-data-collection">
 <h1>(Step 1) Data Collection<a class="headerlink" href="#step-1-data-collection" title="Permalink to this headline">¶</a></h1>
 <p>Defect data preparation involves several key steps.
-<a class="reference internal" href="#data-preparation"><span class="std std-numref">Fig. 4</span></a> provides an overview of defect data preparation steps.
+<code class="xref std std-numref docutils literal notranslate"><span class="pre">data-preparation</span></code> provides an overview of defect data preparation steps.
 First, one must extract issue reports, which describe defects, feature requests, or general maintenance tasks from an Issue Tracking System (ITS, e.g., JIRA).
 Second, one must extract commit logs, code snapshots, and historical code changes that are recorded in a Version Control System (VCS, e.g., Git).
 Third, one must extract software metrics of each module (e.g., size, and complexity) from the VCS.
@@ -365,7 +365,7 @@ Then, the heuristic approach will label modules <em>A.java</em>, <em>B.java</em>
 The remaining module (i.e., <em>D.java</em>) will be labelled as clean.</p>
 <p>Unfortunately, such the heuristic approach has several limitations.
 First, the heuristic approach assumes that all defect-fixing commits that are identified within the post-release window period of the release of interest (i.e., <em>v1.0</em>) are the defect-fixing commits that affect the release of interest.
-However, <a class="reference internal" href="#data-preparation"><span class="std std-numref">Fig. 4</span></a> shows that the commit <em>C2</em> was changed to address the issue report <em>ID-2</em> where the release <em>v0.9</em> was affected.
+However, <code class="xref std std-numref docutils literal notranslate"><span class="pre">data-preparation</span></code> shows that the commit <em>C2</em> was changed to address the issue report <em>ID-2</em> where the release <em>v0.9</em> was affected.
 Thus, the module <em>B.java</em> that was labelled as defective by the heuristic approach is actually clean.
 Second, the heuristic approach assumes that all defect-fixing commits that affect the release of interest (i.e., <em>v1.0</em>) only occur within the post-release window period of the release of interest.
 <a class="reference internal" href="#defect-labelling"><span class="std std-numref">Fig. 5</span></a> shows that the commit <em>C4</em> was made to address the issue report <em>ID-4</em> where the release <em>v1.0</em> was affected, however the commit <em>C4</em> was made outside the post-release window period.
@@ -418,7 +418,7 @@ For example, Mockus and Herbslerb <span id="id19">[<a class="reference internal"
 Furthermore, Bird et al. <span id="id20">[<a class="reference internal" href="../References.html#id26"><span>BMG11</span></a>]</span> find that modules that are written by many experts are less likely to be defect-prone.
 Second, <em>reviewing activity</em> has been also used to approximate code ownership.
 For example, Thongtanunam <span id="id21">[<a class="reference internal" href="../References.html#id301"><span>TMHI16</span></a>]</span> find that reviewing expertise also shares a relationship with defect-proneness (e.g., modules that are reviewed by experts are less likely to be defect-prone).</p>
-<p>ADD: Social Network, Geographical, Social, Human-Factor, Test</p>
+<!-- TODO: ADD Social Network, Geographical, Social, Human-Factor, Test -->
 <!-- 
 ### Challenges of mining software defects 
 

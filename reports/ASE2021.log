@@ -27,63 +27,21 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import numpy as np
 
-# Import for Construct a black-box model (Regression and Random Forests)
-import statsmodels.api as sm
-from statsmodels.formula.api import ols
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.linear_model import LogisticRegression
-
-train_dataset = pd.read_csv(("../../datasets/lucene-2.9.0.csv"), index_col = 'File')
-test_dataset = pd.read_csv(("../../datasets/lucene-3.0.0.csv"), index_col = 'File')
+lucene_290_dataset = pd.read_csv(("../../datasets/lucene-2.9.0.csv"), index_col = 'File')
+lucene_300_dataset = pd.read_csv(("../../datasets/lucene-3.0.0.csv"), index_col = 'File')
 
 outcome = 'RealBug'
-features = ['OWN_COMMIT', 'Added_lines', 'CountClassCoupled', 'AvgLine', 'RatioCommentToCode']
-
-# process outcome to 0 and 1
-train_dataset[outcome] = pd.Categorical(train_dataset[outcome])
-train_dataset[outcome] = train_dataset[outcome].cat.codes
-
-test_dataset[outcome] = pd.Categorical(test_dataset[outcome])
-test_dataset[outcome] = test_dataset[outcome].cat.codes
-
-X_train = train_dataset.loc[:, features]
-X_test = test_dataset.loc[:, features]
-
-y_train = train_dataset.loc[:, outcome]
-y_test = test_dataset.loc[:, outcome]
-
-
-# commits - # of commits that modify the file of interest
-# Added lines - # of added lines of code
-# Count class coupled - # of classes that interact or couple with the class of interest
-# LOC - # of lines of code
-# RatioCommentToCode - The ratio of lines of comments to lines of code
-features = ['nCommit', 'AddedLOC', 'nCoupledClass', 'LOC', 'CommentToCodeRatio']
-
-X_train.columns = features
-X_test.columns = features
-training_data = pd.concat([X_train, y_train], axis=1)
-testing_data = pd.concat([X_test, y_test], axis=1)
-
-# Compute class ratio
-def get_class_ratio(input_data):
-    n_data = len(input_data)
-    n_defective = sum(input_data)
-    n_clean = n_data - n_defective
-    print('From the total of', n_data, 'files, there are:')
-    print(n_defective, 'defective files', '('+str(np.round(n_defective*1.0/n_data*100, 2))+'%)')
-    print(n_clean, 'clean files', '('+str(np.round(n_clean*1.0/n_data*100, 2))+'%)')
-    
+metrics = lucene_290_dataset.columns[:-1]
 ------------------
 
 [0;31m----------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m              Traceback (most recent call last)
-[0;32m<ipython-input-1-61e95ef5b218>[0m in [0;36m<module>[0;34m[0m
-[1;32m     15[0m [0;32mfrom[0m [0msklearn[0m[0;34m.[0m[0mlinear_model[0m [0;32mimport[0m [0mLogisticRegression[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     16[0m [0;34m[0m[0m
-[0;32m---> 17[0;31m [0mtrain_dataset[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m([0m[0;34m"../../datasets/lucene-2.9.0.csv"[0m[0;34m)[0m[0;34m,[0m [0mindex_col[0m [0;34m=[0m [0;34m'File'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     18[0m [0mtest_dataset[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m([0m[0;34m"../../datasets/lucene-3.0.0.csv"[0m[0;34m)[0m[0;34m,[0m [0mindex_col[0m [0;34m=[0m [0;34m'File'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     19[0m [0;34m[0m[0m
+[0;32m<ipython-input-2-d175aad0fce8>[0m in [0;36m<module>[0;34m[0m
+[1;32m      9[0m [0;32mimport[0m [0mnumpy[0m [0;32mas[0m [0mnp[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     10[0m [0;34m[0m[0m
+[0;32m---> 11[0;31m [0mlucene_290_dataset[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m([0m[0;34m"../../datasets/lucene-2.9.0.csv"[0m[0;34m)[0m[0;34m,[0m [0mindex_col[0m [0;34m=[0m [0;34m'File'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     12[0m [0mlucene_300_dataset[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m([0m[0;34m"../../datasets/lucene-3.0.0.csv"[0m[0;34m)[0m[0;34m,[0m [0mindex_col[0m [0;34m=[0m [0;34m'File'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     13[0m [0;34m[0m[0m
 
 [0;32m/opt/anaconda3/envs/xaitools/lib/python3.6/site-packages/pandas/io/parsers.py[0m in [0;36mread_csv[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)[0m
 [1;32m    686[0m     )
