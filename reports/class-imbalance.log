@@ -76,8 +76,8 @@ def get_class_ratio(input_data):
     
 ------------------
 
-[0;31m----------------------------------------------------------------[0m
-[0;31mFileNotFoundError[0m              Traceback (most recent call last)
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
 [0;32m<ipython-input-1-61e95ef5b218>[0m in [0;36m<module>[0;34m[0m
 [1;32m     15[0m [0;32mfrom[0m [0msklearn[0m[0;34m.[0m[0mlinear_model[0m [0;32mimport[0m [0mLogisticRegression[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     16[0m [0;34m[0m[0m

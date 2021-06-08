@@ -20,8 +20,8 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 s
 ------------------
 
-[0;31m----------------------------------------------------------------[0m
-[0;31mNameError[0m                      Traceback (most recent call last)
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
 [0;32m<ipython-input-1-ded5ba42480f>[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0ms[0m[0;34m[0m[0;34m[0m[0m
 [0m

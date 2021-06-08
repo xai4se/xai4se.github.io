@@ -103,8 +103,8 @@ print(lime_local_explanation.as_list(label= lime_local_explanation.available_lab
 lime_local_explanation.show_in_notebook()
 ------------------
 
-[0;31m----------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m            Traceback (most recent call last)
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
 [0;32m<ipython-input-1-1a9be2c2f9b8>[0m in [0;36m<module>[0;34m[0m
 [1;32m     15[0m [0;34m[0m[0m
 [1;32m     16[0m [0;31m# Import for LIME[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
