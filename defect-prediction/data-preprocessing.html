@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,24 +33,26 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://xai4se.github.io/defect-prediction/data-preprocessing.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -74,6 +76,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/logo.png" class="logo" alt="logo">
       
       
@@ -83,7 +89,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -92,7 +98,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Part1-What is Explainable AI?
  </span>
@@ -119,7 +125,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Part2-Defect Prediction Models
  </span>
@@ -161,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Part3-Explainable AI for Software Engineering
  </span>
@@ -301,7 +307,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#always-handle-collinearity-and-multicollinearity">
@@ -387,7 +393,7 @@
         
               <div>
                 
-  <div class="section" id="step-2-data-preprocessing">
+  <div class="tex2jax_ignore mathjax_ignore section" id="step-2-data-preprocessing">
 <h1>(Step 2) Data Preprocessing<a class="headerlink" href="#step-2-data-preprocessing" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="always-handle-collinearity-and-multicollinearity">
 <h2>Always handle collinearity and multicollinearity<a class="headerlink" href="#always-handle-collinearity-and-multicollinearity" title="Permalink to this headline">¶</a></h2>
@@ -441,7 +447,7 @@ Below, we provide a tutorial for using and visualising Spearman correlation test
 <div class="section" id="multicollinearity">
 <h3>Multicollinearity<a class="headerlink" href="#multicollinearity" title="Permalink to this headline">¶</a></h3>
 <p>Multicollinearity is a phenomenon in which one metric can be linearly predicted by a combination of two or more metrics.
-Multicollinearity can be detected using Variance Inflation Factor (VIF) analysis <span id="id1">[<a class="reference internal" href="../References.html#id70"><span>FM92</span></a>]</span>.
+Multicollinearity can be detected using Variance Inflation Factor (VIF) analysis <span id="id1">[<a class="reference internal" href="../References.html#id70">FM92</a>]</span>.
 The idea behind variance inflation factor analysis is to construct an ordinary least square regression to predict a metric by using the other metrics in the dataset.
 Having a model that is well fit indicates that the metric can be predicted by other metrics, linearly highly-correlated with other metrics.
 There are 3 steps in variance inflation factor analysis.</p>
@@ -453,7 +459,7 @@ A high VIF score of a metric indicates that a given metric can be accurately pre
 Thus, that given metric is considered redundant and should be removed from our model.</p>
 <p><em>(Step 3) Remove metrics with a VIF score that is higher than a given threshold.</em>
 We remove metrics with a VIF score that is higher than a given threshold.
-We use a VIF threshold of 5 to determine the magnitude of multi-collinearity, as it is suggested by Fox <span id="id2">[<a class="reference internal" href="../References.html#id71"><span>Fox15</span></a>]</span>.
+We use a VIF threshold of 5 to determine the magnitude of multi-collinearity, as it is suggested by Fox <span id="id2">[<a class="reference internal" href="../References.html#id71">Fox15</a>]</span>.
 Then, we repeat the above three steps until the VIF scores of all remaining metrics are lower than the pre-defined threshold.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -622,7 +628,7 @@ The following features are selected according to Stepwise VIF with the VIF thres
 <p>Feature selection is a data preprocessing technique for selecting a
 subset of the best software metrics prior to constructing a defect
 model. There is a plethora of feature selection techniques that can be
-applied <span id="id3">[<a class="reference internal" href="../References.html#id84"><span>GE03</span></a>]</span>, e.g., filter-based, wrapper-based, and
+applied <span id="id3">[<a class="reference internal" href="../References.html#id84">GE03</a>]</span>, e.g., filter-based, wrapper-based, and
 embedded-based families.</p>
 <div class="section" id="filter-based-family">
 <h4>Filter-based Family<a class="headerlink" href="#filter-based-family" title="Permalink to this headline">¶</a></h4>
@@ -631,7 +637,7 @@ metrics according to an evaluation criterion regardless of model
 construction. Since constructing models is not required, the use of
 filter-based feature selection techniques is considered low cost and
 widely used.</p>
-<p><strong>Chi-Squared-based feature selection</strong> <span id="id4">[<a class="reference internal" href="../References.html#id192"><span>McH13</span></a>]</span> assesses the
+<p><strong>Chi-Squared-based feature selection</strong> <span id="id4">[<a class="reference internal" href="../References.html#id192">McH13</a>]</span> assesses the
 importance of metrics with the <span class="math notranslate nohighlight">\(\chi^2\)</span> statistic which is a
 non-parametric statistical test of independence.</p>
 <div class="cell docutils container">
@@ -665,7 +671,7 @@ non-parametric statistical test of independence.</p>
 <div class="section" id="wrapper-based-family">
 <h4>Wrapper-based Family<a class="headerlink" href="#wrapper-based-family" title="Permalink to this headline">¶</a></h4>
 <p>Wrapper-based feature selection
-techniques <span id="id5">[<a class="reference internal" href="../References.html#id129"><span>JKP94</span></a>]</span><span id="id6">[<a class="reference internal" href="../References.html#id150"><span>KJ97</span></a>]</span> use classification
+techniques <span id="id5">[<a class="reference internal" href="../References.html#id129">JKP94</a>]</span><span id="id6">[<a class="reference internal" href="../References.html#id150">KJ97</a>]</span> use classification
 techniques to assess each subset of metrics and find the best subset of
 metrics according to an evaluation criterion. Wrapper-based feature
 selection is made up of three steps, which we described below.</p>
@@ -687,7 +693,7 @@ repeats Steps 2 and 3 in order to find the best subset of metrics
 according to the evaluation criterion. Finally, it provides the best
 subset of metrics that yields the highest performance according to the
 evaluation criterion.</p>
-<p><strong>Recursive Feature Elimination</strong> (RFE) <span id="id7">[<a class="reference internal" href="../References.html#id84"><span>GE03</span></a>]</span>
+<p><strong>Recursive Feature Elimination</strong> (RFE) <span id="id7">[<a class="reference internal" href="../References.html#id84">GE03</a>]</span>
 searches for the best subset of metrics by recursively eliminating the
 least important metric. First, RFE constructs a model using all metrics
 and ranks metrics according to their importance score (e.g., Breiman’s
@@ -774,14 +780,14 @@ To mitigate this, we have to select one of them but the question is <em>Which on
 </div>
 <div class="section" id="autospearman-an-automated-feature-selection-approach-that-address-collinearity-and-multicollinearity">
 <h3>AutoSpearman: An automated feature selection approach that address collinearity and multicollinearity<a class="headerlink" href="#autospearman-an-automated-feature-selection-approach-that-address-collinearity-and-multicollinearity" title="Permalink to this headline">¶</a></h3>
-<p>Jiarpakdee <em>et al.</em> <span id="id8">[<a class="reference internal" href="../References.html#id121"><span>JTT18a</span></a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id125"><span>JTT20b</span></a>]</span> <span id="id10">[<a class="reference internal" href="../References.html#id118"><span>JTT18b</span></a>]</span> introduce , an
+<p>Jiarpakdee <em>et al.</em> <span id="id8">[<a class="reference internal" href="../References.html#id121">JTT18a</a>]</span><span id="id9">[<a class="reference internal" href="../References.html#id125">JTT20b</a>]</span> <span id="id10">[<a class="reference internal" href="../References.html#id118">JTT18b</a>]</span> introduce , an
 automated metric selection approach based on the Spearman rank
 correlation test and the VIF analysis for statistical inference.
 The high-level concept of can be summarised into 2 parts:</p>
 <p><em>(Part 1) Automatically select non-correlated metrics based on a
 Spearman rank correlation test.</em> We first measure the correlation of all
 metrics using the Spearman rank correlation test (<span class="math notranslate nohighlight">\(\rho\)</span>). We use the interpretation of correlation coefficients (<span class="math notranslate nohighlight">\(|\rho|\)</span>) as
-provided by Kraemer <span id="id11">[<a class="reference internal" href="../References.html#id153"><span>KML+03</span></a>]</span>—i.e., a Spearman
+provided by Kraemer <span id="id11">[<a class="reference internal" href="../References.html#id153">KML+03</a>]</span>—i.e., a Spearman
 correlation coefficient of above or equal to 0.7 is considered a strong
 correlation. Thus, we only consider the pairs that have an absolute
 Spearman correlation coefficient of above or equal to the threshold
@@ -821,7 +827,7 @@ value of 0.7.</p>
     <span class="n">abs_corrmat</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">corrmat</span><span class="p">)</span>
     
     <span class="c1"># identify correlated metrics with the correlation threshold of 0.7</span>
-    <span class="n">highly_correlated_metrics</span> <span class="o">=</span> <span class="p">((</span><span class="n">corrmat</span> <span class="o">&gt;</span> <span class="o">.</span><span class="mi">7</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">corrmat</span> <span class="o">&lt;</span> <span class="o">-.</span><span class="mi">7</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">corrmat</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">highly_correlated_metrics</span> <span class="o">=</span> <span class="p">((</span><span class="n">corrmat</span> <span class="o">&gt;</span> <span class="mf">.7</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">corrmat</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">.7</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">corrmat</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span>
     <span class="n">n_correlated_metrics</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">highly_correlated_metrics</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">n_correlated_metrics</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="c1"># find the strongest pair-wise correlation</span>
@@ -879,7 +885,7 @@ Variance Inflation Factor analysis.</em> We first measure the magnitude of
 multicollinearity of the remaining metrics (<span class="math notranslate nohighlight">\(M'\)</span>) from <code class="docutils literal notranslate"><span class="pre">Part</span> <span class="pre">1</span></code> using
 the Variance Inflation Factor analysis. We use a VIF
 threshold value (<span class="math notranslate nohighlight">\(vif.t\)</span>) of 5 to identify the presence of
-multicollinearity, as suggested by Fox <span id="id12">[<a class="reference internal" href="../References.html#id71"><span>Fox15</span></a>]</span>.</p>
+multicollinearity, as suggested by Fox <span id="id12">[<a class="reference internal" href="../References.html#id71">Fox15</a>]</span>.</p>
 <p>To automatically remove correlated metrics from the Variance Inflation
 Factor analysis, we identify the removed metric as the metric that has
 the highest VIF score. We then exclude the removed
@@ -1059,19 +1065,19 @@ Finally, according to Part 2 of AutoSpearman, [&#39;nCommit&#39;, &#39;CommentTo
 <h2>Always handle class imbalance<a class="headerlink" href="#always-handle-class-imbalance" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="class-rebalancing-techniques-for-software-analytics">
 <h3>Class Rebalancing Techniques for Software Analytics<a class="headerlink" href="#class-rebalancing-techniques-for-software-analytics" title="Permalink to this headline">¶</a></h3>
-<p>A plethora of class rebalancing techniques exist <span id="id13">[<a class="reference internal" href="../References.html#id100"><span>HG09</span></a>]</span>,
+<p>A plethora of class rebalancing techniques exist <span id="id13">[<a class="reference internal" href="../References.html#id100">HG09</a>]</span>,
 e.g., (1) sampling methods for imbalanced learning, (2) cost-sensitive
 methods for imbalanced learning, (3) kernel-based methods for imbalanced
 learning, and (4) active learning for imbalanced learning. Since it is
 impractical to study all of these techniques, we select a manageable set
 of class rebalancing techniques for our study. As discussed by
-He <span id="id14">[<a class="reference internal" href="../References.html#id100"><span>HG09</span></a>]</span>, we start from the four families of imbalance
-learning techniques. Based on a literature surveys by Hall <em>et al.</em> <span id="id15">[<a class="reference internal" href="../References.html#id89"><span>HBB+12</span></a>]</span>,
-Shihab <span id="id16">[<a class="reference internal" href="../References.html#id278"><span>Shi12</span></a>]</span>, and Nam <span id="id17">[<a class="reference internal" href="../References.html#id228"><span>Nam14</span></a>]</span>, we then select only the
+He <span id="id14">[<a class="reference internal" href="../References.html#id100">HG09</a>]</span>, we start from the four families of imbalance
+learning techniques. Based on a literature surveys by Hall <em>et al.</em> <span id="id15">[<a class="reference internal" href="../References.html#id89">HBB+12</a>]</span>,
+Shihab <span id="id16">[<a class="reference internal" href="../References.html#id278">Shi12</a>]</span>, and Nam <span id="id17">[<a class="reference internal" href="../References.html#id228">Nam14</a>]</span>, we then select only the
 family of sampling techniques for the context of defect prediction.</p>
 <p>We first select the three commonly-used techniques (i.e., over-sampling,
-under-sampling, and Default SMOTE <span id="id18">[<a class="reference internal" href="../References.html#id42"><span>CBHK02</span></a>]</span>) that were
-previously used in the literature <span id="id19">[<a class="reference internal" href="../References.html#id134"><span>KameiMondenMatsumoto+07</span></a>]</span><span id="id20">[<a class="reference internal" href="../References.html#id143"><span>KGS10</span></a>]</span><span id="id21">[<a class="reference internal" href="../References.html#id240"><span>PD07</span></a>]</span><span id="id22">[<a class="reference internal" href="../References.html#id273"><span>SKVanHulseF14</span></a>]</span><span id="id23">[<a class="reference internal" href="../References.html#id289"><span>TTDM15</span></a>]</span><span id="id24">[<a class="reference internal" href="../References.html#id322"><span>WY13</span></a>]</span><span id="id25">[<a class="reference internal" href="../References.html#id333"><span>XLS+15</span></a>]</span><span id="id26">[<a class="reference internal" href="../References.html#id335"><span>YLH+16</span></a>]</span><span id="id27">[<a class="reference internal" href="../References.html#id336"><span>YLX+17</span></a>]</span></p>
+under-sampling, and Default SMOTE <span id="id18">[<a class="reference internal" href="../References.html#id42">CBHK02</a>]</span>) that were
+previously used in the literature <span id="id19">[<a class="reference internal" href="../References.html#id134">KameiMondenMatsumoto+07</a>]</span><span id="id20">[<a class="reference internal" href="../References.html#id143">KGS10</a>]</span><span id="id21">[<a class="reference internal" href="../References.html#id240">PD07</a>]</span><span id="id22">[<a class="reference internal" href="../References.html#id273">SKVanHulseF14</a>]</span><span id="id23">[<a class="reference internal" href="../References.html#id289">TTDM15</a>]</span><span id="id24">[<a class="reference internal" href="../References.html#id322">WY13</a>]</span><span id="id25">[<a class="reference internal" href="../References.html#id333">XLS+15</a>]</span><span id="id26">[<a class="reference internal" href="../References.html#id335">YLH+16</a>]</span><span id="id27">[<a class="reference internal" href="../References.html#id336">YLX+17</a>]</span></p>
 <div class="figure align-default" id="class-imbalance-overview">
 <img alt="../_images/class-imbalance-overview.png" src="../_images/class-imbalance-overview.png" />
 <p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">An illustrative overview of the 3 selected class rebalancing techniques.</span><a class="headerlink" href="#class-imbalance-overview" title="Permalink to this image">¶</a></p>
@@ -1141,7 +1147,7 @@ lose important information pertaining to the majority class.</p>
 </div>
 <div class="section" id="synthetic-minority-oversampling-technique-smote">
 <h4>Synthetic Minority Oversampling Technique (SMOTE)<a class="headerlink" href="#synthetic-minority-oversampling-technique-smote" title="Permalink to this headline">¶</a></h4>
-<p>The SMOTE technique <span id="id28">[<a class="reference internal" href="../References.html#id42"><span>CBHK02</span></a>]</span> was proposed to combat the
+<p>The SMOTE technique <span id="id28">[<a class="reference internal" href="../References.html#id42">CBHK02</a>]</span> was proposed to combat the
 disavantages of the simple over-sampling and under-sampling techniques.
 The SMOTE technique creates artificial data based on the feature space
 (rather than the data space) similarities from the minority modules. The
@@ -1215,22 +1221,42 @@ AutoSpearman: Automatically Mitigating Correlated Software Metrics for Interpret
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="data-collection.html" title="previous page">(Step 1) Data Collection</a>
-    <a class='right-next' id="next-link" href="model-construction.html" title="next page">(Step 3) Model Construction</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="data-collection.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">(Step 1) Data Collection</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="model-construction.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">(Step 3) Model Construction</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
           By Chakkrit Tantithamthavorn and Jirayus Jiarpakdee<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             <script>mermaid.init();</script> <div class="row_footer"> This project has received funding from the <a href="https://www.arc.gov.au/">Australian Research Council</a>'s Discovery Early Career Researcher Award (ARC DECRA) funding scheme (DE200100941). This book reflects the views of the authors and neither Australian Research Council nor Monash University are liable for any use that may be made of the information contained herein. The content of this project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. The source code that is part of the content, as well as the source code used to format and display that content is licensed under the MIT License. </div>
           </div>

@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,24 +33,26 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://xai4se.github.io/defect-prediction/model-evaluation.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -74,6 +76,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/logo.png" class="logo" alt="logo">
       
       
@@ -83,7 +89,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -92,7 +98,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Part1-What is Explainable AI?
  </span>
@@ -119,7 +125,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Part2-Defect Prediction Models
  </span>
@@ -161,7 +167,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   Part3-Explainable AI for Software Engineering
  </span>
@@ -301,7 +307,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#always-select-evaluation-measures-according-to-the-goals-of-studies">
@@ -385,14 +391,14 @@
         
               <div>
                 
-  <div class="section" id="step-4-model-evaluation">
+  <div class="tex2jax_ignore mathjax_ignore section" id="step-4-model-evaluation">
 <h1>(Step 4) Model Evaluation<a class="headerlink" href="#step-4-model-evaluation" title="Permalink to this headline">¶</a></h1>
 <!-- # - file: defect-prediction/model-validation.ipynb
 # - file: defect-prediction/evaluation-measures.ipynb --><div class="section" id="always-select-evaluation-measures-according-to-the-goals-of-studies">
 <h2>Always select evaluation measures according to the goals of studies<a class="headerlink" href="#always-select-evaluation-measures-according-to-the-goals-of-studies" title="Permalink to this headline">¶</a></h2>
 <p>Different studies often have different goals of developing defect models.
-For example, one study may want its defect models that yield the highest discriminatory power (i.e., optimise based on Area Under the receiver operator characteristic Curve (AUC) (AUC) <span id="id1">[<a class="reference internal" href="../References.html#id435"><span>HM82</span></a>]</span>).
-Another study may want its defect models to discover an actual defective module as early as possible (i.e., optimise based on initial false alarm <span id="id2">[<a class="reference internal" href="../References.html#id113"><span>HXL17</span></a>]</span>).
+For example, one study may want its defect models that yield the highest discriminatory power (i.e., optimise based on Area Under the receiver operator characteristic Curve (AUC) (AUC) <span id="id1">[<a class="reference internal" href="../References.html#id435">HM82</a>]</span>).
+Another study may want its defect models to discover an actual defective module as early as possible (i.e., optimise based on initial false alarm <span id="id2">[<a class="reference internal" href="../References.html#id113">HXL17</a>]</span>).
 Thus, several evaluation measures have been proposed to serve different goals of developing defect models.</p>
 <!-- Examples are predictive accuracy measures (e.g., Area Under the ROC Curve (AUC) {cite}`Hanley1982-uo` and Matthews Correlation Coefficients (MCC) {cite}`matthews1975comparison`) and effort-aware measures (e.g., Distance-to-heaven {cite}`agrawal2018better` and Top k% LOC precision {cite}`huang2017supervised`). -->
 <p>Below, we describe <em>5</em> predictive accuracy and <em>3</em> effort-aware measures in detail with interactive tutorials.
@@ -547,10 +553,10 @@ In other words, a low FAR value indicates that developers spend less effort when
 </div>
 <div class="section" id="area-under-the-receiver-operator-characteristic-curve-auc">
 <h4>Area Under the receiver operator characteristic Curve (AUC)<a class="headerlink" href="#area-under-the-receiver-operator-characteristic-curve-auc" title="Permalink to this headline">¶</a></h4>
-<p>AUC measures the discriminatory power of predictive models and is widely suggested by recent research <span id="id3">[<a class="reference internal" href="../References.html#id166"><span>LBMP08</span></a>]</span><span id="id4">[<a class="reference internal" href="../References.html#id77"><span>GMH15</span></a>]</span><span id="id5">[<a class="reference internal" href="../References.html#id247"><span>RD13</span></a>]</span>.
+<p>AUC measures the discriminatory power of predictive models and is widely suggested by recent research <span id="id3">[<a class="reference internal" href="../References.html#id166">LBMP08</a>]</span><span id="id4">[<a class="reference internal" href="../References.html#id77">GMH15</a>]</span><span id="id5">[<a class="reference internal" href="../References.html#id247">RD13</a>]</span>.
 The axes of the curve of the AUC measure are the coverage of non-defective modules (true negative rate) for the x-axis and the coverage of defective modules (true positive rate) for the y-axis.
 The AUC measure is a threshold-independent performance measure that evaluates the ability of models in discriminating between defective and clean instances.
-The values of AUC range between 0 (worst), 0.5 (no better than random guessing), and 1 (best) <span id="id6">[<a class="reference internal" href="../References.html#id435"><span>HM82</span></a>]</span>.</p>
+The values of AUC range between 0 (worst), 0.5 (no better than random guessing), and 1 (best) <span id="id6">[<a class="reference internal" href="../References.html#id435">HM82</a>]</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_auc_score</span> 
@@ -604,9 +610,9 @@ MCC (matthews_corrcoef function)	: 0.4249604383453459
 <h3>Effort-Aware Measures<a class="headerlink" href="#effort-aware-measures" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="initial-false-alarm-ifa">
 <h4>Initial False Alarm (IFA)<a class="headerlink" href="#initial-false-alarm-ifa" title="Permalink to this headline">¶</a></h4>
-<p>IFA measures the number of clean lines on which developers spend SQA effort until the first defective line is found when lines are ranked by their defect-proneness <span id="id7">[<a class="reference internal" href="../References.html#id113"><span>HXL17</span></a>]</span>.
+<p>IFA measures the number of clean lines on which developers spend SQA effort until the first defective line is found when lines are ranked by their defect-proneness <span id="id7">[<a class="reference internal" href="../References.html#id113">HXL17</a>]</span>.
 A low IFA value indicates that few clean lines are ranked at the top, while a high IFA value indicates that developers will spend unnecessary effort on clean lines.
-The intuition behinds this measure is that developers may stop inspecting if they could not get promising results (i.e., find defective lines) within the first few inspected lines <span id="id8">[<a class="reference internal" href="../References.html#id236"><span>PO11</span></a>]</span>.</p>
+The intuition behinds this measure is that developers may stop inspecting if they could not get promising results (i.e., find defective lines) within the first few inspected lines <span id="id8">[<a class="reference internal" href="../References.html#id236">PO11</a>]</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate a defect-proneness ranking of testing instances</span>
@@ -634,7 +640,7 @@ The intuition behinds this measure is that developers may stop inspecting if the
 </div>
 <div class="section" id="distance-to-heaven-d2h">
 <h4>Distance-to-Heaven (D2H)<a class="headerlink" href="#distance-to-heaven-d2h" title="Permalink to this headline">¶</a></h4>
-<p>D2H is a combination of recall and FAR proposed by Agrawal and Menzies <span id="id9">[<a class="reference internal" href="../References.html#id3"><span>AM18</span></a>]</span> <span id="id10">[<a class="reference internal" href="../References.html#id6"><span>AFC+19</span></a>]</span>.
+<p>D2H is a combination of recall and FAR proposed by Agrawal and Menzies <span id="id9">[<a class="reference internal" href="../References.html#id3">AM18</a>]</span> <span id="id10">[<a class="reference internal" href="../References.html#id6">AFC+19</a>]</span>.
 The calculation of D2H is the root mean square of the recall and false alarm values (i.e., <span class="math notranslate nohighlight">\(\sqrt{\frac{(1-Recall)^2 + (0-FAR)^2}{2}}\)</span>).
 A d2h value of 0 indicates that an approach achieves a perfect identification, i.e., an approach can identify all defective lines (Recall <span class="math notranslate nohighlight">\(= 1\)</span>) without any false positives (FAR <span class="math notranslate nohighlight">\(= 0\)</span>).
 A high d2h value indicates that the performance of an approach is far from perfect, e.g., achieving a high recall value but also have high a FAR value and vice versa.</p>
@@ -666,10 +672,10 @@ A high d2h value indicates that the performance of an approach is far from perfe
 </div>
 <div class="section" id="top-k-loc-precision">
 <h4>Top k% LOC Precision<a class="headerlink" href="#top-k-loc-precision" title="Permalink to this headline">¶</a></h4>
-<p>Top k% LOC Precision measures how many defective lines found when inspecting the top k% of lines ranked by the defect-proneness estimated by the models <span id="id11">[<a class="reference internal" href="../References.html#id113"><span>HXL17</span></a>]</span>.
+<p>Top k% LOC Precision measures how many defective lines found when inspecting the top k% of lines ranked by the defect-proneness estimated by the models <span id="id11">[<a class="reference internal" href="../References.html#id113">HXL17</a>]</span>.
 A high value of Top k% LOC precision indicates that the model can rank many defective lines at the top and many defective lines can be found given the fixed amount of effort (i.e., k% of LOC).
 On the other hand, the low value of Top k% LOC precision indicates many clean lines are in the top k% LOC and developers need to inspect more lines to identify defects.
-Similar to prior studies <span id="id12">[<a class="reference internal" href="../References.html#id200"><span>MK10</span></a>]</span> <span id="id13">[<a class="reference internal" href="../References.html#id136"><span>KMM+10</span></a>]</span> <span id="id14">[<a class="reference internal" href="../References.html#id248"><span>RKBD14</span></a>]</span> <span id="id15">[<a class="reference internal" href="../References.html#id254"><span>RHG+16</span></a>]</span>, we use 20% of LOC as a fixed cutoff for an effort in this interactive tutorial.</p>
+Similar to prior studies <span id="id12">[<a class="reference internal" href="../References.html#id200">MK10</a>]</span> <span id="id13">[<a class="reference internal" href="../References.html#id136">KMM+10</a>]</span> <span id="id14">[<a class="reference internal" href="../References.html#id248">RKBD14</a>]</span> <span id="id15">[<a class="reference internal" href="../References.html#id254">RHG+16</a>]</span>, we use 20% of LOC as a fixed cutoff for an effort in this interactive tutorial.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span>
@@ -714,7 +720,7 @@ Top 20% LOC Precision (precision_score function)	: 0.4025974025974026
 </div>
 <div class="section" id="top-k-loc-recall">
 <h4>Top k% LOC Recall<a class="headerlink" href="#top-k-loc-recall" title="Permalink to this headline">¶</a></h4>
-<p>Top k%LOC recall measures how many actual defective lines found given a fixed amount of effort, i.e., the top k% of lines ranked by their defect-proneness <span id="id16">[<a class="reference internal" href="../References.html#id113"><span>HXL17</span></a>]</span>.
+<p>Top k%LOC recall measures how many actual defective lines found given a fixed amount of effort, i.e., the top k% of lines ranked by their defect-proneness <span id="id16">[<a class="reference internal" href="../References.html#id113">HXL17</a>]</span>.
 A high value of top k% LOC recall indicates that an approach can rank many actual defective lines at the top and many actual defective lines can be found given a fixed amount of effort.
 On the other hand, a low value of top k% LOC recall indicates many clean lines are in the top k% LOC and developers need to spend more effort to identify defective lines.
 Similarly, we use 20% of LOC as a fixed cutoff for an effort.</p>
@@ -798,22 +804,42 @@ Top 20% LOC Recall (recall_score function)	: 1.0
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="model-construction.html" title="previous page">(Step 3) Model Construction</a>
-    <a class='right-next' id="next-link" href="model-ranking.html" title="next page">(Step 5) Model Ranking</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="model-construction.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">(Step 3) Model Construction</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="model-ranking.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">(Step 5) Model Ranking</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
           By Chakkrit Tantithamthavorn and Jirayus Jiarpakdee<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
           <div class="extra_footer">
             <script>mermaid.init();</script> <div class="row_footer"> This project has received funding from the <a href="https://www.arc.gov.au/">Australian Research Council</a>'s Discovery Early Career Researcher Award (ARC DECRA) funding scheme (DE200100941). This book reflects the views of the authors and neither Australian Research Council nor Monash University are liable for any use that may be made of the information contained herein. The content of this project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. The source code that is part of the content, as well as the source code used to format and display that content is licensed under the MIT License. </div>
           </div>
