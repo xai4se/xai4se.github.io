@@ -6,7 +6,7 @@ dependencies:
   - ca-certificates=2021.1.19
   - ncurses=6.2
   - openssl=1.1.1k
-  - pip>=21.3.1
+  - pip>=21.0.0
   - python>=3.8
   - readline=8.1
   - setuptools=52.0.0
