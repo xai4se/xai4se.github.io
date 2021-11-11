@@ -2,6 +2,9 @@ format: jb-book
 root: index.ipynb
 title: Getting Started
 parts:
+- caption: Hands-on Exercise
+  chapters:
+  - file: tutorials/hands-on-exercise.ipynb
 - caption: Part1-What is Explainable AI?
   chapters:
   - file: xai/theory-of-explanations.ipynb
