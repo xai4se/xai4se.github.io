@@ -104,23 +104,35 @@ lime_local_explanation.show_in_notebook()
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mImportError[0m                               Traceback (most recent call last)
-[0;32m/tmp/ipykernel_3379983/1127894913.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      4[0m [0;32mfrom[0m [0mos[0m [0;32mimport[0m [0mlistdir[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m [0;32mfrom[0m [0mos[0m[0;34m.[0m[0mpath[0m [0;32mimport[0m [0misfile[0m[0;34m,[0m [0mjoin[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 6[0;31m [0;32mimport[0m [0mpandas[0m [0;32mas[0m [0mpd[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      7[0m [0;34m[0m[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+[0;32m/tmp/ipykernel_2176726/1127894913.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      7[0m [0;34m[0m[0m
 [1;32m      8[0m [0;31m# Import for Split Data into Training and Testing Samples[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 9[0;31m [0;32mfrom[0m [0msklearn[0m[0;34m.[0m[0mmodel_selection[0m [0;32mimport[0m [0mtrain_test_split[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     10[0m [0;34m[0m[0m
+[1;32m     11[0m [0;31m# Import for Construct a black-box model (Random Forests)[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 
-[0;32m~/.conda/envs/xaitools/lib/python3.9/site-packages/pandas/__init__.py[0m in [0;36m<module>[0;34m[0m
-[1;32m     14[0m [0;34m[0m[0m
-[1;32m     15[0m [0;32mif[0m [0mmissing_dependencies[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 16[0;31m     raise ImportError(
-[0m[1;32m     17[0m         [0;34m"Unable to import required dependencies:\n"[0m [0;34m+[0m [0;34m"\n"[0m[0;34m.[0m[0mjoin[0m[0;34m([0m[0mmissing_dependencies[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     18[0m     )
+[0;32m~/.conda/envs/xaitools/lib/python3.9/site-packages/sklearn/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     80[0m     [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0m_distributor_init[0m  [0;31m# noqa: F401[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     81[0m     [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0m__check_build[0m  [0;31m# noqa: F401[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 82[0;31m     [0;32mfrom[0m [0;34m.[0m[0mbase[0m [0;32mimport[0m [0mclone[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     83[0m     [0;32mfrom[0m [0;34m.[0m[0mutils[0m[0;34m.[0m[0m_show_versions[0m [0;32mimport[0m [0mshow_versions[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     84[0m [0;34m[0m[0m
 
-[0;31mImportError[0m: Unable to import required dependencies:
-numpy: No module named 'numpy'
-ImportError: Unable to import required dependencies:
-numpy: No module named 'numpy'
+[0;32m~/.conda/envs/xaitools/lib/python3.9/site-packages/sklearn/base.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     15[0m [0;32mfrom[0m [0;34m.[0m [0;32mimport[0m [0m__version__[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     16[0m [0;32mfrom[0m [0;34m.[0m[0m_config[0m [0;32mimport[0m [0mget_config[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 17[0;31m [0;32mfrom[0m [0;34m.[0m[0mutils[0m [0;32mimport[0m [0m_IS_32BIT[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     18[0m from .utils._tags import (
+[1;32m     19[0m     [0m_DEFAULT_TAGS[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/.conda/envs/xaitools/lib/python3.9/site-packages/sklearn/utils/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     18[0m [0;32mimport[0m [0mwarnings[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     19[0m [0;32mimport[0m [0mnumpy[0m [0;32mas[0m [0mnp[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 20[0;31m [0;32mfrom[0m [0mscipy[0m[0;34m.[0m[0msparse[0m [0;32mimport[0m [0missparse[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     21[0m [0;34m[0m[0m
+[1;32m     22[0m [0;32mfrom[0m [0;34m.[0m[0mmurmurhash[0m [0;32mimport[0m [0mmurmurhash3_32[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mModuleNotFoundError[0m: No module named 'scipy'
+ModuleNotFoundError: No module named 'scipy'
 
