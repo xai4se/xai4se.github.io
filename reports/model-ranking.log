@@ -23,18 +23,21 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 from os import listdir
 from os.path import isfile, join
 import pandas as pd
+import numpy as np
 
 # Import for Split Data into Training and Testing Samples
 from sklearn.model_selection import train_test_split
 
-# Import for Construct a black-box model (Random Forests)
-import statsmodels.api as sm
-from statsmodels.formula.api import ols
-from sklearn.ensemble import RandomForestClassifier
+# Import for Construct Defect Models (Classification)
+from sklearn.linear_model import LogisticRegression # Logistic Regression
+from sklearn.ensemble import RandomForestClassifier # Random Forests
+from sklearn.tree import DecisionTreeClassifier # C5.0 (Decision Tree)
+from sklearn.neural_network import MLPClassifier # Neural Network
+from sklearn.ensemble import GradientBoostingClassifier # Gradient Boosting Machine (GBM)
+import xgboost as xgb # eXtreme Gradient Boosting Tree (xGBTree)
 
-# Import for LIME
-import lime
-import lime.lime_tabular
+# Import for Cross-Validation
+from sklearn.model_selection import cross_val_score
 
 train_dataset = pd.read_csv(("../../datasets/lucene-2.9.0.csv"), index_col = 'File')
 test_dataset = pd.read_csv(("../../datasets/lucene-3.0.0.csv"), index_col = 'File')
@@ -68,50 +71,51 @@ X_test.columns = features
 training_data = pd.concat([X_train, y_train], axis=1)
 testing_data = pd.concat([X_test, y_test], axis=1)
 
-## Construct a black-box model (Random Forests)
 
-# random forests
+cv_kfold = 10
+model_performance_df = pd.DataFrame()
+## Construct defect models and generate the 10-fold Cross Validation AUC
+
+# Logistic Regression
+lr_model = LogisticRegression(random_state=1234)
+model_performance_df['LR'] = cross_val_score(lr_model, X_train, y_train, cv = cv_kfold, scoring = 'roc_auc')
+
+# Random Forests
 rf_model = RandomForestClassifier(random_state=1234, n_jobs = 10)
-rf_model.fit(X_train, y_train)  
+model_performance_df['RF'] = cross_val_score(rf_model, X_train, y_train, cv = cv_kfold, scoring = 'roc_auc')
 
-# construct a lime explainer
-lime_explainer = lime.lime_tabular.LimeTabularExplainer(
-                            training_data = X_train.values,  
-                            mode='classification',
-                            training_labels=y_train,
-                            feature_names=features,
-                            class_names = ['Clean', 'Defective'],
-                            discretize_continuous=True,
-                            random_state = 1234)
+# C5.0 (Decision Tree)
+dt_model = DecisionTreeClassifier(random_state=1234)
+model_performance_df['DT'] = cross_val_score(dt_model, X_train, y_train, cv = cv_kfold, scoring = 'roc_auc')
 
+# Neural Network
+nn_model = MLPClassifier(random_state=1234)
+model_performance_df['NN'] = cross_val_score(nn_model, X_train, y_train, cv = cv_kfold, scoring = 'roc_auc')
 
-# random an instance that is predicted as defective for generating a visual example
-# src/java/org/apache/lucene/index/DocumentsWriter.java
-print('src/java/org/apache/lucene/index/DocumentsWriter.java is likely to be defective with the probability of', rf_model.predict_proba(X_test.loc['src/java/org/apache/lucene/index/DocumentsWriter.java':, :].iloc[0:1,:])[0][1])
+# Gradient Boosting Machine (GBM)
+gbm_model = GradientBoostingClassifier(random_state=1234)
+gbm_model.fit(X_train, y_train)  
+model_performance_df['GBM'] = cross_val_score(gbm_model, X_train, y_train, cv = cv_kfold, scoring = 'roc_auc')
 
-# generate a LIME local explanation of the instance
-lime_local_explanation = lime_explainer.explain_instance(
-                            data_row = X_test.loc['src/java/org/apache/lucene/index/DocumentsWriter.java',:], 
-                            predict_fn = rf_model.predict_proba, 
-                            num_features=5,
-                            top_labels=1)
+# eXtreme Gradient Boosting Tree (xGBTree)
+xgb_model = xgb.XGBClassifier(random_state=1234)
+model_performance_df['XGB'] = cross_val_score(xgb_model, X_train, y_train, cv = cv_kfold, scoring = 'roc_auc')
 
-# textual explanation
-print(lime_local_explanation.as_list(label= lime_local_explanation.available_labels()[0]))
-
-# visual LIME
-lime_local_explanation.show_in_notebook()
+# export to csv, display, and visualise the data frame
+model_performance_df.to_csv('model_performance.csv', index = False)
+display(model_performance_df)
+model_performance_df.plot(kind = 'box', ylim = (0, 1), ylabel = 'AUC')
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/var/folders/68/p10tkmvx0p9dw88yp1k3tzh00000gr/T/ipykernel_57230/1127894913.py[0m in [0;36m<module>[0;34m[0m
-[1;32m     15[0m [0;34m[0m[0m
-[1;32m     16[0m [0;31m# Import for LIME[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 17[0;31m [0;32mimport[0m [0mlime[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     18[0m [0;32mimport[0m [0mlime[0m[0;34m.[0m[0mlime_tabular[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     19[0m [0;34m[0m[0m
+[0;32m/var/folders/68/p10tkmvx0p9dw88yp1k3tzh00000gr/T/ipykernel_57394/2435358079.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     16[0m [0;32mfrom[0m [0msklearn[0m[0;34m.[0m[0mneural_network[0m [0;32mimport[0m [0mMLPClassifier[0m [0;31m# Neural Network[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     17[0m [0;32mfrom[0m [0msklearn[0m[0;34m.[0m[0mensemble[0m [0;32mimport[0m [0mGradientBoostingClassifier[0m [0;31m# Gradient Boosting Machine (GBM)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 18[0;31m [0;32mimport[0m [0mxgboost[0m [0;32mas[0m [0mxgb[0m [0;31m# eXtreme Gradient Boosting Tree (xGBTree)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     19[0m [0;34m[0m[0m
+[1;32m     20[0m [0;31m# Import for Cross-Validation[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mModuleNotFoundError[0m: No module named 'lime'
-ModuleNotFoundError: No module named 'lime'
+[0;31mModuleNotFoundError[0m: No module named 'xgboost'
+ModuleNotFoundError: No module named 'xgboost'
 

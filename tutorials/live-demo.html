@@ -405,6 +405,13 @@ First, we need to load necesarry libraries as well as preparing datasets.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
 
 <span class="c1"># Please fit your Random Forests model here!</span>
+<span class="n">our_rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+<span class="n">our_rf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomForestClassifier()
 </pre></div>
 </div>
 </div>
@@ -453,12 +460,38 @@ and mutation techniques</p></li>
 <span class="n">file_to_be_explained</span> <span class="o">=</span> <span class="s1">&#39;src/java/org/apache/lucene/index/DocumentsWriter.java&#39;</span>
 
 <span class="c1"># PyExplainer Step 1 - Construct a PyExplainer </span>
-
+<span class="n">our_pyexplainer</span> <span class="o">=</span> <span class="n">PyExplainer</span><span class="p">(</span><span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">,</span>
+                           <span class="n">y_train</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">,</span>
+                           <span class="n">indep</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+                           <span class="n">dep</span> <span class="o">=</span> <span class="n">outcome</span><span class="p">,</span>
+                           <span class="n">blackbox_model</span> <span class="o">=</span> <span class="n">rf_model</span><span class="p">)</span>
 
 <span class="c1"># PyExplainer Step 2 - Generate the rule-based explanation of an instance to be explained</span>
+<span class="n">pyexplainer_explanation_of_an_instance</span> <span class="o">=</span> <span class="n">our_pyexplainer</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span>
+                                <span class="n">X_explain</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">file_to_be_explained</span><span class="p">,:]</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span>
+                                <span class="n">y_explain</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">file_to_be_explained</span><span class="p">]),</span> 
+                                                      <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="n">file_to_be_explained</span><span class="p">],</span>
+                                                      <span class="n">name</span> <span class="o">=</span> <span class="n">outcome</span><span class="p">),</span>
+                                <span class="n">search_function</span> <span class="o">=</span> <span class="s1">&#39;crossoverinterpolation&#39;</span><span class="p">,</span>
+                                <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                                <span class="n">max_rules</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
+<span class="c1"># Please use the code below to visualise the generated PyExplainer explanation (What-If interactive visualisation).</span>
+<span class="n">our_pyexplainer</span><span class="o">.</span><span class="n">visualise</span><span class="p">(</span><span class="n">pyexplainer_explanation_of_an_instance</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Why this file is defect-introducing ?&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">68</span><span class="o">/</span><span class="n">p10tkmvx0p9dw88yp1k3tzh00000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_56147</span><span class="o">/</span><span class="mf">3037054565.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import for PyExplainer</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">pyexplainer.pyexplainer_pyexplainer</span> <span class="kn">import</span> <span class="n">PyExplainer</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">file_to_be_explained</span> <span class="o">=</span> <span class="s1">&#39;src/java/org/apache/lucene/index/DocumentsWriter.java&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
 
-<span class="c1"># visualise the generated rule-based PyExplainer explanation</span>
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pyexplainer&#39;
 </pre></div>
 </div>
 </div>
