@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explainable AI for Software Engineering &#8212; Explainable AI for Software Engineering</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://xai4se.github.io/index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ASE2021" href="tutorials/hands-on-exercise.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="#">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Explainable AI for Software Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Explainable AI for Software Engineering
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Hands-on Exercise
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/hands-on-exercise.html">
+   ASE2021
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part1-What is Explainable AI?
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai/theory-of-explanations.html">
+   A Theory of Explanations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai/techniques-for-generating-explanations.html">
+   Techniques for Generating Explanations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai/model-specific-techniques.html">
+   Model-specific Techniques for Generating Global Explanations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai/model-agnostic-techniques.html">
+   Model-agnostic Techniques for Generating Local Explanations
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part2-Defect Prediction Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="defect-prediction/software-quality-assurance.html">
+   Software Quality Assurance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defect-prediction/defect-prediction.html">
+   Defect Prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defect-prediction/data-collection.html">
+   (Step 1) Data Collection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defect-prediction/data-preprocessing.html">
+   (Step 2) Data Preprocessing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defect-prediction/model-construction.html">
+   (Step 3) Model Construction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defect-prediction/model-evaluation.html">
+   (Step 4) Model Evaluation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defect-prediction/model-ranking.html">
+   (Step 5) Model Ranking
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part3-Explainable AI for Software Engineering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai4se/explainability-for-se.html">
+   Explainability in Software Engineering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai4se/a-case-study-of-defect-prediction.html">
+   A Case Study of Defect Prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai4se/defective-line-localization.html">
+   (Example 1) Help developers localize which lines of code are the most risky
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai4se/local-defect-explanation.html">
+   (Example 2) Help developers understand why a file is predicted as defective
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai4se/specific-sq-plan.html">
+   (Example 3) Help managers develop software quality improvement plans
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/index.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/xai4se/xai4se.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/xai4se/xai4se.github.io/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/xai4se/xai4se.github.io/edit/master/docs/index.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/xai4se.github.io/master?urlpath=lab/tree/docs/index.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/xai4se.github.io/blob/master/docs/index.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#about-this-book">
+   About this Book
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-you-will-learn">
+     What you will learn
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#who-this-book-is-for">
+     Who this book is for
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#about-the-authors">
+     About the authors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cite-this-book">
+     Cite this book:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testimonials">
+     Testimonials
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="explainable-ai-for-software-engineering">
+<h1><em>Explainable AI for Software Engineering</em><a class="headerlink" href="#explainable-ai-for-software-engineering" title="Permalink to this headline">¶</a></h1>
+<p><em>A Hands-on Guide on How To Make Software Analytics More Practical, Explainable, and Actionable</em></p>
+<hr class="docutils" />
+<div class="figure align-default" id="software-tools">
+<img alt="_images/front-banner.png" src="_images/front-banner.png" />
+</div>
+<div class="section" id="about-this-book">
+<h2>About this Book<a class="headerlink" href="#about-this-book" title="Permalink to this headline">¶</a></h2>
+<p>The success of software engineering projects largely depends on complex decision-making. For example, which tasks should a developer do first, who should perform this task, is the software of high quality, is a software system reliable and resilient enough to deploy, etc. However, erroneous decision-making for these complex questions is costly in terms of money and reputation. Thus, Artificial Intelligence/Machine Learning (AI/ML) techniques have been widely used in software engineering for developing software analytics tools and techniques to improve decision-making, developer productivity, and software quality. However, the predictions of such AI/ML models for software engineering are still not practical (i.e., fine-grained), not explainable, and not actionable. These concerns often hinder the adoption of AI/ML models in software engineering practices. In addition, many recent studies still focus on improving the accuracy, while a few of them focus on improving explainability. <strong>Are we moving in the right direction? How can we better improve the SE community (both research and education)?</strong> In this book, we first provide a concise yet essential introduction to the most important aspects of Explainable AI and a hands-on tutorial of Explainable AI tools and techniques. Then, we introduce the fundamental knowledge of defect prediction (an example application of AI for Software Engineering). Finally, we demonstrate three successful case studies on how Explainable AI techniques can be used to address the aforementioned challenges by making the predictions of software defect prediction models more practical, explainable, and actionable.</p>
+<div class="section" id="what-you-will-learn">
+<h3>What you will learn<a class="headerlink" href="#what-you-will-learn" title="Permalink to this headline">¶</a></h3>
+<p>This book consists of three parts:</p>
+<ul class="simple">
+<li><p><strong>Part 1-Explainable AI:</strong> We first provide a concise yet essential introduction to the most important aspects of Explainable AI and a hands-on tutorial of Explainable AI tools and techniques.</p></li>
+<li><p><strong>Part 2-Defect Prediction Models:</strong> We introduce the fundamental knowledge of defect prediction (an example application of AI for Software Engineering)</p></li>
+<li><p><strong>Part 3-Explainable AI for Software Engineering:</strong> We demonstrate three successful case studies on how Explainable AI techniques can be used to address the aforementioned challenges by making the predictions of software defect prediction models more practical, explainable, and actionable.</p></li>
+</ul>
+</div>
+<div class="section" id="who-this-book-is-for">
+<h3>Who this book is for<a class="headerlink" href="#who-this-book-is-for" title="Permalink to this headline">¶</a></h3>
+<p>Some of the potential readers of this book include:</p>
+<ol class="simple">
+<li><p>SE researchers and PhD students who want to learn more about the intersection of Explainable AI and Software Engineering.</p></li>
+<li><p>Software practitioners who already use Python for as data science, machine learning, research, and analysis and wish to apply their data science knowledge to software data.</p></li>
+<li><p>Software analysts and data scientists who want to understand and avoid pitfalls when desigining software analytics.</p></li>
+<li><p>Project managers who involve high-stakes decision-making and need software analytics to make smarter data-driven business decisions.</p></li>
+</ol>
+<p><strong>Caution:</strong> This book is not an introduction to data science, machine learning, or artifcial intelligence concepts. You must have some foundational knowledge and/or experience with machine learning libraries such as scikit-learn to make the most out of this book.</p>
+</div>
+<div class="section" id="about-the-authors">
+<h3>About the authors<a class="headerlink" href="#about-the-authors" title="Permalink to this headline">¶</a></h3>
+<p><strong>Dr. Chakkrit (Kla) Tantithamthavorn</strong> is a Senior Lecturer in Software Engineering and a 2020 ARC DECRA Fellow in the Faculty of Information Technology, Monash University, Australia. He is leading a new research area of Explaianble AI for Software Engineering. His current fellowship is focusing on the development of Practical and Explainable Analytics to Prevent Future Software Defects. His work has been published at several top-tier software engineering venues, such as TSE, ICSE, EMSE, MSR, IST. Contact him at <a class="reference external" href="mailto:chakkrit&#37;&#52;&#48;monash&#46;edu">chakkrit<span>&#64;</span>monash<span>&#46;</span>edu</a>.</p>
+<p><strong>Dr. Jirayus Jiarpakdee</strong> is graduated from Monash University, Australia. His research interests include empirical software engineering and mining software repositories (MSR). The goal of his Ph.D. is to apply the knowledge of statistical modelling, experimental design, and software engineering to improve the explainability of defect prediction models. Contact him at <a class="reference external" href="mailto:jirayus&#46;jiarpakdee&#37;&#52;&#48;monash&#46;edu">jirayus<span>&#46;</span>jiarpakdee<span>&#64;</span>monash<span>&#46;</span>edu</a>.</p>
+</div>
+<div class="section" id="cite-this-book">
+<h3>Cite this book:<a class="headerlink" href="#cite-this-book" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@book</span><span class="p">{</span><span class="n">xai4sebook</span><span class="p">,</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Chakkrit</span> <span class="n">Tantithamthavorn</span> <span class="ow">and</span> <span class="n">Jirayus</span> <span class="n">Jiarpakdee</span><span class="p">},</span>
+    <span class="n">booktitle</span> <span class="o">=</span> <span class="p">{</span><span class="n">Explainable</span> <span class="n">AI</span> <span class="k">for</span> <span class="n">Software</span> <span class="n">Engineering</span><span class="p">},</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2021</span><span class="p">},</span>
+    <span class="n">publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">Monash</span> <span class="n">University</span><span class="p">},</span>
+    <span class="n">howpublished</span> <span class="o">=</span> <span class="p">{</span>\<span class="n">url</span><span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">xai4se</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="p">}},</span>
+    <span class="n">note</span> <span class="o">=</span> <span class="p">{</span><span class="n">Retrieved</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">17</span><span class="p">},</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">xai4se</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="p">},</span>
+    <span class="n">urldate</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2021</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">17</span><span class="p">},</span>
+    <span class="n">doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.4769127</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="testimonials">
+<h3>Testimonials<a class="headerlink" href="#testimonials" title="Permalink to this headline">¶</a></h3>
+<p>We are very excited to hear about how does this book help you (e.g., research, teaching, learning).</p>
+<script
+   type="text/javascript"
+   src="https://utteranc.es/client.js"
+   async="async"
+   repo="xai4se/xai4se.github.io"
+   issue-term="Testimonials"
+   theme="github-light"
+   label="💬 comment"
+   crossorigin="anonymous"
+/><script src="https://utteranc.es/client.js"
+        repo="https://github.com/analytics-cookbook/analytics-cookbook.github.io"
+        issue-term="Testimonial"
+        label="testimonial"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script></div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "xaitools"
+        },
+        kernelOptions: {
+            kernelName: "xaitools",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'xaitools'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='right-next' id="next-link" href="tutorials/hands-on-exercise.html" title="next page">ASE2021</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chakkrit Tantithamthavorn and Jirayus Jiarpakdee<br/>
+        
+            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <script>mermaid.init();</script> <div class="row_footer"> This project has received funding from the <a href="https://www.arc.gov.au/">Australian Research Council</a>'s Discovery Early Career Researcher Award (ARC DECRA) funding scheme (DE200100941). This book reflects the views of the authors and neither Australian Research Council nor Monash University are liable for any use that may be made of the information contained herein. The content of this project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. The source code that is part of the content, as well as the source code used to format and display that content is licensed under the MIT License. </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-54962993-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

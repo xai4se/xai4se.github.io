@@ -1,0 +1,887 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Model-specific Techniques for Generating Global Explanations &#8212; Explainable AI for Software Engineering</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://xai4se.github.io/xai/model-specific-techniques.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Model-agnostic Techniques for Generating Local Explanations" href="model-agnostic-techniques.html" />
+    <link rel="prev" title="Techniques for Generating Explanations" href="techniques-for-generating-explanations.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Explainable AI for Software Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Explainable AI for Software Engineering
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Hands-on Exercise
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutorials/hands-on-exercise.html">
+   ASE2021
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part1-What is Explainable AI?
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="theory-of-explanations.html">
+   A Theory of Explanations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="techniques-for-generating-explanations.html">
+   Techniques for Generating Explanations
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Model-specific Techniques for Generating Global Explanations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="model-agnostic-techniques.html">
+   Model-agnostic Techniques for Generating Local Explanations
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part2-Defect Prediction Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defect-prediction/software-quality-assurance.html">
+   Software Quality Assurance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defect-prediction/defect-prediction.html">
+   Defect Prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defect-prediction/data-collection.html">
+   (Step 1) Data Collection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defect-prediction/data-preprocessing.html">
+   (Step 2) Data Preprocessing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defect-prediction/model-construction.html">
+   (Step 3) Model Construction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defect-prediction/model-evaluation.html">
+   (Step 4) Model Evaluation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defect-prediction/model-ranking.html">
+   (Step 5) Model Ranking
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part3-Explainable AI for Software Engineering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/explainability-for-se.html">
+   Explainability in Software Engineering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/a-case-study-of-defect-prediction.html">
+   A Case Study of Defect Prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/defective-line-localization.html">
+   (Example 1) Help developers localize which lines of code are the most risky
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/local-defect-explanation.html">
+   (Example 2) Help developers understand why a file is predicted as defective
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/specific-sq-plan.html">
+   (Example 3) Help managers develop software quality improvement plans
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/xai/model-specific-techniques.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/xai4se/xai4se.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/xai4se/xai4se.github.io/issues/new?title=Issue%20on%20page%20%2Fxai/model-specific-techniques.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/xai4se/xai4se.github.io/edit/master/docs/xai/model-specific-techniques.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/xai4se.github.io/master?urlpath=lab/tree/docs/xai/model-specific-techniques.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/xai4se.github.io/blob/master/docs/xai/model-specific-techniques.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anova-analysis">
+   ANOVA analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variable-importance-analysis">
+   Variable Importance analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partial-dependence-plot-pdp">
+   Partial Dependence Plot (PDP)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-tree-decision-rules">
+   Decision Tree/Decision Rules
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#suggested-readings">
+     Suggested Readings
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="model-specific-techniques-for-generating-global-explanations">
+<h1>Model-specific Techniques for Generating Global Explanations<a class="headerlink" href="#model-specific-techniques-for-generating-global-explanations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="anova-analysis">
+<h2>ANOVA analysis<a class="headerlink" href="#anova-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Analysis of Variance (a.k.a. multi-way ANOVA) is a statistical test that
+examines the importance of multiple independent variables (e.g., two or
+more software metrics) on the outcome (e.g.,
+defect-proneness) <span id="id1">[<a class="reference internal" href="../References.html#id66">Fis25</a>]</span>. The significance of each
+metric in a regression model is estimated from the calculation of the
+Sum of Squares (SS)—i.e., the explained variance of the observations
+with respect to their mean value. There are two commonly-used approaches
+to calculate the Sum of Squares for ANOVA, namely, Type-I and Type-II.
+We provide a description of the two types of ANOVA below.</p>
+<p><strong>Type-I</strong>, <em>one of the most commonly-used interpretation techniques and
+the default interpretation technique for a logistic regression (<code class="docutils literal notranslate"><span class="pre">glm</span></code>)
+model in R</em>, examines the importance of each metric in a sequential
+order <span id="id2">[<a class="reference internal" href="../References.html#id41">Cha92</a>]</span><span id="id3">[<a class="reference internal" href="../References.html#id71">Fox15</a>]</span>. In other words,
+Type-I measures the improvement of the Residual Sum of Squares (RSS)
+(i.e., the unexplained variance) when each metric is sequentially added
+into the model. Hence, Type-I attributes as much variance as it can to
+the first metric before attributing residual variance to the second
+metric in the model specification. Thus, the importance (i.e., produced
+ranking) of metrics is dependent on the ordering of metrics in the model
+specification.</p>
+<p>The calculation starts from the RSS of the preliminary model
+(<span class="math notranslate nohighlight">\(y \sim 1\)</span>), i.e., a null model that is fitted without any software
+metrics. We then compute the RSS of the first metric by fitting a
+regression model with the first metric (<span class="math notranslate nohighlight">\(y \sim m_1\)</span>). Thus, the
+importance of the first metric (<span class="math notranslate nohighlight">\(m_1\)</span>) is the improvement between the
+unexplained variances (RSS) of the preliminary model and the model that
+is constructed by the first metric.</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{SS}(m_1) = \mathrm{RSS}(\mathrm{Model}_\mathrm{null})-\mathrm{RSS}(m_1)\]</div>
+<p>Similar to the computation of the importance of the first metric, the
+importance of the remaining metrics is computed using the following
+equation.</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{SS}(m_i) = \mathrm{RSS}(\mathrm{m_1 + ... + m_{i-1}})-\mathrm{RSS}(m_1 + ... + m_i)\]</div>
+<p><strong>Type II</strong>, an enhancement to the ANOVA Type-I, examines the importance
+of each metric in a hierarchical nature, i.e., the ordering of metrics
+is rearranged for each
+examination <span id="id4">[<a class="reference internal" href="../References.html#id41">Cha92</a>]</span><span id="id5">[<a class="reference internal" href="../References.html#id71">Fox15</a>]</span>. The importance
+of metrics (Type-II) measures the improvement of the Residual Sum of
+Squares (RSS) (i.e., the unexplained variance) when adding a metric
+under examination to the model after the other metrics. In other words,
+the importance of metrics (Type-II) is equivalent to a Type-I where a
+metric under examination appears at the last position of the model. The
+intuition is that the Type-II is evaluated after all of the other
+metrics have been accounted for. The importance of each metric (i.e.,
+SS(<span class="math notranslate nohighlight">\(m_e\)</span>)) measures the improvement of the RSS of the model that is
+constructed by adding only the other metrics except for the metric under
+examination, and the RSS of the model that is constructed by adding the
+other metrics where the metric under examination appears at the last
+position of the model. For example, given a set of <span class="math notranslate nohighlight">\(M\)</span> metrics, and
+<span class="math notranslate nohighlight">\(e,i,j\in[1,M]\)</span>, the importance of each metric <span class="math notranslate nohighlight">\(m_e\)</span> can be explained as
+follows:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{SS}(m_e) = \mathrm{RSS}(m_i + ... + m_{j})-\mathrm{RSS}(m_i + ... + m_{j} + m_e)\]</div>
+<p>where <span class="math notranslate nohighlight">\(m_e\)</span> is the metric under examination and <span class="math notranslate nohighlight">\(m_i + ... + m_{j}\)</span> is a
+set of the other metrics except the metric under examination.</p>
+<p><em>For an interactive tutorial, please refer to the snippet below.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Load Data and preparing datasets</span>
+
+<span class="c1"># Import for Load Data</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Import for Split Data into Training and Testing Samples</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># Import for Construct a black-box model (Regression)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="c1"># Import for ANOVA (Regression)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../../datasets/lucene-2.9.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../../datasets/lucene-3.0.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
+
+<span class="n">outcome</span> <span class="o">=</span> <span class="s1">&#39;RealBug&#39;</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;OWN_COMMIT&#39;</span><span class="p">,</span> <span class="s1">&#39;Added_lines&#39;</span><span class="p">,</span> <span class="s1">&#39;CountClassCoupled&#39;</span><span class="p">,</span> <span class="s1">&#39;AvgLine&#39;</span><span class="p">,</span> <span class="s1">&#39;RatioCommentToCode&#39;</span><span class="p">]</span>
+
+<span class="c1"># process outcome to 0 and 1</span>
+<span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">])</span>
+<span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+
+<span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">])</span>
+<span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">features</span><span class="p">]</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">features</span><span class="p">]</span>
+
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">outcome</span><span class="p">]</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">outcome</span><span class="p">]</span>
+
+
+<span class="c1"># commits - # of commits that modify the file of interest</span>
+<span class="c1"># Added lines - # of added lines of code</span>
+<span class="c1"># Count class coupled - # of classes that interact or couple with the class of interest</span>
+<span class="c1"># LOC - # of lines of code</span>
+<span class="c1"># RatioCommentToCode - The ratio of lines of comments to lines of code</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nCommit&#39;</span><span class="p">,</span> <span class="s1">&#39;AddedLOC&#39;</span><span class="p">,</span> <span class="s1">&#39;nCoupledClass&#39;</span><span class="p">,</span> <span class="s1">&#39;LOC&#39;</span><span class="p">,</span> <span class="s1">&#39;CommentToCodeRatio&#39;</span><span class="p">]</span>
+
+<span class="n">X_train</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">features</span>
+<span class="n">X_test</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">features</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">testing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">## Construct a black-box model (Regression)</span>
+
+<span class="c1"># regression (ols)</span>
+<span class="n">model_formula</span> <span class="o">=</span> <span class="n">outcome</span> <span class="o">+</span> <span class="s1">&#39; ~ &#39;</span> <span class="o">+</span> <span class="s1">&#39; + &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+<span class="n">regression_model</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="n">model_formula</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">)</span>
+<span class="n">regression_model_fit</span> <span class="o">=</span> <span class="n">regression_model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+
+<span class="c1"># compute an ANOVA Type-II table</span>
+<span class="n">aov_table</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">anova_lm</span><span class="p">(</span><span class="n">regression_model_fit</span><span class="p">,</span> 
+                              <span class="n">typ</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">aov_table</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;sum_sq&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># visualize an ANOVA Type-II table</span>
+<span class="n">aov_table</span><span class="p">[</span><span class="s1">&#39;Features&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">aov_table</span><span class="o">.</span><span class="n">index</span>
+<span class="n">aov_table</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:,:]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Features&#39;</span><span class="p">)</span> <span class="c1"># remove the residual</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matplotlib is building the font cache; this may take a moment.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Features&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/model-specific-techniques_1_2.png" src="../_images/model-specific-techniques_1_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="variable-importance-analysis">
+<h2>Variable Importance analysis<a class="headerlink" href="#variable-importance-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Variable importance (a.k.a. VarImp) is an approach to examine the
+importance of software metrics for random forest models. There are two
+commonly-used calculation approaches of variable importance scores,
+namely, Gini Importance and Permutation Importance, which we describe
+below.</p>
+<p><strong>Gini Importance (a.k.a. MeanDecreaseGini)</strong> determines the importance
+of metrics from the decrease of the Gini Index, i.e., the distinguishing
+power for the defective class due to a given
+metric <span id="id6">[<a class="reference internal" href="../References.html#id31">Bre01</a>]</span>. We start from a random
+forest model that is constructed using the original dataset with
+multiple trees, where each tree is constructed using a bootstrap sample.
+For each tree, a parent node (i.e., <span class="math notranslate nohighlight">\(G_{\mathrm{Parent}}\)</span>) is split by
+the best cut-point into two descendent nodes (i.e.,
+<span class="math notranslate nohighlight">\(G_{\mathrm{Desc.1}}\)</span> and <span class="math notranslate nohighlight">\(G_{\mathrm{Desc.2}}\)</span>). The calculation of the
+Gini Importance of each metric is made up of 2 steps:</p>
+<p><em>(Step 1) Compute the DecreaseGini for all of the trees in the random
+forest model.</em> The DecreaseGini is the improvement of the ability to
+distinguish between two classes across parent and its descendent nodes.
+We compute the DecreaseGini using the following equation:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{DecreaseGini}(m_i) = I_{m_i} = G_{\mathrm{Parent}} - G_{\mathrm{Desc.1}} - G_{\mathrm{Desc.2}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(G\)</span> is the Gini Index, i.e., the distinguishing power of defective
+class for a given metric. The Gini Index is computed using the following
+equation: <span class="math notranslate nohighlight">\(G = \sum_{i=1}^{N_{\mathrm{Class}}}p_i(1-p_i)\)</span>, where
+<span class="math notranslate nohighlight">\(N_{\mathrm{Class}}\)</span> is the number of classes and <span class="math notranslate nohighlight">\(p_i\)</span> is the
+proportion of Class<span class="math notranslate nohighlight">\(_i\)</span>.</p>
+<p><em>(Step 2) Compute the MeanDecreaseGini measure.</em> Finally, the importance
+of each metric (i.e., MeanDecreaseGini) is the average of the
+DecreaseGini values from all of the splits of that metric across all the
+trees in the random forest model.</p>
+<p>In this paper, we consider both the scaled and non-scaled importance
+scores for the Gini Importance.</p>
+<p><strong>Permutation Importance (a.k.a. MeanDecreaseAccuracy)</strong> determines the
+importance of metrics from the decrease of the accuracy (i.e., the
+misclassification rate) when the values of a given metric are randomly
+permuted <span id="id7">[<a class="reference internal" href="../References.html#id31">Bre01</a>]</span>. Similar to
+MeanDecreaseGini, we start from a random forest model that is
+constructed using an original dataset with multiple trees, where each
+tree is constructed using an out-of-sample bootstrap. The calculation of
+the Permutation Importance is made up of 2 steps:</p>
+<p><em>(Step 1) Compute the DecreaseAccuracy of each tree in the random forest
+model.</em> The DecreaseAccuracy is the decrease of the accuracy (i.e.,
+misclassification rate) between a model that is tested using the
+original out-of-bag testing samples and a model that is tested using
+permuted out-of-bag testing samples, i.e., a dataset with one metric
+permuted, while all other metrics are unchanged).</p>
+<p><em>(Step 2) Compute the MeanDecreaseAccuracy measure.</em> Finally, the
+importance of each metric (i.e., MeanDecreaseAccuracy) is the average of
+the DecreaseAccuracy values across all of the trees in the random forest
+model.</p>
+<p><em>For an interactive tutorial, please refer to the snippet below.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Load Data and preparing datasets</span>
+
+<span class="c1"># Import for Load Data</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Import for Split Data into Training and Testing Samples</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># Import for Construct a black-box model (Random Forests)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../../datasets/lucene-2.9.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../../datasets/lucene-3.0.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
+
+<span class="n">outcome</span> <span class="o">=</span> <span class="s1">&#39;RealBug&#39;</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;OWN_COMMIT&#39;</span><span class="p">,</span> <span class="s1">&#39;Added_lines&#39;</span><span class="p">,</span> <span class="s1">&#39;CountClassCoupled&#39;</span><span class="p">,</span> <span class="s1">&#39;AvgLine&#39;</span><span class="p">,</span> <span class="s1">&#39;RatioCommentToCode&#39;</span><span class="p">]</span>
+
+<span class="c1"># process outcome to 0 and 1</span>
+<span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">])</span>
+<span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+
+<span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">])</span>
+<span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">features</span><span class="p">]</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">features</span><span class="p">]</span>
+
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">outcome</span><span class="p">]</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">outcome</span><span class="p">]</span>
+
+
+<span class="c1"># commits - # of commits that modify the file of interest</span>
+<span class="c1"># Added lines - # of added lines of code</span>
+<span class="c1"># Count class coupled - # of classes that interact or couple with the class of interest</span>
+<span class="c1"># LOC - # of lines of code</span>
+<span class="c1"># RatioCommentToCode - The ratio of lines of comments to lines of code</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nCommit&#39;</span><span class="p">,</span> <span class="s1">&#39;AddedLOC&#39;</span><span class="p">,</span> <span class="s1">&#39;nCoupledClass&#39;</span><span class="p">,</span> <span class="s1">&#39;LOC&#39;</span><span class="p">,</span> <span class="s1">&#39;CommentToCodeRatio&#39;</span><span class="p">]</span>
+
+<span class="n">X_train</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">features</span>
+<span class="n">X_test</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">features</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">testing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">## Construct a black-box model (Random Forests)</span>
+
+<span class="c1"># random forests</span>
+<span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">rf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  
+
+<span class="c1"># get VarImp score from the rf_model</span>
+<span class="n">feature_importances</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Features&#39;</span><span class="p">:</span> <span class="n">features</span><span class="p">,</span>
+             <span class="s1">&#39;ImportanceScore&#39;</span><span class="p">:</span> <span class="n">rf_model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">})</span>
+<span class="n">feature_importances</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;ImportanceScore&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># visualize VarImp</span>
+<span class="n">feature_importances</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span> <span class="o">=</span> <span class="s1">&#39;barh&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;ImportanceScore&#39;</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Features&#39;</span><span class="p">)</span> <span class="c1"># remove the residual</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Features&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/model-specific-techniques_3_1.png" src="../_images/model-specific-techniques_3_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="partial-dependence-plot-pdp">
+<h2>Partial Dependence Plot (PDP)<a class="headerlink" href="#partial-dependence-plot-pdp" title="Permalink to this headline">¶</a></h2>
+<p><strong>Partial Dependence Plot (PDP)</strong> <span id="id8">[<a class="reference internal" href="../References.html#id74">Fri01</a>]</span> is a
+model-agnostic technique to generate model explanations for any
+classification models. Unlike visual explanations generated by ANOVA and
+VarImp that show only the importance of all features, visual
+explanations generated by PDP illustrate the marginal effect that one or
+two features have on the predicted outcome of a classification model.</p>
+<p><em>For an interactive tutorial, please refer to the snippet below.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Load Data and preparing datasets</span>
+
+<span class="c1"># Import for Load Data</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Import for Split Data into Training and Testing Samples</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># Import for Construct a black-box model (Random Forests)</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="c1"># Import for Partial Dependence Plot (PDP)</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">import</span> <span class="nn">sklearn</span>
+<span class="kn">from</span> <span class="nn">sklearn.inspection</span> <span class="kn">import</span> <span class="n">plot_partial_dependence</span> <span class="c1"># new version</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../../datasets/lucene-2.9.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../../datasets/lucene-3.0.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
+
+<span class="n">outcome</span> <span class="o">=</span> <span class="s1">&#39;RealBug&#39;</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;OWN_COMMIT&#39;</span><span class="p">,</span> <span class="s1">&#39;Added_lines&#39;</span><span class="p">,</span> <span class="s1">&#39;CountClassCoupled&#39;</span><span class="p">,</span> <span class="s1">&#39;AvgLine&#39;</span><span class="p">,</span> <span class="s1">&#39;RatioCommentToCode&#39;</span><span class="p">]</span>
+
+<span class="c1"># process outcome to 0 and 1</span>
+<span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">])</span>
+<span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+
+<span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">])</span>
+<span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">features</span><span class="p">]</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">features</span><span class="p">]</span>
+
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">outcome</span><span class="p">]</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">outcome</span><span class="p">]</span>
+
+
+<span class="c1"># commits - # of commits that modify the file of interest</span>
+<span class="c1"># Added lines - # of added lines of code</span>
+<span class="c1"># Count class coupled - # of classes that interact or couple with the class of interest</span>
+<span class="c1"># LOC - # of lines of code</span>
+<span class="c1"># RatioCommentToCode - The ratio of lines of comments to lines of code</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nCommit&#39;</span><span class="p">,</span> <span class="s1">&#39;AddedLOC&#39;</span><span class="p">,</span> <span class="s1">&#39;nCoupledClass&#39;</span><span class="p">,</span> <span class="s1">&#39;LOC&#39;</span><span class="p">,</span> <span class="s1">&#39;CommentToCodeRatio&#39;</span><span class="p">]</span>
+
+<span class="n">X_train</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">features</span>
+<span class="n">X_test</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">features</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">testing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">## Construct a black-box model (Random Forests)</span>
+
+<span class="c1"># random forests</span>
+<span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">,</span> <span class="n">n_jobs</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">rf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">24</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">24</span><span class="p">)</span>
+
+<span class="c1"># a visual example of PDP for the ActiveDevelopers (features[2])</span>
+<span class="n">plot_partial_dependence</span><span class="p">(</span><span class="n">estimator</span> <span class="o">=</span> <span class="n">rf_model</span><span class="p">,</span> 
+                        <span class="n">X</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">,</span> 
+                        <span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> 
+                        <span class="n">feature_names</span> <span class="o">=</span> <span class="n">features</span><span class="p">,</span> 
+                        <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sklearn.inspection._plot.partial_dependence.PartialDependenceDisplay at 0x7fabc1db4e48&gt;
+</pre></div>
+</div>
+<img alt="../_images/model-specific-techniques_5_1.png" src="../_images/model-specific-techniques_5_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="decision-tree-decision-rules">
+<h2>Decision Tree/Decision Rules<a class="headerlink" href="#decision-tree-decision-rules" title="Permalink to this headline">¶</a></h2>
+<p><strong>Decision Tree</strong> or Decision Rule is a technique to generate tree-based
+model explanations. A decision tree is constructed in a top-down
+direction from a root node. Then, a decision tree partitions the data
+into subsets of similar instances (homogeneous). Typically, an entropy
+or an information gain score are used to calculate the homogeneity of
+among instances. Finally, the constructed decision tree can be converted
+into a set of if-then-else decision rules.</p>
+<p><em>For an interactive tutorial, please refer to the snippet below.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Load Data and preparing datasets</span>
+
+<span class="c1"># Import for Load Data</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">join</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Import for Split Data into Training and Testing Samples</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># Import for Decision Rules/Decision Trees</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
+<span class="kn">from</span> <span class="nn">six</span> <span class="kn">import</span> <span class="n">StringIO</span>  
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>  
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">export_graphviz</span>
+<span class="kn">import</span> <span class="nn">pydotplus</span>
+<span class="kn">import</span> <span class="nn">collections</span>
+
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../../datasets/lucene-2.9.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../../datasets/lucene-3.0.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
+
+<span class="n">outcome</span> <span class="o">=</span> <span class="s1">&#39;RealBug&#39;</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;OWN_COMMIT&#39;</span><span class="p">,</span> <span class="s1">&#39;Added_lines&#39;</span><span class="p">,</span> <span class="s1">&#39;CountClassCoupled&#39;</span><span class="p">,</span> <span class="s1">&#39;AvgLine&#39;</span><span class="p">,</span> <span class="s1">&#39;RatioCommentToCode&#39;</span><span class="p">]</span>
+
+<span class="c1"># process outcome to 0 and 1</span>
+<span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">])</span>
+<span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+
+<span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">])</span>
+<span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">features</span><span class="p">]</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">features</span><span class="p">]</span>
+
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">outcome</span><span class="p">]</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">outcome</span><span class="p">]</span>
+
+
+<span class="c1"># commits - # of commits that modify the file of interest</span>
+<span class="c1"># Added lines - # of added lines of code</span>
+<span class="c1"># Count class coupled - # of classes that interact or couple with the class of interest</span>
+<span class="c1"># LOC - # of lines of code</span>
+<span class="c1"># RatioCommentToCode - The ratio of lines of comments to lines of code</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nCommit&#39;</span><span class="p">,</span> <span class="s1">&#39;AddedLOC&#39;</span><span class="p">,</span> <span class="s1">&#39;nCoupledClass&#39;</span><span class="p">,</span> <span class="s1">&#39;LOC&#39;</span><span class="p">,</span> <span class="s1">&#39;CommentToCodeRatio&#39;</span><span class="p">]</span>
+
+<span class="n">X_train</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">features</span>
+<span class="n">X_test</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">features</span>
+<span class="n">training_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">testing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+
+<span class="c1"># construct a decision rules/decision trees model</span>
+<span class="n">dt_model</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">dt_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  
+<span class="n">dt_text</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">export_text</span><span class="p">(</span><span class="n">dt_model</span><span class="p">,</span> 
+                          <span class="n">feature_names</span> <span class="o">=</span> <span class="n">features</span><span class="p">)</span>
+  
+<span class="c1"># visualize </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dt_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|--- nCoupledClass &lt;= 5.50
+|   |--- AddedLOC &lt;= 145.50
+|   |   |--- class: 0
+|   |--- AddedLOC &gt;  145.50
+|   |   |--- class: 0
+|--- nCoupledClass &gt;  5.50
+|   |--- AddedLOC &lt;= 113.00
+|   |   |--- class: 0
+|   |--- AddedLOC &gt;  113.00
+|   |   |--- class: 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Parts of this chapter have been published by Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, Ahmed E. Hassan: The Impact of Correlated Metrics on the Interpretation of Defect Models. IEEE Trans. Software Eng. 47(2): 320-331 (2021).</p>
+</div>
+<div class="section" id="suggested-readings">
+<h3>Suggested Readings<a class="headerlink" href="#suggested-readings" title="Permalink to this headline">¶</a></h3>
+<p>[1] Frank Harrel: Regression modeling strategies: with applications to linear models, logistic and ordinal regression, and survival analysis. Springer (2015).</p>
+<p>[2] Leo Breiman: Random Forests. Mach. Learn. 45(1): 5-32 (2001)</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "xaitools"
+        },
+        kernelOptions: {
+            kernelName: "xaitools",
+            path: "./xai"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'xaitools'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="techniques-for-generating-explanations.html" title="previous page">Techniques for Generating Explanations</a>
+    <a class='right-next' id="next-link" href="model-agnostic-techniques.html" title="next page">Model-agnostic Techniques for Generating Local Explanations</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chakkrit Tantithamthavorn and Jirayus Jiarpakdee<br/>
+        
+            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <script>mermaid.init();</script> <div class="row_footer"> This project has received funding from the <a href="https://www.arc.gov.au/">Australian Research Council</a>'s Discovery Early Career Researcher Award (ARC DECRA) funding scheme (DE200100941). This book reflects the views of the authors and neither Australian Research Council nor Monash University are liable for any use that may be made of the information contained herein. The content of this project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. The source code that is part of the content, as well as the source code used to format and display that content is licensed under the MIT License. </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-54962993-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

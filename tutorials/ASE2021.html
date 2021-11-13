@@ -1,0 +1,1671 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial Presentation at ASE2021 &#8212; Explainable AI for Software Engineering</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://xai4se.github.io/tutorials/ASE2021.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Explainable AI for Software Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Explainable AI for Software Engineering
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Hands-on Exercise
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="hands-on-exercise.html">
+   ASE2021
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part1-What is Explainable AI?
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai/theory-of-explanations.html">
+   A Theory of Explanations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai/techniques-for-generating-explanations.html">
+   Techniques for Generating Explanations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai/model-specific-techniques.html">
+   Model-specific Techniques for Generating Global Explanations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai/model-agnostic-techniques.html">
+   Model-agnostic Techniques for Generating Local Explanations
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part2-Defect Prediction Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defect-prediction/software-quality-assurance.html">
+   Software Quality Assurance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defect-prediction/defect-prediction.html">
+   Defect Prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defect-prediction/data-collection.html">
+   (Step 1) Data Collection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defect-prediction/data-preprocessing.html">
+   (Step 2) Data Preprocessing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defect-prediction/model-construction.html">
+   (Step 3) Model Construction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defect-prediction/model-evaluation.html">
+   (Step 4) Model Evaluation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../defect-prediction/model-ranking.html">
+   (Step 5) Model Ranking
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part3-Explainable AI for Software Engineering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/explainability-for-se.html">
+   Explainability in Software Engineering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/a-case-study-of-defect-prediction.html">
+   A Case Study of Defect Prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/defective-line-localization.html">
+   (Example 1) Help developers localize which lines of code are the most risky
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/local-defect-explanation.html">
+   (Example 2) Help developers understand why a file is predicted as defective
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../xai4se/specific-sq-plan.html">
+   (Example 3) Help managers develop software quality improvement plans
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/tutorials/ASE2021.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/xai4se/xai4se.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/xai4se/xai4se.github.io/issues/new?title=Issue%20on%20page%20%2Ftutorials/ASE2021.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/xai4se/xai4se.github.io/edit/master/docs/tutorials/ASE2021.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/xai4se.github.io/master?urlpath=lab/tree/docs/tutorials/ASE2021.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/xai4se.github.io/blob/master/docs/tutorials/ASE2021.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-introduction-to-explainable-ai">
+   Part 1: Introduction to Explainable AI
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-defect-prediction-models">
+   Part 2: Defect Prediction Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-data-collection">
+     (Step 1) Data Collection
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#software-metrics">
+       Software Metrics
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-data-preprocessing">
+     (Step 2) Data Preprocessing
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#detecting-collinearity">
+       Detecting Collinearity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#detecting-multicollinearity">
+       Detecting Multicollinearity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#autospearman-an-automated-feature-selection-approach-that-address-collinearity-and-multicollinearity">
+       AutoSpearman: An automated feature selection approach that address collinearity and multicollinearity
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-model-construction">
+     (Step 3) Model Construction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-model-evaluation">
+     (Step 4) Model Evaluation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-5-model-ranking">
+     (Step 5) Model Ranking
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="tutorial-presentation-at-ase2021">
+<h1>Tutorial Presentation at ASE2021<a class="headerlink" href="#tutorial-presentation-at-ase2021" title="Permalink to this headline">¶</a></h1>
+<p>This demo is presented at the International Conference on Automated Software (ASE) 2021.
+For background and details, please refer to this slide (<em>TBU</em>).</p>
+<div class="section" id="part-1-introduction-to-explainable-ai">
+<h2>Part 1: Introduction to Explainable AI<a class="headerlink" href="#part-1-introduction-to-explainable-ai" title="Permalink to this headline">¶</a></h2>
+<p>Please refer to Pages XX to YY of the slides.</p>
+</div>
+<div class="section" id="part-2-defect-prediction-models">
+<h2>Part 2: Defect Prediction Models<a class="headerlink" href="#part-2-defect-prediction-models" title="Permalink to this headline">¶</a></h2>
+<p>Below, we describe five key data analytics steps of developing an explainable defect prediction model (i.e., a prediction model to predict software defects) <span id="id1">[<a class="reference internal" href="../References.html#id299">TH18</a>]</span>: (1) Data Collection, (2) Data Preprocessing, (3) Model Construction, (4) Model Evaluation, and (5) Model Ranking.</p>
+<div class="section" id="step-1-data-collection">
+<h3>(Step 1) Data Collection<a class="headerlink" href="#step-1-data-collection" title="Permalink to this headline">¶</a></h3>
+<p>Data collection involves several key steps.
+<code class="xref std std-numref docutils literal notranslate"><span class="pre">data-preparation</span></code> provides an overview of defect data preparation steps.
+First, one must extract issue reports, which describe defects, feature requests, or general maintenance tasks from an Issue Tracking System (ITS, e.g., JIRA).
+Second, one must extract commit logs, code snapshots, and historical code changes that are recorded in a Version Control System (VCS, e.g., Git).
+Third, one must extract software metrics of each module (e.g., size, and complexity) from the VCS.
+To extract such software metrics, one must focus on development activities that occur prior to a release of interest that corresponds to the release branch of a studied system to ensure that activities that we study correspond to the development and maintenance of the official software releases.
+Finally, one must identify and label modules as defective if they have been affected by code changes that address issue reports that were classified as defects after the software is released (i.e., post-release defects).
+On the other hand, modules that are not changed to address any issue reports are labelled as clean.</p>
+<div class="figure align-default" id="data-preparation">
+<img alt="../_images/data-preparation.png" src="../_images/data-preparation.png" />
+<p class="caption"><span class="caption-text">An overview of defect data preparation steps.</span><a class="headerlink" href="#data-preparation" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="software-metrics">
+<h4>Software Metrics<a class="headerlink" href="#software-metrics" title="Permalink to this headline">¶</a></h4>
+<p>To prepare a defect dataset, we first <em>extract metrics</em> of software modules (e.g., size, complexity, process metrics) from a version control system (VCS).
+We focus on the development activity that occurs prior to a release that corresponds to the <em>release</em> branch of a studied system.
+With this strictly controlled setting, we ensure that changes that we study correspond to the development and maintenance of official software releases.
+Since modern issue tracking systems, like JIRA, often provide traceable links between issue reports (i.e., a report described defects or feature requests) and code changes, we can identify the modules that are changed to address a particular issue report.
+Finally, we <em>label defective modules</em> if they have been affected by a code change that addresses an issue report that is classified as a defect.
+Similar to prior studies <span id="id2">[<a class="reference internal" href="../References.html#id500">DAmbrosLR12a</a>, <a class="reference internal" href="../References.html#id137">KSA+13</a>, <a class="reference internal" href="../References.html#id344">ZPZ07</a>]</span>, we define post-release defects as modules that are changed to address an issue report within the six-month period after the release date.</p>
+<p>To understand the characteristics of defect-proneness, prior studies proposed a variety of metrics that are related to software quality.
+We provide a brief summary of software metrics below.</p>
+<p><strong>Code metrics</strong> describe the relationship between code properties and software quality.
+For example, in 1971, Akiyama <span id="id3">[<a class="reference internal" href="../References.html#id8">Aki71</a>]</span> is among the first research to show that the size of modules (e.g., lines of code) shares a relationship with defect-proneness.
+McCabe et al. <span id="id4">[<a class="reference internal" href="../References.html#id191">McC76</a>]</span> and Halstead also show that the high complexity of modules (e.g., the number of distinct operators and operands) are likely to be more defective.
+Chidamber and Kemerer <span id="id5">[<a class="reference internal" href="../References.html#id45">CK94</a>]</span> also propose CK metrics suites, a set of six metrics that describe the structure of a class (e.g., the number of methods defined in a class), that may share a relationship with defect-proneness.
+An independent evaluation by Basili et al. <span id="id6">[<a class="reference internal" href="../References.html#id18">BBM96</a>]</span> and Gyimothy et al. <span id="id7">[<a class="reference internal" href="../References.html#id864">GyimothyFS05</a>]</span> confirms that the CK metrics suites can be effectively used as software quality indicators.
+An in-depth investigation on the size-defect relationship by Syer <span id="id8">[<a class="reference internal" href="../References.html#id863">SNAH14</a>]</span> shows that defect density has an inverted “U” shaped pattern (i.e., defect density increases in smaller files, peaks in the largest small-sized files/smallest medium-sized files, then decreases in medium and larger files).
+Such code metrics are typically extracted from a code snapshot at a release using various available static analysis tools (e.g., <a class="reference external" href="https://sourceforge.net/projects/sloccount/">SLOCcount</a> tool, <a class="reference external" href="https://scitools.com/">Understand</a> tool , the <a class="reference external" href="https://pypi.python.org/pypi/mccabe"><em>mccabe</em></a> python package, and the <a class="reference external" href="https://pypi.python.org/pypi/radon"><em>radon</em></a> python package).</p>
+<p><strong>Process metrics</strong> describe the relationship between change activities during software development process and software quality.
+Prior work has shown that historical software development process can be used to describe the characteristics of defect-proneness.
+For example, Graves <span id="id9">[<a class="reference internal" href="../References.html#id776">GKMS00</a>]</span> find that the software defects may still exist in modules that were recently defective.
+Nagappan and Ball <span id="id10">[<a class="reference internal" href="../References.html#id224">NB05b</a>, <a class="reference internal" href="../References.html#id861">NB07</a>]</span> find that modules that have undergone a lot of change are likely to be more defective.
+Hassan <span id="id11">[<a class="reference internal" href="../References.html#id860">Has09</a>]</span> find that modules with a volatile change process, where changes are spread amongst several files are likely defective.
+Hassan and Holt <span id="id12">[<a class="reference internal" href="../References.html#id515">aEHH05</a>]</span> find that modules that are recently changed are more likely to be defective.
+Zimmermann and Nagappan <span id="id13">[<a class="reference internal" href="../References.html#id754">ZN08</a>, <a class="reference internal" href="../References.html#id345">ZNG+09</a>, <a class="reference internal" href="../References.html#id344">ZPZ07</a>]</span> find that program dependency graphs share a relationship with software quality.
+Zimmermann et al. <span id="id14">[<a class="reference internal" href="../References.html#id344">ZPZ07</a>]</span> find that the number of defects that were reported in the last six months before release for a module shares a relationship with software quality.
+Such process metrics are typically extracted using code changes that are stored in VCSs.</p>
+<p><strong>Organization metrics</strong> describe the relationship between organization structure and software quality <span id="id15">[<a class="reference internal" href="../References.html#id358">NMB08</a>]</span>.
+For example, Graves et al. <span id="id16">[<a class="reference internal" href="../References.html#id776">GKMS00</a>]</span> find that modules that are changed by a large number of developers are likely to be more defective.
+Despite of the organization structure, prior studies have shown that code ownership shares a relationship with software quality.
+Thus, we focus on the two dimensions for an approximation of code ownership.
+First, <em>authoring activity</em> has been widely used to approximate code ownership.
+For example, Mockus and Herbslerb <span id="id17">[<a class="reference internal" href="../References.html#id862">MH02</a>]</span> identify developers who responsible for a module using the number of tasks that a developer has completed.
+Furthermore, Bird et al. <span id="id18">[<a class="reference internal" href="../References.html#id26">BMG11</a>]</span> find that modules that are written by many experts are less likely to be defect-prone.
+Second, <em>reviewing activity</em> has been also used to approximate code ownership.
+For example, Thongtanunam <span id="id19">[<a class="reference internal" href="../References.html#id301">TMHI16</a>]</span> find that reviewing expertise also shares a relationship with defect-proneness (e.g., modules that are reviewed by experts are less likely to be defect-prone).</p>
+<p>In this tutorial, we provide 2 example datasets of Apache Lucene Releases 2.9.0 and 3.0.0.
+Each dataset consists of 65 software metrics (independent variables) and defect labels indicating whether a file is defective (dependent variable).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">lucene_290_dataset</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CountDeclMethodPrivate</th>
+      <th>AvgLineCode</th>
+      <th>CountLine</th>
+      <th>MaxCyclomatic</th>
+      <th>CountDeclMethodDefault</th>
+      <th>AvgEssential</th>
+      <th>CountDeclClassVariable</th>
+      <th>SumCyclomaticStrict</th>
+      <th>AvgCyclomatic</th>
+      <th>AvgLine</th>
+      <th>...</th>
+      <th>DDEV</th>
+      <th>Added_lines</th>
+      <th>Del_lines</th>
+      <th>OWN_LINE</th>
+      <th>OWN_COMMIT</th>
+      <th>MINOR_COMMIT</th>
+      <th>MINOR_LINE</th>
+      <th>MAJOR_COMMIT</th>
+      <th>MAJOR_LINE</th>
+      <th>RealBug</th>
+    </tr>
+    <tr>
+      <th>File</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>contrib/analyzers/common/src/java/org/apache/lucene/analysis/ar/ArabicAnalyzer.java</th>
+      <td>0</td>
+      <td>7</td>
+      <td>157</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>8</td>
+      <td>1</td>
+      <td>12</td>
+      <td>...</td>
+      <td>2</td>
+      <td>172</td>
+      <td>15</td>
+      <td>0.745223</td>
+      <td>0.750000</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>contrib/analyzers/common/src/java/org/apache/lucene/analysis/ar/ArabicLetterTokenizer.java</th>
+      <td>0</td>
+      <td>3</td>
+      <td>54</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>5</td>
+      <td>1</td>
+      <td>4</td>
+      <td>...</td>
+      <td>3</td>
+      <td>55</td>
+      <td>1</td>
+      <td>0.777778</td>
+      <td>0.333333</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>contrib/analyzers/common/src/java/org/apache/lucene/analysis/ar/ArabicNormalizationFilter.java</th>
+      <td>0</td>
+      <td>7</td>
+      <td>51</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>7</td>
+      <td>...</td>
+      <td>3</td>
+      <td>65</td>
+      <td>14</td>
+      <td>0.764706</td>
+      <td>0.333333</td>
+      <td>0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>contrib/analyzers/common/src/java/org/apache/lucene/analysis/ar/ArabicNormalizer.java</th>
+      <td>0</td>
+      <td>10</td>
+      <td>102</td>
+      <td>6</td>
+      <td>0</td>
+      <td>1</td>
+      <td>17</td>
+      <td>18</td>
+      <td>4</td>
+      <td>21</td>
+      <td>...</td>
+      <td>1</td>
+      <td>102</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>contrib/analyzers/common/src/java/org/apache/lucene/analysis/ar/ArabicStemFilter.java</th>
+      <td>0</td>
+      <td>7</td>
+      <td>51</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>7</td>
+      <td>...</td>
+      <td>3</td>
+      <td>73</td>
+      <td>22</td>
+      <td>0.764706</td>
+      <td>0.333333</td>
+      <td>0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>src/test/org/apache/lucene/util/TestRamUsageEstimator.java</th>
+      <td>0</td>
+      <td>7</td>
+      <td>57</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>8</td>
+      <td>...</td>
+      <td>1</td>
+      <td>57</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>src/test/org/apache/lucene/util/TestSmallFloat.java</th>
+      <td>0</td>
+      <td>13</td>
+      <td>112</td>
+      <td>5</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>12</td>
+      <td>3</td>
+      <td>15</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.991071</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>src/test/org/apache/lucene/util/TestSortedVIntList.java</th>
+      <td>4</td>
+      <td>5</td>
+      <td>196</td>
+      <td>5</td>
+      <td>2</td>
+      <td>1</td>
+      <td>5</td>
+      <td>45</td>
+      <td>2</td>
+      <td>5</td>
+      <td>...</td>
+      <td>2</td>
+      <td>6</td>
+      <td>8</td>
+      <td>0.969388</td>
+      <td>0.500000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>src/test/org/apache/lucene/util/TestStringHelper.java</th>
+      <td>0</td>
+      <td>12</td>
+      <td>40</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>15</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.800000</td>
+      <td>0.000000</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>src/test/org/apache/lucene/util/TestStringIntern.java</th>
+      <td>2</td>
+      <td>17</td>
+      <td>93</td>
+      <td>5</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>15</td>
+      <td>3</td>
+      <td>21</td>
+      <td>...</td>
+      <td>1</td>
+      <td>93</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<p>1368 rows × 66 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="step-2-data-preprocessing">
+<h3>(Step 2) Data Preprocessing<a class="headerlink" href="#step-2-data-preprocessing" title="Permalink to this headline">¶</a></h3>
+<p>Data preprocessing is essential to ensure the quality of the produced defect prediction models and their explanations.
+Prior work <span id="id20">[<a class="reference internal" href="../References.html#id122">JTH19</a>]</span> found that strong correlations among software metrics (e.g., collinearity and multicollinearity) negatively impact the explanations produced by defect prediction models, leading to misleading and unstable conclusions of defect prediction models.
+Therefore, ones must mitigate strong correlations among software metrics prior to constructing defect prediction models to generate reliable explanations.</p>
+<p>In this tutorial, we first illustrate steps to detect two levels of correlations: collinearity and multicollinearity.
+After detecting collinearity and multicollinearity, we provides an introductory step of data preprocessing to mitigate collinearity and multicollinearity.</p>
+<div class="section" id="detecting-collinearity">
+<h4>Detecting Collinearity<a class="headerlink" href="#detecting-collinearity" title="Permalink to this headline">¶</a></h4>
+<p>Collinearity is a phenomenon in which one metric can be linearly predicted by another metric.
+There are several correlation tests that can detect collinearity between metrics.
+For example, Pearson correlation test, Spearman correlation test, and Kendall Tau correlation test.
+Below, we provide a tutorial for using and visualising Spearman correlation test.
+In this tutorial, we use the interpretation of Spearman correlation coefficients (<span class="math notranslate nohighlight">\(|\rho|\)</span>) as
+provided by Kraemer <span id="id21">[<a class="reference internal" href="../References.html#id153">KML+03</a>]</span>—i.e., a Spearman
+correlation coefficient of above or equal to 0.7 is considered a strong
+correlation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for Correlation tests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Prepare a dataframe for collinearity simulation</span>
+<span class="n">Dataset_Corr</span> <span class="o">=</span> <span class="n">lucene_290_dataset</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">X_Corr</span> <span class="o">=</span> <span class="n">Dataset_Corr</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">metrics</span><span class="p">]</span>
+
+<span class="c1"># There are 3 options for the parameter setting of method as follows:</span>
+<span class="c1"># pearson : standard correlation coefficient</span>
+<span class="c1"># kendall : Kendall Tau correlation coefficient</span>
+<span class="c1"># spearman : Spearman rank correlation</span>
+<span class="n">corrmat</span> <span class="o">=</span> <span class="n">X_Corr</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+<span class="n">top_corr_features</span> <span class="o">=</span> <span class="n">corrmat</span><span class="o">.</span><span class="n">index</span>
+
+
+<span class="c1"># Visualise a lower-triangle correlation heatmap</span>
+<span class="n">mask_df</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">corrmat</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">13</span><span class="p">))</span>
+<span class="c1">#plot heat map</span>
+<span class="n">g</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">X_Corr</span><span class="p">[</span><span class="n">top_corr_features</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> 
+              <span class="n">mask</span> <span class="o">=</span> <span class="n">mask_df</span><span class="p">,</span> 
+              <span class="n">vmin</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+              <span class="n">vmax</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="n">annot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+              <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdBu&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ASE2021_7_0.png" src="../_images/ASE2021_7_0.png" />
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># of correlated metrics (Collinearity) with absolute Spearman Correlation Coefficients of above 0.7: 47
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;ADEV&#39;,
+ &#39;Added_lines&#39;,
+ &#39;AvgCyclomatic&#39;,
+ &#39;AvgCyclomaticModified&#39;,
+ &#39;AvgCyclomaticStrict&#39;,
+ &#39;AvgLine&#39;,
+ &#39;AvgLineCode&#39;,
+ &#39;AvgLineComment&#39;,
+ &#39;COMM&#39;,
+ &#39;CountClassCoupled&#39;,
+ &#39;CountDeclFunction&#39;,
+ &#39;CountDeclInstanceMethod&#39;,
+ &#39;CountDeclMethod&#39;,
+ &#39;CountDeclMethodPublic&#39;,
+ &#39;CountInput_Max&#39;,
+ &#39;CountInput_Mean&#39;,
+ &#39;CountLine&#39;,
+ &#39;CountLineBlank&#39;,
+ &#39;CountLineCode&#39;,
+ &#39;CountLineCodeDecl&#39;,
+ &#39;CountLineCodeExe&#39;,
+ &#39;CountLineComment&#39;,
+ &#39;CountOutput_Max&#39;,
+ &#39;CountOutput_Mean&#39;,
+ &#39;CountPath_Max&#39;,
+ &#39;CountPath_Mean&#39;,
+ &#39;CountPath_Min&#39;,
+ &#39;CountSemicolon&#39;,
+ &#39;CountStmt&#39;,
+ &#39;CountStmtDecl&#39;,
+ &#39;CountStmtExe&#39;,
+ &#39;DDEV&#39;,
+ &#39;Del_lines&#39;,
+ &#39;MAJOR_COMMIT&#39;,
+ &#39;MINOR_LINE&#39;,
+ &#39;MaxCyclomatic&#39;,
+ &#39;MaxCyclomaticModified&#39;,
+ &#39;MaxCyclomaticStrict&#39;,
+ &#39;MaxNesting_Max&#39;,
+ &#39;MaxNesting_Mean&#39;,
+ &#39;MaxNesting_Min&#39;,
+ &#39;OWN_LINE&#39;,
+ &#39;RatioCommentToCode&#39;,
+ &#39;SumCyclomatic&#39;,
+ &#39;SumCyclomaticModified&#39;,
+ &#39;SumCyclomaticStrict&#39;,
+ &#39;SumEssential&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="detecting-multicollinearity">
+<h4>Detecting Multicollinearity<a class="headerlink" href="#detecting-multicollinearity" title="Permalink to this headline">¶</a></h4>
+<p>Multicollinearity is a phenomenon in which one metric can be linearly predicted by a combination of two or more metrics.
+Multicollinearity can be detected using Variance Inflation Factor (VIF) analysis <span id="id22">[<a class="reference internal" href="../References.html#id70">FM92</a>]</span>.
+The idea behind variance inflation factor analysis is to construct an ordinary least square regression to predict a metric by using the other metrics in the dataset.
+Having a model that is well fit indicates that the metric can be predicted by other metrics, linearly highly-correlated with other metrics.
+There are 3 steps in variance inflation factor analysis.</p>
+<p><em>(Step 1) Construct a regression model for each metric.</em>
+For each metric, we construct a model using the other metrics to predict that particular metric.</p>
+<p><em>(Step 2) Compute a VIF score for each metric.</em>
+The VIF score for each metric is computed using the following formula: <span class="math notranslate nohighlight">\(\mathrm{VIF} = \frac{1}{1 - \mathrm{R}^2}\)</span>, where <span class="math notranslate nohighlight">\(\mathrm{R}^2\)</span> is the explanatory power of the regression model from Step 1.
+A high VIF score of a metric indicates that a given metric can be accurately predicted by the other metrics.
+Thus, that given metric is considered redundant and should be removed from our model.</p>
+<p><em>(Step 3) Remove metrics with a VIF score that is higher than a given threshold.</em>
+We remove metrics with a VIF score that is higher than a given threshold.
+We use a VIF threshold of 5 to determine the magnitude of multi-collinearity, as it is suggested by Fox <span id="id23">[<a class="reference internal" href="../References.html#id71">Fox15</a>]</span>.
+Then, we repeat the above three steps until the VIF scores of all remaining metrics are lower than the pre-defined threshold.</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for VIF</span>
+<span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tools.tools</span> <span class="kn">import</span> <span class="n">add_constant</span>
+
+
+<span class="c1"># Prepare a dataframe for VIF</span>
+<span class="n">X_VIF</span> <span class="o">=</span> <span class="n">add_constant</span><span class="p">(</span><span class="n">X_Corr</span><span class="p">)</span>
+
+<span class="c1"># Calculate VIF scores</span>
+<span class="n">vif_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">X_VIF</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> 
+               <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X_VIF</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])],</span> 
+              <span class="n">index</span><span class="o">=</span><span class="n">X_VIF</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="c1"># Prepare a final dataframe of VIF scores and select only those that have vif scores of above 5</span>
+<span class="n">vif_scores</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">vif_scores</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Metric&#39;</span><span class="p">,</span> <span class="s1">&#39;VIFscore&#39;</span><span class="p">]</span>
+<span class="n">vif_scores</span> <span class="o">=</span> <span class="n">vif_scores</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">vif_scores</span><span class="p">[</span><span class="s1">&#39;Metric&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;const&#39;</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">vif_scores</span> <span class="o">=</span> <span class="n">vif_scores</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;VIFscore&#39;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">vif_scores</span> <span class="o">=</span> <span class="n">vif_scores</span><span class="p">[</span><span class="n">vif_scores</span><span class="p">[</span><span class="s1">&#39;VIFscore&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># of correlated metrics (Multicollinearity) with VIF scores of above 5: 46
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Metric</th>
+      <th>VIFscore</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>CountDeclMethodPrivate</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>DDEV</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>CountStmt</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>CountDeclInstanceMethod</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>CountStmtExe</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>CountStmtDecl</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>CountDeclMethodPublic</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>COMM</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>CountDeclMethodProtected</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>ADEV</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>CountDeclMethod</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>MINOR_COMMIT</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>MAJOR_COMMIT</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>CountDeclClassMethod</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>CountDeclMethodDefault</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CountLine</td>
+      <td>8004.889762</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>CountDeclFunction</td>
+      <td>6740.432026</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>CountLineCode</td>
+      <td>5117.769984</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>CountSemicolon</td>
+      <td>2090.711928</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>MaxCyclomatic</td>
+      <td>1468.923797</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>MaxCyclomaticStrict</td>
+      <td>1205.985264</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>AvgCyclomatic</td>
+      <td>1116.431405</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>SumCyclomatic</td>
+      <td>1061.420772</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>AvgCyclomaticStrict</td>
+      <td>984.274336</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>CountLineComment</td>
+      <td>839.671589</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>SumCyclomaticModified</td>
+      <td>726.385630</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>AvgLine</td>
+      <td>687.180438</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>SumCyclomaticStrict</td>
+      <td>633.738446</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AvgLineCode</td>
+      <td>585.809492</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>CountLineCodeExe</td>
+      <td>507.136384</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>AvgLineComment</td>
+      <td>253.322891</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>CountLineBlank</td>
+      <td>125.276851</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>CountLineCodeDecl</td>
+      <td>44.763080</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>MaxCyclomaticModified</td>
+      <td>44.726844</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>SumEssential</td>
+      <td>31.213514</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>AvgCyclomaticModified</td>
+      <td>27.537459</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>AvgLineBlank</td>
+      <td>13.519826</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>AvgEssential</td>
+      <td>13.144612</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>CountOutput_Mean</td>
+      <td>10.679538</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>CountPath_Mean</td>
+      <td>9.128120</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>CountPath_Max</td>
+      <td>8.793541</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>MaxNesting_Mean</td>
+      <td>7.904565</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>CountOutput_Max</td>
+      <td>5.768366</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>MaxNesting_Max</td>
+      <td>5.483591</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>CountInput_Mean</td>
+      <td>5.288319</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>OWN_LINE</td>
+      <td>5.176984</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="autospearman-an-automated-feature-selection-approach-that-address-collinearity-and-multicollinearity">
+<h4>AutoSpearman: An automated feature selection approach that address collinearity and multicollinearity<a class="headerlink" href="#autospearman-an-automated-feature-selection-approach-that-address-collinearity-and-multicollinearity" title="Permalink to this headline">¶</a></h4>
+<p>Jiarpakdee <em>et al.</em> <span id="id24">[<a class="reference internal" href="../References.html#id121">JTT18a</a>]</span><span id="id25">[<a class="reference internal" href="../References.html#id125">JTT20b</a>]</span> <span id="id26">[<a class="reference internal" href="../References.html#id118">JTT18b</a>]</span> introduce , an
+automated metric selection approach based on the Spearman rank
+correlation test and the VIF analysis for statistical inference.
+The high-level concept of can be summarised into 2 parts:</p>
+<p><em>(Part 1) Automatically select non-correlated metrics based on a
+Spearman rank correlation test.</em> We first measure the correlation of all
+metrics using the Spearman rank correlation test (<span class="math notranslate nohighlight">\(\rho\)</span>). We use the interpretation of correlation coefficients (<span class="math notranslate nohighlight">\(|\rho|\)</span>) as
+provided by Kraemer <span id="id27">[<a class="reference internal" href="../References.html#id153">KML+03</a>]</span>—i.e., a Spearman
+correlation coefficient of above or equal to 0.7 is considered a strong
+correlation. Thus, we only consider the pairs that have an absolute
+Spearman correlation coefficient of above or equal to the threshold
+value (<span class="math notranslate nohighlight">\(sp.t\)</span>) of 0.7.</p>
+<p>To automatically select non-correlated metrics based on the Spearman
+rank correlation test, we start from the pair that has the highest
+Spearman correlation coefficient. Since the two
+correlated metrics under examination can be linearly predicted with each
+other, one of these two metrics must be removed. Thus, we select the
+metric that has the lowest average values of the absolute Spearman
+correlation coefficients of the other metrics that are not included in
+the pair. That means the removed metric is another metric
+in the pair that is not selected. Since the removed
+metric may be correlated with the other metrics, we remove any pairs of
+metrics that are correlated with the removed metric.
+Finally, we exclude the removed metric from the set of the remaining
+metrics (<span class="math notranslate nohighlight">\(M'\)</span>). We repeat this process until all pairs of
+metrics have their Spearman correlation coefficient below a threshold
+value of 0.7.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Prepare a dataframe for AutoSpearman demo</span>
+<span class="n">Dataset_AS</span> <span class="o">=</span> <span class="n">lucene_290_dataset</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">X_AS</span> <span class="o">=</span> <span class="n">Dataset_AS</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">metrics</span><span class="p">]</span>
+
+<span class="n">AS_metrics</span> <span class="o">=</span> <span class="n">metrics</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># (Part 1) Automatically select non-correlated metrics based on a Spearman rank correlation test.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(Part 1) Automatically select non-correlated metrics based on a Spearman rank correlation test&#39;</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">corrmat</span> <span class="o">=</span> <span class="n">X_AS</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>
+    <span class="n">top_corr_features</span> <span class="o">=</span> <span class="n">corrmat</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">abs_corrmat</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">corrmat</span><span class="p">)</span>
+    
+    <span class="c1"># identify correlated metrics with the correlation threshold of 0.7</span>
+    <span class="n">highly_correlated_metrics</span> <span class="o">=</span> <span class="p">((</span><span class="n">corrmat</span> <span class="o">&gt;</span> <span class="mf">.7</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">corrmat</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">.7</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">corrmat</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">n_correlated_metrics</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">highly_correlated_metrics</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">n_correlated_metrics</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># find the strongest pair-wise correlation</span>
+        <span class="n">find_top_corr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">abs_corrmat</span><span class="p">,</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="n">find_top_corr</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">find_top_corr</span> <span class="o">=</span> <span class="n">find_top_corr</span><span class="p">[</span><span class="n">find_top_corr</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">top_corr_index</span> <span class="o">=</span> <span class="n">find_top_corr</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+        <span class="n">top_corr_i</span> <span class="o">=</span> <span class="n">find_top_corr</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">top_corr_index</span><span class="p">,</span> <span class="p">:]</span>
+
+        <span class="c1"># get the 2 correlated metrics with the strongest correlation</span>
+        <span class="n">correlated_metric_1</span> <span class="o">=</span> <span class="n">top_corr_i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">correlated_metric_2</span> <span class="o">=</span> <span class="n">top_corr_i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Step&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span><span class="s1">&#39;comparing between&#39;</span><span class="p">,</span> <span class="n">correlated_metric_1</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="n">correlated_metric_2</span><span class="p">)</span>
+        
+        <span class="c1"># compute their correlation with other metrics outside of the pair</span>
+        <span class="n">correlation_with_other_metrics_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">abs_corrmat</span><span class="p">[</span><span class="n">correlated_metric_1</span><span class="p">][[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">top_corr_features</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">correlated_metric_1</span><span class="p">,</span> <span class="n">correlated_metric_2</span><span class="p">]]])</span>
+        <span class="n">correlation_with_other_metrics_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">abs_corrmat</span><span class="p">[</span><span class="n">correlated_metric_2</span><span class="p">][[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">top_corr_features</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">correlated_metric_1</span><span class="p">,</span> <span class="n">correlated_metric_2</span><span class="p">]]])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="n">correlated_metric_1</span><span class="p">,</span> <span class="s1">&#39;has the average correlation of&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">correlation_with_other_metrics_1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="s1">&#39;with other metrics&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="n">correlated_metric_2</span><span class="p">,</span> <span class="s1">&#39;has the average correlation of&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">correlation_with_other_metrics_2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="p">,</span> <span class="s1">&#39;with other metrics&#39;</span><span class="p">)</span>
+        <span class="c1"># select the metric that shares the least correlation outside of the pair and exclude the other</span>
+        <span class="k">if</span> <span class="n">correlation_with_other_metrics_1</span> <span class="o">&lt;</span> <span class="n">correlation_with_other_metrics_2</span><span class="p">:</span>
+            <span class="n">exclude_metric</span> <span class="o">=</span> <span class="n">correlated_metric_2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">exclude_metric</span> <span class="o">=</span> <span class="n">correlated_metric_1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;Exclude&#39;</span><span class="p">,</span><span class="n">exclude_metric</span><span class="p">)</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">AS_metrics</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">AS_metrics</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">([</span><span class="n">exclude_metric</span><span class="p">]))</span>
+        <span class="n">X_AS</span> <span class="o">=</span> <span class="n">X_AS</span><span class="p">[</span><span class="n">AS_metrics</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">break</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;According to Part 1, AutoSpearman selects the&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">AS_metrics</span><span class="p">),</span> <span class="s1">&#39;following metrics:&#39;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="n">AS_metrics</span><span class="p">)</span> <span class="c1"># alphabetically sorted</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Part 1) Automatically select non-correlated metrics based on a Spearman rank correlation test
+Step 1 comparing between MAJOR_COMMIT and DDEV
+&gt; MAJOR_COMMIT has the average correlation of 0.22 with other metrics
+&gt; DDEV has the average correlation of 0.221 with other metrics
+&gt; Exclude DDEV
+Step 2 comparing between CountDeclMethod and CountDeclFunction
+&gt; CountDeclMethod has the average correlation of 0.427 with other metrics
+&gt; CountDeclFunction has the average correlation of 0.427 with other metrics
+&gt; Exclude CountDeclMethod
+Step 3 comparing between SumCyclomaticStrict and SumCyclomatic
+&gt; SumCyclomaticStrict has the average correlation of 0.501 with other metrics
+&gt; SumCyclomatic has the average correlation of 0.5 with other metrics
+&gt; Exclude SumCyclomaticStrict
+Step 4 comparing between SumCyclomatic and SumCyclomaticModified
+&gt; SumCyclomatic has the average correlation of 0.492 with other metrics
+&gt; SumCyclomaticModified has the average correlation of 0.491 with other metrics
+&gt; Exclude SumCyclomatic
+Step 5 comparing between MaxCyclomaticModified and MaxCyclomatic
+&gt; MaxCyclomaticModified has the average correlation of 0.46 with other metrics
+&gt; MaxCyclomatic has the average correlation of 0.459 with other metrics
+&gt; Exclude MaxCyclomaticModified
+Step 6 comparing between CountStmt and CountSemicolon
+&gt; CountStmt has the average correlation of 0.495 with other metrics
+&gt; CountSemicolon has the average correlation of 0.487 with other metrics
+&gt; Exclude CountStmt
+Step 7 comparing between AvgCyclomaticModified and AvgCyclomatic
+&gt; AvgCyclomaticModified has the average correlation of 0.346 with other metrics
+&gt; AvgCyclomatic has the average correlation of 0.349 with other metrics
+&gt; Exclude AvgCyclomatic
+Step 8 comparing between CountLineCode and CountLineCodeExe
+&gt; CountLineCode has the average correlation of 0.485 with other metrics
+&gt; CountLineCodeExe has the average correlation of 0.478 with other metrics
+&gt; Exclude CountLineCode
+Step 9 comparing between MaxCyclomaticStrict and MaxCyclomatic
+&gt; MaxCyclomaticStrict has the average correlation of 0.425 with other metrics
+&gt; MaxCyclomatic has the average correlation of 0.432 with other metrics
+&gt; Exclude MaxCyclomatic
+Step 10 comparing between CountStmtDecl and CountLineCodeDecl
+&gt; CountStmtDecl has the average correlation of 0.456 with other metrics
+&gt; CountLineCodeDecl has the average correlation of 0.449 with other metrics
+&gt; Exclude CountStmtDecl
+Step 11 comparing between CountLineCodeExe and CountSemicolon
+&gt; CountLineCodeExe has the average correlation of 0.455 with other metrics
+&gt; CountSemicolon has the average correlation of 0.454 with other metrics
+&gt; Exclude CountLineCodeExe
+Step 12 comparing between MaxCyclomaticStrict and CountPath_Max
+&gt; MaxCyclomaticStrict has the average correlation of 0.405 with other metrics
+&gt; CountPath_Max has the average correlation of 0.413 with other metrics
+&gt; Exclude CountPath_Max
+Step 13 comparing between CountSemicolon and CountStmtExe
+&gt; CountSemicolon has the average correlation of 0.439 with other metrics
+&gt; CountStmtExe has the average correlation of 0.443 with other metrics
+&gt; Exclude CountStmtExe
+Step 14 comparing between AvgCyclomaticModified and AvgCyclomaticStrict
+&gt; AvgCyclomaticModified has the average correlation of 0.303 with other metrics
+&gt; AvgCyclomaticStrict has the average correlation of 0.303 with other metrics
+&gt; Exclude AvgCyclomaticStrict
+Step 15 comparing between CountDeclInstanceMethod and CountDeclFunction
+&gt; CountDeclInstanceMethod has the average correlation of 0.343 with other metrics
+&gt; CountDeclFunction has the average correlation of 0.368 with other metrics
+&gt; Exclude CountDeclFunction
+Step 16 comparing between CountSemicolon and CountLineCodeDecl
+&gt; CountSemicolon has the average correlation of 0.421 with other metrics
+&gt; CountLineCodeDecl has the average correlation of 0.409 with other metrics
+&gt; Exclude CountSemicolon
+Step 17 comparing between MAJOR_COMMIT and ADEV
+&gt; MAJOR_COMMIT has the average correlation of 0.207 with other metrics
+&gt; ADEV has the average correlation of 0.229 with other metrics
+&gt; Exclude ADEV
+Step 18 comparing between COMM and MAJOR_COMMIT
+&gt; COMM has the average correlation of 0.213 with other metrics
+&gt; MAJOR_COMMIT has the average correlation of 0.191 with other metrics
+&gt; Exclude COMM
+Step 19 comparing between SumEssential and SumCyclomaticModified
+&gt; SumEssential has the average correlation of 0.369 with other metrics
+&gt; SumCyclomaticModified has the average correlation of 0.408 with other metrics
+&gt; Exclude SumCyclomaticModified
+Step 20 comparing between CountPath_Mean and MaxCyclomaticStrict
+&gt; CountPath_Mean has the average correlation of 0.354 with other metrics
+&gt; MaxCyclomaticStrict has the average correlation of 0.365 with other metrics
+&gt; Exclude MaxCyclomaticStrict
+Step 21 comparing between CountLineCodeDecl and CountLine
+&gt; CountLineCodeDecl has the average correlation of 0.387 with other metrics
+&gt; CountLine has the average correlation of 0.405 with other metrics
+&gt; Exclude CountLine
+Step 22 comparing between AvgLine and AvgLineCode
+&gt; AvgLine has the average correlation of 0.303 with other metrics
+&gt; AvgLineCode has the average correlation of 0.308 with other metrics
+&gt; Exclude AvgLineCode
+Step 23 comparing between MINOR_LINE and OWN_LINE
+&gt; MINOR_LINE has the average correlation of 0.09 with other metrics
+&gt; OWN_LINE has the average correlation of 0.12 with other metrics
+&gt; Exclude OWN_LINE
+Step 24 comparing between AvgCyclomaticModified and CountPath_Mean
+&gt; AvgCyclomaticModified has the average correlation of 0.27 with other metrics
+&gt; CountPath_Mean has the average correlation of 0.33 with other metrics
+&gt; Exclude CountPath_Mean
+Step 25 comparing between CountDeclInstanceMethod and SumEssential
+&gt; CountDeclInstanceMethod has the average correlation of 0.309 with other metrics
+&gt; SumEssential has the average correlation of 0.343 with other metrics
+&gt; Exclude SumEssential
+Step 26 comparing between MaxNesting_Max and MaxNesting_Mean
+&gt; MaxNesting_Max has the average correlation of 0.286 with other metrics
+&gt; MaxNesting_Mean has the average correlation of 0.243 with other metrics
+&gt; Exclude MaxNesting_Max
+Step 27 comparing between CountLineBlank and CountLineCodeDecl
+&gt; CountLineBlank has the average correlation of 0.347 with other metrics
+&gt; CountLineCodeDecl has the average correlation of 0.353 with other metrics
+&gt; Exclude CountLineCodeDecl
+Step 28 comparing between MaxNesting_Min and CountPath_Min
+&gt; MaxNesting_Min has the average correlation of 0.114 with other metrics
+&gt; CountPath_Min has the average correlation of 0.111 with other metrics
+&gt; Exclude MaxNesting_Min
+Step 29 comparing between AvgCyclomaticModified and MaxNesting_Mean
+&gt; AvgCyclomaticModified has the average correlation of 0.235 with other metrics
+&gt; MaxNesting_Mean has the average correlation of 0.22 with other metrics
+&gt; Exclude AvgCyclomaticModified
+Step 30 comparing between CountOutput_Max and CountOutput_Mean
+&gt; CountOutput_Max has the average correlation of 0.312 with other metrics
+&gt; CountOutput_Mean has the average correlation of 0.237 with other metrics
+&gt; Exclude CountOutput_Max
+Step 31 comparing between CountInput_Mean and CountInput_Max
+&gt; CountInput_Mean has the average correlation of 0.203 with other metrics
+&gt; CountInput_Max has the average correlation of 0.262 with other metrics
+&gt; Exclude CountInput_Max
+Step 32 comparing between CountDeclInstanceMethod and CountDeclMethodPublic
+&gt; CountDeclInstanceMethod has the average correlation of 0.274 with other metrics
+&gt; CountDeclMethodPublic has the average correlation of 0.235 with other metrics
+&gt; Exclude CountDeclInstanceMethod
+Step 33 comparing between Del_lines and MAJOR_COMMIT
+&gt; Del_lines has the average correlation of 0.185 with other metrics
+&gt; MAJOR_COMMIT has the average correlation of 0.169 with other metrics
+&gt; Exclude Del_lines
+Step 34 comparing between AvgLine and CountOutput_Mean
+&gt; AvgLine has the average correlation of 0.255 with other metrics
+&gt; CountOutput_Mean has the average correlation of 0.227 with other metrics
+&gt; Exclude AvgLine
+Step 35 comparing between Added_lines and MAJOR_COMMIT
+&gt; Added_lines has the average correlation of 0.149 with other metrics
+&gt; MAJOR_COMMIT has the average correlation of 0.151 with other metrics
+&gt; Exclude MAJOR_COMMIT
+Step 36 comparing between AvgLineComment and CountLineComment
+&gt; AvgLineComment has the average correlation of 0.129 with other metrics
+&gt; CountLineComment has the average correlation of 0.223 with other metrics
+&gt; Exclude CountLineComment
+According to Part 1, AutoSpearman selects the 29 following metrics:
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Added_lines&#39;,
+ &#39;AvgEssential&#39;,
+ &#39;AvgLineBlank&#39;,
+ &#39;AvgLineComment&#39;,
+ &#39;CountClassBase&#39;,
+ &#39;CountClassCoupled&#39;,
+ &#39;CountClassDerived&#39;,
+ &#39;CountDeclClass&#39;,
+ &#39;CountDeclClassMethod&#39;,
+ &#39;CountDeclClassVariable&#39;,
+ &#39;CountDeclInstanceVariable&#39;,
+ &#39;CountDeclMethodDefault&#39;,
+ &#39;CountDeclMethodPrivate&#39;,
+ &#39;CountDeclMethodProtected&#39;,
+ &#39;CountDeclMethodPublic&#39;,
+ &#39;CountInput_Mean&#39;,
+ &#39;CountInput_Min&#39;,
+ &#39;CountLineBlank&#39;,
+ &#39;CountOutput_Mean&#39;,
+ &#39;CountOutput_Min&#39;,
+ &#39;CountPath_Min&#39;,
+ &#39;MAJOR_LINE&#39;,
+ &#39;MINOR_COMMIT&#39;,
+ &#39;MINOR_LINE&#39;,
+ &#39;MaxInheritanceTree&#39;,
+ &#39;MaxNesting_Mean&#39;,
+ &#39;OWN_COMMIT&#39;,
+ &#39;PercentLackOfCohesion&#39;,
+ &#39;RatioCommentToCode&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correlation heatmap of software metrics that are selected by Step 1 of AutoSpearman
+</pre></div>
+</div>
+<img alt="../_images/ASE2021_16_1.png" src="../_images/ASE2021_16_1.png" />
+</div>
+</div>
+<p><em>(Part 2) Automatically select non-correlated metrics based on a
+Variance Inflation Factor analysis.</em> We first measure the magnitude of
+multicollinearity of the remaining metrics (<span class="math notranslate nohighlight">\(M'\)</span>) from <code class="docutils literal notranslate"><span class="pre">Part</span> <span class="pre">1</span></code> using
+the Variance Inflation Factor analysis. We use a VIF
+threshold value (<span class="math notranslate nohighlight">\(vif.t\)</span>) of 5 to identify the presence of
+multicollinearity, as suggested by Fox <span id="id28">[<a class="reference internal" href="../References.html#id71">Fox15</a>]</span>.</p>
+<p>To automatically remove correlated metrics from the Variance Inflation
+Factor analysis, we identify the removed metric as the metric that has
+the highest VIF score. We then exclude the removed
+metric from the set of the remaining metrics (<span class="math notranslate nohighlight">\(M'\)</span>). We
+apply the VIF analysis on the remaining metrics until none of the
+remaining metrics have their VIF scores above or equal to the threshold
+value. Finally,  produces a subset of non-correlated
+metrics based on the Spearman rank correlation test and the VIF analysis
+(<span class="math notranslate nohighlight">\(M'\)</span>).</p>
+<p>Similar to filter-based feature selection techniques, <em>Part 1</em>
+of  measures the correlation of all metrics using the Spearman rank
+correlation test regardless of model construction. Similar to
+wrapper-based feature selection techniques, <em>Part 2</em> of  constructs
+regression models to measure the magnitude of multicollinearity of
+metrics. Thus, we consider  as a hybrid feature selection technique
+(both filter-based and wrapper-based).</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Prepare a dataframe for VIF (Step 2) from the dataframe produced by (Step 1)</span>
+<span class="n">X_AS</span> <span class="o">=</span> <span class="n">add_constant</span><span class="p">(</span><span class="n">X_AS</span><span class="p">)</span>
+
+<span class="n">selected_features</span> <span class="o">=</span> <span class="n">X_AS</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1"># (Part 2) Automatically select non-correlated metrics based on a Variance Inflation Factor analysis.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(Part 2) Automatically select non-correlated metrics based on a Variance Inflation Factor analysis&#39;</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Calculate VIF scores</span>
+    <span class="n">vif_scores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">X_AS</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> 
+                   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X_AS</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])],</span> 
+                  <span class="n">index</span><span class="o">=</span><span class="n">X_AS</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="c1"># Prepare a final dataframe of VIF scores</span>
+    <span class="n">vif_scores</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">vif_scores</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">,</span> <span class="s1">&#39;VIFscore&#39;</span><span class="p">]</span>
+    <span class="n">vif_scores</span> <span class="o">=</span> <span class="n">vif_scores</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">vif_scores</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;const&#39;</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">vif_scores</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;VIFscore&#39;</span><span class="p">],</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Find features that have their VIF scores of above 5.0</span>
+    <span class="n">filtered_vif_scores</span> <span class="o">=</span> <span class="n">vif_scores</span><span class="p">[</span><span class="n">vif_scores</span><span class="p">[</span><span class="s1">&#39;VIFscore&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">5.0</span><span class="p">]</span>
+    
+    <span class="c1"># Terminate when there is no features with the VIF scores of above 5.0</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">filtered_vif_scores</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span>
+        
+    <span class="c1"># exclude the metric with the highest VIF score</span>
+    <span class="n">metric_to_exclude</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">filtered_vif_scores</span><span class="p">[</span><span class="s1">&#39;Feature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Step&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span><span class="s1">&#39;- exclude&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">metric_to_exclude</span><span class="p">))</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+        
+    <span class="n">selected_features</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">selected_features</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">([</span><span class="n">metric_to_exclude</span><span class="p">]))</span>
+    
+    <span class="n">X_AS</span> <span class="o">=</span> <span class="n">X_AS</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">selected_features</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;According to Part 2, AutoSpearman selects the&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">AS_metrics</span><span class="p">),</span> <span class="s1">&#39;following metrics:&#39;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="n">AS_metrics</span><span class="p">)</span> <span class="c1"># alphabetically sorted</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Part 2) Automatically select non-correlated metrics based on a Variance Inflation Factor analysis
+Step 1 - exclude CountLineBlank
+According to Part 2, AutoSpearman selects the 29 following metrics:
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Added_lines&#39;,
+ &#39;AvgEssential&#39;,
+ &#39;AvgLineBlank&#39;,
+ &#39;AvgLineComment&#39;,
+ &#39;CountClassBase&#39;,
+ &#39;CountClassCoupled&#39;,
+ &#39;CountClassDerived&#39;,
+ &#39;CountDeclClass&#39;,
+ &#39;CountDeclClassMethod&#39;,
+ &#39;CountDeclClassVariable&#39;,
+ &#39;CountDeclInstanceVariable&#39;,
+ &#39;CountDeclMethodDefault&#39;,
+ &#39;CountDeclMethodPrivate&#39;,
+ &#39;CountDeclMethodProtected&#39;,
+ &#39;CountDeclMethodPublic&#39;,
+ &#39;CountInput_Mean&#39;,
+ &#39;CountInput_Min&#39;,
+ &#39;CountLineBlank&#39;,
+ &#39;CountOutput_Mean&#39;,
+ &#39;CountOutput_Min&#39;,
+ &#39;CountPath_Min&#39;,
+ &#39;MAJOR_LINE&#39;,
+ &#39;MINOR_COMMIT&#39;,
+ &#39;MINOR_LINE&#39;,
+ &#39;MaxInheritanceTree&#39;,
+ &#39;MaxNesting_Mean&#39;,
+ &#39;OWN_COMMIT&#39;,
+ &#39;PercentLackOfCohesion&#39;,
+ &#39;RatioCommentToCode&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-3-model-construction">
+<h3>(Step 3) Model Construction<a class="headerlink" href="#step-3-model-construction" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="step-4-model-evaluation">
+<h3>(Step 4) Model Evaluation<a class="headerlink" href="#step-4-model-evaluation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="step-5-model-ranking">
+<h3>(Step 5) Model Ranking<a class="headerlink" href="#step-5-model-ranking" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "xaitools"
+        },
+        kernelOptions: {
+            kernelName: "xaitools",
+            path: "./tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'xaitools'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chakkrit Tantithamthavorn and Jirayus Jiarpakdee<br/>
+        
+            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <script>mermaid.init();</script> <div class="row_footer"> This project has received funding from the <a href="https://www.arc.gov.au/">Australian Research Council</a>'s Discovery Early Career Researcher Award (ARC DECRA) funding scheme (DE200100941). This book reflects the views of the authors and neither Australian Research Council nor Monash University are liable for any use that may be made of the information contained herein. The content of this project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. The source code that is part of the content, as well as the source code used to format and display that content is licensed under the MIT License. </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-54962993-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>

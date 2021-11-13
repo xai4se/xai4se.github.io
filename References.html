@@ -1,0 +1,725 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>References &#8212; Explainable AI for Software Engineering</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://xai4se.github.io/References.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Explainable AI for Software Engineering</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="index.html">
+   Explainable AI for Software Engineering
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Hands-on Exercise
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorials/hands-on-exercise.html">
+   ASE2021
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part1-What is Explainable AI?
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai/theory-of-explanations.html">
+   A Theory of Explanations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai/techniques-for-generating-explanations.html">
+   Techniques for Generating Explanations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai/model-specific-techniques.html">
+   Model-specific Techniques for Generating Global Explanations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai/model-agnostic-techniques.html">
+   Model-agnostic Techniques for Generating Local Explanations
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part2-Defect Prediction Models
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="defect-prediction/software-quality-assurance.html">
+   Software Quality Assurance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defect-prediction/defect-prediction.html">
+   Defect Prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defect-prediction/data-collection.html">
+   (Step 1) Data Collection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defect-prediction/data-preprocessing.html">
+   (Step 2) Data Preprocessing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defect-prediction/model-construction.html">
+   (Step 3) Model Construction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defect-prediction/model-evaluation.html">
+   (Step 4) Model Evaluation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="defect-prediction/model-ranking.html">
+   (Step 5) Model Ranking
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Part3-Explainable AI for Software Engineering
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai4se/explainability-for-se.html">
+   Explainability in Software Engineering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai4se/a-case-study-of-defect-prediction.html">
+   A Case Study of Defect Prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai4se/defective-line-localization.html">
+   (Example 1) Help developers localize which lines of code are the most risky
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai4se/local-defect-explanation.html">
+   (Example 2) Help developers understand why a file is predicted as defective
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xai4se/specific-sq-plan.html">
+   (Example 3) Help managers develop software quality improvement plans
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/References.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/xai4se/xai4se.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/xai4se/xai4se.github.io/issues/new?title=Issue%20on%20page%20%2FReferences.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/xai4se/xai4se.github.io/edit/master/docs/References.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<p id="id1"><dl class="citation">
+<dt class="label" id="id515"><span class="brackets">aEHH05</span></dt>
+<dd><p>a.E. Hassan and R.C. Holt. The top ten list: dynamic fault prediction. <em>21st IEEE International Conference on Software Maintenance (ICSM'05)</em>, 2005.</p>
+</dd>
+<dt class="label" id="id2"><span class="brackets">AM16</span></dt>
+<dd><p>Bram Adams and Shane McIntosh. Modern release engineering in a nutshell–why researchers should care. In <em>Proceedings of the International Conference on Software ANalysis, Evolution, and Reengineering (SANER)</em>, volume 5, 78–90. 2016.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets">AFC+19</span></dt>
+<dd><p>Amritanshu Agrawal, Wei Fu, Di Chen, Xipeng Shen, and Tim Menzies. How to“dodge&quot; complex software analytics. <em>IEEE Transactions on Software Engineering (TSE)</em>, 2019.</p>
+</dd>
+<dt class="label" id="id3"><span class="brackets">AM18</span></dt>
+<dd><p>Amritanshu Agrawal and Tim Menzies. Is Better Data Better Than Better Data Miners?: On the Benefits of Tuning SMOTE for Defect Prediction. In <em>Proceedings of the International Conference on Software Engineering (ICSE)</em>, 1050–1061. 2018.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets">Aki71</span></dt>
+<dd><p>Fumio Akiyama. An Example of Software System Debugging. In <em>IFIP Congress</em>, volume 71, 353–359. 1971.</p>
+</dd>
+<dt class="label" id="id18"><span class="brackets">BBM96</span></dt>
+<dd><p>Victor R Basili, Lionel C. Briand, and Walcélio L Melo. A Validation of Object-oriented Design Metrics as Quality Indicators. <em>IEEE Transactions on Software Engineering (TSE)</em>, 22(10):751–761, 1996.</p>
+</dd>
+<dt class="label" id="id26"><span class="brackets">BMG11</span></dt>
+<dd><p>Christian Bird, Brendan Murphy, and Harald Gall. Don't Touch My Code ! Examining the Effects of Ownership on Software Quality. In <em>Proceedings of the European Conference on Foundations of Software Engineering (ESEC/FSE)</em>, 4–14. 2011.</p>
+</dd>
+<dt class="label" id="id31"><span class="brackets">Bre01</span></dt>
+<dd><p>Leo Breiman. Random forests. <em>Machine learning</em>, 45(1):5–32, 2001.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets">BJ95</span></dt>
+<dd><p>Frederick P Brooks Jr. <em>The Mythical Man-Month: Essays on Software Engineering</em>. Pearson Education, 1995.</p>
+</dd>
+<dt class="label" id="id41"><span class="brackets">Cha92</span></dt>
+<dd><p>John M Chambers. Statistical Models in S. Wadsworth. <em>Pacific Grove, California</em>, 1992.</p>
+</dd>
+<dt class="label" id="id42"><span class="brackets">CBHK02</span></dt>
+<dd><p>Nitesh V Chawla, Kevin W Bowyer, Lawrence O Hall, and W Philip Kegelmeyer. SMOTE: Synthetic Minority Over-sampling Technique. <em>Journal of Artificial Intelligence Research</em>, 16:321–357, 2002.</p>
+</dd>
+<dt class="label" id="id43"><span class="brackets">CFKM18</span></dt>
+<dd><p>Di Chen, Wei Fu, Rahul Krishna, and Tim Menzies. Applications of Psychological Science for Actionable Analytics. In <em>Proceedings of the 2018 26th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering</em>, 456–467. ACM, 2018.</p>
+</dd>
+<dt class="label" id="id45"><span class="brackets">CK94</span></dt>
+<dd><p>Shyam R Chidamber and Chris F Kemerer. A Metrics Suite for Object Oriented Design. <em>IEEE Transactions on Software Engineering (TSE)</em>, 20(6):476–493, 1994.</p>
+</dd>
+<dt class="label" id="id49"><span class="brackets">DAmbrosLR10</span></dt>
+<dd><p>Marco D'Ambros, Michele Lanza, and Romain Robbes. An Extensive Comparison of Bug Prediction Approaches. In <em>Proceedings of the International Conference on Mining Software Repositories (MSR)</em>, 31–41. 2010.</p>
+</dd>
+<dt class="label" id="id500"><span class="brackets">DAmbrosLR12a</span></dt>
+<dd><p>Marco D'Ambros, Michele Lanza, and Romain Robbes. Evaluating Defect Prediction Approaches : A Benchmark and an Extensive Comparison. <em>Empirical Software Engineering</em>, 17(4-5):531–577, 2012.</p>
+</dd>
+<dt class="label" id="id50"><span class="brackets">DAmbrosLR12b</span></dt>
+<dd><p>Marco D'Ambros, Michele Lanza, and Romain Robbes. Evaluating Defect Prediction Approaches: A Benchmark and an Extensive Comparison. <em>Empirical Software Engineering (EMSE)</em>, 17(4-5):531–577, 2012.</p>
+</dd>
+<dt class="label" id="id51"><span class="brackets">dCMS+17</span></dt>
+<dd><p>Daniel Alencar da Costa, Shane McIntosh, Weiyi Shang, Uirá Kulesza, Roberta Coelho, and Ahmed E Hassan. A Framework for Evaluating the Results of the SZZ Approach for Identifying Bug-introducing Changes. <em>IEEE Transactions on Software Engineering (TSE)</em>, 43(7):641–657, 2017.</p>
+</dd>
+<dt class="label" id="id53"><span class="brackets">DTG18</span></dt>
+<dd><p>Hoa Khanh Dam, Truyen Tran, and Aditya Ghose. Explainable Software Analytics. In <em>Proceedings of the International Conference on Software Engineering: New Ideas and Emerging Results (ICSE-NIER)</em>, 53–56. 2018.</p>
+</dd>
+<dt class="label" id="id61"><span class="brackets">EngstromRW10</span></dt>
+<dd><p>Emelie Engström, Per Runeson, and Greger Wikstrand. An empirical evaluation of regression testing based on fix-cache recommendations. In <em>ICST</em>, 75–78. 2010.</p>
+</dd>
+<dt class="label" id="id65"><span class="brackets">FPG03</span></dt>
+<dd><p>Michael Fischer, Martin Pinzger, and Harald Gall. Populating a Release History Database from Version Control and Bug Tracking Systems. In <em>Proceedings of the International Conference on Software Maintenance (ICSM)</em>, 23–32. 2003.</p>
+</dd>
+<dt class="label" id="id66"><span class="brackets">Fis25</span></dt>
+<dd><p>RA Fisher. Intraclass correlations and the analysis of variance. <em>Statistical Methods for Research Workers</em>, pages 187–210, 1925.</p>
+</dd>
+<dt class="label" id="id71"><span class="brackets">Fox15</span></dt>
+<dd><p>John Fox. <em>Applied regression analysis and generalized linear models</em>. Sage Publications, 2015.</p>
+</dd>
+<dt class="label" id="id70"><span class="brackets">FM92</span></dt>
+<dd><p>John Fox and Georges Monette. Generalized Collinearity Diagnostic. <em>Journal of the American Statistical Association (JASA)</em>, 87(417):178–183, 1992.</p>
+</dd>
+<dt class="label" id="id74"><span class="brackets">Fri01</span></dt>
+<dd><p>Jerome H Friedman. Greedy Function Approximation: A Gradient Boosting Machine. <em>Annals of statistics</em>, pages 1189–1232, 2001.</p>
+</dd>
+<dt class="label" id="id75"><span class="brackets">FMS16</span></dt>
+<dd><p>Wei Fu, Tim Menzies, and Xipeng Shen. Tuning for Software Analytics: Is it really necessary? <em>Information and Software Technology</em>, 76:135–146, 2016.</p>
+</dd>
+<dt class="label" id="id77"><span class="brackets">GMH15</span></dt>
+<dd><p>Baljinder Ghotra, Shane McIntosh, and Ahmed E Hassan. Revisiting the Impact of Classification Techniques on the Performance of Defect Prediction Models. In <em>Proceedings of the International Conference on Software Engineering (ICSE)</em>, 789–800. 2015.</p>
+</dd>
+<dt class="label" id="id78"><span class="brackets">GMH17</span></dt>
+<dd><p>Baljinder Ghotra, Shane Mcintosh, and Ahmed E Hassan. A Large-scale Study of the Impact of Feature Selection Techniques on Defect Classification Models. In <em>Proceedings of the International Conference on Mining Software Repositories (MSR)</em>, 146–157. 2017.</p>
+</dd>
+<dt class="label" id="id80"><span class="brackets">GB19</span></dt>
+<dd><p>Alicja Gosiewska and Przemyslaw Biecek. iBreakDown: Uncertainty of Model Explanations for Non-additive Predictive Models. <em>arXiv preprint arXiv:1903.11420</em>, 2019.</p>
+</dd>
+<dt class="label" id="id81"><span class="brackets">GPD14</span></dt>
+<dd><p>Georgios Gousios, Martin Pinzger, and Arie van Deursen. An Exploratory Study of the Pull-based Software Development Model. In <em>Proceedings of the International Conference on Software Engineering (ICSE)</em>, 345–355. 2014.</p>
+</dd>
+<dt class="label" id="id776"><span class="brackets">GKMS00</span></dt>
+<dd><p>Todd L Graves, Alan F Karr, J S Marron, and Harvey Siy. Predicting fault incidence using software change history. <em>Transactions on Software Engineering (TSE)</em>, 26(7):653–661, 2000.</p>
+</dd>
+<dt class="label" id="id84"><span class="brackets">GE03</span></dt>
+<dd><p>Isabelle Guyon and André Elisseeff. An Introduction to Variable and Feature Selection. <em>Journal of Machine Learning Research</em>, 3:1157–1182, 2003.</p>
+</dd>
+<dt class="label" id="id864"><span class="brackets">GyimothyFS05</span></dt>
+<dd><p>Tibor Gyimóthy, Rudolf Ferenc, and Istvan Siket. Empirical validation of object-oriented metrics on open source software for fault prediction. <em>IEEE Transactions on Software engineering</em>, 31(10):897–910, 2005.</p>
+</dd>
+<dt class="label" id="id89"><span class="brackets">HBB+12</span></dt>
+<dd><p>Tracy Hall, Sarah Beecham, David Bowes, David Gray, and Steve Counsell. A Systematic Literature Review on Fault Prediction Performance in Software Engineering. <em>IEEE Transactions on Software Engineering (TSE)</em>, 38(6):1276–1304, 2012. URL: <a class="reference external" href="http://ieeexplore.ieee.org.pc124152.oulu.fi:8080/xpls/abs{\_}all.jsp?arnumber=6035727">http://ieeexplore.ieee.org.pc124152.oulu.fi:8080/xpls/abs{\_}all.jsp?arnumber=6035727</a>.</p>
+</dd>
+<dt class="label" id="id435"><span class="brackets">HM82</span></dt>
+<dd><p>J A Hanley and B J McNeil. The meaning and use of the area under a receiver operating characteristic (ROC) curve. <em>Radiology</em>, 143(1):29–36, April 1982. URL: <a class="reference external" href="http://dx.doi.org/10.1148/radiology.143.1.7063747">http://dx.doi.org/10.1148/radiology.143.1.7063747</a>.</p>
+</dd>
+<dt class="label" id="id860"><span class="brackets">Has09</span></dt>
+<dd><p>Ahmed E Hassan. Predicting faults using the complexity of code changes. In <em>2009 IEEE 31st international conference on software engineering</em>, 78–88. IEEE, 2009.</p>
+</dd>
+<dt class="label" id="id99"><span class="brackets">HMK12</span></dt>
+<dd><p>Hideaki Hata, Osamu Mizuno, and Tohru Kikuno. Bug prediction based on fine-grained module histories. In <em>ICSE</em>, 200–210. 2012.</p>
+</dd>
+<dt class="label" id="id100"><span class="brackets">HG09</span></dt>
+<dd><p>Haibo He and Edwardo A Garcia. Learning from Imbalanced Data. <em>IEEE Transactions on Knowledge and Data Engineering (TKDE)</em>, 21(9):1263–1284, 2009.</p>
+</dd>
+<dt class="label" id="id107"><span class="brackets">Her14</span></dt>
+<dd><p>Kim Herzig. Using pre-release test failures to build early post-release defect prediction models. In <em>ISSRE</em>, 300–311. 2014.</p>
+</dd>
+<dt class="label" id="id108"><span class="brackets">HMS05</span></dt>
+<dd><p>Denis J. Hilton, John J. McClure, and Ben R. Slugoski. The psychology of counterfactual thinking. <em>Routledge Research International Series in Social Psychology</em>, pages 44–60, 2005.</p>
+</dd>
+<dt class="label" id="id113"><span class="brackets">HXL17</span></dt>
+<dd><p>Qiao Huang, Xin Xia, and David Lo. Supervised vs unsupervised models: a holistic look at effort-aware just-in-time defect prediction. In <em>Proceedings of the International Conference on Software Maintenance and Evolution (ICSME)</em>, 159–170. 2017.</p>
+</dd>
+<dt class="label" id="id123"><span class="brackets">JTDG20a</span></dt>
+<dd><p>Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, Hoa Khanh Dam, and John Grundy. An empirical study of model-agnostic techniques for defect prediction models. <em>TSE</em>, 2020.</p>
+</dd>
+<dt class="label" id="id126"><span class="brackets">JTDG20b</span></dt>
+<dd><p>Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, Hoa Khanh Dam, and John Grundy. An Empirical Study of Model-Agnostic Techniques for Defect Prediction Models. <em>IEEE Transactions on Software Engineering (TSE)</em>, pages To Appear, 2020.</p>
+</dd>
+<dt class="label" id="id127"><span class="brackets">JTG21</span></dt>
+<dd><p>Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, and John Grundy. Practitioners' Perceptions of the Goals and Visual Explanations of Defect Prediction Models. In <em>Proceedings of the International Conference on Mining Software Repositories (MSR)</em>, To Appear. 2021.</p>
+</dd>
+<dt class="label" id="id122"><span class="brackets">JTH19</span></dt>
+<dd><p>Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, and Ahmed E Hassan. The Impact of Correlated Metrics on Defect Models. <em>IEEE Transactions on Software Engineering (TSE)</em>, pages To Appear, 2019.</p>
+</dd>
+<dt class="label" id="id117"><span class="brackets">JTIM16</span></dt>
+<dd><p>Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, Akinori Ihara, and Kenichi Matsumoto. A Study of Redundant Metrics in Defect Prediction Datasets. In <em>Proceedings of the International Symposium on Software Reliability Engineering Workshops (ISSREW)</em>, 51–52. 2016.</p>
+</dd>
+<dt class="label" id="id121"><span class="brackets">JTT18a</span></dt>
+<dd><p>Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, and Christoph Treude. AutoSpearman: Automatically Mitigating Correlated Metrics for Interpreting Defect Models. In <em>Proceeding of the International Conference on Software Maintenance and Evolution (ICSME)</em>, 92–103. 2018.</p>
+</dd>
+<dt class="label" id="id118"><span class="brackets">JTT18b</span></dt>
+<dd><p>Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, and Christoph Treude. AutoSpearman: Automatically Mitigating Correlated Software Metrics for Interpreting Defect Models. In <em>Proceedings of the International Conference on Software Maintenance and Evolution (ICSME)</em>, 92–103. 2018.</p>
+</dd>
+<dt class="label" id="id124"><span class="brackets">JTT20a</span></dt>
+<dd><p>Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, and Christoph Treude. The impact of automated feature selection techniques on the interpretation of defect models. <em>EMSE</em>, 2020.</p>
+</dd>
+<dt class="label" id="id125"><span class="brackets">JTT20b</span></dt>
+<dd><p>Jirayus Jiarpakdee, Chakkrit Tantithamthavorn, and Christoph Treude. The impact of automated feature selection techniques on the interpretation of defect models. <em>Empirical Software Engineering</em>, 25(5):3590–3638, 2020.</p>
+</dd>
+<dt class="label" id="id129"><span class="brackets">JKP94</span></dt>
+<dd><p>George H John, Ron Kohavi, and Karl Pfleger. Irrelevant Features and the Subset Selection Problem. In <em>Proceedings of the International Conference on Machine Learning (ICML)</em>, pages 121–129. 1994.</p>
+</dd>
+<dt class="label" id="id136"><span class="brackets">KMM+10</span></dt>
+<dd><p>Yasutaka Kamei, Shinsuke Matsumoto, Akito Monden, Ken-ichi Matsumoto, Bram Adams, and Ahmed E Hassan. Revisiting common bug prediction findings using effort-aware models. In <em>ICSME</em>, 1–10. 2010.</p>
+</dd>
+<dt class="label" id="id135"><span class="brackets">KMM+07</span></dt>
+<dd><p>Yasutaka Kamei, Akito Monden, Shinsuke Matsumoto, Takeshi Kakimoto, and Ken-ichi Matsumoto. The effects of over and under sampling on fault-prone module detection. In <em>ESEM</em>, 196–204. 2007.</p>
+</dd>
+<dt class="label" id="id137"><span class="brackets">KSA+13</span></dt>
+<dd><p>Yasutaka Kamei, Emad Shihab, Bram Adams, Ahmed E. Hassan, Audris Mockus, Anand Sinha, and Naoyasu Ubayashi. A Large-Scale Empirical Study of Just-In-Time Quality Assurance. <em>IEEE Transactions on Software Engineering (TSE)</em>, 39(6):757–773, 2013.</p>
+</dd>
+<dt class="label" id="id143"><span class="brackets">KGS10</span></dt>
+<dd><p>T.M. Khoshgoftaar, Kehan Gao Kehan Gao, and N. Seliya. Attribute Selection and Imbalanced Data: Problems in Software Defect Prediction. <em>Proceedings of the International Conference on Tools with Artificial Intelligence (ICTAI)</em>, 2010.</p>
+</dd>
+<dt class="label" id="id147"><span class="brackets">KNY+15</span></dt>
+<dd><p>Mijung Kim, Jaechang Nam, Jaehyuk Yeon, Soonhwang Choi, and Sunghun Kim. REMI: Defect prediction for efficient API testing. In <em>ESEC/FSE</em>, 990–993. 2015.</p>
+</dd>
+<dt class="label" id="id150"><span class="brackets">KJ97</span></dt>
+<dd><p>Ron Kohavi and George H John. Wrappers for Feature Subset Selection. <em>Artificial Intelligence</em>, 97(1-2):273–324, 1997.</p>
+</dd>
+<dt class="label" id="id153"><span class="brackets">KML+03</span></dt>
+<dd><p>Helena Chmura Kraemer, George A Morgan, Nancy L Leech, Jeffrey A Gliner, Jerry J Vaske, and Robert J Harmon. Measures of Clinical Significance. <em>Journal of the American Academy of Child &amp; Adolescent Psychiatry (JAACAP)</em>, 42(12):1524–1529, 2003.</p>
+</dd>
+<dt class="label" id="id158"><span class="brackets">KM20</span></dt>
+<dd><p>Rahul Krishna and Tim Menzies. From prediction to planning: improving software quality with belltree. <em>Empirical Software Engineering</em>, 2020.</p>
+</dd>
+<dt class="label" id="id165"><span class="brackets">Lea14</span></dt>
+<dd><p>David B Leake. Evaluating explanations: a content theory. <em>Psychology Press</em>, 2014.</p>
+</dd>
+<dt class="label" id="id166"><span class="brackets">LBMP08</span></dt>
+<dd><p>Stefan Lessmann, Bart Baesens, Christophe Mues, and Swantje Pietsch. Benchmarking Classification Models for Software Defect Prediction: A Proposed Framework and Novel Findings. <em>IEEE Transactions on Software Engineering (TSE)</em>, 34(4):485–496, 2008.</p>
+</dd>
+<dt class="label" id="id171"><span class="brackets">LYAW19</span></dt>
+<dd><p>Brian Y Lim, Qian Yang, Ashraf M Abdul, and Danding Wang. Why these explanations? selecting intelligibility types for explanation goals. In <em>IUI Workshops</em>. 2019.</p>
+</dd>
+<dt class="label" id="id719"><span class="brackets">Lip90</span></dt>
+<dd><p>Peter Lipton. Contrastive explanation. <em>Royal Institute of Philosophy Supplements</em>, 27:247–266, 1990.</p>
+</dd>
+<dt class="label" id="id173"><span class="brackets">Lip18</span></dt>
+<dd><p>Zachary C Lipton. The mythos of model interpretability: in machine learning, the concept of interpretability is both important and slippery. <em>Queue</em>, 16(3):31–57, 2018.</p>
+</dd>
+<dt class="label" id="id179"><span class="brackets">Luc0)</span></dt>
+<dd><p>Lucidchart. <em>Release management process</em>. 2020 (accessed July 23, 2020). <span><a class="reference external" href="#"></a></span>https://www.lucidchart.com/blog/release-management-process.</p>
+</dd>
+<dt class="label" id="id182"><span class="brackets">LEL18</span></dt>
+<dd><p>Scott M Lundberg, Gabriel G Erion, and Su-In Lee. Consistent Individualized Feature Attribution for Tree Ensembles. <em>arXiv preprint arXiv:1802.03888</em>, 2018.</p>
+</dd>
+<dt class="label" id="id191"><span class="brackets">McC76</span></dt>
+<dd><p>Thomas J McCabe. A Complexity Measure. <em>IEEE Transactions on Software Engineering (TSE)</em>, pages 308–320, 1976.</p>
+</dd>
+<dt class="label" id="id192"><span class="brackets">McH13</span></dt>
+<dd><p>Mary L McHugh. The Chi-square Test of Independence. <em>Biochemia Medica</em>, 23(2):143–149, 2013.</p>
+</dd>
+<dt class="label" id="id200"><span class="brackets">MK10</span></dt>
+<dd><p>Thilo Mende and Rainer Koschke. Effort-aware defect prediction models. In <em>Proceedings of the European Conference on Software Maintenance and Reengineering (CSMR)</em>, 107–116. 2010.</p>
+</dd>
+<dt class="label" id="id202"><span class="brackets">MGF07</span></dt>
+<dd><p>Tim Menzies, Jeremy Greenwald, and Art Frank. Data Mining Static Code Attributes to Learn Defect Predictors. <em>IEEE Transactions on Software Engineering (TSE)</em>, 33(1):2–13, 2007.</p>
+</dd>
+<dt class="label" id="id211"><span class="brackets">MS19</span></dt>
+<dd><p>Tim Menzies and Martin Shepperd. “bad smells” in software analytics papers. <em>IST</em>, 112:35–47, 2019.</p>
+</dd>
+<dt class="label" id="id209"><span class="brackets">MZ18</span></dt>
+<dd><p>Tim Menzies and Thomas Zimmermann. Software Analytics: So What? <em>IEEE Software</em>, pages 31–37, 2018.</p>
+</dd>
+<dt class="label" id="id214"><span class="brackets">Mil19</span></dt>
+<dd><p>Tim Miller. Explanation in artificial intelligence: insights from the social sciences. <em>Artificial intelligence</em>, 267:1–38, 2019.</p>
+</dd>
+<dt class="label" id="id862"><span class="brackets">MH02</span></dt>
+<dd><p>Audris Mockus and James D Herbsleb. Expertise browser: a quantitative approach to identifying expertise. In <em>Proceedings of the 24th International Conference on Software Engineering. ICSE 2002</em>, 503–512. IEEE, 2002.</p>
+</dd>
+<dt class="label" id="id225"><span class="brackets">NB05a</span></dt>
+<dd><p>Nachiappan Nagappan and Thomas Ball. Static analysis tools as early indicators of pre-release defect density. In <em>ICSE</em>, 580–586. 2005.</p>
+</dd>
+<dt class="label" id="id224"><span class="brackets">NB05b</span></dt>
+<dd><p>Nachiappan Nagappan and Thomas Ball. Use of Relative Code Churn Measures to Predict System Defect Density. <em>Proceedings of the International Conference on Software Engineering (ICSE)</em>, pages 284–292, 2005.</p>
+</dd>
+<dt class="label" id="id861"><span class="brackets">NB07</span></dt>
+<dd><p>Nachiappan Nagappan and Thomas Ball. Using software dependencies and churn metrics to predict field failures: an empirical case study. In <em>First International Symposium on Empirical Software Engineering and Measurement (ESEM 2007)</em>, 364–373. IEEE, 2007.</p>
+</dd>
+<dt class="label" id="id358"><span class="brackets">NMB08</span></dt>
+<dd><p>Nachiappan Nagappan, Brendan Murphy, and Victor Basili. The influence of organizational structure on software quality. In <em>Proceedings of the International Conference on Software Engineering (ICSE)</em>, 521–530. 2008.</p>
+</dd>
+<dt class="label" id="id227"><span class="brackets">NZZ+10</span></dt>
+<dd><p>Nachiappan Nagappan, Andreas Zeller, Thomas Zimmermann, Kim Herzig, and Brendan Murphy. Change Bursts as Defect Predictors. In <em>Proceedings of the International Symposium on Software Reliability Engineering (ISSRE)</em>, 309–318. 2010.</p>
+</dd>
+<dt class="label" id="id228"><span class="brackets">Nam14</span></dt>
+<dd><p>Jaechang Nam. Survey on software defect prediction. <em>Department of Compter Science and Engineerning, The Hong Kong University of Science and Technology, Tech. Rep</em>, 2014.</p>
+</dd>
+<dt class="label" id="id236"><span class="brackets">PO11</span></dt>
+<dd><p>Chris Parnin and Alessandro Orso. Are automated debugging techniques actually helping programmers? In <em>ISSTA</em>, 199–209. 2011.</p>
+</dd>
+<dt class="label" id="id238"><span class="brackets">PPB19</span></dt>
+<dd><p>Luca Pascarella, Fabio Palomba, and Alberto Bacchelli. Fine-grained just-in-time defect prediction. <em>JSS</em>, 150:22–36, 2019.</p>
+</dd>
+<dt class="label" id="id240"><span class="brackets">PD07</span></dt>
+<dd><p>Lourdes Pelayo and Scott Dick. Applying novel resampling strategies to software defect prediction. <em>Annual Conference of the North American Fuzzy Information Processing Society - NAFIPS</em>, pages 69–72, 2007.</p>
+</dd>
+<dt class="label" id="id241"><span class="brackets">PM20</span></dt>
+<dd><p>Kewen Peng and Tim Menzies. Defect Reduction Planning (using TimeLIME). <em>arXiv preprint arXiv:2006.07416</em>, 2020.</p>
+</dd>
+<dt class="label" id="id865"><span class="brackets">PTJ+21</span></dt>
+<dd><p>Chanathip Pornprasit, Chakkrit Tantithamthavorn, Jirayus Jiarpakdee, Michael Fu, and Patanamon Thongtanunam. PyExplainer: Explaining the Predictions of Just-In-Time Defect Models. In <em>Proceedings of the International Conference on Automated Software Engineering (ASE)</em>, To Appear. 2021.</p>
+</dd>
+<dt class="label" id="id247"><span class="brackets">RD13</span></dt>
+<dd><p>Foyzur Rahman and Premkumar Devanbu. How, and Why, Process Metrics are Better. In <em>Proceedings of the International Conference on Software Engineering (ICSE)</em>, 432–441. 2013.</p>
+</dd>
+<dt class="label" id="id248"><span class="brackets">RKBD14</span></dt>
+<dd><p>Foyzur Rahman, Sameer Khatri, Earl T Barr, and Premkumar Devanbu. Comparing static bug finders and statistical prediction. In <em>ICSE</em>, 424–434. 2014.</p>
+</dd>
+<dt class="label" id="id249"><span class="brackets">RR15</span></dt>
+<dd><p>Md Tajmilur Rahman and Peter C Rigby. Release stabilization on linux and chrome. <em>IEEE Software</em>, 32(2):81–88, 2015.</p>
+</dd>
+<dt class="label" id="id251"><span class="brackets">RTJ+21</span></dt>
+<dd><p>Dilini Rajapaksha, Chakkrit Tantithamthavorn, Jirayus Jiarpakdee, Christoph Bergmeir, John Grundy, and Wray Buntine. SQAPlanner: Generating Data-Informed Software Quality Improvement Plans. <em>IEEE Transactions on Software Engineering</em>, 2021.</p>
+</dd>
+<dt class="label" id="id254"><span class="brackets">RHG+16</span></dt>
+<dd><p>Baishakhi Ray, Vincent Hellendoorn, Saheel Godhane, Zhaopeng Tu, Alberto Bacchelli, and Premkumar Devanbu. On the Naturalness of Buggy Code. In <em>Proceedings of the International Conference on Software Engineering (ICSE)</em>, 428–439. 2016.</p>
+</dd>
+<dt class="label" id="id257"><span class="brackets">RSG16a</span></dt>
+<dd><p>Marco Tulio Ribeiro, Sameer Singh, and Carlos Guestrin. Model-agnostic Interpretability of Machine Learning. <em>arXiv preprint arXiv:1606.05386</em>, 2016.</p>
+</dd>
+<dt class="label" id="id258"><span class="brackets">RSG16b</span></dt>
+<dd><p>Marco Tulio Ribeiro, Sameer Singh, and Carlos Guestrin. Why should I trust you?: Explaining the Predictions of Any Classifier. In <em>Proceedings of the International Conference on Knowledge Discovery and Data Mining (KDDM)</em>, 1135–1144. 2016.</p>
+</dd>
+<dt class="label" id="id269"><span class="brackets">Sal84</span></dt>
+<dd><p>Wesley C. Salmon. <em>Scientific explanation and the causal structure of the world</em>. Princeton University Press Princeton, N.J, 1984.</p>
+</dd>
+<dt class="label" id="id273"><span class="brackets">SKVanHulseF14</span></dt>
+<dd><p>Chris Seiffert, Taghi M. Khoshgoftaar, Jason Van Hulse, and Andres Folleco. An empirical study of the classification performance of learners on imbalanced and noisy software quality data. <em>Information Sciences</em>, pages 571–595, 2014.</p>
+</dd>
+<dt class="label" id="id278"><span class="brackets">Shi12</span></dt>
+<dd><p>Emad Shihab. <em>An Exploration of Challenges Limiting Pragmatic Software Defect Prediction</em>. PhD thesis, Queen's University, 2012.</p>
+</dd>
+<dt class="label" id="id863"><span class="brackets">SNAH14</span></dt>
+<dd><p>Mark D Syer, Meiyappan Nagappan, Bram Adams, and Ahmed E Hassan. Replicating and re-evaluating the theory of relative defect-proneness. <em>IEEE Transactions on Software Engineering</em>, 41(2):176–197, 2014.</p>
+</dd>
+<dt class="label" id="id289"><span class="brackets">TTDM15</span></dt>
+<dd><p>Ming Tan, Lin Tan, Sashank Dara, and Caleb Mayeux. Online defect prediction for imbalanced data. In <em>Proceedings of the International Conference on Software Engineering (ICSE)</em>, volume 2, 99–108. 2015.</p>
+</dd>
+<dt class="label" id="id293"><span class="brackets">Tan16</span></dt>
+<dd><p>Chakkrit Tantithamthavorn. Towards a Better Understanding of the Impact of Experimental Components on Defect Prediction Modelling. In <em>Companion Proceeding of the International Conference on Software Engineering (ICSE)</em>, 867––870. 2016.</p>
+</dd>
+<dt class="label" id="id297"><span class="brackets">THM19</span></dt>
+<dd><p>Chakkrit Tantithamthavorn, Ahmed E Hassan, and Kenichi Matsumoto. The Impact of Class Rebalancing Techniques on The Performance and Interpretation of Defect Prediction Models. <em>IEEE Transactions on Software Engineering (TSE)</em>, pages To Appear, 2019.</p>
+</dd>
+<dt class="label" id="id299"><span class="brackets">TH18</span></dt>
+<dd><p>Chakkrit Tantithamthavorn and Ahmed E. Hassan. An Experience Report on Defect Modelling in Practice: Pitfalls and Challenges. In <em>In Proceedings of the International Conference on Software Engineering: Software Engineering in Practice Track (ICSE-SEIP)</em>, 286–295. 2018.</p>
+</dd>
+<dt class="label" id="id291"><span class="brackets">TMHM16a</span></dt>
+<dd><p>Chakkrit Tantithamthavorn, Shane McIntosh, Ahmed E Hassan, and Kenichi Matsumoto. Automated Parameter Optimization of Classification Techniques for Defect Prediction Models. In <em>Proceedings of the International Conference on Software Engineering (ICSE)</em>, 321–332. 2016.</p>
+</dd>
+<dt class="label" id="id292"><span class="brackets">TMHM16b</span></dt>
+<dd><p>Chakkrit Tantithamthavorn, Shane McIntosh, Ahmed E Hassan, and Kenichi Matsumoto. Comments on \textquotedblleft Researcher Bias: The Use of Machine Learning in Software Defect Prediction\textquotedblright . <em>IEEE Transactions on Software Engineering (TSE)</em>, 42(11):1092–1094, 2016.</p>
+</dd>
+<dt class="label" id="id296"><span class="brackets">TMHM17</span></dt>
+<dd><p>Chakkrit Tantithamthavorn, Shane McIntosh, Ahmed E Hassan, and Kenichi Matsumoto. An Empirical Comparison of Model Validation Techniques for Defect Prediction Models. <em>IEEE Transactions on Software Engineering (TSE)</em>, 43(1):1–18, 2017.</p>
+</dd>
+<dt class="label" id="id290"><span class="brackets">TMH+15</span></dt>
+<dd><p>Chakkrit Tantithamthavorn, Shane McIntosh, Ahmed E. Hassan, Akinori Ihara, and Kenichi Matsumoto. The Impact of Mislabelling on the Performance and Interpretation of Defect Prediction Models. In <em>Proceeding of the International Conference on Software Engineering (ICSE)</em>, 812–823. 2015.</p>
+</dd>
+<dt class="label" id="id298"><span class="brackets">TMHM18</span></dt>
+<dd><p>Chakkrit Tantithamthavorn, Shane McIntosh, Ahmed E. Hassan, and Kenichi Matsumoto. The Impact of Automated Parameter Optimization on Defect Prediction Models. <em>IEEE Transactions on Software Engineering (TSE)</em>, pages 683–711, 2018.</p>
+</dd>
+<dt class="label" id="id301"><span class="brackets">TMHI16</span></dt>
+<dd><p>Patanamon Thongtanunam, Shane McIntosh, Ahmed E Hassan, and Hajimu Iida. Revisiting Code Ownership and its Relationship with Software Quality in the Scope of Modern Code Review. In <em>Proceedings of the International Conference on Software Engineering (ICSE)</em>, 1039–1050. 2016.</p>
+</dd>
+<dt class="label" id="id303"><span class="brackets">TMHI15</span></dt>
+<dd><p>Patanamon Thongtanunam, Shane McIntosh, Ahmed E. Hassan, and Hajimu Iida. Investigating code review practices in defective files: an empirical study of the qt system. In <em>MSR</em>, 168–179. 2015.</p>
+</dd>
+<dt class="label" id="id718"><span class="brackets">VBW02</span></dt>
+<dd><p>Jeroen Van Bouwel and Erik Weber. Remote causes, bad explanations? <em>Journal for the Theory of Social Behaviour</em>, 32(4):437–449, 2002.</p>
+</dd>
+<dt class="label" id="id321"><span class="brackets">WXH+18</span></dt>
+<dd><p>Zhiyuan Wan, Xin Xia, Ahmed E Hassan, David Lo, Jianwei Yin, and Xiaohu Yang. Perceptions, expectations, and challenges in defect prediction. <em>IEEE Transactions on Software Engineering</em>, 2018.</p>
+</dd>
+<dt class="label" id="id322"><span class="brackets">WY13</span></dt>
+<dd><p>Shuo Wang and Xin Yao. Using Class Imbalance Learning for Software Defect Prediction. <em>IEEE Transactions on Reliability</em>, 62(2):434–443, 2013.</p>
+</dd>
+<dt class="label" id="id326"><span class="brackets">WLNT18</span></dt>
+<dd><p>Song Wang, Taiyue Liu, Jaechang Nam, and Lin Tan. Deep Semantic Feature Learning for Software Defect Prediction. <em>IEEE Transactions on Software Engineering (TSE)</em>, 2018.</p>
+</dd>
+<dt class="label" id="id323"><span class="brackets">WLT16</span></dt>
+<dd><p>Song Wang, Taiyue Liu, and Lin Tan. Automatically Learning Semantic Features for Defect Prediction. In <em>Proceedings of the International Conference on Software Engineering (ICSE)</em>, 297–308. 2016.</p>
+</dd>
+<dt class="label" id="id327"><span class="brackets">WTT+20</span></dt>
+<dd><p>Supatsara Wattanakriengkrai, Patanamon Thongtanunam, Chakkrit Tantithamthavorn, Hideaki Hata, and Kenichi Matsumoto. Predicting defective lines using a model-agnostic technique. <em>IEEE Transactions on Software Engineering (TSE)</em>, 2020.</p>
+</dd>
+<dt class="label" id="id333"><span class="brackets">XLS+15</span></dt>
+<dd><p>Xin Xia, David Lo, Emad Shihab, Xinyu Wang, and Xiaohu Yang. Elblocker: Predicting blocking bugs with ensemble imbalance learning. <em>Information and Software Technology</em>, 61:93–106, 2015.</p>
+</dd>
+<dt class="label" id="id336"><span class="brackets">YLX+17</span></dt>
+<dd><p>Xin-Li Yang, David Lo, Xin Xia, Qiao Huang, and Jian-Ling Sun. High-impact bug report identification with imbalanced learning strategies. <em>Journal of Computer Science and Technology</em>, 2017.</p>
+</dd>
+<dt class="label" id="id335"><span class="brackets">YLH+16</span></dt>
+<dd><p>Xinli Yang, David Lo, Qiao Huang, Xin Xia, and Jianling Sun. Automated identification of high impact bug reports leveraging imbalanced learning strategies. <em>Computer Software and Applications Conference (COMPSAC)</em>, 1:227–232, 2016.</p>
+</dd>
+<dt class="label" id="id754"><span class="brackets">ZN08</span></dt>
+<dd><p>T. Zimmermann and N. Nagappan. Predicting defects using network analysis on dependency graphs. In <em>Proceedings of the International Conference on Software Engineering (ICSE'08)</em>, 531–540. 2008.</p>
+</dd>
+<dt class="label" id="id345"><span class="brackets">ZNG+09</span></dt>
+<dd><p>Thomas Zimmermann, Nachiappan Nagappan, Harald Gall, Emanuel Giger, and Brendan Murphy. Cross-project Defect Prediction. In <em>Proceedings of the European Software Engineering Conference and the Symposium on the Foundations of Software Engineering (ESEC/FSE)</em>, 91–100. 2009.</p>
+</dd>
+<dt class="label" id="id344"><span class="brackets">ZPZ07</span></dt>
+<dd><p>Thomas Zimmermann, Rahul Premraj, and Andreas Zeller. Predicting Defects for Eclipse. In <em>Proceedings of the International Workshop on Predictor Models in Software Engineering (PROMISE)</em>, 9–19. 2007.</p>
+</dd>
+<dt class="label" id="id461"><span class="brackets">SliwerskiZZ05</span></dt>
+<dd><p>Jacek Śliwerski, Thomas Zimmermann, and Andreas Zeller. When do changes induce fixes? <em>ACM sigsoft software engineering notes</em>, 30(4):1–5, 2005.</p>
+</dd>
+<dt class="label" id="id134"><span class="brackets">KameiMondenMatsumoto+07</span></dt>
+<dd><p>Y. Kamei, A. Monden, S. Matsumoto, T. Kakimoto, and K. Matsumoto. The effects of over and under sampling on fault-prone module detection. In <em>First International Symposium on Empirical Software Engineering and Measurement (ESEM 2007)</em>, 196–204. 2007.</p>
+</dd>
+</dl>
+</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chakkrit Tantithamthavorn and Jirayus Jiarpakdee<br/>
+        
+            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <script>mermaid.init();</script> <div class="row_footer"> This project has received funding from the <a href="https://www.arc.gov.au/">Australian Research Council</a>'s Discovery Early Career Researcher Award (ARC DECRA) funding scheme (DE200100941). This book reflects the views of the authors and neither Australian Research Council nor Monash University are liable for any use that may be made of the information contained herein. The content of this project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. The source code that is part of the content, as well as the source code used to format and display that content is licensed under the MIT License. </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-54962993-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
