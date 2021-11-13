@@ -390,20 +390,6 @@ First, we need to load necesarry libraries as well as preparing datasets.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">68</span><span class="o">/</span><span class="n">p10tkmvx0p9dw88yp1k3tzh00000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_44719</span><span class="o">/</span><span class="mf">440864984.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> 
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Import for Split Data into Training and Testing Samples</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> 
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">train_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../datasets/lucene-2.9.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sklearn&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Then, we construct a Random Forests model as a predictive model to be explained.</p>
 <p><strong>(1) Please construct a Random Forests model using the code cell below.</strong></p>
@@ -489,6 +475,11 @@ interest according to the black-box model.</p></li>
 
 
 <span class="c1"># visualise the generated LIME explanation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Explaining src/java/org/apache/lucene/index/DocumentsWriter.java with LIME
 </pre></div>
 </div>
 </div>
@@ -618,6 +609,11 @@ In fact, model-agnostic techniques can be used to generate other types of explan
 
 
 <span class="c1"># visualise the generated LIME explanation - (DocumentsWriter.java)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Generating the object-contrast explanations between src/java/org/apache/lucene/index/DocumentsWriter.java and src/test/org/apache/lucene/util/TestStringIntern.java with LIME
 </pre></div>
 </div>
 </div>

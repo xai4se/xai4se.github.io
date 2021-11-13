@@ -63,7 +63,7 @@ testing_data = pd.concat([X_test, y_test], axis=1)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m/var/folders/68/p10tkmvx0p9dw88yp1k3tzh00000gr/T/ipykernel_57374/440864984.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/68/p10tkmvx0p9dw88yp1k3tzh00000gr/T/ipykernel_60492/440864984.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      9[0m [0;32mfrom[0m [0msklearn[0m[0;34m.[0m[0mmodel_selection[0m [0;32mimport[0m [0mtrain_test_split[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     10[0m [0;34m[0m[0m
 [0;32m---> 11[0;31m [0mtrain_dataset[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m([0m[0;34m"../../datasets/lucene-2.9.0.csv"[0m[0;34m)[0m[0;34m,[0m [0mindex_col[0m [0;34m=[0m [0;34m'File'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
