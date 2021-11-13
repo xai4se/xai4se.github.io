@@ -49,9 +49,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://xai4se.github.io/tutorials/live-demo.html" />
+    <link rel="canonical" href="https://xai4se.github.io/tutorials/pyexplainer-live-demo.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ASE2021 Hands-on Exercise" href="hands-on-exercise.html" />
+    <link rel="prev" title="Explainable AI for Software Engineering" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -93,10 +95,15 @@
   Hands-on Exercise
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   ASE2021 PyExplainer Live-Demo
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="hands-on-exercise.html">
-   ASE2021
+   ASE2021 Hands-on Exercise
   </a>
  </li>
 </ul>
@@ -241,7 +248,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/tutorials/live-demo.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/tutorials/pyexplainer-live-demo.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -261,10 +268,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/xai4se/xai4se.github.io/issues/new?title=Issue%20on%20page%20%2Ftutorials/live-demo.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/xai4se/xai4se.github.io/issues/new?title=Issue%20on%20page%20%2Ftutorials/pyexplainer-live-demo.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/xai4se/xai4se.github.io/edit/master/docs/tutorials/live-demo.ipynb"><button
+        <a class="edit-button" href="https://github.com/xai4se/xai4se.github.io/edit/master/docs/tutorials/pyexplainer-live-demo.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -284,7 +291,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/xai4se.github.io/master?urlpath=lab/tree/docs/tutorials/live-demo.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xai4se/xai4se.github.io/master?urlpath=lab/tree/docs/tutorials/pyexplainer-live-demo.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -292,7 +299,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/xai4se.github.io/blob/master/docs/tutorials/live-demo.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/xai4se/xai4se.github.io/blob/master/docs/tutorials/pyexplainer-live-demo.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -314,16 +321,6 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pyexplainer">
    PyExplainer
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lime">
-   LIME
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shap">
-   SHAP
   </a>
  </li>
 </ul>
@@ -394,8 +391,8 @@ First, we need to load necesarry libraries as well as preparing datasets.</p>
 <div class="tip admonition">
 <p class="admonition-title">Tips</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="n">our_rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
-<span class="n">our_rf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  
+<span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+<span class="n">rf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  
 
 </pre></div>
 </div>
@@ -405,13 +402,6 @@ First, we need to load necesarry libraries as well as preparing datasets.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
 
 <span class="c1"># Please fit your Random Forests model here!</span>
-<span class="n">our_rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
-<span class="n">our_rf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomForestClassifier()
 </pre></div>
 </div>
 </div>
@@ -430,24 +420,26 @@ and mutation techniques</p></li>
 <p class="admonition-title">Tips</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 <span class="c1"># PyExplainer Step 1 - Construct a PyExplainer </span>
-<span class="n">our_pyexplainer</span> <span class="o">=</span> <span class="n">PyExplainer</span><span class="p">(</span><span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">,</span>
+<span class="n">pyexp</span> <span class="o">=</span> <span class="n">PyExplainer</span><span class="p">(</span><span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">,</span>
                            <span class="n">y_train</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">,</span>
                            <span class="n">indep</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
                            <span class="n">dep</span> <span class="o">=</span> <span class="n">outcome</span><span class="p">,</span>
                            <span class="n">blackbox_model</span> <span class="o">=</span> <span class="n">rf_model</span><span class="p">)</span>
-                            
+
 <span class="c1"># PyExplainer Step 2 - Generate the rule-based explanation of an instance to be explained</span>
-<span class="n">pyexplainer_explanation_of_an_instance</span> <span class="o">=</span> <span class="n">our_pyexplainer</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span>
-                                <span class="n">X_explain</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">file_to_be_explained</span><span class="p">,:]</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span>
-                                <span class="n">y_explain</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">file_to_be_explained</span><span class="p">]),</span> 
+<span class="n">exp_obj</span> <span class="o">=</span> <span class="n">pyexp</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span><span class="n">X_explain</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">file_to_be_explained</span><span class="p">,:]</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span>
+                        <span class="n">y_explain</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">file_to_be_explained</span><span class="p">]),</span> 
                                                       <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="n">file_to_be_explained</span><span class="p">],</span>
                                                       <span class="n">name</span> <span class="o">=</span> <span class="n">outcome</span><span class="p">),</span>
-                                <span class="n">search_function</span> <span class="o">=</span> <span class="s1">&#39;crossoverinterpolation&#39;</span><span class="p">,</span>
-                                <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-                                <span class="n">max_rules</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-                            
+                        <span class="n">search_function</span> <span class="o">=</span> <span class="s1">&#39;crossoverinterpolation&#39;</span><span class="p">,</span>
+                        <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                        <span class="n">max_rules</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># Print rule </span>
+<span class="n">exp_obj</span><span class="p">[</span><span class="s1">&#39;top_k_positive_rules&#39;</span><span class="p">][:</span><span class="mi">1</span><span class="p">]</span>
+
 <span class="c1"># Please use the code below to visualise the generated PyExplainer explanation (What-If interactive visualisation).</span>
-<span class="n">our_pyexplainer</span><span class="o">.</span><span class="n">visualise</span><span class="p">(</span><span class="n">pyexplainer_explanation_of_an_instance</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Why this file is defect-introducing ?&quot;</span><span class="p">)</span>
+<span class="n">pyexp</span><span class="o">.</span><span class="n">visualise</span><span class="p">(</span><span class="n">exp_obj</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Why this file is predicted as defect-introducing?&quot;</span><span class="p">)</span>
 
 </pre></div>
 </div>
@@ -460,155 +452,23 @@ and mutation techniques</p></li>
 <span class="n">file_to_be_explained</span> <span class="o">=</span> <span class="s1">&#39;src/java/org/apache/lucene/index/DocumentsWriter.java&#39;</span>
 
 <span class="c1"># PyExplainer Step 1 - Construct a PyExplainer </span>
-<span class="n">our_pyexplainer</span> <span class="o">=</span> <span class="n">PyExplainer</span><span class="p">(</span><span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">,</span>
-                           <span class="n">y_train</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">,</span>
-                           <span class="n">indep</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
-                           <span class="n">dep</span> <span class="o">=</span> <span class="n">outcome</span><span class="p">,</span>
-                           <span class="n">blackbox_model</span> <span class="o">=</span> <span class="n">rf_model</span><span class="p">)</span>
+
 
 <span class="c1"># PyExplainer Step 2 - Generate the rule-based explanation of an instance to be explained</span>
-<span class="n">pyexplainer_explanation_of_an_instance</span> <span class="o">=</span> <span class="n">our_pyexplainer</span><span class="o">.</span><span class="n">explain</span><span class="p">(</span>
-                                <span class="n">X_explain</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">file_to_be_explained</span><span class="p">,:]</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span>
-                                <span class="n">y_explain</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">file_to_be_explained</span><span class="p">]),</span> 
-                                                      <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="n">file_to_be_explained</span><span class="p">],</span>
-                                                      <span class="n">name</span> <span class="o">=</span> <span class="n">outcome</span><span class="p">),</span>
-                                <span class="n">search_function</span> <span class="o">=</span> <span class="s1">&#39;crossoverinterpolation&#39;</span><span class="p">,</span>
-                                <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-                                <span class="n">max_rules</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-
-<span class="c1"># Please use the code below to visualise the generated PyExplainer explanation (What-If interactive visualisation).</span>
-<span class="n">our_pyexplainer</span><span class="o">.</span><span class="n">visualise</span><span class="p">(</span><span class="n">pyexplainer_explanation_of_an_instance</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Why this file is defect-introducing ?&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">68</span><span class="o">/</span><span class="n">p10tkmvx0p9dw88yp1k3tzh00000gr</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_56147</span><span class="o">/</span><span class="mf">3037054565.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Import for PyExplainer</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">pyexplainer.pyexplainer_pyexplainer</span> <span class="kn">import</span> <span class="n">PyExplainer</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">file_to_be_explained</span> <span class="o">=</span> <span class="s1">&#39;src/java/org/apache/lucene/index/DocumentsWriter.java&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pyexplainer&#39;
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="lime">
-<h2>LIME<a class="headerlink" href="#lime" title="Permalink to this headline">¶</a></h2>
-<p><strong>LIME</strong> (i.e., Local Interpretable Model-agnostic
-Explanations) <span id="id2">[<a class="reference internal" href="../References.html#id258">RSG16b</a>]</span> is a model-agnostic technique that
-mimics the behaviour of the black-box model to generate the explanations
-of the predictions of the black-box model. Given a black-box model and
-an instance to explain, LIME performs 4 key steps to generate an
-instance explanation as follows:</p>
-<ul class="simple">
-<li><p>First, LIME randomly generates instances surrounding the instance of
-interest.</p></li>
-<li><p>Second, LIME uses the black-box model to generate predictions of the
-generated random instances.</p></li>
-<li><p>Third, LIME constructs a local regression model using the generated
-random instances and their generated predictions from the black-box
-model.</p></li>
-<li><p>Finally, the coefficients of the regression model indicate the
-contribution of each metric on the prediction of the instance of
-interest according to the black-box model.</p></li>
-</ul>
-<p><strong>(2) Please use LIME to explain the prediction of <em>DocumentsWriter.java</em> that is generated from your Random Forests model.</strong></p>
-<div class="tip admonition">
-<p class="admonition-title">Tips</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="c1"># LIME Step 1 - Construct an explainer</span>
-<span class="n">our_lime_explainer</span> <span class="o">=</span> <span class="n">lime</span><span class="o">.</span><span class="n">lime_tabular</span><span class="o">.</span><span class="n">LimeTabularExplainer</span><span class="p">(</span>
-                            <span class="n">training_data</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>  
-                            <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;classification&#39;</span><span class="p">,</span>
-                            <span class="n">training_labels</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">,</span>
-                            <span class="n">feature_names</span> <span class="o">=</span> <span class="n">features</span><span class="p">,</span>
-                            <span class="n">class_names</span> <span class="o">=</span> <span class="n">class_labels</span><span class="p">,</span>
-                            <span class="n">discretize_continuous</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-                            
-<span class="c1"># LIME Step 2 - Use the constructed explainer with the predict function </span>
-<span class="c1"># of your predictive model to explain any instance</span>
-<span class="n">lime_local_explanation_of_an_instance</span> <span class="o">=</span> <span class="n">lime_explainer</span><span class="o">.</span><span class="n">explain_instance</span><span class="p">(</span>
-                            <span class="n">data_row</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;FileName.py&#39;</span><span class="p">,</span> <span class="p">:],</span> 
-                            <span class="n">predict_fn</span> <span class="o">=</span> <span class="n">our_rf_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">,</span> 
-                            <span class="n">num_features</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
-                            <span class="n">top_labels</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-                            
-<span class="c1"># Please use the code below to visualise the generated LIME explanation.</span>
-<span class="n">lime_local_explanation_of_an_instance</span><span class="o">.</span><span class="n">show_in_notebook</span><span class="p">()</span>
-
-</pre></div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for LIME</span>
-<span class="kn">import</span> <span class="nn">lime</span>
-<span class="kn">import</span> <span class="nn">lime.lime_tabular</span>
-
-<span class="n">file_to_be_explained</span> <span class="o">=</span> <span class="s1">&#39;src/java/org/apache/lucene/index/DocumentsWriter.java&#39;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Explaining </span><span class="si">{</span><span class="n">file_to_be_explained</span><span class="si">}</span><span class="s1"> with LIME&#39;</span><span class="p">)</span>
-
-<span class="c1"># LIME Step 1 - Construct an explainer</span>
-
-
-<span class="c1"># LIME Step 2 - Use the constructed explainer with the predict function of your predictive model to explain any instance</span>
-
-
-<span class="c1"># visualise the generated LIME explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print rule </span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="shap">
-<h2>SHAP<a class="headerlink" href="#shap" title="Permalink to this headline">¶</a></h2>
-<p><strong>SHAP</strong> (Shapley values) <span id="id3">[<a class="reference internal" href="../References.html#id182">LEL18</a>]</span> is a model-agnostic technique that generate the explanations of the black-box model based on game theory.</p>
-<p><strong>(2) Please use LIME to explain the prediction of <em>DocumentsWriter.java</em> that is generated from your Random Forests model.</strong></p>
-<div class="tip admonition">
-<p class="admonition-title">Tips</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="c1"># SHAP Step 1 - Construct an explainer with the predict function</span>
-<span class="c1"># of your predictive model</span>
-<span class="n">our_shap_explainer</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">KernelExplainer</span><span class="p">(</span><span class="n">our_rf_model</span><span class="o">.</span><span class="n">predict</span><span class="p">,</span> <span class="n">X_test</span><span class="p">)</span>
-                            
-<span class="c1"># SHAP Step 2 - Generate the SHAP explanation of an instance to be explained</span>
-<span class="n">shap_explanations_of_an_instance</span> <span class="o">=</span> <span class="n">our_shap_explainer</span><span class="o">.</span><span class="n">shap_values</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">file_to_be_explained_idx</span><span class="p">,</span> <span class="p">:])</span>
-                            
-<span class="c1"># Please use the code below to visualise the generated SHAP explanation (Force plot).</span>
-<span class="n">shap</span><span class="o">.</span><span class="n">initjs</span><span class="p">()</span>
-<span class="n">shap</span><span class="o">.</span><span class="n">force_plot</span><span class="p">(</span><span class="n">our_shap_explainer</span><span class="o">.</span><span class="n">expected_value</span><span class="p">,</span> 
-                <span class="n">shap_explanations_of_instances</span><span class="p">,</span> 
-                <span class="n">X_test</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">file_to_be_explained_idx</span><span class="p">,:])</span>
-
-</pre></div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import libraries for SHAP</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">importlib</span>
-<span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">import</span> <span class="nn">shap</span>
-
-<span class="n">file_to_be_explained</span> <span class="o">=</span> <span class="s1">&#39;src/java/org/apache/lucene/index/DocumentsWriter.java&#39;</span>
-<span class="n">file_to_be_explained_idx</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">file_to_be_explained</span><span class="p">)</span>
-
-
-<span class="c1"># SHAP Step 1 - Construct an explainer with the predict function</span>
-
-
-<span class="c1"># SHAP Step 2 - Generate the SHAP explanation of an instance to be explained</span>
-
-
-<span class="c1"># visualise the generated SHAP explanation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Please use the code below to visualise the generated PyExplainer explanation (What-If interactive visualisation).</span>
 </pre></div>
 </div>
 </div>
@@ -641,6 +501,8 @@ interest according to the black-box model.</p></li>
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page"><em>Explainable AI for Software Engineering</em></a>
+    <a class='right-next' id="next-link" href="hands-on-exercise.html" title="next page">ASE2021 Hands-on Exercise</a>
 
         </div>
         
