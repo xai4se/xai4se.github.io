@@ -401,7 +401,7 @@ First, we need to load necesarry libraries as well as preparing datasets.</p>
 <div class="tip admonition">
 <p class="admonition-title">Tips</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="n">our_rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+<span class="n">our_rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">our_rf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  
 
 </pre></div>
@@ -567,7 +567,9 @@ and mutation techniques</p></li>
                                                       <span class="n">name</span> <span class="o">=</span> <span class="n">outcome</span><span class="p">),</span>
                                 <span class="n">search_function</span> <span class="o">=</span> <span class="s1">&#39;crossoverinterpolation&#39;</span><span class="p">,</span>
                                 <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-                                <span class="n">max_rules</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+                                <span class="n">max_rules</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                                <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                                <span class="n">reuse_local_model</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
                             
 <span class="c1"># Please use the code below to visualise the generated PyExplainer explanation (What-If interactive visualisation).</span>
 <span class="n">our_pyexplainer</span><span class="o">.</span><span class="n">visualise</span><span class="p">(</span><span class="n">pyexplainer_explanation_of_an_instance</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Why this file is defect-introducing ?&quot;</span><span class="p">)</span>

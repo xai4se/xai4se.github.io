@@ -391,7 +391,7 @@ First, we need to load necesarry libraries as well as preparing datasets.</p>
 <div class="tip admonition">
 <p class="admonition-title">Tips</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+<span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">rf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  
 
 </pre></div>
@@ -402,6 +402,13 @@ First, we need to load necesarry libraries as well as preparing datasets.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
 
 <span class="c1"># Please fit your Random Forests model here!</span>
+<span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">rf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomForestClassifier(random_state=0)
 </pre></div>
 </div>
 </div>
@@ -433,7 +440,8 @@ and mutation techniques</p></li>
                                                       <span class="n">name</span> <span class="o">=</span> <span class="n">outcome</span><span class="p">),</span>
                         <span class="n">search_function</span> <span class="o">=</span> <span class="s1">&#39;crossoverinterpolation&#39;</span><span class="p">,</span>
                         <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-                        <span class="n">max_rules</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+                        <span class="n">max_rules</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                        <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Print rule </span>
 <span class="n">exp_obj</span><span class="p">[</span><span class="s1">&#39;top_k_positive_rules&#39;</span><span class="p">][:</span><span class="mi">1</span><span class="p">]</span>
@@ -455,6 +463,12 @@ and mutation techniques</p></li>
 
 
 <span class="c1"># PyExplainer Step 2 - Generate the rule-based explanation of an instance to be explained</span>
+
+
+<span class="c1"># Print rule </span>
+
+
+<span class="c1"># Please use the code below to visualise the generated PyExplainer explanation (What-If interactive visualisation).</span>
 </pre></div>
 </div>
 </div>
