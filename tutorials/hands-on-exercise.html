@@ -365,6 +365,11 @@ First, we need to load necesarry libraries as well as preparing datasets.</p>
 
 <span class="n">outcome</span> <span class="o">=</span> <span class="s1">&#39;RealBug&#39;</span>
 <span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;OWN_COMMIT&#39;</span><span class="p">,</span> <span class="s1">&#39;Added_lines&#39;</span><span class="p">,</span> <span class="s1">&#39;CountClassCoupled&#39;</span><span class="p">,</span> <span class="s1">&#39;AvgLine&#39;</span><span class="p">,</span> <span class="s1">&#39;RatioCommentToCode&#39;</span><span class="p">]</span>
+<span class="c1"># commits - # of commits that modify the file of interest</span>
+<span class="c1"># Added lines - # of added lines of code</span>
+<span class="c1"># Count class coupled - # of classes that interact or couple with the class of interest</span>
+<span class="c1"># LOC - # of lines of code</span>
+<span class="c1"># RatioCommentToCode - The ratio of lines of comments to lines of code</span>
 
 <span class="c1"># process outcome to 0 and 1</span>
 <span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">])</span>
@@ -379,13 +384,6 @@ First, we need to load necesarry libraries as well as preparing datasets.</p>
 <span class="n">y_train</span> <span class="o">=</span> <span class="n">train_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">outcome</span><span class="p">]</span>
 <span class="n">y_test</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">outcome</span><span class="p">]</span>
 
-
-<span class="c1"># commits - # of commits that modify the file of interest</span>
-<span class="c1"># Added lines - # of added lines of code</span>
-<span class="c1"># Count class coupled - # of classes that interact or couple with the class of interest</span>
-<span class="c1"># LOC - # of lines of code</span>
-<span class="c1"># RatioCommentToCode - The ratio of lines of comments to lines of code</span>
-<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nCommit&#39;</span><span class="p">,</span> <span class="s1">&#39;AddedLOC&#39;</span><span class="p">,</span> <span class="s1">&#39;nCoupledClass&#39;</span><span class="p">,</span> <span class="s1">&#39;LOC&#39;</span><span class="p">,</span> <span class="s1">&#39;CommentToCodeRatio&#39;</span><span class="p">]</span>
 <span class="n">class_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clean&#39;</span><span class="p">,</span> <span class="s1">&#39;Defective&#39;</span><span class="p">]</span>
 
 <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">features</span>
@@ -551,7 +549,9 @@ and mutation techniques</p></li>
 <p><strong>(3) Please use PyExplainer to explain the prediction of <em>DocumentsWriter.java</em> that is generated from your Random Forests model.</strong></p>
 <div class="tip admonition">
 <p class="admonition-title">Tips</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
 <span class="c1"># PyExplainer Step 1 - Construct a PyExplainer </span>
 <span class="n">our_pyexplainer</span> <span class="o">=</span> <span class="n">PyExplainer</span><span class="p">(</span><span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">,</span>
                            <span class="n">y_train</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">,</span>
