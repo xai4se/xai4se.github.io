@@ -354,7 +354,11 @@ First, we need to load necesarry libraries as well as preparing datasets.</p>
 <span class="n">test_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">((</span><span class="s2">&quot;../../datasets/lucene-3.0.0.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span> <span class="o">=</span> <span class="s1">&#39;File&#39;</span><span class="p">)</span>
 
 <span class="n">outcome</span> <span class="o">=</span> <span class="s1">&#39;RealBug&#39;</span>
-<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;OWN_COMMIT&#39;</span><span class="p">,</span> <span class="s1">&#39;Added_lines&#39;</span><span class="p">,</span> <span class="s1">&#39;CountClassCoupled&#39;</span><span class="p">,</span> <span class="s1">&#39;AvgLine&#39;</span><span class="p">,</span> <span class="s1">&#39;RatioCommentToCode&#39;</span><span class="p">]</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;OWN_COMMIT&#39;</span><span class="p">,</span> <span class="s1">&#39;CountClassCoupled&#39;</span><span class="p">,</span> <span class="s1">&#39;AvgLine&#39;</span><span class="p">,</span> <span class="s1">&#39;RatioCommentToCode&#39;</span><span class="p">]</span>
+<span class="c1"># OWN_COMMIT - # code ownership</span>
+<span class="c1"># Added lines - # of added lines of code</span>
+<span class="c1"># Count class coupled - # of classes that interact or couple with the class of interest</span>
+<span class="c1"># RatioCommentToCode - The ratio of lines of comments to lines of code</span>
 
 <span class="c1"># process outcome to 0 and 1</span>
 <span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">[</span><span class="n">outcome</span><span class="p">])</span>
@@ -370,12 +374,6 @@ First, we need to load necesarry libraries as well as preparing datasets.</p>
 <span class="n">y_test</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">outcome</span><span class="p">]</span>
 
 
-<span class="c1"># commits - # of commits that modify the file of interest</span>
-<span class="c1"># Added lines - # of added lines of code</span>
-<span class="c1"># Count class coupled - # of classes that interact or couple with the class of interest</span>
-<span class="c1"># LOC - # of lines of code</span>
-<span class="c1"># RatioCommentToCode - The ratio of lines of comments to lines of code</span>
-<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nCommit&#39;</span><span class="p">,</span> <span class="s1">&#39;AddedLOC&#39;</span><span class="p">,</span> <span class="s1">&#39;nCoupledClass&#39;</span><span class="p">,</span> <span class="s1">&#39;LOC&#39;</span><span class="p">,</span> <span class="s1">&#39;CommentToCodeRatio&#39;</span><span class="p">]</span>
 <span class="n">class_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Clean&#39;</span><span class="p">,</span> <span class="s1">&#39;Defective&#39;</span><span class="p">]</span>
 
 <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">features</span>
@@ -402,11 +400,6 @@ First, we need to load necesarry libraries as well as preparing datasets.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
 
 <span class="c1"># Please fit your Random Forests model here!</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RandomForestClassifier(random_state=0)
 </pre></div>
 </div>
 </div>

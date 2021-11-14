@@ -31,7 +31,11 @@ train_dataset = pd.read_csv(("../../datasets/lucene-2.9.0.csv"), index_col = 'Fi
 test_dataset = pd.read_csv(("../../datasets/lucene-3.0.0.csv"), index_col = 'File')
 
 outcome = 'RealBug'
-features = ['OWN_COMMIT', 'Added_lines', 'CountClassCoupled', 'AvgLine', 'RatioCommentToCode']
+features = ['OWN_COMMIT', 'CountClassCoupled', 'AvgLine', 'RatioCommentToCode']
+# OWN_COMMIT - # code ownership
+# Added lines - # of added lines of code
+# Count class coupled - # of classes that interact or couple with the class of interest
+# RatioCommentToCode - The ratio of lines of comments to lines of code
 
 # process outcome to 0 and 1
 train_dataset[outcome] = pd.Categorical(train_dataset[outcome])
@@ -47,12 +51,6 @@ y_train = train_dataset.loc[:, outcome]
 y_test = test_dataset.loc[:, outcome]
 
 
-# commits - # of commits that modify the file of interest
-# Added lines - # of added lines of code
-# Count class coupled - # of classes that interact or couple with the class of interest
-# LOC - # of lines of code
-# RatioCommentToCode - The ratio of lines of comments to lines of code
-features = ['nCommit', 'AddedLOC', 'nCoupledClass', 'LOC', 'CommentToCodeRatio']
 class_labels = ['Clean', 'Defective']
 
 X_train.columns = features
@@ -63,7 +61,7 @@ testing_data = pd.concat([X_test, y_test], axis=1)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m/var/folders/68/p10tkmvx0p9dw88yp1k3tzh00000gr/T/ipykernel_22126/440864984.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/68/p10tkmvx0p9dw88yp1k3tzh00000gr/T/ipykernel_24278/2813444008.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      9[0m [0;32mfrom[0m [0msklearn[0m[0;34m.[0m[0mmodel_selection[0m [0;32mimport[0m [0mtrain_test_split[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     10[0m [0;34m[0m[0m
 [0;32m---> 11[0;31m [0mtrain_dataset[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m([0m[0;34m"../../datasets/lucene-2.9.0.csv"[0m[0;34m)[0m[0;34m,[0m [0mindex_col[0m [0;34m=[0m [0;34m'File'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
