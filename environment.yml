@@ -52,7 +52,7 @@ dependencies:
     - ptyprocess>=0.7.0
     - py>=1.10.0
     - pydotplus>=2.0.2
-    - pyexplainer>=1.1.4
+    - pyexplainer>=1.1.6
     - pygments>=2.8.1
     - pyparsing>=2.4.7
     - pytest>=6.2.2
