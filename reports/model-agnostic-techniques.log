@@ -105,7 +105,7 @@ lime_local_explanation.show_in_notebook()
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m/var/folders/68/p10tkmvx0p9dw88yp1k3tzh00000gr/T/ipykernel_13993/1127894913.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/68/p10tkmvx0p9dw88yp1k3tzh00000gr/T/ipykernel_21087/1127894913.py[0m in [0;36m<module>[0;34m[0m
 [1;32m     18[0m [0;32mimport[0m [0mlime[0m[0;34m.[0m[0mlime_tabular[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     19[0m [0;34m[0m[0m
 [0;32m---> 20[0;31m [0mtrain_dataset[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m([0m[0;34m"../../datasets/lucene-2.9.0.csv"[0m[0;34m)[0m[0;34m,[0m [0mindex_col[0m [0;34m=[0m [0;34m'File'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
