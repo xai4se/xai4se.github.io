@@ -22,7 +22,7 @@ s
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/68/p10tkmvx0p9dw88yp1k3tzh00000gr/T/ipykernel_13512/1028141915.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/68/p10tkmvx0p9dw88yp1k3tzh00000gr/T/ipykernel_13982/1028141915.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0ms[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;31mNameError[0m: name 's' is not defined

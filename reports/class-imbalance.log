@@ -78,7 +78,7 @@ def get_class_ratio(input_data):
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m/var/folders/68/p10tkmvx0p9dw88yp1k3tzh00000gr/T/ipykernel_13413/2503383258.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/68/p10tkmvx0p9dw88yp1k3tzh00000gr/T/ipykernel_14232/2503383258.py[0m in [0;36m<module>[0;34m[0m
 [1;32m     15[0m [0;32mfrom[0m [0msklearn[0m[0;34m.[0m[0mlinear_model[0m [0;32mimport[0m [0mLogisticRegression[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     16[0m [0;34m[0m[0m
 [0;32m---> 17[0;31m [0mtrain_dataset[0m [0;34m=[0m [0mpd[0m[0;34m.[0m[0mread_csv[0m[0;34m([0m[0;34m([0m[0;34m"../../datasets/lucene-2.9.0.csv"[0m[0;34m)[0m[0;34m,[0m [0mindex_col[0m [0;34m=[0m [0;34m'File'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
